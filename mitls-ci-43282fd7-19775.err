@@ -1,0 +1,156 @@
+From https://github.com/FStarLang/FStar
+406af3f64..e11d391b4  master                  -> origin/master
+928b49f6e..8c53a28a8  aseem_misc              -> origin/aseem_misc
+5128a46fb..73fc3c4c8  buildpoc                -> origin/buildpoc
+* [new branch]          c_Delta-equational      -> origin/c_Delta-equational
+a6927c4ff..56834b46a  c_fstar-build_pp        -> origin/c_fstar-build_pp
+bc8919221..99bb49cb9  c_prop-dev              -> origin/c_prop-dev
+5ba34e2a7..fc1d5eb4f  catalin_fsharp-4.1-upgrade -> origin/catalin_fsharp-4.1-upgrade
++ f33b23d21...e11d391b4 cpitclaudel_staging     -> origin/cpitclaudel_staging  (forced update)
+* [new branch]          nik_misc                -> origin/nik_misc
+0d80df8cf..af8c16c4a  nik_rel                 -> origin/nik_rel
+7a95ca74b..e6804a821  taramana_modifies_light -> origin/taramana_modifies_light
+From https://github.com/FStarLang/kremlin
+3d1941d..b42294b  fstar-master -> origin/fstar-master
+8049a31..62748a1  taramana_2018pldi_tutorial -> origin/taramana_2018pldi_tutorial
+From https://github.com/mitls/hacl-star
+e20b3dab..e19e236e  fstar-master -> origin/fstar-master
+Warning 6: in the definition of buf, after the definition of m0, in the last element of the sequence, in top-level declaration Crypto.Symmetric.Bytes.random_bytes, in file Crypto_Symmetric_Bytes: stack newbuf 0uint8 @1 is a non-constant size, stack-allocated array; this is not supported by CompCert
+Warning 6: in the definition of k1, in top-level declaration Crypto.Symmetric.UF1CMA.akey_gen, in file Crypto_Symmetric_UF1CMA: eternal newbuf 0uint8 Crypto.Symmetric.UF1CMA.skeylen @0 is a non-constant size, stack-allocated array; this is not supported by CompCert
+Warning 6: in the definition of sk, in top-level declaration Crypto.Symmetric.UF1CMA.akey_coerce, in file Crypto_Symmetric_UF1CMA: eternal newbuf 0uint8 Crypto.Symmetric.UF1CMA.skeylen @1 is a non-constant size, stack-allocated array; this is not supported by CompCert
+Warning 6: in the definition of k1, after the definition of len1, in top-level declaration Crypto.Symmetric.UF1CMA.gen, in file Crypto_Symmetric_UF1CMA: eternal newbuf 0uint8 @0 is a non-constant size, stack-allocated array; this is not supported by CompCert
+Warning 6: in top-level declaration Crypto.Plain.create, in file Crypto_Plain: stack newbuf @1 @0 is a non-constant size, stack-allocated array; this is not supported by CompCert
+in top-level declaration Crypto.Symmetric.PRF.__proj__Mkdomain__item__iv, in file Crypto_Symmetric_PRF, expected a provided type annotation
+Dropping Crypto.Symmetric.PRF.__proj__Mkdomain__item__iv (at checking time); if this is normal, please consider using -drop
+
+in top-level declaration Crypto.Symmetric.PRF.__proj__Mkdomain__item__ctr, in file Crypto_Symmetric_PRF, expected a provided type annotation
+Dropping Crypto.Symmetric.PRF.__proj__Mkdomain__item__ctr (at checking time); if this is normal, please consider using -drop
+
+Warning 6: in the definition of key, after the definition of mac_rgn, in the last element of the sequence, in top-level declaration Crypto.Symmetric.PRF.gen, in file Crypto_Symmetric_PRF: stack newbuf 0uint8 Crypto.Symmetric.PRF.keylen @1 is a non-constant size, stack-allocated array; this is not supported by CompCert
+Warning 6: in the definition of keystate, after the definition of h1, in the last element of the sequence, after the definition of key, in the last element of the sequence, in top-level declaration Crypto.Symmetric.PRF.gen, in file Crypto_Symmetric_PRF: eternal newbuf 0uint8 Crypto.Symmetric.PRF.statelen @3 is a non-constant size, stack-allocated array; this is not supported by CompCert
+Warning 6: in the definition of keystate, after the definition of h1, in top-level declaration Crypto.Symmetric.PRF.coerce, in file Crypto_Symmetric_PRF: eternal newbuf 0uint8 Crypto.Symmetric.PRF.statelen @3 is a non-constant size, stack-allocated array; this is not supported by CompCert
+Warning 6: in the definition of keyBuffer, after the definition of h0, in the last element of the sequence, after the definition of macId, in top-level declaration Crypto.Symmetric.PRF.prf_mac, in file Crypto_Symmetric_PRF: eternal newbuf 0uint8 Crypto.Symmetric.UF1CMA.keylen @5 is a non-constant size, stack-allocated array; this is not supported by CompCert
+Warning 6: in the definition of keyBuffer, after the definition of x, in top-level declaration Crypto.Symmetric.PRF.prf_sk0, in file Crypto_Symmetric_PRF: eternal newbuf 0uint8 Crypto.Symmetric.UF1CMA.skeylen @2 is a non-constant size, stack-allocated array; this is not supported by CompCert
+Warning 7: : After inlining, Crypto.Symmetric.Bytes.uint128_to_uint8 (going into Crypto_Symmetric_Bytes) calls FStar.Int.Cast.Full.uint128_to_uint64 (going into FStar) -- removing the static qualifier from FStar.Int.Cast.Full.uint128_to_uint64
+Warning 7: : After inlining, Crypto.Symmetric.Bytes.load_bytes (going into Crypto_Symmetric_Bytes) calls FStar.Seq.Properties.cons__uint8_t (going into FStar) -- removing the static qualifier from FStar.Seq.Properties.cons__uint8_t
+Warning 7: : After inlining, Crypto.Symmetric.Bytes.little_endian (going into Crypto_Symmetric_Bytes) calls FStar.Endianness.little_endian (going into FStar) -- removing the static qualifier from FStar.Endianness.little_endian
+Warning 7: : After inlining, Crypto.Symmetric.Bytes.big_endian (going into Crypto_Symmetric_Bytes) calls FStar.Endianness.big_endian (going into FStar) -- removing the static qualifier from FStar.Endianness.big_endian
+Warning 7: : After inlining, Crypto.Symmetric.Bytes.uint8_to_uint128 (going into Crypto_Symmetric_Bytes) calls FStar.Int.Cast.Full.uint64_to_uint128 (going into FStar) -- removing the static qualifier from FStar.Int.Cast.Full.uint64_to_uint128
+Warning 7: : After inlining, Crypto.Symmetric.Bytes.little_bytes (going into Crypto_Symmetric_Bytes) calls FStar.Endianness.little_bytes (going into FStar) -- removing the static qualifier from FStar.Endianness.little_bytes
+Warning 7: : After inlining, Crypto.Symmetric.Cipher.compute (going into Crypto_Symmetric_Cipher) calls Hacl.Lib.LoadStore32.uint32s_from_le_bytes (going into Hacl) -- removing the static qualifier from Hacl.Lib.LoadStore32.uint32s_from_le_bytes
+Warning 7: : After inlining, Crypto.Symmetric.Cipher.compute (going into Crypto_Symmetric_Cipher) calls Hacl.Impl.Chacha20.copy_state (going into Hacl) -- removing the static qualifier from Hacl.Impl.Chacha20.copy_state
+Warning 8: : After inlining, Crypto.Symmetric.Cipher.compute (going into Crypto_Symmetric_Cipher) calls Hacl.Impl.Chacha20.copy_state (going into Hacl). This is a call across translation units but Hacl.Impl.Chacha20.copy_state has a C "inline" qualifier. The C standard allows removing Hacl.Impl.Chacha20.copy_state from its translation unit (see C11 6.7.3 §5), and CompCert will do it. 
+Warning 7: : After inlining, Crypto.Symmetric.Cipher.compute (going into Crypto_Symmetric_Cipher) calls Hacl.Impl.Chacha20.rounds (going into Hacl) -- removing the static qualifier from Hacl.Impl.Chacha20.rounds
+Warning 8: : After inlining, Crypto.Symmetric.Cipher.compute (going into Crypto_Symmetric_Cipher) calls Hacl.Impl.Chacha20.rounds (going into Hacl). This is a call across translation units but Hacl.Impl.Chacha20.rounds has a C "inline" qualifier. The C standard allows removing Hacl.Impl.Chacha20.rounds from its translation unit (see C11 6.7.3 §5), and CompCert will do it. 
+Warning 7: : After inlining, Crypto.Symmetric.Cipher.compute (going into Crypto_Symmetric_Cipher) calls Hacl.Impl.Chacha20.sum_states (going into Hacl) -- removing the static qualifier from Hacl.Impl.Chacha20.sum_states
+Warning 8: : After inlining, Crypto.Symmetric.Cipher.compute (going into Crypto_Symmetric_Cipher) calls Hacl.Impl.Chacha20.sum_states (going into Hacl). This is a call across translation units but Hacl.Impl.Chacha20.sum_states has a C "inline" qualifier. The C standard allows removing Hacl.Impl.Chacha20.sum_states from its translation unit (see C11 6.7.3 §5), and CompCert will do it. 
+Warning 7: : After inlining, Crypto.Symmetric.Cipher.compute (going into Crypto_Symmetric_Cipher) calls Hacl.Lib.LoadStore32.uint32s_to_le_bytes (going into Hacl) -- removing the static qualifier from Hacl.Lib.LoadStore32.uint32s_to_le_bytes
+Warning 7: : After inlining, Crypto.Symmetric.UF1CMA.verify (going into Crypto_Symmetric_UF1CMA) calls Hacl.Impl.Poly1305_64.poly1305_process_last_block (going into Hacl) -- removing the static qualifier from Hacl.Impl.Poly1305_64.poly1305_process_last_block
+Warning 8: : After inlining, Crypto.Symmetric.UF1CMA.verify (going into Crypto_Symmetric_UF1CMA) calls Hacl.Impl.Poly1305_64.poly1305_process_last_block (going into Hacl). This is a call across translation units but Hacl.Impl.Poly1305_64.poly1305_process_last_block has a C "inline" qualifier. The C standard allows removing Hacl.Impl.Poly1305_64.poly1305_process_last_block from its translation unit (see C11 6.7.3 §5), and CompCert will do it. 
+Warning 7: : After inlining, Crypto.Symmetric.UF1CMA.verify (going into Crypto_Symmetric_UF1CMA) calls Hacl.Impl.Poly1305_64.poly1305_last_pass (going into Hacl) -- removing the static qualifier from Hacl.Impl.Poly1305_64.poly1305_last_pass
+Warning 7: : After inlining, Crypto.Symmetric.UF1CMA.verify (going into Crypto_Symmetric_UF1CMA) calls Hacl.Impl.Poly1305_64.mk_state (going into Hacl) -- removing the static qualifier from Hacl.Impl.Poly1305_64.mk_state
+Warning 7: : After inlining, Crypto.AEAD.Encoding.add_bytes (going into Crypto_AEAD_Encoding) calls Hacl.Impl.Poly1305_64.poly1305_update (going into Hacl) -- removing the static qualifier from Hacl.Impl.Poly1305_64.poly1305_update
+Warning 8: : After inlining, Crypto.AEAD.Encoding.add_bytes (going into Crypto_AEAD_Encoding) calls Hacl.Impl.Poly1305_64.poly1305_update (going into Hacl). This is a call across translation units but Hacl.Impl.Poly1305_64.poly1305_update has a C "inline" qualifier. The C standard allows removing Hacl.Impl.Poly1305_64.poly1305_update from its translation unit (see C11 6.7.3 §5), and CompCert will do it. 
+Warning 7: : After inlining, Crypto.AEAD.Decrypt.decrypt (going into Crypto_AEAD_Decrypt) calls Crypto.AEAD.Encoding.add_bytes (going into Crypto_AEAD_Encoding) -- removing the static qualifier from Crypto.AEAD.Encoding.add_bytes
+Warning 7: : After inlining, Crypto.AEAD.Decrypt.decrypt (going into Crypto_AEAD_Decrypt) calls Crypto.AEAD.Encoding.store_lengths (going into Crypto_AEAD_Encoding) -- removing the static qualifier from Crypto.AEAD.Encoding.store_lengths
+Warning 3: run_or_warn: the following command failed:
+x86_64-w64-mingw32-gcc -I C:/build/agent1/_work/4/s/hacl-star/secure_api/aead -I C:/build/agent1/_work/4/s/hacl-star/secure_api/uf1cma -I C:/build/agent1/_work/4/s/hacl-star/secure_api/vale -I C:/build/agent1/_work/4/s/hacl-star/secure_api/vale/asm -I C:/build/agent1/_work/4/s/hacl-star/secure_api/prf -I C:/build/agent1/_work/4/s/hacl-star/secure_api/hkdf -I C:/build/agent1/_work/4/s/hacl-star/secure_api/utils -I C:/build/agent1/_work/4/s/hacl-star/secure_api/indexing -I C:/build/agent1/_work/4/s/hacl-star/code/experimental/aesgcm -I C:/build/agent1/_work/4/s/hacl-star/code/bignum -I C:/build/agent1/_work/4/s/hacl-star/code/poly1305 -I C:/build/agent1/_work/4/s/hacl-star/code/salsa-family -I C:/build/agent1/_work/4/s/hacl-star/code/hash -I C:/build/agent1/_work/4/s/hacl-star/code/lib/kremlin -I C:/build/agent1/_work/4/s/hacl-star/specs -I C:/build/agent1/_work/4/s/kremlin/kremlib -I C:/build/agent1/_work/4/s/kremlin/test -I C:/build/agent1/_work/4/s/kremlin/kremlib -I LowCProvider/tmp -Wno-unused-value -maes -Ofast -funroll-loops -fomit-frame-pointer -Wall -Werror -Wno-unused-variable -Wno-unknown-warning-option -Wno-unused-but-set-variable -g -O3 -fwrapv -fstack-check -D_BSD_SOURCE -D_DEFAULT_SOURCE -D__USE_MINGW_ANSI_STDIO -Wno-parentheses -std=c11 -c LowCProvider/tmp/Crypto_Symmetric_UF1CMA.c -o LowCProvider/tmp/Crypto_Symmetric_UF1CMA.o
+ffi.c:1:0: warning: -fPIC ignored for target (all code is position independent)
+#include <stdio.h>
+^
+ffi.c: In function ‘FFI_mitls_quic_process_caml’:
+ffi.c:1034:13: warning: unused variable ‘errorcode’ [-Wunused-variable]
+int errorcode = Int_val(Field(result, 1));
+^
+ffi.c: At top level:
+ffi.c:58:14: warning: ‘Val_some’ defined but not used [-Wunused-function]
+static value Val_some(value mlvalue) {
+^
+ffi.c:1:0: warning: -fPIC ignored for target (all code is position independent)
+#include <stdio.h>
+^
+ffi.c: In function ‘FFI_mitls_quic_process_caml’:
+ffi.c:1034:13: warning: unused variable ‘errorcode’ [-Wunused-variable]
+int errorcode = Int_val(Field(result, 1));
+^
+ffi.c: At top level:
+ffi.c:58:14: warning: ‘Val_some’ defined but not used [-Wunused-function]
+static value Val_some(value mlvalue) {
+^
+Extracted.mk:96: warning: overriding recipe for target 'mitls.cmxa'
+Makefile:193: warning: ignoring old recipe for target 'mitls.cmxa'
+Extracted.mk:99: warning: overriding recipe for target 'mitls.exe'
+Makefile:196: warning: ignoring old recipe for target 'mitls.exe'
+Extracted.mk:121: warning: overriding recipe for target 'test'
+Makefile:205: warning: ignoring old recipe for target 'test'
+Extracted.mk:205: warning: overriding recipe for target 'cmitls.o'
+Makefile:199: warning: ignoring old recipe for target 'cmitls.o'
+Extracted.mk:207: warning: overriding recipe for target 'cmitls.exe'
+Makefile:201: warning: ignoring old recipe for target 'cmitls.exe'
+Extracted.mk:96: warning: overriding recipe for target 'mitls.cmxa'
+Makefile:193: warning: ignoring old recipe for target 'mitls.cmxa'
+Extracted.mk:99: warning: overriding recipe for target 'mitls.exe'
+Makefile:196: warning: ignoring old recipe for target 'mitls.exe'
+Extracted.mk:121: warning: overriding recipe for target 'test'
+Makefile:205: warning: ignoring old recipe for target 'test'
+Extracted.mk:205: warning: overriding recipe for target 'cmitls.o'
+Makefile:199: warning: ignoring old recipe for target 'cmitls.o'
+Extracted.mk:207: warning: overriding recipe for target 'cmitls.exe'
+Makefile:201: warning: ignoring old recipe for target 'cmitls.exe'
+Extracted.mk:96: warning: overriding recipe for target 'mitls.cmxa'
+Makefile:193: warning: ignoring old recipe for target 'mitls.cmxa'
+Extracted.mk:99: warning: overriding recipe for target 'mitls.exe'
+Makefile:196: warning: ignoring old recipe for target 'mitls.exe'
+Extracted.mk:121: warning: overriding recipe for target 'test'
+Makefile:205: warning: ignoring old recipe for target 'test'
+Extracted.mk:205: warning: overriding recipe for target 'cmitls.o'
+Makefile:199: warning: ignoring old recipe for target 'cmitls.o'
+Extracted.mk:207: warning: overriding recipe for target 'cmitls.exe'
+Makefile:201: warning: ignoring old recipe for target 'cmitls.exe'
+** Cannot resolve symbols for C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider/libllcrypto.a(Crypto_AEAD_Encrypt.o/
+Crypto_AEAD_Encrypt_Ideal_Invariant.o/
+Crypto_AEAD_Encrypt_Invariant.o/
+Crypto_AEAD_Enxor_Invariant.o/
+Crypto_AEAD_EnxorDexor.o/
+Crypto_AEAD_Invariant.o/
+Crypto_AEAD_MAC_Wrapper_Invariant.o/
+Crypto_AEAD_Wrappers_CMA.o/
+Crypto_AEAD_Wrappers_Encoding.o/
+Crypto_AEAD_Wrappers_PRF.o/
+Crypto_Indexing.o/
+Crypto_Symmetric_AES.o/
+Crypto_Symmetric_AES128.o/
+Crypto_Symmetric_Bytes.o/
+Crypto_Symmetric_Cipher.o/
+Crypto_Symmetric_GF128.o/
+Crypto_Symmetric_MAC.o/
+Crypto_Symmetric_PRF.o/
+):
+FStar_Pervasives_Native_fst__Crypto_Indexing_id_FStar_UInt128_t
+** Cannot resolve symbols for C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider/libllcrypto.a(Crypto_Symmetric_PRF.o/
+):
+Crypto_Symmetric_UF1CMA_coerce
+Crypto_Symmetric_UF1CMA_keylen
+Crypto_Symmetric_UF1CMA_skeyed
+Crypto_Symmetric_UF1CMA_skeylen
+** Cannot resolve symbols for C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider/libllcrypto.a(Crypto_AEAD.o):
+Crypto_Symmetric_UF1CMA_skeyed
+** Cannot resolve symbols for C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider/libllcrypto.a(Crypto_AEAD_Wrappers_CMA.o/
+Crypto_AEAD_Wrappers_Encoding.o/
+Crypto_AEAD_Wrappers_PRF.o/
+Crypto_Indexing.o/
+Crypto_Symmetric_AES.o/
+Crypto_Symmetric_AES128.o/
+Crypto_Symmetric_Bytes.o/
+Crypto_Symmetric_Cipher.o/
+Crypto_Symmetric_GF128.o/
+Crypto_Symmetric_MAC.o/
+Crypto_Symmetric_PRF.o/
+):
+Crypto_Symmetric_UF1CMA_verify
+File "caml_startup", line 1:
+Error: Error during linking
+make[3]: *** [Extracted.mk:99: mitls.exe] Error 2
+make[2]: *** [Makefile:196: mitls.exe] Error 2
+make[1]: *** [Makefile:26: build] Error 2
+make: *** [Makefile:22: all] Error 2

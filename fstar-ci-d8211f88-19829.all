@@ -1,0 +1,118 @@
+This is /home/everbld/everest-ci/ci
+Working directory: /cygdrive/c/build/agent2/_work/2/s
+About to run: fstar_and_friends uregressions
+BUILD_SOURCEBRANCHNAME: c_fstar-build_pp
+BUILD_DEFINITIONNAME: FStar-CI-Windows
+BUILD_BUILDID: 19829
+DEFINITIONNAME:
+Z3 is /home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin/z3
+make fstar-in-fsharp
+Switching to vale to fstar_ci
+Removing tools/FsLexYacc/
+Switching to KreMLin origin/fstar-master
+HEAD is now at 6d30377 Fix two Python3 incompatibilities
+HEAD is now at 08bf83e Merge branch 'fstar-master' of pro.github.com:FStarLang/kremlin into fstar-master
+Switching to HACL origin/fstar-master
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/2/s/src'
+VS/.nuget/NuGet.exe restore VS/FStar.sln
+Installing 'FSharp.Compatibility.OCaml 0.1.10'.
+Installing 'PPrintForFSharp 0.0.2'.
+Installing 'FsLexYacc.Runtime 6.1.0'.
+Installing 'FsLexYacc 6.1.0'.
+Successfully installed 'PPrintForFSharp 0.0.2'.
+Successfully installed 'FSharp.Compatibility.OCaml 0.1.10'.
+Successfully installed 'FsLexYacc.Runtime 6.1.0'.
+Successfully installed 'FsLexYacc 6.1.0'.
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/2/s/src'
+make -C VS install-packages
+[ -d packages ] || make update-nuget
+From https://github.com/mitls/mitls-fstar
+e801d308..1954e14c  new-master     -> origin/new-master
+6f4677fc..8bc4c612  quic2c_parsers -> origin/quic2c_parsers
+Switching to mitls-fstar origin/fstar-master
+make[2]: Entering directory '/cygdrive/c/build/agent2/_work/2/s/src/VS'
+.nuget/NuGet.exe restore FStar.sln
+All packages listed in packages.config are already installed.
+find packages -name '*.exe' -exec chmod +x '{}' ';'
+make[2]: Leaving directory '/cygdrive/c/build/agent2/_work/2/s/src/VS'
+HEAD is now at 74c4b38f Targets to compile bytecode version of LowC
+HEAD is now at 65a24d96 ***NO_CI*** hints
+Restoring NuGet package FsLexYacc.Runtime.6.1.0.
+Restoring NuGet package FsLexYacc.6.1.0.
+Adding package 'FsLexYacc.6.1.0' to folder 'C:\build\agent2\_work\2\s\vale\tools\FsLexYacc'
+Adding package 'FsLexYacc.Runtime.6.1.0' to folder 'C:\build\agent2\_work\2\s\vale\tools\FsLexYacc'
+Added package 'FsLexYacc.Runtime.6.1.0' to folder 'C:\build\agent2\_work\2\s\vale\tools\FsLexYacc'
+Added package 'FsLexYacc.6.1.0' to folder 'C:\build\agent2\_work\2\s\vale\tools\FsLexYacc'
+
+NuGet Config files used:
+C:\Users\everbld\AppData\Roaming\NuGet\NuGet.Config
+C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
+
+Feeds used:
+C:\Users\everbld\.nuget\packages\
+https://api.nuget.org/v3/index.json
+C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
+
+Installed:
+2 package(s) to packages.config projects
+make: Entering directory '/cygdrive/c/build/agent2/_work/2/s/kremlin'
+ocamlbuild -I src -I lib -I parser -I kremlib -use-menhir -use-ocamlfind -classic-display -menhir "menhir --infer --explain" Kremlin.native Tests.native
+ln -sf Kremlin.native krml
+make: Leaving directory '/cygdrive/c/build/agent2/_work/2/s/kremlin'
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/2/s/src'
+make[1]: *** [Makefile:18: fstar-in-fsharp] Error 1
+./msbuild.bat /verbosity:minimal /p:Configuration=Release VS/FStar.sln
+**********************************************************************
+make: *** [Makefile:135: fsharp-build-and-test] Error 2
+** Visual Studio 2017 Developer Command Prompt v15.5.5
+** Copyright (c) 2017 Microsoft Corporation
+make: Target 'utest-prelude' not remade because of errors.
+**********************************************************************
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Command exited with non-zero status 2
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+0.06user 0.22system 0:15.39elapsed 1%CPU (0avgtext+0avgdata 6338816maxresident)k
+C:\build\agent2\_work\2\s\src\basic\boot\NotFStar.Util.fs(50,5): warning FS3190: Lowercase literal 'max_int' is being shadowed by a new pattern with the same name. Only uppercase and module-prefixed literals can be used as named patterns. [C:\build\agent2\_work\2\s\src\basic\basic.fsproj]
+0inputs+0outputs (25880major+0minor)pagefaults 0swaps
+basic -> C:\build\agent2\_work\2\s\bin\basic.dll
+Restoring NuGet packages...
+To prevent NuGet from downloading packages during build, open the Visual Studio Options dialog, click on the Package Manager node and uncheck 'Allow NuGet to download missing packages'.
+All packages listed in packages.config are already installed.
+prettyprint -> C:\build\agent2\_work\2\s\bin\prettyprint.dll
+compiling to dfas (can take a while...)
+367 states
+writing output
+building tables
+computing first function...time: 00:00:00.3023484
+building kernels...time: 00:00:00.2111708
+building kernel table...time: 00:00:00.0198085
+computing lookahead relations..............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................time: 00:00:00.8272730
+building lookahead table...time: 00:00:00.3583299
+building action table...state 469: shift/reduce error on SEMICOLON
+state 469: shift/reduce error on SEMICOLON_SEMICOLON
+state 508: shift/reduce error on BAR
+state 512: shift/reduce error on BAR
+state 531: shift/reduce error on BAR
+state 615: shift/reduce error on COLON_EQUALS
+state 647: shift/reduce error on COLON_EQUALS
+time: 00:00:01.1918777
+building goto table...time: 00:00:00.3909507
+returning tables.
+7 shift/reduce conflicts
+891 states
+156 nonterminals
+150 terminals
+471 productions
+#rows in action table: 891
+C:\build\agent2\_work\2\s\src\parser\FStar.Parser.ToDocument.fs(633,19): error FS0033: The non-generic type 'FStar.Parser.AST.binder' does not expect any type arguments, but here is given 1 type argument(s) [C:\build\agent2\_work\2\s\src\parser\parser.fsproj]
+C:\build\agent2\_work\2\s\src\parser\FStar.Parser.ToDocument.fs(926,43): error FS0033: The non-generic type 'FStar.Parser.AST.binder' does not expect any type arguments, but here is given 1 type argument(s) [C:\build\agent2\_work\2\s\src\parser\parser.fsproj]
+C:\build\agent2\_work\2\s\src\parser\FStar.Parser.ToDocument.fs(926,57): error FS0033: The non-generic type 'FStar.Pprint.document' does not expect any type arguments, but here is given 1 type argument(s) [C:\build\agent2\_work\2\s\src\parser\parser.fsproj]
+C:\build\agent2\_work\2\s\src\parser\FStar.Parser.ToDocument.fs(928,38): error FS0033: The non-generic type 'FStar.Parser.AST.binder' does not expect any type arguments, but here is given 1 type argument(s) [C:\build\agent2\_work\2\s\src\parser\parser.fsproj]
+C:\build\agent2\_work\2\s\src\parser\FStar.Parser.ToDocument.fs(633,19): error FS0033: The non-generic type 'FStar.Parser.AST.binder' does not expect any type arguments, but here is given 1 type argument(s) [C:\build\agent2\_work\2\s\src\parser\parser.fsproj]
+C:\build\agent2\_work\2\s\src\parser\FStar.Parser.ToDocument.fs(926,43): error FS0033: The non-generic type 'FStar.Parser.AST.binder' does not expect any type arguments, but here is given 1 type argument(s) [C:\build\agent2\_work\2\s\src\parser\parser.fsproj]
+C:\build\agent2\_work\2\s\src\parser\FStar.Parser.ToDocument.fs(926,57): error FS0033: The non-generic type 'FStar.Pprint.document' does not expect any type arguments, but here is given 1 type argument(s) [C:\build\agent2\_work\2\s\src\parser\parser.fsproj]
+C:\build\agent2\_work\2\s\src\parser\FStar.Parser.ToDocument.fs(928,38): error FS0033: The non-generic type 'FStar.Parser.AST.binder' does not expect any type arguments, but here is given 1 type argument(s) [C:\build\agent2\_work\2\s\src\parser\parser.fsproj]
+format -> C:\build\agent2\_work\2\s\bin\format.dll
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/2/s/src'
+warm-up failed

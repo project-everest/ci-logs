@@ -1,0 +1,1218 @@
+This is /home/everbld/everest-ci/ci
+Working directory: /cygdrive/c/build/agent1/_work/4/s
+About to run: mitls_verify_and_hints
+BUILD_SOURCEBRANCHNAME: master
+BUILD_DEFINITIONNAME: miTLS-Nightly-Windows
+BUILD_BUILDID: 19811
+DEFINITIONNAME:
+Z3 is /home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin/z3
+From https://github.com/FStarLang/FStar
+e11d391b4..8280654d7  master             -> origin/master
+* [new branch]          c_delta-equational -> origin/c_delta-equational
+56834b46a..f5f42be98  c_fstar-build_pp   -> origin/c_fstar-build_pp
+179d85fae..8280654d7  nik_misc           -> origin/nik_misc
+af8c16c4a..1fcfc23b9  nik_rel            -> origin/nik_rel
+Switching to F* origin/stable
+HEAD is now at cc8247b68 Fix type error in OCaml 4.05 printer
+make: Entering directory '/cygdrive/c/build/agent1/_work/4/s/fstar/src/ocaml-output'
+cp "../extraction/ml/FStar_Extraction_ML_PrintML_4.05.X.ml" ../extraction/ml/FStar_Extraction_ML_PrintML.ml
+make: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/fstar/src/ocaml-output'
+make: Entering directory '/cygdrive/c/build/agent1/_work/4/s/fstar/src/ocaml-output'
+echo 'open FStar_Util' > FStar_Version.ml
+echo 'let dummy () = ();;' >> FStar_Version.ml
+echo 'FStar_Options._version := "0.9.5.0";;' >> FStar_Version.ml
+echo 'FStar_Options._platform := "Windows_x64";;' >> FStar_Version.ml
+echo 'FStar_Options._compiler := "OCaml 4.05.0";;' >> FStar_Version.ml
+echo 'FStar_Options._date := "2018-04-27T01:02:16-07:00";;' >> FStar_Version.ml
+echo 'FStar_Options._commit:= "cc8247b68";;' >> FStar_Version.ml
+make: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/fstar/src/ocaml-output'
+make: Entering directory '/cygdrive/c/build/agent1/_work/4/s/fstar/src/ocaml-output'
+cd ../../ && ocamlbuild -cflag -g -I src/ocaml-output -I src/basic/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/prettyprint/ml -I src/tactics/ml -I ulib/ml -j 24 -build-dir src/ocaml-output/_build -use-ocamlfind main.native
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package batteries -package zarith -modules src/ocaml-output/FStar_Version.ml > src/ocaml-output/FStar_Version.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package batteries -package zarith -I src/ocaml-output -I ulib/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Version.cmo src/ocaml-output/FStar_Version.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package batteries -package zarith -I src/ocaml-output -I ulib/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Version.cmx src/ocaml-output/FStar_Version.ml
+ocamlfind ocamlopt -linkpkg -linkall -thread -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package batteries -package zarith -I ulib/ml -I src/basic/ml -I src/ocaml-output -I src/prettyprint/ml -I src/extraction/ml -I src/parser/ml -I src/tactics/ml -I src/fstar/ml ulib/ml/FStar_Monotonic_Heap.cmx ulib/ml/FStar_CommonST.cmx ulib/ml/FStar_List_Tot_Base.cmx ulib/ml/FStar_List.cmx ulib/ml/FStar_ST.cmx ulib/ml/prims.cmx src/basic/ml/FStar_Util.cmx src/basic/ml/FStar_Bytes.cmx src/basic/ml/FStar_Dyn.cmx ulib/ml/FStar_Char.cmx src/basic/ml/FStar_Getopt.cmx src/basic/ml/FStar_Platform.cmx ulib/ml/FStar_Float.cmx ulib/ml/FStar_Int16.cmx ulib/ml/FStar_Int32.cmx ulib/ml/FStar_Int64.cmx ulib/ml/FStar_Int8.cmx ulib/ml/FStar_UInt16.cmx ulib/ml/FStar_UInt8.cmx ulib/ml/FStar_BaseTypes.cmx src/basic/ml/FStar_Range.cmx ulib/ml/FStar_All.cmx src/basic/ml/FStar_Unionfind.cmx ulib/ml/FStar_Pervasives_Native.cmx src/ocaml-output/FStar_Common.cmx ulib/ml/FStar_String.cmx src/ocaml-output/FStar_Ident.cmx src/ocaml-output/FStar_Const.cmx ulib/ml/FStar_Exn.cmx src/ocaml-output/FStar_Options.cmx src/ocaml-output/FStar_Errors.cmx src/ocaml-output/FStar_Parser_Const.cmx src/ocaml-output/FStar_Syntax_Syntax.cmx src/ocaml-output/FStar_Extraction_ML_Syntax.cmx src/ocaml-output/FStar_Parser_AST.cmx src/prettyprint/ml/FStar_Pprint.cmx src/ocaml-output/FStar_Parser_ToDocument.cmx src/ocaml-output/FStar_Syntax_Unionfind.cmx ulib/ml/FStar_Option.cmx src/ocaml-output/FStar_Syntax_Subst.cmx src/ocaml-output/FStar_Syntax_Free.cmx src/ocaml-output/FStar_Syntax_InstFV.cmx src/ocaml-output/FStar_Syntax_Util.cmx src/ocaml-output/FStar_Syntax_Resugar.cmx src/ocaml-output/FStar_Syntax_Print.cmx src/ocaml-output/FStar_TypeChecker_Common.cmx src/ocaml-output/FStar_TypeChecker_Env.cmx src/ocaml-output/FStar_Extraction_ML_UEnv.cmx src/ocaml-output/FStar_Reflection_Data.cmx src/ocaml-output/FStar_Extraction_ML_Util.cmx src/ocaml-output/FStar_Format.cmx src/ocaml-output/FStar_Extraction_ML_Code.cmx src/extraction/ml/FStar_Extraction_ML_PrintML.cmx src/parser/ml/FStar_Parser_Util.cmx src/ocaml-output/FStar_Parser_Parse.cmx src/parser/ml/FStar_Ulexing.cmx src/parser/ml/FStar_Parser_LexFStar.cmx src/parser/ml/FStar_Parser_ParseIt.cmx src/ocaml-output/FStar_Parser_Driver.cmx src/ocaml-output/FStar_Parser_Dep.cmx src/ocaml-output/FStar_Dependencies.cmx src/ocaml-output/FStar_Extraction_Kremlin.cmx src/ocaml-output/FStar_Pervasives.cmx src/ocaml-output/FStar_Syntax_Embeddings.cmx src/ocaml-output/FStar_TypeChecker_Normalize.cmx src/ocaml-output/FStar_TypeChecker_Err.cmx src/ocaml-output/FStar_TypeChecker_Rel.cmx src/ocaml-output/FStar_TypeChecker_Util.cmx src/ocaml-output/FStar_TypeChecker_TcTerm.cmx src/ocaml-output/FStar_Extraction_ML_Term.cmx src/ocaml-output/FStar_Extraction_ML_Modul.cmx src/ocaml-output/FStar_Fsdoc_Generator.cmx src/ocaml-output/FStar_Indent.cmx src/ocaml-output/FStar_Order.cmx src/ocaml-output/FStar_Reflection_Basic.cmx src/ocaml-output/FStar_Reflection_Interpreter.cmx src/ocaml-output/FStar_SMTEncoding_Term.cmx src/ocaml-output/FStar_SMTEncoding_Util.cmx src/ocaml-output/FStar_SMTEncoding_Z3.cmx src/ocaml-output/FStar_SMTEncoding_ErrorReporting.cmx src/ocaml-output/FStar_SMTEncoding_Encode.cmx src/ocaml-output/FStar_SMTEncoding_Solver.cmx src/ocaml-output/FStar_Syntax_MutRecTy.cmx src/ocaml-output/FStar_Tactics_Types.cmx src/ocaml-output/FStar_Tactics_Result.cmx src/ocaml-output/FStar_Tactics_Basic.cmx src/ocaml-output/FStar_Tactics_Embedding.cmx src/tactics/ml/FStar_Tactics_Native.cmx src/ocaml-output/FStar_Tactics_Interpreter.cmx src/ocaml-output/FStar_ToSyntax_Env.cmx src/ocaml-output/FStar_ToSyntax_Interleave.cmx src/ocaml-output/FStar_ToSyntax_ToSyntax.cmx src/ocaml-output/FStar_TypeChecker_DMFF.cmx src/ocaml-output/FStar_TypeChecker_TcInductive.cmx src/ocaml-output/FStar_TypeChecker_Tc.cmx src/ocaml-output/FStar_Universal.cmx src/ocaml-output/FStar_Interactive.cmx src/ocaml-output/FStar_Legacy_Interactive.cmx src/ocaml-output/FStar_Version.cmx src/tactics/ml/FStar_Tactics_Load.cmx src/ocaml-output/FStar_Main.cmx src/fstar/ml/main.cmx -o src/fstar/ml/main.native
+# No parallelism done
+cp -f _build/src/fstar/ml/main.native ../../bin/fstar.exe
+cp -f _build/src/fstar/ml/main.native ../../bin/fstar.ocaml
+make: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/fstar/src/ocaml-output'
+make: Entering directory '/cygdrive/c/build/agent1/_work/4/s/fstar/src/ocaml-output'
+mkdir -p ../../bin/fstar-compiler-lib/
+find -name "*.cmi" -exec cp {} ../../bin/fstar-compiler-lib/ \;
+make: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/fstar/src/ocaml-output'
+make: Entering directory '/cygdrive/c/build/agent1/_work/4/s/fstar/ulib/ml'
+make -C .. install-fstarlib
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/fstar/ulib'
+mkdir -p ml/extracted
+/cygdrive/c/build/agent1/_work/4/s/fstar/bin/fstar.exe --record_hints --print_z3_statistics --use_hints --query_stats --use_hints --lax --codegen OCaml --odir ml/extracted --no_extract FStar.All --no_extract FStar.BaseTypes --no_extract FStar.Buffer --no_extract FStar.Char --no_extract FStar.CommonST --no_extract FStar.Constructive --no_extract FStar.Float --no_extract FStar.Ghost --no_extract FStar.Heap --no_extract FStar.Monotonic.Heap --no_extract FStar.HyperStack.All --no_extract FStar.HyperStack.ST --no_extract FStar.Int16 --no_extract FStar.Int32 --no_extract FStar.Int63 --no_extract FStar.Int64 --no_extract FStar.Int8 --no_extract FStar.Int.Cast --no_extract FStar.IO --no_extract FStar.List --no_extract FStar.List.Tot.Base --no_extract FStar.Mul --no_extract FStar.Option --no_extract FStar.Pervasives.Native --no_extract FStar.Set --no_extract FStar.ST --no_extract FStar.Exn --no_extract FStar.String --no_extract FStar.UInt16 --no_extract FStar.UInt32 --no_extract FStar.UInt63 --no_extract FStar.UInt64 --no_extract FStar.UInt8 --no_extract FStar.Pointer.Base --no_extract FStar.Pointer --no_extract FStar.BufferNG --no_extract FStar.Tactics.Builtins --no_extract FStar.TaggedUnion --no_extract FStar.Reflection.Types --no_extract FStar.Reflection.Basic --no_extract FStar.Reflection.Data --no_extract FStar.Tactics.Result --no_extract FStar.Tactics.Types --no_extract FStar.Bytes --no_extract FStar.Util --no_extract FStar.Pervasives --no_extract FStar.Order --no_extract prims FStar.Reader.fst FStar.FunctionalExtensionality.fst FStar.IndefiniteDescription.fst FStar.Buffer.Quantifiers.fst FStar.HyperHeap.ST.fst FStar.Map.fst FStar.StrongExcludedMiddle.fst FStar.BV.fst FStar.OrdSetProps.fst FStar.HyperStack.fst FStar.Monotonic.Seq.fst FStar.Int.fst FStar.Classical.fst FStar.Int.Cast.Full.fst FStar.DependentMap.fst FStar.PropositionalExtensionality.fst FStar.Ref.fst FStar.WellFounded.fst FStar.TwoLevelHeap.fst FStar.MRef.fst FStar.SquashEffect.fst FStar.Math.Lib.fst FStar.Relational.Relational.fst FStar.Integers.fst FStar.Array.fst FStar.TSet.fst FStar.Monotonic.HyperHeap.fst FStar.Int128.fst FStar.Preorder.fst FStar.Relational.State.fst FStar.Int31.fst FStar.Squash.fst FStar.Fin.fst FStar.Math.Lemmas.fst FStar.ErasedLogic.fst FStar.SquashProperties.fst FStar.Monotonic.HyperStack.fst FStar.UInt.fst FStar.Axiomatic.Array.fst FStar.HyperHeap.fst FStar.UInt128.fst FStar.UInt31.fst FStar.Seq.Sorted.fst FStar.Monotonic.RRef.fst FStar.Algebra.Monoid.fst FStar.OrdSet.fst FStar.List.Tot.fst FStar.Seq.Properties.fst FStar.Universe.fst FStar.Relational.Comp.fst FStar.Seq.fst FStar.List.Pure.fst FStar.List.Tot.Properties.fst FStar.List.Pure.Properties.fst FStar.BitVector.fst FStar.MarkovsPrinciple.fst FStar.OrdMap.fst FStar.OrdMapProps.fst FStar.HyperHeap.All.fst FStar.PredicateExtensionality.fst FStar.Seq.Base.fst FStar.List.Pure.Base.fst FStar.Ghost.fsti FStar.UInt128.fsti FStar.Dyn.fsti FStar.IO.fsti FStar.Universe.fsti FStar.Monotonic.Heap.fsti FStar.Squash.fsti FStar.BV.fsti FStar.Float.fsti FStar.BaseTypes.fsti FStar.TaggedUnion.fsti FStar.String.fsti FStar.Char.fsti FStar.Matrix2.fsti FStar.Option.fsti FStar.Pointer.Base.fsti
+Extracted module PropositionalExtensionality
+Extracted module Squash
+Extracted module Classical
+Extracted module Monoid
+Extracted module FunctionalExtensionality
+Extracted module Preorder
+Extracted module StrongExcludedMiddle
+Extracted module PredicateExtensionality
+Extracted module TSet
+Extracted module Properties
+Extracted module Tot
+Extracted module Base
+Extracted module Properties
+Extracted module Seq
+Extracted module Array
+Extracted module Array
+Extracted module Lib
+Extracted module Lemmas
+Extracted module BitVector
+Extracted module UInt
+Extracted module Int
+Extracted module Map
+Extracted module HyperHeap
+Extracted module HyperHeap
+Extracted module HyperStack
+Extracted module HyperStack
+Extracted module Quantifiers
+Extracted module BV
+Extracted module DependentMap
+Extracted module ErasedLogic
+Extracted module Fin
+Extracted module ST
+Extracted module All
+Extracted module IndefiniteDescription
+Extracted module UInt128
+Extracted module Full
+Extracted module Int128
+Extracted module Int31
+Extracted module UInt31
+Extracted module Integers
+Extracted module Base
+Extracted module Properties
+Extracted module Pure
+Extracted module MarkovsPrinciple
+Extracted module RRef
+Extracted module Seq
+Extracted module MRef
+Extracted module OrdSet
+Extracted module OrdMap
+Extracted module OrdMapProps
+Extracted module OrdSetProps
+Extracted module Reader
+Extracted module Ref
+Extracted module Relational
+Extracted module Comp
+Extracted module State
+Extracted module Sorted
+Extracted module SquashEffect
+Extracted module SquashProperties
+Extracted module TwoLevelHeap
+Extracted module Universe
+Extracted module WellFounded
+All verification conditions discharged successfully
+cp ../src/ocaml-output/FStar_Pervasives.ml ml/extracted
+touch fstarlib.mgen
+./gen_mllib.sh ml ml/extracted > ml/fstarlib.mllib
+cd ../ && OCAMLPATH="../../../bin/" ocamlbuild -cflag -g -use-ocamlfind -build-dir ulib/ml/_build -I ulib/ml -I ulib/ml/extracted fstarlib.a fstarlib.cma fstarlib.cmxs fstarlib.cmxa
+ocamlfind ocamlopt -shared -linkall -thread -package batteries -package zarith -I ulib/ml ulib/ml/fstarlib.cmxa -o ulib/ml/fstarlib.cmxs
+mkdir -p ../bin/fstarlib/
+cp ml/_build/ulib/ml/*.cmi ml/_build/ulib/ml/extracted/*.cmi ml/_build/ulib/ml/fstarlib.a ml/_build/ulib/ml/fstarlib.cma ml/_build/ulib/ml/fstarlib.cmxs ml/_build/ulib/ml/fstarlib.cmxa ../bin/fstarlib/
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/fstar/ulib'
+make: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/fstar/ulib/ml'
+From https://github.com/FStarLang/kremlin
+b42294b..08bf83e  fstar-master -> origin/fstar-master
+Switching to KreMLin origin/master
+HEAD is now at 4064311 CI compatibility fix
+make: Entering directory '/cygdrive/c/build/agent1/_work/4/s/kremlin'
+ocamlbuild -I src -I lib -I parser -use-menhir -use-ocamlfind -classic-display -menhir "menhir --infer --explain" Kremlin.native Tests.native
+ln -sf Kremlin.native krml
+make: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/kremlin'
+From https://github.com/mitls/hacl-star
+e19e236e..74c4b38f  fstar-master -> origin/fstar-master
+Switching to HACL origin/master
+HEAD is now at 24ddefac Merge branch 'master' of github.com:mitls/hacl-star
+From https://github.com/project-everest/MLCrypto
+feba1f6..563d9e8  master     -> origin/master
+Switching to MLCrypto origin/master
+HEAD is now at 563d9e8 Fix bytecode compilation
+make: Nothing to be done for 'all'.
+make: Entering directory '/cygdrive/c/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider'
+ocamlfind dep *.ml *.mli > .depend
+make: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider'
+make -C .. LowCProvider-tmp
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/hacl-star/secure_api'
+Warning 6: in the definition of buf, after the definition of m0, in the last element of the sequence, in top-level declaration Crypto.Symmetric.Bytes.random_bytes, in file Crypto_Symmetric_Bytes: stack newbuf 0uint8 @1 is a non-constant size, stack-allocated array; this is not supported by CompCert
+C:/build/agent1/_work/4/s/kremlin/krml  -warn-error -4-9 -ccopt -Wno-unused-value -ccopt -maes -ccopt -Ofast -ccopt -funroll-loops -ccopt -fomit-frame-pointer C:/build/agent1/_work/4/s/kremlin/test/../kremlib/testlib.c vale/asm/vale.a test/test_hacks.c -drop Hacl.Spe.*,Spec,Hacl.Spec,Spec.*,Hacl.Spec.* -add-include '"testlib.h"' -bundle Hacl.*  -I C:/build/agent1/_work/4/s/hacl-star/secure_api/aead -I C:/build/agent1/_work/4/s/hacl-star/secure_api/uf1cma -I C:/build/agent1/_work/4/s/hacl-star/secure_api/vale -I C:/build/agent1/_work/4/s/hacl-star/secure_api/vale/asm -I C:/build/agent1/_work/4/s/hacl-star/secure_api/prf -I C:/build/agent1/_work/4/s/hacl-star/secure_api/hkdf -I C:/build/agent1/_work/4/s/hacl-star/secure_api/utils -I C:/build/agent1/_work/4/s/hacl-star/secure_api/indexing -I C:/build/agent1/_work/4/s/hacl-star/code/experimental/aesgcm -I C:/build/agent1/_work/4/s/hacl-star/code/bignum -I C:/build/agent1/_work/4/s/hacl-star/code/poly1305 -I C:/build/agent1/_work/4/s/hacl-star/code/salsa-family -I C:/build/agent1/_work/4/s/hacl-star/code/hash -I C:/build/agent1/_work/4/s/hacl-star/code/lib/kremlin -I C:/build/agent1/_work/4/s/hacl-star/specs -I C:/build/agent1/_work/4/s/kremlin/kremlib -I C:/build/agent1/_work/4/s/kremlin/test LowCProvider/Crypto.Indexing.fst \
+Warning 6: in the definition of k1, in top-level declaration Crypto.Symmetric.UF1CMA.akey_gen, in file Crypto_Symmetric_UF1CMA: eternal newbuf 0uint8 Crypto.Symmetric.UF1CMA.skeylen @0 is a non-constant size, stack-allocated array; this is not supported by CompCert
+test/Flag.fst utils/Hacl.Spec.fst \
+aead/Crypto.AEAD.fst \
+Warning 6: in the definition of sk, in top-level declaration Crypto.Symmetric.UF1CMA.akey_coerce, in file Crypto_Symmetric_UF1CMA: eternal newbuf 0uint8 Crypto.Symmetric.UF1CMA.skeylen @1 is a non-constant size, stack-allocated array; this is not supported by CompCert
+-tmpdir LowCProvider/tmp \
+-skip-linking
+Warning 6: in the definition of k1, after the definition of len1, in top-level declaration Crypto.Symmetric.UF1CMA.gen, in file Crypto_Symmetric_UF1CMA: eternal newbuf 0uint8 @0 is a non-constant size, stack-allocated array; this is not supported by CompCert
+[38;5;81m⚙ KreMLin auto-detecting tools.[0m Here's what we found:
+Warning 6: in top-level declaration Crypto.Plain.create, in file Crypto_Plain: stack newbuf @1 @0 is a non-constant size, stack-allocated array; this is not supported by CompCert
+[4mreadlink is:[0m readlink
+[4mKreMLin called via:[0m C:\build\agent1\_work\4\s\kremlin\_build\src\Kremlin.native
+in top-level declaration Crypto.Symmetric.PRF.__proj__Mkdomain__item__iv, in file Crypto_Symmetric_PRF, expected a provided type annotation
+[4mthe Kremlin executable is:[0m C:\build\agent1\_work\4\s\kremlin\_build\src\Kremlin.native
+Dropping Crypto.Symmetric.PRF.__proj__Mkdomain__item__iv (at checking time); if this is normal, please consider using -drop
+[4mKreMLin home is:[0m C:/build/agent1/_work/4/s/kremlin
+
+[38;5;81m⚙ KreMLin will drive F*.[0m Here's what we found:
+read FSTAR_HOME via the environment
+in top-level declaration Crypto.Symmetric.PRF.__proj__Mkdomain__item__ctr, in file Crypto_Symmetric_PRF, expected a provided type annotation
+[4mfstar converted to windows path:[0m C:/build/agent1/_work/4/s/fstar/bin/fstar.exe
+[4mfstar home converted to windows path:[0m C:/build/agent1/_work/4/s/fstar
+Dropping Crypto.Symmetric.PRF.__proj__Mkdomain__item__ctr (at checking time); if this is normal, please consider using -drop
+[4mfstar lib converted to windows path:[0m C:/build/agent1/_work/4/s/fstar/ulib
+fstar is on [38;5;119mbranch master[0m
+
+Warning 6: in the definition of key, after the definition of mac_rgn, in the last element of the sequence, in top-level declaration Crypto.Symmetric.PRF.gen, in file Crypto_Symmetric_PRF: stack newbuf 0uint8 Crypto.Symmetric.PRF.keylen @1 is a non-constant size, stack-allocated array; this is not supported by CompCert
+[4mfstar is:[0m C:/build/agent1/_work/4/s/fstar/bin/fstar.exe --no_extract FStar.Monotonic.HyperStack --no_extract FStar.Buffer --no_extract FStar.Monotonic.HyperHeap --no_extract FStar.Map --no_extract FStar.Math.Lib --no_extract FStar.HyperHeap --no_extract FStar.HyperStack --no_extract FStar.HyperStack.ST --no_extract FStar.Seq.Base --no_extract FStar.Int128 --no_extract FStar.UInt64 --no_extract FStar.Int64 --no_extract FStar.UInt63 --no_extract FStar.Int63 --no_extract FStar.UInt32 --no_extract FStar.Int32 --no_extract FStar.UInt31 --no_extract FStar.Int31 --no_extract FStar.UInt16 --no_extract FStar.Int16 --no_extract FStar.UInt8 --no_extract FStar.Int8 --trace_error --include C:/build/agent1/_work/4/s/hacl-star/secure_api/aead --include C:/build/agent1/_work/4/s/hacl-star/secure_api/uf1cma --include C:/build/agent1/_work/4/s/hacl-star/secure_api/vale --include C:/build/agent1/_work/4/s/hacl-star/secure_api/vale/asm --include C:/build/agent1/_work/4/s/hacl-star/secure_api/prf --include C:/build/agent1/_work/4/s/hacl-star/secure_api/hkdf --include C:/build/agent1/_work/4/s/hacl-star/secure_api/utils --include C:/build/agent1/_work/4/s/hacl-star/secure_api/indexing --include C:/build/agent1/_work/4/s/hacl-star/code/experimental/aesgcm --include C:/build/agent1/_work/4/s/hacl-star/code/bignum --include C:/build/agent1/_work/4/s/hacl-star/code/poly1305 --include C:/build/agent1/_work/4/s/hacl-star/code/salsa-family --include C:/build/agent1/_work/4/s/hacl-star/code/hash --include C:/build/agent1/_work/4/s/hacl-star/code/lib/kremlin --include C:/build/agent1/_work/4/s/hacl-star/specs --include C:/build/agent1/_work/4/s/kremlin/kremlib --include C:/build/agent1/_work/4/s/kremlin/test --include C:/build/agent1/_work/4/s/kremlin/kremlib
+[38;5;81m⚡ Calling F* (use -verbose to see the output)[0m
+Warning 6: in the definition of keystate, after the definition of h1, in the last element of the sequence, after the definition of key, in the last element of the sequence, in top-level declaration Crypto.Symmetric.PRF.gen, in file Crypto_Symmetric_PRF: eternal newbuf 0uint8 Crypto.Symmetric.PRF.statelen @3 is a non-constant size, stack-allocated array; this is not supported by CompCert
+[38;5;119m✔[0m [F*,extract] (use -verbose to see the output)
+Warning: not translating definition for allow_inversion (and possibly others)
+Warning 6: in the definition of keystate, after the definition of h1, in top-level declaration Crypto.Symmetric.PRF.coerce, in file Crypto_Symmetric_PRF: eternal newbuf 0uint8 Crypto.Symmetric.PRF.statelen @3 is a non-constant size, stack-allocated array; this is not supported by CompCert
+Warning: not translating definition for excluded_middle (and possibly others)
+Warning 6: in the definition of keyBuffer, after the definition of h0, in the last element of the sequence, after the definition of macId, in top-level declaration Crypto.Symmetric.PRF.prf_mac, in file Crypto_Symmetric_PRF: eternal newbuf 0uint8 Crypto.Symmetric.UF1CMA.keylen @5 is a non-constant size, stack-allocated array; this is not supported by CompCert
+Warning: not translating definition for tl (and possibly others)
+Warning: not translating definition for noRepeats_nil (and possibly others)
+Warning 6: in the definition of keyBuffer, after the definition of x, in top-level declaration Crypto.Symmetric.PRF.prf_sk0, in file Crypto_Symmetric_PRF: eternal newbuf 0uint8 Crypto.Symmetric.UF1CMA.skeylen @2 is a non-constant size, stack-allocated array; this is not supported by CompCert
+Warning: not translating definition for lemma_contains_empty (and possibly others)
+Warning: not translating definition for subset_mem (and possibly others)
+Warning 7: : After inlining, Crypto.Symmetric.Bytes.uint128_to_uint8 (going into Crypto_Symmetric_Bytes) calls FStar.Int.Cast.Full.uint128_to_uint64 (going into FStar) -- removing the static qualifier from FStar.Int.Cast.Full.uint128_to_uint64
+Warning: not translating definition for mem_subset (and possibly others)
+Warning 7: : After inlining, Crypto.Symmetric.Bytes.load_bytes (going into Crypto_Symmetric_Bytes) calls FStar.Seq.Properties.cons__uint8_t (going into FStar) -- removing the static qualifier from FStar.Seq.Properties.cons__uint8_t
+Warning: not translating definition for lemma_equal_intro (and possibly others)
+Warning: not translating definition for lemma_equal_refl (and possibly others)
+
+Warning 7: : After inlining, Crypto.Symmetric.Bytes.little_endian (going into Crypto_Symmetric_Bytes) calls FStar.Endianness.little_endian (going into FStar) -- removing the static qualifier from FStar.Endianness.little_endian
+[38;5;119m✔[0m [F*] ⏱️ <1ms
+[38;5;203m⚠[0m [Checking input file] ⏱️ 31ms
+Warning 7: : After inlining, Crypto.Symmetric.Bytes.big_endian (going into Crypto_Symmetric_Bytes) calls FStar.Endianness.big_endian (going into FStar) -- removing the static qualifier from FStar.Endianness.big_endian
+[38;5;119m✔[0m [Bundle + inline types] ⏱️ 31ms
+[38;5;119m✔[0m [Pattern matches compilation] ⏱️ 63ms
+Warning 7: : After inlining, Crypto.Symmetric.Bytes.uint8_to_uint128 (going into Crypto_Symmetric_Bytes) calls FStar.Int.Cast.Full.uint64_to_uint128 (going into FStar) -- removing the static qualifier from FStar.Int.Cast.Full.uint64_to_uint128
+[38;5;119m✔[0m [Simplify 2] ⏱️ 203ms
+Warning 7: : After inlining, Crypto.Symmetric.Bytes.little_bytes (going into Crypto_Symmetric_Bytes) calls FStar.Endianness.little_bytes (going into FStar) -- removing the static qualifier from FStar.Endianness.little_bytes
+[38;5;119m✔[0m [Inline + Simplify 2] ⏱️ 250ms
+[38;5;119m✔[0m [Drop] ⏱️ 16ms
+[38;5;119m✔[0m [AstToCStar] ⏱️ 16ms
+Warning 7: : After inlining, Crypto.Symmetric.Cipher.compute (going into Crypto_Symmetric_Cipher) calls Hacl.Lib.LoadStore32.uint32s_from_le_bytes (going into Hacl) -- removing the static qualifier from Hacl.Lib.LoadStore32.uint32s_from_le_bytes
+[38;5;119m✔[0m [CStarToC] ⏱️ <1ms
+[38;5;119m✔[0m [PrettyPrinting] ⏱️ 31ms
+Warning 7: : After inlining, Crypto.Symmetric.Cipher.compute (going into Crypto_Symmetric_Cipher) calls Hacl.Impl.Chacha20.copy_state (going into Hacl) -- removing the static qualifier from Hacl.Impl.Chacha20.copy_state
+KreMLin: wrote out .c and .h files for Prims, Buffer_Utils, Crypto_AEAD_BufferUtils, Vale_AES, Seq_Create, Crypto_Indexing, Flag, Crypto_Symmetric_AES, Crypto_Symmetric_AES128, FStar, Crypto_Symmetric_Bytes, Hacl, Crypto_Symmetric_Cipher, Crypto_Symmetric_GF128, Crypto_Symmetric_MAC, Crypto_Symmetric_UF1CMA, Crypto_Plain, Crypto_Symmetric_PRF, Crypto_AEAD_Encoding, Crypto_AEAD_Invariant, Crypto_AEAD_Encrypt_Invariant, Crypto_AEAD_Wrappers_PRF, Crypto_AEAD_Wrappers_Encoding, Crypto_AEAD_Wrappers_CMA, Crypto_AEAD_EnxorDexor, Crypto_AEAD_Decrypt, Crypto_AEAD_Encrypt_Ideal_Invariant, Crypto_AEAD_MAC_Wrapper_Invariant, Crypto_AEAD_Enxor_Invariant, Crypto_AEAD_Encrypt, Crypto_AEAD, kremlinit
+Warning 8: : After inlining, Crypto.Symmetric.Cipher.compute (going into Crypto_Symmetric_Cipher) calls Hacl.Impl.Chacha20.copy_state (going into Hacl). This is a call across translation units but Hacl.Impl.Chacha20.copy_state has a C "inline" qualifier. The C standard allows removing Hacl.Impl.Chacha20.copy_state from its translation unit (see C11 6.7.3 §5), and CompCert will do it. 
+[38;5;81m⚙ KreMLin will drive the C compiler.[0m Here's what we found:
+[4mgcc is:[0m x86_64-w64-mingw32-gcc
+Warning 7: : After inlining, Crypto.Symmetric.Cipher.compute (going into Crypto_Symmetric_Cipher) calls Hacl.Impl.Chacha20.rounds (going into Hacl) -- removing the static qualifier from Hacl.Impl.Chacha20.rounds
+Warning 8: : After inlining, Crypto.Symmetric.Cipher.compute (going into Crypto_Symmetric_Cipher) calls Hacl.Impl.Chacha20.rounds (going into Hacl). This is a call across translation units but Hacl.Impl.Chacha20.rounds has a C "inline" qualifier. The C standard allows removing Hacl.Impl.Chacha20.rounds from its translation unit (see C11 6.7.3 §5), and CompCert will do it. 
+[4mx86_64-w64-mingw32-gcc options are:[0m -I C:/build/agent1/_work/4/s/hacl-star/secure_api/aead -I C:/build/agent1/_work/4/s/hacl-star/secure_api/uf1cma -I C:/build/agent1/_work/4/s/hacl-star/secure_api/vale -I C:/build/agent1/_work/4/s/hacl-star/secure_api/vale/asm -I C:/build/agent1/_work/4/s/hacl-star/secure_api/prf -I C:/build/agent1/_work/4/s/hacl-star/secure_api/hkdf -I C:/build/agent1/_work/4/s/hacl-star/secure_api/utils -I C:/build/agent1/_work/4/s/hacl-star/secure_api/indexing -I C:/build/agent1/_work/4/s/hacl-star/code/experimental/aesgcm -I C:/build/agent1/_work/4/s/hacl-star/code/bignum -I C:/build/agent1/_work/4/s/hacl-star/code/poly1305 -I C:/build/agent1/_work/4/s/hacl-star/code/salsa-family -I C:/build/agent1/_work/4/s/hacl-star/code/hash -I C:/build/agent1/_work/4/s/hacl-star/code/lib/kremlin -I C:/build/agent1/_work/4/s/hacl-star/specs -I C:/build/agent1/_work/4/s/kremlin/kremlib -I C:/build/agent1/_work/4/s/kremlin/test -I C:/build/agent1/_work/4/s/kremlin/kremlib -I LowCProvider/tmp -Wno-unused-value -maes -Ofast -funroll-loops -fomit-frame-pointer -Wall -Werror -Wno-unused-variable -Wno-unknown-warning-option -Wno-unused-but-set-variable -g -O3 -fwrapv -fstack-check -D_BSD_SOURCE -D_DEFAULT_SOURCE -D__USE_MINGW_ANSI_STDIO -Wno-parentheses -std=c11
+[38;5;81m⚡ Generating object files[0m
+Warning 7: : After inlining, Crypto.Symmetric.Cipher.compute (going into Crypto_Symmetric_Cipher) calls Hacl.Impl.Chacha20.sum_states (going into Hacl) -- removing the static qualifier from Hacl.Impl.Chacha20.sum_states
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Prims.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Buffer_Utils.c] (use -verbose to see the output)
+Warning 8: : After inlining, Crypto.Symmetric.Cipher.compute (going into Crypto_Symmetric_Cipher) calls Hacl.Impl.Chacha20.sum_states (going into Hacl). This is a call across translation units but Hacl.Impl.Chacha20.sum_states has a C "inline" qualifier. The C standard allows removing Hacl.Impl.Chacha20.sum_states from its translation unit (see C11 6.7.3 §5), and CompCert will do it. 
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_AEAD_BufferUtils.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Vale_AES.c] (use -verbose to see the output)
+Warning 7: : After inlining, Crypto.Symmetric.Cipher.compute (going into Crypto_Symmetric_Cipher) calls Hacl.Lib.LoadStore32.uint32s_to_le_bytes (going into Hacl) -- removing the static qualifier from Hacl.Lib.LoadStore32.uint32s_to_le_bytes
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Seq_Create.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_Indexing.c] (use -verbose to see the output)
+Warning 7: : After inlining, Crypto.Symmetric.UF1CMA.verify (going into Crypto_Symmetric_UF1CMA) calls Hacl.Impl.Poly1305_64.poly1305_process_last_block (going into Hacl) -- removing the static qualifier from Hacl.Impl.Poly1305_64.poly1305_process_last_block
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Flag.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_Symmetric_AES.c] (use -verbose to see the output)
+Warning 8: : After inlining, Crypto.Symmetric.UF1CMA.verify (going into Crypto_Symmetric_UF1CMA) calls Hacl.Impl.Poly1305_64.poly1305_process_last_block (going into Hacl). This is a call across translation units but Hacl.Impl.Poly1305_64.poly1305_process_last_block has a C "inline" qualifier. The C standard allows removing Hacl.Impl.Poly1305_64.poly1305_process_last_block from its translation unit (see C11 6.7.3 §5), and CompCert will do it. 
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_Symmetric_AES128.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/FStar.c] (use -verbose to see the output)
+Warning 7: : After inlining, Crypto.Symmetric.UF1CMA.verify (going into Crypto_Symmetric_UF1CMA) calls Hacl.Impl.Poly1305_64.poly1305_last_pass (going into Hacl) -- removing the static qualifier from Hacl.Impl.Poly1305_64.poly1305_last_pass
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_Symmetric_Bytes.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Hacl.c] (use -verbose to see the output)
+Warning 7: : After inlining, Crypto.Symmetric.UF1CMA.verify (going into Crypto_Symmetric_UF1CMA) calls Hacl.Impl.Poly1305_64.mk_state (going into Hacl) -- removing the static qualifier from Hacl.Impl.Poly1305_64.mk_state
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_Symmetric_Cipher.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_Symmetric_GF128.c] (use -verbose to see the output)
+Warning 7: : After inlining, Crypto.AEAD.Encoding.add_bytes (going into Crypto_AEAD_Encoding) calls Hacl.Impl.Poly1305_64.poly1305_update (going into Hacl) -- removing the static qualifier from Hacl.Impl.Poly1305_64.poly1305_update
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_Symmetric_MAC.c] (use -verbose to see the output)
+[38;5;203m✘[0m [CC,LowCProvider/tmp/Crypto_Symmetric_UF1CMA.c] (use -verbose to see the output)
+Warning 8: : After inlining, Crypto.AEAD.Encoding.add_bytes (going into Crypto_AEAD_Encoding) calls Hacl.Impl.Poly1305_64.poly1305_update (going into Hacl). This is a call across translation units but Hacl.Impl.Poly1305_64.poly1305_update has a C "inline" qualifier. The C standard allows removing Hacl.Impl.Poly1305_64.poly1305_update from its translation unit (see C11 6.7.3 §5), and CompCert will do it. 
+LowCProvider/tmp/Crypto_Symmetric_UF1CMA.c: In function ‘FStar_Pervasives_Native_fst__Crypto_Indexing_id_FStar_UInt128_t’:
+Warning 7: : After inlining, Crypto.AEAD.Decrypt.decrypt (going into Crypto_AEAD_Decrypt) calls Crypto.AEAD.Encoding.add_bytes (going into Crypto_AEAD_Encoding) -- removing the static qualifier from Crypto.AEAD.Encoding.add_bytes
+LowCProvider/tmp/Crypto_Symmetric_UF1CMA.c:254:5: error: implicit declaration of function ‘FStar_Pervasives_Native___proj__Mktuple2__item___1__Crypto_Indexing_id_FStar_UInt128_t’ [-Werror=implicit-function-declaration]
+FStar_Pervasives_Native___proj__Mktuple2__item___1__Crypto_Indexing_id_FStar_UInt128_t(x);
+Warning 7: : After inlining, Crypto.AEAD.Decrypt.decrypt (going into Crypto_AEAD_Decrypt) calls Crypto.AEAD.Encoding.store_lengths (going into Crypto_AEAD_Encoding) -- removing the static qualifier from Crypto.AEAD.Encoding.store_lengths
+^
+LowCProvider/tmp/Crypto_Symmetric_UF1CMA.c:254:5: error: incompatible types when returning type ‘int’ but ‘Crypto_Indexing_id0 {aka struct <anonymous>}’ was expected
+Warning 3: run_or_warn: the following command failed:
+LowCProvider/tmp/Crypto_Symmetric_UF1CMA.c:255:1: error: control reaches end of non-void function [-Werror=return-type]
+}
+^
+x86_64-w64-mingw32-gcc -I C:/build/agent1/_work/4/s/hacl-star/secure_api/aead -I C:/build/agent1/_work/4/s/hacl-star/secure_api/uf1cma -I C:/build/agent1/_work/4/s/hacl-star/secure_api/vale -I C:/build/agent1/_work/4/s/hacl-star/secure_api/vale/asm -I C:/build/agent1/_work/4/s/hacl-star/secure_api/prf -I C:/build/agent1/_work/4/s/hacl-star/secure_api/hkdf -I C:/build/agent1/_work/4/s/hacl-star/secure_api/utils -I C:/build/agent1/_work/4/s/hacl-star/secure_api/indexing -I C:/build/agent1/_work/4/s/hacl-star/code/experimental/aesgcm -I C:/build/agent1/_work/4/s/hacl-star/code/bignum -I C:/build/agent1/_work/4/s/hacl-star/code/poly1305 -I C:/build/agent1/_work/4/s/hacl-star/code/salsa-family -I C:/build/agent1/_work/4/s/hacl-star/code/hash -I C:/build/agent1/_work/4/s/hacl-star/code/lib/kremlin -I C:/build/agent1/_work/4/s/hacl-star/specs -I C:/build/agent1/_work/4/s/kremlin/kremlib -I C:/build/agent1/_work/4/s/kremlin/test -I C:/build/agent1/_work/4/s/kremlin/kremlib -I LowCProvider/tmp -Wno-unused-value -maes -Ofast -funroll-loops -fomit-frame-pointer -Wall -Werror -Wno-unused-variable -Wno-unknown-warning-option -Wno-unused-but-set-variable -g -O3 -fwrapv -fstack-check -D_BSD_SOURCE -D_DEFAULT_SOURCE -D__USE_MINGW_ANSI_STDIO -Wno-parentheses -std=c11 -c LowCProvider/tmp/Crypto_Symmetric_UF1CMA.c -o LowCProvider/tmp/Crypto_Symmetric_UF1CMA.o
+LowCProvider/tmp/Crypto_Symmetric_UF1CMA.c: At top level:
+cc1: error: unrecognized command line option ‘-Wno-unknown-warning-option’ [-Werror]
+cc1: all warnings being treated as errors
+
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_Plain.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_Symmetric_PRF.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_AEAD_Encoding.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_AEAD_Invariant.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_AEAD_Encrypt_Invariant.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_AEAD_Wrappers_PRF.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_AEAD_Wrappers_Encoding.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_AEAD_Wrappers_CMA.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_AEAD_EnxorDexor.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_AEAD_Decrypt.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_AEAD_Encrypt_Ideal_Invariant.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_AEAD_MAC_Wrapper_Invariant.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_AEAD_Enxor_Invariant.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_AEAD_Encrypt.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/Crypto_AEAD.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,LowCProvider/tmp/kremlinit.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,C:/build/agent1/_work/4/s/kremlin/kremlib/kremlib.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,test/test_hacks.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,C:/build/agent1/_work/4/s/kremlin/test/../kremlib/testlib.c] (use -verbose to see the output)
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/hacl-star/secure_api'
+make: Entering directory '/cygdrive/c/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider'
+cp ../vale/asm/vale.a libllcrypto.a
+x86_64-w64-mingw32-ar -cr libllcrypto.a tmp/*.o
+make: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider'
+make: Entering directory '/cygdrive/c/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider'
+ocamlfind opt -package batteries,zarith -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -g -annot -ccopt -Wall -ccopt -std=c11 -ccopt -D__USE_MINGW_ANSI_STDIO  -I C:/build/agent1/_work/4/s/kremlin/kremlib -I C:/build/agent1/_work/4/s/kremlin/test -I tmp -c lowc_stub.c
+make: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider'
+make: Entering directory '/cygdrive/c/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider'
+ocamlfind mklib -package batteries,zarith -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -ocamloptflags "" -L. -cclib -L. -o LowCProvider lowc_stub.o LowCProvider.cmx
+make: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider'
+make: Entering directory '/cygdrive/c/build/agent1/_work/4/s/libs/ffi'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind c -package fstarlib -linkpkg -g  -package batteries,zarith -c FFICallbacks.mli
+make: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/libs/ffi'
+make: Entering directory '/cygdrive/c/build/agent1/_work/4/s/libs/ffi'
+ffi.c:1:0: warning: -fPIC ignored for target (all code is position independent)
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,zarith -c FFICallbacks.ml -ccopt -Wall -ccopt -fPIC ffi.c
+#include <stdio.h>
+make: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/libs/ffi'
+^
+ffi.c: In function ‘FFI_mitls_quic_process_caml’:
+make: Entering directory '/cygdrive/c/build/agent1/_work/4/s/libs/ffi'
+ffi.c:1034:13: warning: unused variable ‘errorcode’ [-Wunused-variable]
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,zarith -c FFICallbacks.ml -ccopt -Wall -ccopt -fPIC ffi.c
+make: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/libs/ffi'
+int errorcode = Int_val(Field(result, 1));
+^
+ffi.c: At top level:
+ffi.c:58:14: warning: ‘Val_some’ defined but not used [-Wunused-function]
+static value Val_some(value mlvalue) {
+^
+ffi.c:1:0: warning: -fPIC ignored for target (all code is position independent)
+#include <stdio.h>
+^
+ffi.c: In function ‘FFI_mitls_quic_process_caml’:
+ffi.c:1034:13: warning: unused variable ‘errorcode’ [-Wunused-variable]
+int errorcode = Int_val(Field(result, 1));
+^
+ffi.c: At top level:
+ffi.c:58:14: warning: ‘Val_some’ defined but not used [-Wunused-function]
+static value Val_some(value mlvalue) {
+^
+make: Entering directory '/cygdrive/c/build/agent1/_work/4/s/libs/ffi'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind mklib -package batteries,zarith,fstarlib -o FFICallbacks FFICallbacks.cmx ffi.o
+make: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/libs/ffi'
+make build
+make mitls.exe
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+touch .fstarlib
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make -C C:/build/agent1/_work/4/s/fstar/ulib/ml
+make -C .. install-fstarlib
+make[4]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/fstar/ulib'
+cd ../ && OCAMLPATH="../../../bin/" ocamlbuild -cflag -g -use-ocamlfind -build-dir ulib/ml/_build -I ulib/ml -I ulib/ml/extracted fstarlib.a fstarlib.cma fstarlib.cmxs fstarlib.cmxa
+ocamlfind ocamlopt -shared -linkall -thread -package batteries -package zarith -I ulib/ml ulib/ml/fstarlib.cmxa -o ulib/ml/fstarlib.cmxs
+make[4]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/fstar/ulib'
+make[4]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/fstar/ulib'
+mkdir -p ../bin/fstarlib/
+cp ml/_build/ulib/ml/*.cmi ml/_build/ulib/ml/extracted/*.cmi ml/_build/ulib/ml/fstarlib.a ml/_build/ulib/ml/fstarlib.cma ml/_build/ulib/ml/fstarlib.cmxs ml/_build/ulib/ml/fstarlib.cmxa ../bin/fstarlib/
+make[4]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/fstar/ulib'
+make -f Extracted.mk mitls.cmxa
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+Extracted.mk:96: warning: overriding recipe for target 'mitls.cmxa'
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+Makefile:193: warning: ignoring old recipe for target 'mitls.cmxa'
+Extracted.mk:99: warning: overriding recipe for target 'mitls.exe'
+Makefile:196: warning: ignoring old recipe for target 'mitls.exe'
+Extracted.mk:121: warning: overriding recipe for target 'test'
+Makefile:205: warning: ignoring old recipe for target 'test'
+Extracted.mk:205: warning: overriding recipe for target 'cmitls.o'
+Makefile:199: warning: ignoring old recipe for target 'cmitls.o'
+Extracted.mk:207: warning: overriding recipe for target 'cmitls.exe'
+Makefile:201: warning: ignoring old recipe for target 'cmitls.exe'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+C:/build/agent1/_work/4/s/fstar/bin/fstar.exe --fstar_home C:/build/agent1/_work/4/s/fstar --record_hints --print_z3_statistics --use_hints --query_stats --include C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/fst/ --include C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/fst/ --include C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider/fst --include C:/build/agent1/_work/4/s/kremlin/kremlib --include C:/build/agent1/_work/4/s/hacl-star/specs --include C:/build/agent1/_work/4/s/hacl-star/code/lib/kremlin --include C:/build/agent1/_work/4/s/hacl-star/code/bignum --include C:/build/agent1/_work/4/s/hacl-star/code/experimental/aesgcm --include C:/build/agent1/_work/4/s/hacl-star/code/poly1305 --include C:/build/agent1/_work/4/s/hacl-star/code/salsa-family --include C:/build/agent1/_work/4/s/hacl-star/secure_api/test --include C:/build/agent1/_work/4/s/hacl-star/secure_api/utils --include C:/build/agent1/_work/4/s/hacl-star/secure_api/vale --include C:/build/agent1/_work/4/s/hacl-star/secure_api/uf1cma --include C:/build/agent1/_work/4/s/hacl-star/secure_api/prf --include C:/build/agent1/_work/4/s/hacl-star/secure_api/aead --include C:/build/agent1/_work/4/s/libs/ffi --lax --codegen OCaml \
+--odir output --no_extract Prims --no_extract FStar.Pervasives --no_extract FStar.Pervasives.Native --no_extract FStar.Mul --no_extract FStar.Float --no_extract FStar.Char --no_extract FStar.UInt --no_extract FStar.Int8 --no_extract FStar.UInt8 --no_extract FStar.Int16 --no_extract FStar.UInt16 --no_extract FStar.Int32 --no_extract FStar.UInt32 --no_extract FStar.Int64 --no_extract FStar.UInt64 --no_extract FStar.UInt128 --no_extract FStar.Int.Cast --no_extract FStar.Int.Cast.Full --no_extract FStar.BaseTypes --no_extract FStar.IO --no_extract FStar.Heap --no_extract FStar.List.Tot.Base --no_extract FStar.List --no_extract FStar.Option --no_extract FStar.String --no_extract FStar.Set --no_extract FStar.Buffer --no_extract FStar.CommonST --no_extract FStar.TSet --no_extract FStar.Map --no_extract FStar.HyperHeap --no_extract FStar.HyperStack --no_extract FStar.HyperStack.ST --no_extract FStar.HyperStack.All --no_extract FStar.ST --no_extract FStar.All --no_extract FStar.Monotonic.RRef --no_extract FStar.Monotonic.Seq --no_extract FStar.Monotonic.HyperHeap --no_extract FStar.Monotonic.HyperStack --no_extract FStar.Seq.Base --no_extract FStar.Seq.Properties --no_extract FStar.BitVector --no_extract FStar.Math.Lib --no_extract Platform.Bytes --no_extract Platform.Date --no_extract Platform.Error --no_extract Platform.Tcp --no_extract CoreCrypto --no_extract DHDB --no_extract LowCProvider --no_extract FFICallbacks \
+--codegen-lib Platform \
+--include concrete-flags CommonDH.fst
+Extracted module Classical
+Extracted module StrongExcludedMiddle
+Extracted module Properties
+Extracted module Tot
+Extracted module Seq
+Extracted module Lemmas
+Extracted module Int
+Extracted module Int63
+Extracted module UInt63
+Extracted module Preorder
+Extracted module FunctionalExtensionality
+Extracted module PropositionalExtensionality
+Extracted module PredicateExtensionality
+Extracted module Endianness
+Extracted module Lemmas
+Extracted module Loops
+Extracted module Lib
+Extracted module Curve25519
+Extracted module Curve25519
+Extracted module TLSError
+Extracted module Parse
+Extracted module ECGroup
+Extracted module DHGroup
+Extracted module Exn
+Extracted module MonotoneMap
+Extracted module Flags
+Extracted module CommonDH
+All verification conditions discharged successfully
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+C:/build/agent1/_work/4/s/fstar/bin/fstar.exe --fstar_home C:/build/agent1/_work/4/s/fstar --record_hints --print_z3_statistics --use_hints --query_stats --include C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/fst/ --include C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/fst/ --include C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider/fst --include C:/build/agent1/_work/4/s/kremlin/kremlib --include C:/build/agent1/_work/4/s/hacl-star/specs --include C:/build/agent1/_work/4/s/hacl-star/code/lib/kremlin --include C:/build/agent1/_work/4/s/hacl-star/code/bignum --include C:/build/agent1/_work/4/s/hacl-star/code/experimental/aesgcm --include C:/build/agent1/_work/4/s/hacl-star/code/poly1305 --include C:/build/agent1/_work/4/s/hacl-star/code/salsa-family --include C:/build/agent1/_work/4/s/hacl-star/secure_api/test --include C:/build/agent1/_work/4/s/hacl-star/secure_api/utils --include C:/build/agent1/_work/4/s/hacl-star/secure_api/vale --include C:/build/agent1/_work/4/s/hacl-star/secure_api/uf1cma --include C:/build/agent1/_work/4/s/hacl-star/secure_api/prf --include C:/build/agent1/_work/4/s/hacl-star/secure_api/aead --include C:/build/agent1/_work/4/s/libs/ffi --lax --codegen OCaml \
+--odir output --no_extract Prims --no_extract FStar.Pervasives --no_extract FStar.Pervasives.Native --no_extract FStar.Mul --no_extract FStar.Float --no_extract FStar.Char --no_extract FStar.UInt --no_extract FStar.Int8 --no_extract FStar.UInt8 --no_extract FStar.Int16 --no_extract FStar.UInt16 --no_extract FStar.Int32 --no_extract FStar.UInt32 --no_extract FStar.Int64 --no_extract FStar.UInt64 --no_extract FStar.UInt128 --no_extract FStar.Int.Cast --no_extract FStar.Int.Cast.Full --no_extract FStar.BaseTypes --no_extract FStar.IO --no_extract FStar.Heap --no_extract FStar.List.Tot.Base --no_extract FStar.List --no_extract FStar.Option --no_extract FStar.String --no_extract FStar.Set --no_extract FStar.Buffer --no_extract FStar.CommonST --no_extract FStar.TSet --no_extract FStar.Map --no_extract FStar.HyperHeap --no_extract FStar.HyperStack --no_extract FStar.HyperStack.ST --no_extract FStar.HyperStack.All --no_extract FStar.ST --no_extract FStar.All --no_extract FStar.Monotonic.RRef --no_extract FStar.Monotonic.Seq --no_extract FStar.Monotonic.HyperHeap --no_extract FStar.Monotonic.HyperStack --no_extract FStar.Seq.Base --no_extract FStar.Seq.Properties --no_extract FStar.BitVector --no_extract FStar.Math.Lib --no_extract Platform.Bytes --no_extract Platform.Date --no_extract Platform.Error --no_extract Platform.Tcp --no_extract CoreCrypto --no_extract DHDB --no_extract LowCProvider --no_extract FFICallbacks \
+--codegen-lib Platform \
+--include concrete-flags C:/build/agent1/_work/4/s/hacl-star/secure_api/test/Flag.fst
+Extracted module StrongExcludedMiddle
+Extracted module Classical
+Extracted module Properties
+Extracted module Tot
+Extracted module Seq
+Extracted module Exn
+Extracted module FunctionalExtensionality
+Extracted module Preorder
+Extracted module PropositionalExtensionality
+Extracted module PredicateExtensionality
+Extracted module Spec
+Extracted module Flags
+Extracted module TLSError
+Extracted module Lemmas
+Extracted module Parse
+Extracted module MonotoneMap
+Extracted module TLSConstants
+Extracted module PSK
+Extracted module Extensions
+Extracted module Cert
+Extracted module RSAKey
+Extracted module PMS
+Extracted module Nonce
+Extracted module TLSInfo
+Extracted module Indexing
+Extracted module Flag
+All verification conditions discharged successfully
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+C:/build/agent1/_work/4/s/fstar/bin/fstar.exe --fstar_home C:/build/agent1/_work/4/s/fstar --record_hints --print_z3_statistics --use_hints --query_stats --include C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/fst/ --include C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/fst/ --include C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider/fst --include C:/build/agent1/_work/4/s/kremlin/kremlib --include C:/build/agent1/_work/4/s/hacl-star/specs --include C:/build/agent1/_work/4/s/hacl-star/code/lib/kremlin --include C:/build/agent1/_work/4/s/hacl-star/code/bignum --include C:/build/agent1/_work/4/s/hacl-star/code/experimental/aesgcm --include C:/build/agent1/_work/4/s/hacl-star/code/poly1305 --include C:/build/agent1/_work/4/s/hacl-star/code/salsa-family --include C:/build/agent1/_work/4/s/hacl-star/secure_api/test --include C:/build/agent1/_work/4/s/hacl-star/secure_api/utils --include C:/build/agent1/_work/4/s/hacl-star/secure_api/vale --include C:/build/agent1/_work/4/s/hacl-star/secure_api/uf1cma --include C:/build/agent1/_work/4/s/hacl-star/secure_api/prf --include C:/build/agent1/_work/4/s/hacl-star/secure_api/aead --include C:/build/agent1/_work/4/s/libs/ffi --lax --codegen OCaml \
+--odir output --no_extract Prims --no_extract FStar.Pervasives --no_extract FStar.Pervasives.Native --no_extract FStar.Mul --no_extract FStar.Float --no_extract FStar.Char --no_extract FStar.UInt --no_extract FStar.Int8 --no_extract FStar.UInt8 --no_extract FStar.Int16 --no_extract FStar.UInt16 --no_extract FStar.Int32 --no_extract FStar.UInt32 --no_extract FStar.Int64 --no_extract FStar.UInt64 --no_extract FStar.UInt128 --no_extract FStar.Int.Cast --no_extract FStar.Int.Cast.Full --no_extract FStar.BaseTypes --no_extract FStar.IO --no_extract FStar.Heap --no_extract FStar.List.Tot.Base --no_extract FStar.List --no_extract FStar.Option --no_extract FStar.String --no_extract FStar.Set --no_extract FStar.Buffer --no_extract FStar.CommonST --no_extract FStar.TSet --no_extract FStar.Map --no_extract FStar.HyperHeap --no_extract FStar.HyperStack --no_extract FStar.HyperStack.ST --no_extract FStar.HyperStack.All --no_extract FStar.ST --no_extract FStar.All --no_extract FStar.Monotonic.RRef --no_extract FStar.Monotonic.Seq --no_extract FStar.Monotonic.HyperHeap --no_extract FStar.Monotonic.HyperStack --no_extract FStar.Seq.Base --no_extract FStar.Seq.Properties --no_extract FStar.BitVector --no_extract FStar.Math.Lib --no_extract Platform.Bytes --no_extract Platform.Date --no_extract Platform.Error --no_extract Platform.Tcp --no_extract CoreCrypto --no_extract DHDB --no_extract LowCProvider --no_extract FFICallbacks \
+--codegen-lib Platform \
+--include concrete-flags HandshakeLog.fst
+Extracted module Classical
+Extracted module FunctionalExtensionality
+Extracted module Preorder
+Extracted module StrongExcludedMiddle
+Extracted module PropositionalExtensionality
+Extracted module PredicateExtensionality
+Extracted module Properties
+Extracted module Tot
+Extracted module MonotoneMap
+Extracted module Flags
+Extracted module Seq
+Extracted module Spec
+Extracted module TLSError
+Extracted module Lemmas
+Extracted module Parse
+Extracted module TLSConstants
+Extracted module PSK
+Extracted module Exn
+Extracted module Extensions
+Extracted module Cert
+Extracted module RSAKey
+Extracted module PMS
+Extracted module Nonce
+Extracted module TLSInfo
+Extracted module AEADOpenssl
+Extracted module Indexing
+Extracted module Int
+Extracted module Int63
+Extracted module UInt63
+Extracted module Endianness
+Extracted module Loops
+Extracted module Loops
+Extracted module Utils
+Extracted module Bytes
+Extracted module Plain
+Extracted module AEADProvider
+Extracted module Range
+Extracted module OpenSSL
+Extracted module Hashing
+Extracted module HandshakeMessages
+Extracted module CRF
+Extracted module HandshakeLog
+All verification conditions discharged successfully
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+C:/build/agent1/_work/4/s/fstar/bin/fstar.exe --fstar_home C:/build/agent1/_work/4/s/fstar --record_hints --print_z3_statistics --use_hints --query_stats --include C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/fst/ --include C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/fst/ --include C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider/fst --include C:/build/agent1/_work/4/s/kremlin/kremlib --include C:/build/agent1/_work/4/s/hacl-star/specs --include C:/build/agent1/_work/4/s/hacl-star/code/lib/kremlin --include C:/build/agent1/_work/4/s/hacl-star/code/bignum --include C:/build/agent1/_work/4/s/hacl-star/code/experimental/aesgcm --include C:/build/agent1/_work/4/s/hacl-star/code/poly1305 --include C:/build/agent1/_work/4/s/hacl-star/code/salsa-family --include C:/build/agent1/_work/4/s/hacl-star/secure_api/test --include C:/build/agent1/_work/4/s/hacl-star/secure_api/utils --include C:/build/agent1/_work/4/s/hacl-star/secure_api/vale --include C:/build/agent1/_work/4/s/hacl-star/secure_api/uf1cma --include C:/build/agent1/_work/4/s/hacl-star/secure_api/prf --include C:/build/agent1/_work/4/s/hacl-star/secure_api/aead --include C:/build/agent1/_work/4/s/libs/ffi --lax --codegen OCaml \
+--odir output --no_extract Prims --no_extract FStar.Pervasives --no_extract FStar.Pervasives.Native --no_extract FStar.Mul --no_extract FStar.Float --no_extract FStar.Char --no_extract FStar.UInt --no_extract FStar.Int8 --no_extract FStar.UInt8 --no_extract FStar.Int16 --no_extract FStar.UInt16 --no_extract FStar.Int32 --no_extract FStar.UInt32 --no_extract FStar.Int64 --no_extract FStar.UInt64 --no_extract FStar.UInt128 --no_extract FStar.Int.Cast --no_extract FStar.Int.Cast.Full --no_extract FStar.BaseTypes --no_extract FStar.IO --no_extract FStar.Heap --no_extract FStar.List.Tot.Base --no_extract FStar.List --no_extract FStar.Option --no_extract FStar.String --no_extract FStar.Set --no_extract FStar.Buffer --no_extract FStar.CommonST --no_extract FStar.TSet --no_extract FStar.Map --no_extract FStar.HyperHeap --no_extract FStar.HyperStack --no_extract FStar.HyperStack.ST --no_extract FStar.HyperStack.All --no_extract FStar.ST --no_extract FStar.All --no_extract FStar.Monotonic.RRef --no_extract FStar.Monotonic.Seq --no_extract FStar.Monotonic.HyperHeap --no_extract FStar.Monotonic.HyperStack --no_extract FStar.Seq.Base --no_extract FStar.Seq.Properties --no_extract FStar.BitVector --no_extract FStar.Math.Lib --no_extract Platform.Bytes --no_extract Platform.Date --no_extract Platform.Error --no_extract Platform.Tcp --no_extract CoreCrypto --no_extract DHDB --no_extract LowCProvider --no_extract FFICallbacks \
+--codegen-lib Platform \
+--include concrete-flags --extract_module TestQUIC test/TestQUIC.fst
+Extracted module TestQUIC
+All verification conditions discharged successfully
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+C:/build/agent1/_work/4/s/fstar/bin/fstar.exe --fstar_home C:/build/agent1/_work/4/s/fstar --record_hints --print_z3_statistics --use_hints --query_stats --include C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/fst/ --include C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/fst/ --include C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider/fst --include C:/build/agent1/_work/4/s/kremlin/kremlib --include C:/build/agent1/_work/4/s/hacl-star/specs --include C:/build/agent1/_work/4/s/hacl-star/code/lib/kremlin --include C:/build/agent1/_work/4/s/hacl-star/code/bignum --include C:/build/agent1/_work/4/s/hacl-star/code/experimental/aesgcm --include C:/build/agent1/_work/4/s/hacl-star/code/poly1305 --include C:/build/agent1/_work/4/s/hacl-star/code/salsa-family --include C:/build/agent1/_work/4/s/hacl-star/secure_api/test --include C:/build/agent1/_work/4/s/hacl-star/secure_api/utils --include C:/build/agent1/_work/4/s/hacl-star/secure_api/vale --include C:/build/agent1/_work/4/s/hacl-star/secure_api/uf1cma --include C:/build/agent1/_work/4/s/hacl-star/secure_api/prf --include C:/build/agent1/_work/4/s/hacl-star/secure_api/aead --include C:/build/agent1/_work/4/s/libs/ffi --lax --codegen OCaml \
+--odir output --no_extract Prims --no_extract FStar.Pervasives --no_extract FStar.Pervasives.Native --no_extract FStar.Mul --no_extract FStar.Float --no_extract FStar.Char --no_extract FStar.UInt --no_extract FStar.Int8 --no_extract FStar.UInt8 --no_extract FStar.Int16 --no_extract FStar.UInt16 --no_extract FStar.Int32 --no_extract FStar.UInt32 --no_extract FStar.Int64 --no_extract FStar.UInt64 --no_extract FStar.UInt128 --no_extract FStar.Int.Cast --no_extract FStar.Int.Cast.Full --no_extract FStar.BaseTypes --no_extract FStar.IO --no_extract FStar.Heap --no_extract FStar.List.Tot.Base --no_extract FStar.List --no_extract FStar.Option --no_extract FStar.String --no_extract FStar.Set --no_extract FStar.Buffer --no_extract FStar.CommonST --no_extract FStar.TSet --no_extract FStar.Map --no_extract FStar.HyperHeap --no_extract FStar.HyperStack --no_extract FStar.HyperStack.ST --no_extract FStar.HyperStack.All --no_extract FStar.ST --no_extract FStar.All --no_extract FStar.Monotonic.RRef --no_extract FStar.Monotonic.Seq --no_extract FStar.Monotonic.HyperHeap --no_extract FStar.Monotonic.HyperStack --no_extract FStar.Seq.Base --no_extract FStar.Seq.Properties --no_extract FStar.BitVector --no_extract FStar.Math.Lib --no_extract Platform.Bytes --no_extract Platform.Date --no_extract Platform.Error --no_extract Platform.Tcp --no_extract CoreCrypto --no_extract DHDB --no_extract LowCProvider --no_extract FFICallbacks \
+--codegen-lib Platform \
+--include concrete-flags QUIC.fst
+Extracted module StrongExcludedMiddle
+Extracted module Classical
+Extracted module Properties
+Extracted module Tot
+Extracted module Seq
+Extracted module Spec
+Extracted module Lemmas
+Extracted module Exn
+Extracted module FunctionalExtensionality
+Extracted module Preorder
+Extracted module PropositionalExtensionality
+Extracted module PredicateExtensionality
+Extracted module TLSError
+Extracted module Parse
+Extracted module TLSConstants
+Extracted module Flags
+Extracted module MonotoneMap
+Extracted module PSK
+Extracted module Extensions
+Extracted module Cert
+Extracted module RSAKey
+Extracted module PMS
+Extracted module Nonce
+Extracted module TLSInfo
+Extracted module Indexing
+Extracted module Int
+Extracted module Int63
+Extracted module UInt63
+Extracted module Endianness
+Extracted module Loops
+Extracted module Loops
+Extracted module Utils
+Extracted module Bytes
+Extracted module Plain
+Extracted module AEADOpenssl
+Extracted module AEADProvider
+Extracted module Range
+Extracted module Alert
+Extracted module DataStream
+Extracted module Content
+Extracted module StatefulPlain
+Extracted module LHAEPlain
+Extracted module AEAD_GCM
+Extracted module StatefulLHAE
+Extracted module Transport
+Extracted module Record
+Extracted module OpenSSL
+Extracted module Hashing
+Extracted module HandshakeMessages
+Extracted module CRF
+Extracted module HMAC
+Extracted module TLSPRF
+Extracted module StreamPlain
+Extracted module StreamAE
+Extracted module StAE
+Extracted module UFCMA
+Extracted module Ticket
+Extracted module HKDF
+Extracted module KeySchedule
+Extracted module Signature
+Extracted module Negotiation
+Extracted module Epochs
+Extracted module Connection
+Extracted module StreamDeltas
+Extracted module TLS
+Extracted module FFI
+Extracted module QUIC
+All verification conditions discharged successfully
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+C:/build/agent1/_work/4/s/fstar/bin/fstar.exe --fstar_home C:/build/agent1/_work/4/s/fstar --record_hints --print_z3_statistics --use_hints --query_stats --include C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/fst/ --include C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/fst/ --include C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider/fst --include C:/build/agent1/_work/4/s/kremlin/kremlib --include C:/build/agent1/_work/4/s/hacl-star/specs --include C:/build/agent1/_work/4/s/hacl-star/code/lib/kremlin --include C:/build/agent1/_work/4/s/hacl-star/code/bignum --include C:/build/agent1/_work/4/s/hacl-star/code/experimental/aesgcm --include C:/build/agent1/_work/4/s/hacl-star/code/poly1305 --include C:/build/agent1/_work/4/s/hacl-star/code/salsa-family --include C:/build/agent1/_work/4/s/hacl-star/secure_api/test --include C:/build/agent1/_work/4/s/hacl-star/secure_api/utils --include C:/build/agent1/_work/4/s/hacl-star/secure_api/vale --include C:/build/agent1/_work/4/s/hacl-star/secure_api/uf1cma --include C:/build/agent1/_work/4/s/hacl-star/secure_api/prf --include C:/build/agent1/_work/4/s/hacl-star/secure_api/aead --include C:/build/agent1/_work/4/s/libs/ffi --lax --codegen OCaml \
+--odir output --no_extract Prims --no_extract FStar.Pervasives --no_extract FStar.Pervasives.Native --no_extract FStar.Mul --no_extract FStar.Float --no_extract FStar.Char --no_extract FStar.UInt --no_extract FStar.Int8 --no_extract FStar.UInt8 --no_extract FStar.Int16 --no_extract FStar.UInt16 --no_extract FStar.Int32 --no_extract FStar.UInt32 --no_extract FStar.Int64 --no_extract FStar.UInt64 --no_extract FStar.UInt128 --no_extract FStar.Int.Cast --no_extract FStar.Int.Cast.Full --no_extract FStar.BaseTypes --no_extract FStar.IO --no_extract FStar.Heap --no_extract FStar.List.Tot.Base --no_extract FStar.List --no_extract FStar.Option --no_extract FStar.String --no_extract FStar.Set --no_extract FStar.Buffer --no_extract FStar.CommonST --no_extract FStar.TSet --no_extract FStar.Map --no_extract FStar.HyperHeap --no_extract FStar.HyperStack --no_extract FStar.HyperStack.ST --no_extract FStar.HyperStack.All --no_extract FStar.ST --no_extract FStar.All --no_extract FStar.Monotonic.RRef --no_extract FStar.Monotonic.Seq --no_extract FStar.Monotonic.HyperHeap --no_extract FStar.Monotonic.HyperStack --no_extract FStar.Seq.Base --no_extract FStar.Seq.Properties --no_extract FStar.BitVector --no_extract FStar.Math.Lib --no_extract Platform.Bytes --no_extract Platform.Date --no_extract Platform.Error --no_extract Platform.Tcp --no_extract CoreCrypto --no_extract DHDB --no_extract LowCProvider --no_extract FFICallbacks \
+--codegen-lib Platform \
+--include concrete-flags Handshake.fst
+Extracted module StrongExcludedMiddle
+Extracted module Classical
+Extracted module Properties
+Extracted module Tot
+Extracted module Seq
+Extracted module Spec
+Extracted module Lemmas
+Extracted module Exn
+Extracted module FunctionalExtensionality
+Extracted module Preorder
+Extracted module PropositionalExtensionality
+Extracted module PredicateExtensionality
+Extracted module TLSError
+Extracted module Parse
+Extracted module TLSConstants
+Extracted module Flags
+Extracted module MonotoneMap
+Extracted module PSK
+Extracted module Extensions
+Extracted module Cert
+Extracted module RSAKey
+Extracted module PMS
+Extracted module Nonce
+Extracted module TLSInfo
+Extracted module Indexing
+Extracted module Int
+Extracted module Int63
+Extracted module UInt63
+Extracted module Endianness
+Extracted module Loops
+Extracted module Loops
+Extracted module Utils
+Extracted module Bytes
+Extracted module Plain
+Extracted module AEADOpenssl
+Extracted module AEADProvider
+Extracted module Range
+Extracted module Alert
+Extracted module DataStream
+Extracted module Content
+Extracted module StatefulPlain
+Extracted module LHAEPlain
+Extracted module AEAD_GCM
+Extracted module OpenSSL
+Extracted module Hashing
+Extracted module HMAC
+Extracted module TLSPRF
+Extracted module StreamPlain
+Extracted module StreamAE
+Extracted module StatefulLHAE
+Extracted module StAE
+Extracted module UFCMA
+Extracted module Ticket
+Extracted module HKDF
+Extracted module KeySchedule
+Extracted module Signature
+Extracted module HandshakeMessages
+Extracted module Negotiation
+Extracted module Epochs
+Extracted module CRF
+Extracted module Handshake
+All verification conditions discharged successfully
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+C:/build/agent1/_work/4/s/fstar/bin/fstar.exe --fstar_home C:/build/agent1/_work/4/s/fstar --record_hints --print_z3_statistics --use_hints --query_stats --include C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/fst/ --include C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/fst/ --include C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider/fst --include C:/build/agent1/_work/4/s/kremlin/kremlib --include C:/build/agent1/_work/4/s/hacl-star/specs --include C:/build/agent1/_work/4/s/hacl-star/code/lib/kremlin --include C:/build/agent1/_work/4/s/hacl-star/code/bignum --include C:/build/agent1/_work/4/s/hacl-star/code/experimental/aesgcm --include C:/build/agent1/_work/4/s/hacl-star/code/poly1305 --include C:/build/agent1/_work/4/s/hacl-star/code/salsa-family --include C:/build/agent1/_work/4/s/hacl-star/secure_api/test --include C:/build/agent1/_work/4/s/hacl-star/secure_api/utils --include C:/build/agent1/_work/4/s/hacl-star/secure_api/vale --include C:/build/agent1/_work/4/s/hacl-star/secure_api/uf1cma --include C:/build/agent1/_work/4/s/hacl-star/secure_api/prf --include C:/build/agent1/_work/4/s/hacl-star/secure_api/aead --include C:/build/agent1/_work/4/s/libs/ffi --lax --codegen OCaml \
+--odir output --no_extract Prims --no_extract FStar.Pervasives --no_extract FStar.Pervasives.Native --no_extract FStar.Mul --no_extract FStar.Float --no_extract FStar.Char --no_extract FStar.UInt --no_extract FStar.Int8 --no_extract FStar.UInt8 --no_extract FStar.Int16 --no_extract FStar.UInt16 --no_extract FStar.Int32 --no_extract FStar.UInt32 --no_extract FStar.Int64 --no_extract FStar.UInt64 --no_extract FStar.UInt128 --no_extract FStar.Int.Cast --no_extract FStar.Int.Cast.Full --no_extract FStar.BaseTypes --no_extract FStar.IO --no_extract FStar.Heap --no_extract FStar.List.Tot.Base --no_extract FStar.List --no_extract FStar.Option --no_extract FStar.String --no_extract FStar.Set --no_extract FStar.Buffer --no_extract FStar.CommonST --no_extract FStar.TSet --no_extract FStar.Map --no_extract FStar.HyperHeap --no_extract FStar.HyperStack --no_extract FStar.HyperStack.ST --no_extract FStar.HyperStack.All --no_extract FStar.ST --no_extract FStar.All --no_extract FStar.Monotonic.RRef --no_extract FStar.Monotonic.Seq --no_extract FStar.Monotonic.HyperHeap --no_extract FStar.Monotonic.HyperStack --no_extract FStar.Seq.Base --no_extract FStar.Seq.Properties --no_extract FStar.BitVector --no_extract FStar.Math.Lib --no_extract Platform.Bytes --no_extract Platform.Date --no_extract Platform.Error --no_extract Platform.Tcp --no_extract CoreCrypto --no_extract DHDB --no_extract LowCProvider --no_extract FFICallbacks \
+--codegen-lib Platform \
+--include concrete-flags --extract_module TestAPI test/TestAPI.fst
+Extracted module TestAPI
+All verification conditions discharged successfully
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+C:/build/agent1/_work/4/s/fstar/bin/fstar.exe --fstar_home C:/build/agent1/_work/4/s/fstar --record_hints --print_z3_statistics --use_hints --query_stats --include C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/fst/ --include C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/fst/ --include C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider/fst --include C:/build/agent1/_work/4/s/kremlin/kremlib --include C:/build/agent1/_work/4/s/hacl-star/specs --include C:/build/agent1/_work/4/s/hacl-star/code/lib/kremlin --include C:/build/agent1/_work/4/s/hacl-star/code/bignum --include C:/build/agent1/_work/4/s/hacl-star/code/experimental/aesgcm --include C:/build/agent1/_work/4/s/hacl-star/code/poly1305 --include C:/build/agent1/_work/4/s/hacl-star/code/salsa-family --include C:/build/agent1/_work/4/s/hacl-star/secure_api/test --include C:/build/agent1/_work/4/s/hacl-star/secure_api/utils --include C:/build/agent1/_work/4/s/hacl-star/secure_api/vale --include C:/build/agent1/_work/4/s/hacl-star/secure_api/uf1cma --include C:/build/agent1/_work/4/s/hacl-star/secure_api/prf --include C:/build/agent1/_work/4/s/hacl-star/secure_api/aead --include C:/build/agent1/_work/4/s/libs/ffi --lax --codegen OCaml \
+--odir output --no_extract Prims --no_extract FStar.Pervasives --no_extract FStar.Pervasives.Native --no_extract FStar.Mul --no_extract FStar.Float --no_extract FStar.Char --no_extract FStar.UInt --no_extract FStar.Int8 --no_extract FStar.UInt8 --no_extract FStar.Int16 --no_extract FStar.UInt16 --no_extract FStar.Int32 --no_extract FStar.UInt32 --no_extract FStar.Int64 --no_extract FStar.UInt64 --no_extract FStar.UInt128 --no_extract FStar.Int.Cast --no_extract FStar.Int.Cast.Full --no_extract FStar.BaseTypes --no_extract FStar.IO --no_extract FStar.Heap --no_extract FStar.List.Tot.Base --no_extract FStar.List --no_extract FStar.Option --no_extract FStar.String --no_extract FStar.Set --no_extract FStar.Buffer --no_extract FStar.CommonST --no_extract FStar.TSet --no_extract FStar.Map --no_extract FStar.HyperHeap --no_extract FStar.HyperStack --no_extract FStar.HyperStack.ST --no_extract FStar.HyperStack.All --no_extract FStar.ST --no_extract FStar.All --no_extract FStar.Monotonic.RRef --no_extract FStar.Monotonic.Seq --no_extract FStar.Monotonic.HyperHeap --no_extract FStar.Monotonic.HyperStack --no_extract FStar.Seq.Base --no_extract FStar.Seq.Properties --no_extract FStar.BitVector --no_extract FStar.Math.Lib --no_extract Platform.Bytes --no_extract Platform.Date --no_extract Platform.Error --no_extract Platform.Tcp --no_extract CoreCrypto --no_extract DHDB --no_extract LowCProvider --no_extract FFICallbacks \
+--codegen-lib Platform \
+--include concrete-flags --extract_module TestFFI test/TestFFI.fst
+Extracted module TestFFI
+All verification conditions discharged successfully
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+C:/build/agent1/_work/4/s/fstar/bin/fstar.exe --fstar_home C:/build/agent1/_work/4/s/fstar --record_hints --print_z3_statistics --use_hints --query_stats --include C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/fst/ --include C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/fst/ --include C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider/fst --include C:/build/agent1/_work/4/s/kremlin/kremlib --include C:/build/agent1/_work/4/s/hacl-star/specs --include C:/build/agent1/_work/4/s/hacl-star/code/lib/kremlin --include C:/build/agent1/_work/4/s/hacl-star/code/bignum --include C:/build/agent1/_work/4/s/hacl-star/code/experimental/aesgcm --include C:/build/agent1/_work/4/s/hacl-star/code/poly1305 --include C:/build/agent1/_work/4/s/hacl-star/code/salsa-family --include C:/build/agent1/_work/4/s/hacl-star/secure_api/test --include C:/build/agent1/_work/4/s/hacl-star/secure_api/utils --include C:/build/agent1/_work/4/s/hacl-star/secure_api/vale --include C:/build/agent1/_work/4/s/hacl-star/secure_api/uf1cma --include C:/build/agent1/_work/4/s/hacl-star/secure_api/prf --include C:/build/agent1/_work/4/s/hacl-star/secure_api/aead --include C:/build/agent1/_work/4/s/libs/ffi --lax --codegen OCaml \
+--odir output --no_extract Prims --no_extract FStar.Pervasives --no_extract FStar.Pervasives.Native --no_extract FStar.Mul --no_extract FStar.Float --no_extract FStar.Char --no_extract FStar.UInt --no_extract FStar.Int8 --no_extract FStar.UInt8 --no_extract FStar.Int16 --no_extract FStar.UInt16 --no_extract FStar.Int32 --no_extract FStar.UInt32 --no_extract FStar.Int64 --no_extract FStar.UInt64 --no_extract FStar.UInt128 --no_extract FStar.Int.Cast --no_extract FStar.Int.Cast.Full --no_extract FStar.BaseTypes --no_extract FStar.IO --no_extract FStar.Heap --no_extract FStar.List.Tot.Base --no_extract FStar.List --no_extract FStar.Option --no_extract FStar.String --no_extract FStar.Set --no_extract FStar.Buffer --no_extract FStar.CommonST --no_extract FStar.TSet --no_extract FStar.Map --no_extract FStar.HyperHeap --no_extract FStar.HyperStack --no_extract FStar.HyperStack.ST --no_extract FStar.HyperStack.All --no_extract FStar.ST --no_extract FStar.All --no_extract FStar.Monotonic.RRef --no_extract FStar.Monotonic.Seq --no_extract FStar.Monotonic.HyperHeap --no_extract FStar.Monotonic.HyperStack --no_extract FStar.Seq.Base --no_extract FStar.Seq.Properties --no_extract FStar.BitVector --no_extract FStar.Math.Lib --no_extract Platform.Bytes --no_extract Platform.Date --no_extract Platform.Error --no_extract Platform.Tcp --no_extract CoreCrypto --no_extract DHDB --no_extract LowCProvider --no_extract FFICallbacks \
+--codegen-lib Platform \
+--include concrete-flags FFI.fst
+Extracted module StrongExcludedMiddle
+Extracted module Classical
+Extracted module Properties
+Extracted module Tot
+Extracted module Seq
+Extracted module Spec
+Extracted module Lemmas
+Extracted module Exn
+Extracted module FunctionalExtensionality
+Extracted module Preorder
+Extracted module PropositionalExtensionality
+Extracted module PredicateExtensionality
+Extracted module TLSError
+Extracted module Parse
+Extracted module TLSConstants
+Extracted module Flags
+Extracted module MonotoneMap
+Extracted module PSK
+Extracted module Extensions
+Extracted module Cert
+Extracted module RSAKey
+Extracted module PMS
+Extracted module Nonce
+Extracted module TLSInfo
+Extracted module Indexing
+Extracted module Int
+Extracted module Int63
+Extracted module UInt63
+Extracted module Endianness
+Extracted module Loops
+Extracted module Loops
+Extracted module Utils
+Extracted module Bytes
+Extracted module Plain
+Extracted module AEADOpenssl
+Extracted module AEADProvider
+Extracted module Range
+Extracted module Alert
+Extracted module DataStream
+Extracted module Content
+Extracted module StatefulPlain
+Extracted module LHAEPlain
+Extracted module AEAD_GCM
+Extracted module StatefulLHAE
+Extracted module Transport
+Extracted module Record
+Extracted module OpenSSL
+Extracted module Hashing
+Extracted module HandshakeMessages
+Extracted module CRF
+Extracted module HMAC
+Extracted module TLSPRF
+Extracted module StreamPlain
+Extracted module StreamAE
+Extracted module StAE
+Extracted module UFCMA
+Extracted module Ticket
+Extracted module HKDF
+Extracted module KeySchedule
+Extracted module Signature
+Extracted module Negotiation
+Extracted module Epochs
+Extracted module Connection
+Extracted module StreamDeltas
+Extracted module TLS
+Extracted module FFI
+All verification conditions discharged successfully
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+C:/build/agent1/_work/4/s/fstar/bin/fstar.exe --fstar_home C:/build/agent1/_work/4/s/fstar --record_hints --print_z3_statistics --use_hints --query_stats --include C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/fst/ --include C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/fst/ --include C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider/fst --include C:/build/agent1/_work/4/s/kremlin/kremlib --include C:/build/agent1/_work/4/s/hacl-star/specs --include C:/build/agent1/_work/4/s/hacl-star/code/lib/kremlin --include C:/build/agent1/_work/4/s/hacl-star/code/bignum --include C:/build/agent1/_work/4/s/hacl-star/code/experimental/aesgcm --include C:/build/agent1/_work/4/s/hacl-star/code/poly1305 --include C:/build/agent1/_work/4/s/hacl-star/code/salsa-family --include C:/build/agent1/_work/4/s/hacl-star/secure_api/test --include C:/build/agent1/_work/4/s/hacl-star/secure_api/utils --include C:/build/agent1/_work/4/s/hacl-star/secure_api/vale --include C:/build/agent1/_work/4/s/hacl-star/secure_api/uf1cma --include C:/build/agent1/_work/4/s/hacl-star/secure_api/prf --include C:/build/agent1/_work/4/s/hacl-star/secure_api/aead --include C:/build/agent1/_work/4/s/libs/ffi --lax --codegen OCaml \
+--odir output --no_extract Prims --no_extract FStar.Pervasives --no_extract FStar.Pervasives.Native --no_extract FStar.Mul --no_extract FStar.Float --no_extract FStar.Char --no_extract FStar.UInt --no_extract FStar.Int8 --no_extract FStar.UInt8 --no_extract FStar.Int16 --no_extract FStar.UInt16 --no_extract FStar.Int32 --no_extract FStar.UInt32 --no_extract FStar.Int64 --no_extract FStar.UInt64 --no_extract FStar.UInt128 --no_extract FStar.Int.Cast --no_extract FStar.Int.Cast.Full --no_extract FStar.BaseTypes --no_extract FStar.IO --no_extract FStar.Heap --no_extract FStar.List.Tot.Base --no_extract FStar.List --no_extract FStar.Option --no_extract FStar.String --no_extract FStar.Set --no_extract FStar.Buffer --no_extract FStar.CommonST --no_extract FStar.TSet --no_extract FStar.Map --no_extract FStar.HyperHeap --no_extract FStar.HyperStack --no_extract FStar.HyperStack.ST --no_extract FStar.HyperStack.All --no_extract FStar.ST --no_extract FStar.All --no_extract FStar.Monotonic.RRef --no_extract FStar.Monotonic.Seq --no_extract FStar.Monotonic.HyperHeap --no_extract FStar.Monotonic.HyperStack --no_extract FStar.Seq.Base --no_extract FStar.Seq.Properties --no_extract FStar.BitVector --no_extract FStar.Math.Lib --no_extract Platform.Bytes --no_extract Platform.Date --no_extract Platform.Error --no_extract Platform.Tcp --no_extract CoreCrypto --no_extract DHDB --no_extract LowCProvider --no_extract FFICallbacks \
+--codegen-lib Platform \
+--include concrete-flags C:/build/agent1/_work/4/s/hacl-star/secure_api/aead/Crypto.AEAD.Main.fst
+Extracted module StrongExcludedMiddle
+Extracted module Classical
+Extracted module Properties
+Extracted module Tot
+Extracted module Seq
+Extracted module Loops
+Extracted module Lemmas
+Extracted module Preorder
+Extracted module FunctionalExtensionality
+Extracted module PropositionalExtensionality
+Extracted module PredicateExtensionality
+Extracted module Int
+Extracted module Loops
+Extracted module Int63
+Extracted module UInt63
+Extracted module Utils
+Extracted module Endianness
+Extracted module C
+Extracted module Exn
+Extracted module Spec
+Extracted module Flags
+Extracted module TLSError
+Extracted module Parse
+Extracted module MonotoneMap
+Extracted module TLSConstants
+Extracted module PSK
+Extracted module Extensions
+Extracted module Cert
+Extracted module BufferUtils
+Extracted module AES
+Extracted module UInt64
+Extracted module UInt128
+Extracted module UInt32
+Extracted module UInt8
+Extracted module Cast
+Extracted module Endianness
+Extracted module Lib
+Extracted module Create
+Extracted module Lemmas
+Extracted module Lemmas
+Extracted module CTR
+Extracted module UInt16
+Extracted module Endianness
+Extracted module Endianness
+Extracted module LoadStore32
+Extracted module Lemmas
+Extracted module Chacha20
+Extracted module Chacha20
+Extracted module Chacha20
+Extracted module RSAKey
+Extracted module PMS
+Extracted module Nonce
+Extracted module TLSInfo
+Extracted module Indexing
+Extracted module AES
+Extracted module AES128
+Extracted module Bytes
+Extracted module Cipher
+Extracted module Constants
+Extracted module Parameters
+Extracted module Wide
+Extracted module Limb
+Extracted module Field
+Extracted module Bigint
+Extracted module Modulo
+Extracted module Fproduct
+Extracted module Fmul
+Extracted module Fsum
+Extracted module AddAndMultiply
+Extracted module Lemmas
+Extracted module Poly1305
+Extracted module Modulo
+Extracted module Fproduct
+Extracted module State
+Extracted module Poly1305_64
+Extracted module State
+Extracted module Fmul
+Extracted module Fsum
+Extracted module AddAndMultiply
+Extracted module Poly1305_64
+Extracted module Poly1305_64
+Extracted module GaloisField
+Extracted module GF128
+Extracted module GF128
+Extracted module MAC
+Extracted module UF1CMA
+Extracted module Bytes
+Extracted module Plain
+Extracted module PRF
+Extracted module Encoding
+Extracted module Invariant
+Extracted module Invariant
+Extracted module PRF
+Extracted module Encoding
+Extracted module CMA
+Extracted module EnxorDexor
+Extracted module Decrypt
+Extracted module Invariant
+Extracted module Invariant
+Extracted module Invariant
+Extracted module Encrypt
+Extracted module AEAD
+Extracted module Main
+All verification conditions discharged successfully
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH=C:/build/agent1/_work/4/s/fstar/bin ocamlfind dep -native -slash -all -package batteries,stdint,fileutils,zarith,fstarlib -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi test/*.ml output/*.ml C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml/*.ml C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/*.ml C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db/*.ml C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider/*.ml C:/build/agent1/_work/4/s/libs/ffi/*.ml > .depend-ML
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+Extracted.mk:96: warning: overriding recipe for target 'mitls.cmxa'
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+Makefile:193: warning: ignoring old recipe for target 'mitls.cmxa'
+Extracted.mk:99: warning: overriding recipe for target 'mitls.exe'
+Makefile:196: warning: ignoring old recipe for target 'mitls.exe'
+Extracted.mk:121: warning: overriding recipe for target 'test'
+Makefile:205: warning: ignoring old recipe for target 'test'
+Extracted.mk:205: warning: overriding recipe for target 'cmitls.o'
+Makefile:199: warning: ignoring old recipe for target 'cmitls.o'
+Extracted.mk:207: warning: overriding recipe for target 'cmitls.exe'
+Makefile:201: warning: ignoring old recipe for target 'cmitls.exe'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Transport.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/TLSError.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Hashing_Spec.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Spec_Loops.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/MonotoneMap.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/FStar_Endianness.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Hacl_UInt128.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Hacl_Impl_Poly1305_64_State.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/C.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Spec_Poly1305_Lemmas.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/C_Loops.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Spec_GaloisField.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Hashing_OpenSSL.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Vale_AES.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Alert.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Seq_Create.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Parse.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Spec_Lib.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Hacl_Bignum_Wide.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Hacl_Bignum_Parameters.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Hacl_Endianness.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Crypto_Symmetric_Bytes.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Hashing.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Buffer_Utils.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Spec_Poly1305.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Spec_GF128.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/DHGroup.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Hacl_Bignum_Modulo.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Hacl_Spec_Bignum_Bigint.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Hacl_Bignum_Fproduct.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Hacl_Bignum_Fsum.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Hacl_Lib_LoadStore32.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Spec_CTR.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/TLSConstants.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Spec_Curve25519.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Crypto_Symmetric_GF128.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Hacl_Bignum_Fmul.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Hacl_Spec_Poly1305_64_State.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/RSAKey.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/PSK.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Nonce.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/HMAC.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Curve25519.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Hacl_Bignum_AddAndMultiply.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/TLSPRF.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Spec_Chacha20.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/HKDF.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/ECGroup.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Hacl_Impl_Poly1305_64.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Hacl_Impl_Chacha20.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/CommonDH.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Hacl_SecureAPI_Chacha20.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/PMS.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Extensions.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Cert.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Signature.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/TLSInfo.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Crypto_Indexing.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/AEADOpenssl.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/HMAC_UFCMA.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Flag.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/HandshakeMessages.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Crypto_Plain.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Ticket.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Crypto_Symmetric_MAC.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Crypto_Symmetric_UF1CMA.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Negotiation.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Crypto_AEAD_Encoding.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Crypto_Symmetric_AES.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Crypto_Symmetric_AES128.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Crypto_Symmetric_Cipher.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Crypto_Symmetric_PRF.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Crypto_AEAD_Invariant.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Crypto_AEAD_Wrappers_PRF.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Crypto_AEAD_Wrappers_Encoding.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Crypto_AEAD.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Crypto_AEAD_EnxorDexor.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Crypto_AEAD_Wrappers_CMA.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Crypto_AEAD_Decrypt.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Crypto_AEAD_Encrypt.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Crypto_AEAD_Main.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/AEADProvider.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Range.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/DataStream.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/HandshakeLog.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Content.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/StatefulPlain.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/StreamPlain.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/LHAEPlain.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/StreamAE.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/AEAD_GCM.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/StatefulLHAE.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Record.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/StAE.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/StreamDeltas.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/KeySchedule.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Epochs.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Handshake.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/Connection.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/TLS.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/TestAPI.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/FFI.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/TestFFI.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/QUIC.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c C:/build/agent1/_work/4/s/libs/ffi/FFIRegister.ml -o output/FFIRegister.cmx
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c output/TestQUIC.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+=== Note: ML dependencies may be outdated. If you have a link-time error, run 'make mlclean' ===
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -I test -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -a `cat output/.deporder` output/FFIRegister.cmx -o mitls.cmxa
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make -f Extracted.mk mitls.exe
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+Extracted.mk:96: warning: overriding recipe for target 'mitls.cmxa'
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+Makefile:193: warning: ignoring old recipe for target 'mitls.cmxa'
+Extracted.mk:99: warning: overriding recipe for target 'mitls.exe'
+Makefile:196: warning: ignoring old recipe for target 'mitls.exe'
+Extracted.mk:121: warning: overriding recipe for target 'test'
+Makefile:205: warning: ignoring old recipe for target 'test'
+Extracted.mk:205: warning: overriding recipe for target 'cmitls.o'
+Makefile:199: warning: ignoring old recipe for target 'cmitls.o'
+Extracted.mk:207: warning: overriding recipe for target 'cmitls.exe'
+Makefile:201: warning: ignoring old recipe for target 'cmitls.exe'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -c test/mitls.ml
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+make[3]: Entering directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+** Cannot resolve symbols for C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider/libllcrypto.a(Crypto_AEAD_Encrypt.o/
+OCAMLPATH="C:/build/agent1/_work/4/s/fstar/bin" ocamlfind opt -package fstarlib -linkpkg -g  -linkpkg -package batteries,stdint,fileutils,zarith,fstarlib -thread -w -a -I test -I output -I C:/build/agent1/_work/4/s/fstar/ucontrib/Platform/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml -I C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/db -I C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider -I C:/build/agent1/_work/4/s/libs/ffi -I test/ -g \
+C:/build/agent1/_work/4/s/fstar/ucontrib/CoreCrypto/ml/CoreCrypto.cmxa \
+Crypto_AEAD_Encrypt_Ideal_Invariant.o/
+C:/build/agent1/_work/4/s/libs/ffi/FFICallbacks.cmxa C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider/LowCProvider.cmxa \
+Crypto_AEAD_Encrypt_Invariant.o/
+mitls.cmxa C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider/libllcrypto.a test/mitls.cmx -o mitls.exe
+Crypto_AEAD_Enxor_Invariant.o/
+make[3]: Leaving directory '/cygdrive/c/build/agent1/_work/4/s/src/tls'
+Crypto_AEAD_EnxorDexor.o/
+Crypto_AEAD_Invariant.o/
+Crypto_AEAD_MAC_Wrapper_Invariant.o/
+Crypto_AEAD_Wrappers_CMA.o/
+Crypto_AEAD_Wrappers_Encoding.o/
+Crypto_AEAD_Wrappers_PRF.o/
+Crypto_Indexing.o/
+Crypto_Symmetric_AES.o/
+Crypto_Symmetric_AES128.o/
+Crypto_Symmetric_Bytes.o/
+Crypto_Symmetric_Cipher.o/
+Crypto_Symmetric_GF128.o/
+Crypto_Symmetric_MAC.o/
+Crypto_Symmetric_PRF.o/
+):
+FStar_Pervasives_Native_fst__Crypto_Indexing_id_FStar_UInt128_t
+** Cannot resolve symbols for C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider/libllcrypto.a(Crypto_Symmetric_PRF.o/
+):
+Crypto_Symmetric_UF1CMA_coerce
+Crypto_Symmetric_UF1CMA_keylen
+Crypto_Symmetric_UF1CMA_skeyed
+Crypto_Symmetric_UF1CMA_skeylen
+** Cannot resolve symbols for C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider/libllcrypto.a(Crypto_AEAD.o):
+Crypto_Symmetric_UF1CMA_skeyed
+** Cannot resolve symbols for C:/build/agent1/_work/4/s/hacl-star/secure_api/LowCProvider/libllcrypto.a(Crypto_AEAD_Wrappers_CMA.o/
+Crypto_AEAD_Wrappers_Encoding.o/
+Crypto_AEAD_Wrappers_PRF.o/
+Crypto_Indexing.o/
+Crypto_Symmetric_AES.o/
+Crypto_Symmetric_AES128.o/
+Crypto_Symmetric_Bytes.o/
+Crypto_Symmetric_Cipher.o/
+Crypto_Symmetric_GF128.o/
+Crypto_Symmetric_MAC.o/
+Crypto_Symmetric_PRF.o/
+):
+Crypto_Symmetric_UF1CMA_verify
+File "caml_startup", line 1:
+Error: Error during linking
+make[3]: *** [Extracted.mk:99: mitls.exe] Error 2
+make[2]: *** [Makefile:196: mitls.exe] Error 2
+make[1]: *** [Makefile:26: build] Error 2
+make: *** [Makefile:22: all] Error 2

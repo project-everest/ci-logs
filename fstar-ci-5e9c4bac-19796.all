@@ -1,0 +1,95 @@
+This is /home/everbld/everest-ci/ci
+Working directory: /cygdrive/c/build/agent2/_work/2/s
+About to run: fstar_and_friends uregressions
+BUILD_SOURCEBRANCHNAME: nik_misc
+BUILD_DEFINITIONNAME: FStar-CI-Windows
+BUILD_BUILDID: 19796
+DEFINITIONNAME:
+Z3 is /home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin/z3
+make fstar-in-fsharp
+Switching to KreMLin origin/fstar-master
+Switching to HACL origin/fstar-master
+Switching to mitls-fstar origin/fstar-master
+HEAD is now at 08969b5 Build also bytecode-version of libraries
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/2/s/src'
+VS/.nuget/NuGet.exe restore VS/FStar.sln
+Installing 'FsLexYacc 6.1.0'.
+Installing 'FSharp.Compatibility.OCaml 0.1.10'.
+Installing 'PPrintForFSharp 0.0.2'.
+Installing 'FsLexYacc.Runtime 6.1.0'.
+Successfully installed 'PPrintForFSharp 0.0.2'.
+Successfully installed 'FSharp.Compatibility.OCaml 0.1.10'.
+Successfully installed 'FsLexYacc.Runtime 6.1.0'.
+Successfully installed 'FsLexYacc 6.1.0'.
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/2/s/src'
+HEAD is now at 65a24d96 ***NO_CI*** hints
+make -C VS install-packages
+[ -d packages ] || make update-nuget
+HEAD is now at 74c4b38f Targets to compile bytecode version of LowC
+make[2]: Entering directory '/cygdrive/c/build/agent2/_work/2/s/src/VS'
+.nuget/NuGet.exe restore FStar.sln
+All packages listed in packages.config are already installed.
+find packages -name '*.exe' -exec chmod +x '{}' ';'
+make[2]: Leaving directory '/cygdrive/c/build/agent2/_work/2/s/src/VS'
+make: Entering directory '/cygdrive/c/build/agent2/_work/2/s/kremlin'
+ocamlbuild -I src -I lib -I parser -I kremlib -use-menhir -use-ocamlfind -classic-display -menhir "menhir --infer --explain" Kremlin.native Tests.native
+ln -sf Kremlin.native krml
+make: Leaving directory '/cygdrive/c/build/agent2/_work/2/s/kremlin'
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/2/s/src'
+./msbuild.bat /verbosity:minimal /p:Configuration=Release VS/FStar.sln
+make[1]: *** [Makefile:18: fstar-in-fsharp] Error 1
+**********************************************************************
+make: *** [Makefile:135: fsharp-build-and-test] Error 2
+** Visual Studio 2017 Developer Command Prompt v15.5.5
+make: Target 'utest-prelude' not remade because of errors.
+** Copyright (c) 2017 Microsoft Corporation
+**********************************************************************
+Command exited with non-zero status 2
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+0.01user 0.16system 0:32.36elapsed 0%CPU (0avgtext+0avgdata 6325760maxresident)k
+
+0inputs+0outputs (25863major+0minor)pagefaults 0swaps
+C:\build\agent2\_work\2\s\src\basic\boot\NotFStar.Util.fs(50,5): warning FS3190: Lowercase literal 'max_int' is being shadowed by a new pattern with the same name. Only uppercase and module-prefixed literals can be used as named patterns. [C:\build\agent2\_work\2\s\src\basic\basic.fsproj]
+basic -> C:\build\agent2\_work\2\s\bin\basic.dll
+Restoring NuGet packages...
+To prevent NuGet from downloading packages during build, open the Visual Studio Options dialog, click on the Package Manager node and uncheck 'Allow NuGet to download missing packages'.
+All packages listed in packages.config are already installed.
+prettyprint -> C:\build\agent2\_work\2\s\bin\prettyprint.dll
+compiling to dfas (can take a while...)
+367 states
+writing output
+building tables
+computing first function...time: 00:00:00.2981126
+building kernels...time: 00:00:00.2076432
+building kernel table...time: 00:00:00.0188656
+computing lookahead relations..............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................time: 00:00:00.8041305
+building lookahead table...time: 00:00:00.3545640
+building action table...state 469: shift/reduce error on SEMICOLON
+state 469: shift/reduce error on SEMICOLON_SEMICOLON
+state 508: shift/reduce error on BAR
+state 512: shift/reduce error on BAR
+state 531: shift/reduce error on BAR
+state 615: shift/reduce error on COLON_EQUALS
+state 647: shift/reduce error on COLON_EQUALS
+time: 00:00:01.1148627
+building goto table...time: 00:00:00.3721985
+returning tables.
+7 shift/reduce conflicts
+891 states
+156 nonterminals
+150 terminals
+471 productions
+#rows in action table: 891
+parser -> C:\build\agent2\_work\2\s\bin\parser.dll
+syntax -> C:\build\agent2\_work\2\s\bin\syntax.dll
+tosyntax -> C:\build\agent2\_work\2\s\bin\tosyntax.dll
+C:\build\agent2\_work\2\s\src\typechecker\FStar.TypeChecker.Tc.fs(1053,15): warning FS0025: Incomplete pattern matches on this expression. [C:\build\agent2\_work\2\s\src\typechecker\typechecker.fsproj]
+typechecker -> C:\build\agent2\_work\2\s\bin\typechecker.dll
+format -> C:\build\agent2\_work\2\s\bin\format.dll
+reflection -> C:\build\agent2\_work\2\s\bin\reflection.dll
+extraction -> C:\build\agent2\_work\2\s\bin\extraction.dll
+fsdoc -> C:\build\agent2\_work\2\s\bin\fsdoc.dll
+C:\build\agent2\_work\2\s\src\smtencoding\FStar.SMTEncoding.EncodeTerm.fs(1195,63): error FS0001: This expression was expected to have type    'FStar.Syntax.Syntax.term'    but here has type    'FStar.SMTEncoding.Term.term' [C:\build\agent2\_work\2\s\src\smtencoding\smtencoding.fsproj]
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/2/s/src'
+warm-up failed
