@@ -1,0 +1,90 @@
+This is /home/everbld/everest-ci/ci
+Working directory: /cygdrive/c/build/agent1/_work/1/s
+About to run: fstar_and_friends uregressions
+BUILD_SOURCEBRANCHNAME: cpitclaudel_staging
+BUILD_DEFINITIONNAME: FStar-CI-Windows
+BUILD_BUILDID: 19906
+DEFINITIONNAME:
+Z3 is /home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin/z3
+make fstar-in-fsharp
+Switching to vale to fstar_ci
+Switching to KreMLin origin/fstar-master
+Switching to HACL origin/fstar-master
+Switching to mitls-fstar origin/fstar-master
+HEAD is now at d364327 Enough writing for today
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src'
+VS/.nuget/NuGet.exe restore VS/FStar.sln
+Installing 'FsLexYacc.Runtime 6.1.0'.
+Installing 'PPrintForFSharp 0.0.2'.
+Installing 'FsLexYacc 6.1.0'.
+Installing 'FSharp.Compatibility.OCaml 0.1.10'.
+Successfully installed 'PPrintForFSharp 0.0.2'.
+Successfully installed 'FSharp.Compatibility.OCaml 0.1.10'.
+Successfully installed 'FsLexYacc.Runtime 6.1.0'.
+Successfully installed 'FsLexYacc 6.1.0'.
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src'
+HEAD is now at 65a24d96 ***NO_CI*** hints
+Removing .sconsign.dblite
+Removing bin/
+Removing obj/
+Removing tools/FsLexYacc/
+make -C VS install-packages
+[ -d packages ] || make update-nuget
+HEAD is now at 6d30377 Fix two Python3 incompatibilities
+HEAD is now at 74c4b38f Targets to compile bytecode version of LowC
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src/VS'
+.nuget/NuGet.exe restore FStar.sln
+All packages listed in packages.config are already installed.
+find packages -name '*.exe' -exec chmod +x '{}' ';'
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src/VS'
+Restoring NuGet package FsLexYacc.6.1.0.
+Restoring NuGet package FsLexYacc.Runtime.6.1.0.
+Adding package 'FsLexYacc.Runtime.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+Adding package 'FsLexYacc.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+Added package 'FsLexYacc.Runtime.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+Added package 'FsLexYacc.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+
+NuGet Config files used:
+C:\Users\everbld\AppData\Roaming\NuGet\NuGet.Config
+C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
+
+Feeds used:
+C:\Users\everbld\.nuget\packages\
+https://api.nuget.org/v3/index.json
+C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
+
+Installed:
+2 package(s) to packages.config projects
+make: Entering directory '/cygdrive/c/build/agent1/_work/1/s/kremlin'
+ocamlbuild -I src -I lib -I parser -I kremlib -use-menhir -use-ocamlfind -classic-display -menhir "menhir --infer --explain" Kremlin.native Tests.native
+ln -sf Kremlin.native krml
+make: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/kremlin'
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src'
+./msbuild.bat /verbosity:minimal /p:Configuration=Release VS/FStar.sln
+make[1]: *** [Makefile:18: fstar-in-fsharp] Error 1
+**********************************************************************
+** Visual Studio 2017 Developer Command Prompt v15.5.5
+** Copyright (c) 2017 Microsoft Corporation
+make: *** [Makefile:135: fsharp-build-and-test] Error 2
+**********************************************************************
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+make: Target 'utest-prelude' not remade because of errors.
+
+C:\build\agent1\_work\1\s\src\basic\FStar.Common.fsi(6,21): error FS0010: Unexpected symbol ':' in value signature. Expected ',' or other token. [C:\build\agent1\_work\1\s\src\basic\basic.fsproj]
+Command exited with non-zero status 2
+C:\build\agent1\_work\1\s\src\basic\FStar.Common.fsi(6,45): error FS0010: Unexpected symbol ':' in value signature. Expected ',' or other token. [C:\build\agent1\_work\1\s\src\basic\basic.fsproj]
+C:\build\agent1\_work\1\s\src\basic\FStar.Common.fsi(6,69): error FS0010: Unexpected symbol ':' in value signature. Expected ',' or other token. [C:\build\agent1\_work\1\s\src\basic\basic.fsproj]
+0.06user 0.16system 0:03.90elapsed 5%CPU (0avgtext+0avgdata 6335232maxresident)k
+C:\build\agent1\_work\1\s\src\basic\FStar.Common.fsi(7,20): error FS0010: Unexpected symbol ':' in value signature. Expected ',' or other token. [C:\build\agent1\_work\1\s\src\basic\basic.fsproj]
+0inputs+0outputs (25865major+0minor)pagefaults 0swaps
+C:\build\agent1\_work\1\s\src\basic\FStar.Common.fsi(7,46): error FS0010: Unexpected symbol ':' in value signature. Expected ',' or other token. [C:\build\agent1\_work\1\s\src\basic\basic.fsproj]
+C:\build\agent1\_work\1\s\src\basic\FStar.Common.fsi(7,72): error FS0010: Unexpected symbol ':' in value signature. Expected ',' or other token. [C:\build\agent1\_work\1\s\src\basic\basic.fsproj]
+C:\build\agent1\_work\1\s\src\basic\FStar.Common.fs(60,46): error FS0035: This construct is deprecated: ':' is not permitted as a character in operator names and is reserved for future use [C:\build\agent1\_work\1\s\src\basic\basic.fsproj]
+C:\build\agent1\_work\1\s\src\basic\FStar.Common.fs(60,49): error FS0010: Unexpected quote symbol in expression [C:\build\agent1\_work\1\s\src\basic\basic.fsproj]
+C:\build\agent1\_work\1\s\src\basic\FStar.Common.fs(60,20): error FS0583: Unmatched '(' [C:\build\agent1\_work\1\s\src\basic\basic.fsproj]
+Restoring NuGet packages...
+To prevent NuGet from downloading packages during build, open the Visual Studio Options dialog, click on the Package Manager node and uncheck 'Allow NuGet to download missing packages'.
+All packages listed in packages.config are already installed.
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src'
+warm-up failed
