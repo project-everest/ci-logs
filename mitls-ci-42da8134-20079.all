@@ -1,0 +1,334 @@
+This is /home/everbld/everest-ci/ci
+Working directory: /cygdrive/c/build/agent1/_work/2/s
+About to run: mitls_verify
+BUILD_SOURCEBRANCHNAME: quic2c
+BUILD_DEFINITIONNAME: miTLS-CI-Windows
+BUILD_BUILDID: 20079
+DEFINITIONNAME:
+Z3 is /home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin/z3
+From https://github.com/FStarLang/FStar
+* [new branch]          c_delta-equational -> origin/c_delta-equational
+Switching to F* origin/master
+HEAD is now at 63040e459 Merge branch 'protz_json'
+make: Entering directory '/cygdrive/c/build/agent1/_work/2/s/fstar/src/ocaml-output'
+cp "../extraction/ml/FStar_Extraction_ML_PrintML_4.05.X.ml" ../extraction/ml/FStar_Extraction_ML_PrintML.ml
+make: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/fstar/src/ocaml-output'
+make: Entering directory '/cygdrive/c/build/agent1/_work/2/s/fstar/src/ocaml-output'
+echo 'open FStar_Util' > FStar_Version.ml
+echo 'let dummy () = ();;' >> FStar_Version.ml
+echo 'FStar_Options._version := "0.9.5.0";;' >> FStar_Version.ml
+echo 'FStar_Options._platform := "Windows_x64";;' >> FStar_Version.ml
+echo 'FStar_Options._compiler := "OCaml 4.05.0";;' >> FStar_Version.ml
+echo 'FStar_Options._date := "2018-05-01T10:27:31-07:00";;' >> FStar_Version.ml
+echo 'FStar_Options._commit:= "63040e459";;' >> FStar_Version.ml
+make: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/fstar/src/ocaml-output'
+make: Entering directory '/cygdrive/c/build/agent1/_work/2/s/fstar/src/ocaml-output'
+cd ../../ && ocamlbuild -cflag -g -I src/ocaml-output -I src/basic/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/prettyprint/ml -I src/tactics/ml -I src/tests/ml -I ulib/ml -j 24 -build-dir src/ocaml-output/_build -use-ocamlfind main.native src/ocaml-output/FStar_Syntax_Syntax.inferred.mli
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Version.ml > src/ocaml-output/FStar_Version.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Version.cmo src/ocaml-output/FStar_Version.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Version.cmx src/ocaml-output/FStar_Version.ml
+ocamlfind ocamlopt -linkpkg -linkall -thread -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/basic/ml -I ulib/ml -I src/ocaml-output -I src/parser/ml -I src/prettyprint/ml -I src/extraction/ml -I src/tactics/ml -I src/fstar/ml src/basic/ml/FStar_BigInt.cmx ulib/ml/FStar_Monotonic_Heap.cmx ulib/ml/FStar_CommonST.cmx ulib/ml/FStar_List_Tot_Base.cmx ulib/ml/FStar_List.cmx ulib/ml/FStar_ST.cmx ulib/ml/prims.cmx src/basic/ml/FStar_Util.cmx src/basic/ml/FStar_Compiler_Bytes.cmx ulib/ml/FStar_Char.cmx ulib/ml/FStar_String.cmx src/basic/ml/FStar_Getopt.cmx src/basic/ml/FStar_Platform.cmx ulib/ml/FStar_All.cmx src/basic/ml/FStar_Unionfind.cmx ulib/ml/FStar_Pervasives_Native.cmx src/ocaml-output/FStar_Common.cmx src/ocaml-output/FStar_Range.cmx src/ocaml-output/FStar_Ident.cmx ulib/ml/FStar_Float.cmx ulib/ml/FStar_Int16.cmx ulib/ml/FStar_Int32.cmx ulib/ml/FStar_Int64.cmx ulib/ml/FStar_Int8.cmx ulib/ml/FStar_UInt16.cmx ulib/ml/FStar_UInt8.cmx ulib/ml/FStar_BaseTypes.cmx src/ocaml-output/FStar_Const.cmx ulib/ml/FStar_Exn.cmx ulib/ml/FStar_Option.cmx src/ocaml-output/FStar_Options.cmx src/ocaml-output/FStar_Errors.cmx src/ocaml-output/FStar_Parser_Const.cmx ulib/ml/FStar_Dyn.cmx src/ocaml-output/FStar_Syntax_Syntax.cmx src/ocaml-output/FStar_Extraction_ML_Syntax.cmx src/ocaml-output/FStar_Parser_AST.cmx src/ocaml-output/FStar_Syntax_Unionfind.cmx src/ocaml-output/FStar_Syntax_Subst.cmx src/ocaml-output/FStar_Syntax_Free.cmx src/ocaml-output/FStar_Syntax_InstFV.cmx src/ocaml-output/FStar_Syntax_Util.cmx src/parser/ml/FStar_Parser_Util.cmx src/ocaml-output/FStar_Parser_Parse.cmx src/parser/ml/FStar_Ulexing.cmx src/parser/ml/FStar_Parser_LexFStar.cmx src/parser/ml/FStar_Parser_ParseIt.cmx src/ocaml-output/FStar_Parser_Driver.cmx src/ocaml-output/FStar_Parser_Dep.cmx src/ocaml-output/FStar_Pervasives.cmx src/prettyprint/ml/FStar_Pprint.cmx src/ocaml-output/FStar_Parser_ToDocument.cmx src/ocaml-output/FStar_Syntax_DsEnv.cmx src/ocaml-output/FStar_Syntax_Resugar.cmx src/ocaml-output/FStar_Syntax_Print.cmx src/ocaml-output/FStar_TypeChecker_Common.cmx src/ocaml-output/FStar_TypeChecker_Env.cmx src/ocaml-output/FStar_Extraction_ML_UEnv.cmx src/ocaml-output/FStar_Reflection_Data.cmx src/ocaml-output/FStar_Syntax_Embeddings.cmx src/ocaml-output/FStar_TypeChecker_Normalize.cmx src/ocaml-output/FStar_Extraction_ML_Util.cmx src/ocaml-output/FStar_Format.cmx src/ocaml-output/FStar_Extraction_ML_Code.cmx src/extraction/ml/FStar_Extraction_ML_PrintML.cmx src/ocaml-output/FStar_Dependencies.cmx src/ocaml-output/FStar_Extraction_Kremlin.cmx src/ocaml-output/FStar_Order.cmx src/ocaml-output/FStar_Reflection_Basic.cmx src/ocaml-output/FStar_Reflection_Embeddings.cmx src/ocaml-output/FStar_Syntax_MutRecTy.cmx src/ocaml-output/FStar_ToSyntax_ToSyntax.cmx src/ocaml-output/FStar_TypeChecker_Err.cmx src/ocaml-output/FStar_TypeChecker_Rel.cmx src/ocaml-output/FStar_TypeChecker_Util.cmx src/ocaml-output/FStar_TypeChecker_TcTerm.cmx src/ocaml-output/FStar_Extraction_ML_Term.cmx src/ocaml-output/FStar_Extraction_ML_Modul.cmx src/ocaml-output/FStar_Fsdoc_Generator.cmx src/ocaml-output/FStar_Indent.cmx src/ocaml-output/FStar_Interactive_CompletionTable.cmx src/ocaml-output/FStar_Reflection_Interpreter.cmx src/ocaml-output/FStar_SMTEncoding_Term.cmx src/ocaml-output/FStar_SMTEncoding_Util.cmx src/ocaml-output/FStar_SMTEncoding_Env.cmx src/ocaml-output/FStar_SMTEncoding_EncodeTerm.cmx src/ocaml-output/FStar_SMTEncoding_Z3.cmx src/ocaml-output/FStar_SMTEncoding_ErrorReporting.cmx src/ocaml-output/FStar_SMTEncoding_Encode.cmx src/ocaml-output/FStar_SMTEncoding_Solver.cmx src/ocaml-output/FStar_Tactics_Types.cmx src/ocaml-output/FStar_Tactics_Result.cmx src/ocaml-output/FStar_Tactics_Basic.cmx src/ocaml-output/FStar_Tactics_Embedding.cmx src/tactics/ml/FStar_Tactics_Native.cmx src/ocaml-output/FStar_Tactics_Interpreter.cmx src/ocaml-output/FStar_ToSyntax_Interleave.cmx src/ocaml-output/FStar_TypeChecker_DMFF.cmx src/ocaml-output/FStar_TypeChecker_TcInductive.cmx src/ocaml-output/FStar_TypeChecker_Tc.cmx src/ocaml-output/FStar_Universal.cmx src/ocaml-output/FStar_Interactive_Ide.cmx src/ocaml-output/FStar_Interactive_Legacy.cmx src/ocaml-output/FStar_Version.cmx src/tactics/ml/FStar_Tactics_Load.cmx src/ocaml-output/FStar_Main.cmx src/fstar/ml/main.cmx -o src/fstar/ml/main.native
+# No parallelism done
+cp -f _build/src/fstar/ml/main.native ../../bin/fstar.exe
+cp -f _build/src/fstar/ml/main.native ../../bin/fstar.ocaml
+make: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/fstar/src/ocaml-output'
+make: Entering directory '/cygdrive/c/build/agent1/_work/2/s/fstar/src/ocaml-output'
+mkdir -p ../../bin/fstar-compiler-lib/
+find -\( -name '*.cmi' -or -name '*.cmx' -\) -exec cp {} ../../bin/fstar-compiler-lib/ \;
+make: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/fstar/src/ocaml-output'
+make: Entering directory '/cygdrive/c/build/agent1/_work/2/s/fstar/src/ocaml-output'
+cd ../../ && ocamlbuild -cflag -g -I src/ocaml-output -I src/basic/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/prettyprint/ml -I src/tactics/ml -I src/tests/ml -I ulib/ml -j 24 -build-dir src/ocaml-output/_build -use-ocamlfind FStar_Tests_Main.native
+ocamlfind ocamlopt -linkpkg -thread -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/basic/ml -I ulib/ml -I src/ocaml-output -I src/parser/ml -I src/prettyprint/ml -I src/extraction/ml -I src/tactics/ml -I src/tests/ml src/basic/ml/FStar_BigInt.cmx ulib/ml/FStar_Monotonic_Heap.cmx ulib/ml/FStar_CommonST.cmx ulib/ml/FStar_List_Tot_Base.cmx ulib/ml/FStar_List.cmx ulib/ml/FStar_ST.cmx ulib/ml/prims.cmx src/basic/ml/FStar_Util.cmx src/basic/ml/FStar_Compiler_Bytes.cmx ulib/ml/FStar_Char.cmx ulib/ml/FStar_String.cmx src/basic/ml/FStar_Getopt.cmx src/basic/ml/FStar_Platform.cmx ulib/ml/FStar_All.cmx src/basic/ml/FStar_Unionfind.cmx ulib/ml/FStar_Pervasives_Native.cmx src/ocaml-output/FStar_Common.cmx src/ocaml-output/FStar_Range.cmx src/ocaml-output/FStar_Ident.cmx ulib/ml/FStar_Float.cmx ulib/ml/FStar_Int16.cmx ulib/ml/FStar_Int32.cmx ulib/ml/FStar_Int64.cmx ulib/ml/FStar_Int8.cmx ulib/ml/FStar_UInt16.cmx ulib/ml/FStar_UInt8.cmx ulib/ml/FStar_BaseTypes.cmx src/ocaml-output/FStar_Const.cmx ulib/ml/FStar_Exn.cmx ulib/ml/FStar_Option.cmx src/ocaml-output/FStar_Options.cmx src/ocaml-output/FStar_Errors.cmx src/ocaml-output/FStar_Parser_Const.cmx ulib/ml/FStar_Dyn.cmx src/ocaml-output/FStar_Syntax_Syntax.cmx src/ocaml-output/FStar_Extraction_ML_Syntax.cmx src/ocaml-output/FStar_Parser_AST.cmx src/ocaml-output/FStar_Syntax_Unionfind.cmx src/ocaml-output/FStar_Syntax_Subst.cmx src/ocaml-output/FStar_Syntax_Free.cmx src/ocaml-output/FStar_Syntax_InstFV.cmx src/ocaml-output/FStar_Syntax_Util.cmx src/parser/ml/FStar_Parser_Util.cmx src/ocaml-output/FStar_Parser_Parse.cmx src/parser/ml/FStar_Ulexing.cmx src/parser/ml/FStar_Parser_LexFStar.cmx src/parser/ml/FStar_Parser_ParseIt.cmx src/ocaml-output/FStar_Parser_Driver.cmx src/ocaml-output/FStar_Parser_Dep.cmx src/ocaml-output/FStar_Pervasives.cmx src/prettyprint/ml/FStar_Pprint.cmx src/ocaml-output/FStar_Parser_ToDocument.cmx src/ocaml-output/FStar_Syntax_DsEnv.cmx src/ocaml-output/FStar_Syntax_Resugar.cmx src/ocaml-output/FStar_Syntax_Print.cmx src/ocaml-output/FStar_TypeChecker_Common.cmx src/ocaml-output/FStar_TypeChecker_Env.cmx src/ocaml-output/FStar_Extraction_ML_UEnv.cmx src/ocaml-output/FStar_Reflection_Data.cmx src/ocaml-output/FStar_Syntax_Embeddings.cmx src/ocaml-output/FStar_TypeChecker_Normalize.cmx src/ocaml-output/FStar_Extraction_ML_Util.cmx src/ocaml-output/FStar_Format.cmx src/ocaml-output/FStar_Extraction_ML_Code.cmx src/extraction/ml/FStar_Extraction_ML_PrintML.cmx src/ocaml-output/FStar_Dependencies.cmx src/ocaml-output/FStar_Extraction_Kremlin.cmx src/ocaml-output/FStar_Order.cmx src/ocaml-output/FStar_Reflection_Basic.cmx src/ocaml-output/FStar_Reflection_Embeddings.cmx src/ocaml-output/FStar_Syntax_MutRecTy.cmx src/ocaml-output/FStar_ToSyntax_ToSyntax.cmx src/ocaml-output/FStar_TypeChecker_Err.cmx src/ocaml-output/FStar_TypeChecker_Rel.cmx src/ocaml-output/FStar_TypeChecker_Util.cmx src/ocaml-output/FStar_TypeChecker_TcTerm.cmx src/ocaml-output/FStar_Extraction_ML_Term.cmx src/ocaml-output/FStar_Extraction_ML_Modul.cmx src/ocaml-output/FStar_Fsdoc_Generator.cmx src/ocaml-output/FStar_Indent.cmx src/ocaml-output/FStar_Interactive_CompletionTable.cmx src/ocaml-output/FStar_Reflection_Interpreter.cmx src/ocaml-output/FStar_SMTEncoding_Term.cmx src/ocaml-output/FStar_SMTEncoding_Util.cmx src/ocaml-output/FStar_SMTEncoding_Env.cmx src/ocaml-output/FStar_SMTEncoding_EncodeTerm.cmx src/ocaml-output/FStar_SMTEncoding_Z3.cmx src/ocaml-output/FStar_SMTEncoding_ErrorReporting.cmx src/ocaml-output/FStar_SMTEncoding_Encode.cmx src/ocaml-output/FStar_SMTEncoding_Solver.cmx src/ocaml-output/FStar_Tactics_Types.cmx src/ocaml-output/FStar_Tactics_Result.cmx src/ocaml-output/FStar_Tactics_Basic.cmx src/ocaml-output/FStar_Tactics_Embedding.cmx src/tactics/ml/FStar_Tactics_Native.cmx src/ocaml-output/FStar_Tactics_Interpreter.cmx src/ocaml-output/FStar_ToSyntax_Interleave.cmx src/ocaml-output/FStar_TypeChecker_DMFF.cmx src/ocaml-output/FStar_TypeChecker_TcInductive.cmx src/ocaml-output/FStar_TypeChecker_Tc.cmx src/ocaml-output/FStar_Universal.cmx src/ocaml-output/FStar_Interactive_Ide.cmx src/ocaml-output/FStar_Interactive_Legacy.cmx src/ocaml-output/FStar_Version.cmx src/tactics/ml/FStar_Tactics_Load.cmx src/ocaml-output/FStar_Main.cmx src/ocaml-output/FStar_Tests_Pars.cmx src/ocaml-output/FStar_Tests_Util.cmx src/ocaml-output/FStar_Tests_Norm.cmx src/ocaml-output/FStar_Tests_Unif.cmx src/ocaml-output/FStar_Tests_Test.cmx src/tests/ml/FStar_Tests_Main.cmx -o src/tests/ml/FStar_Tests_Main.native
+# No parallelism done
+cp -f _build/src/tests/ml/FStar_Tests_Main.native ../../bin/tests.exe
+make: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/fstar/src/ocaml-output'
+make: Entering directory '/cygdrive/c/build/agent1/_work/2/s/fstar/ulib/ml'
+make -C .. install-fstarlib
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/2/s/fstar/ulib'
+cd ../ && OCAMLPATH="../../../bin/" ocamlbuild -cflag -g -use-ocamlfind -build-dir ulib/ml/_build -I ulib/ml -I ulib/ml/extracted fstarlib.a fstarlib.cma fstarlib.cmxs fstarlib.cmxa
+ocamlfind ocamlopt -shared -linkall -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml ulib/ml/fstarlib.cmxa -o ulib/ml/fstarlib.cmxs
+mkdir -p ../bin/fstarlib/
+cp ml/_build/ulib/ml/*.cmi ml/_build/ulib/ml/*.cmx ml/_build/ulib/ml/extracted/*.cmi ml/_build/ulib/ml/extracted/*.cmx ml/_build/ulib/ml/fstarlib.a ml/_build/ulib/ml/fstarlib.cma ml/_build/ulib/ml/fstarlib.cmxs ml/_build/ulib/ml/fstarlib.cmxa ../bin/fstarlib/
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/fstar/ulib'
+make: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/fstar/ulib/ml'
+Switching to KreMLin origin/fstar-master
+HEAD is now at 08e0a62 Output a Makefile.include in the output directory that lists all the generated C and H files (not necessarily the same list). CC @tahina-pro @wintersteiger
+make: Entering directory '/cygdrive/c/build/agent1/_work/2/s/kremlin'
+ocamlbuild -I src -I lib -I parser -I kremlib -use-menhir -use-ocamlfind -classic-display -menhir "menhir --infer --explain" Kremlin.native Tests.native
+ln -sf Kremlin.native krml
+make: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/kremlin'
+make: Entering directory '/cygdrive/c/build/agent1/_work/2/s/kremlin'
+OCAMLPATH=C:/build/agent1/_work/2/s/fstar/bin ocamlbuild -I src -I lib -I parser -I kremlib -use-menhir -use-ocamlfind -classic-display -menhir "menhir --infer --explain" Ast.inferred.mli kremlib/C.cmx kremlib/TestLib.cmx kremlib/C.cmo kremlib/TestLib.cmo
+make: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/kremlin'
+Switching to HACL origin/fstar-master
+HEAD is now at 43c452bd Merge branch 'fstar-master' of pro.github.com:mitls/hacl-star into fstar-master
+Switching to MLCrypto origin/master
+HEAD is now at 12f3f1e Revert "Link libcrypto"
+make: Nothing to be done for 'all'.
+make -C ../../code/curve25519 x25519-c/Curve25519.c
+make[1]: 'x25519-c/Curve25519.c' is up to date.
+make -C .. hacl_aes_abstract_id vale_aes_abstract_id runtime_switch
+IMPL_CHOICE=hacl_aes_abstract_id make -f Makefile.extract abstract
+IMPL_CHOICE=vale_aes_abstract_id make -f Makefile.extract abstract
+IMPL_CHOICE=runtime_switch make -f Makefile.extract all concrete test vale
+make[2]: Nothing to be done for 'abstract'.
+make[2]: Nothing to be done for 'abstract'.
+make -C C:/build/agent1/_work/2/s/mlcrypto
+make[3]: Nothing to be done for 'all'.
+make[2]: Nothing to be done for 'concrete'.
+make[2]: Nothing to be done for 'vale'.
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+./../secure_api/out/runtime_switch/krml-test.exe
+test()
+[test] expected output cipher is d31a8d34648e60db7b86afbc53ef7ec2a4aded51296e08fea9e2b5a736ee62d63dbea45e8ca9671282fafb69da92728b1a71de0a9e060b2905d6a5b67ecd3b3692ddbd7f2d778b8c9803aee328091b58fab324e4fad675945585808b4831d7bc3ff4def08e4b7a9de576d26586cec64b61161ae10b594f09e26a7e902ecbd0600691
+[test] computed output cipher is d31a8d34648e60db7b86afbc53ef7ec2a4aded51296e08fea9e2b5a736ee62d63dbea45e8ca9671282fafb69da92728b1a71de0a9e060b2905d6a5b67ecd3b3692ddbd7f2d778b8c9803aee328091b58fab324e4fad675945585808b4831d7bc3ff4def08e4b7a9de576d26586cec64b61161ae10b594f09e26a7e902ecbd0600691
+[test] cipher is a success
+[test] expected output decryption is 4c616469657320616e642047656e746c656d656e206f662074686520636c617373206f66202739393a204966204920636f756c64206f6666657220796f75206f6e6c79206f6e652074697020666f7220746865206675747572652c2073756e73637265656e20776f756c642062652069742e
+[test] computed output decryption is 4c616469657320616e642047656e746c656d656e206f662074686520636c617373206f66202739393a204966204920636f756c64206f6666657220796f75206f6e6c79206f6e652074697020666f7220746865206675747572652c2073756e73637265656e20776f756c642062652069742e
+[test] decryption is a success
+test_aes_gcm_0()
+[test] expected output cipher is 58e2fccefa7e3061367f1d57a4e7455a
+[test] computed output cipher is 58e2fccefa7e3061367f1d57a4e7455a
+[test] cipher is a success
+[test] expected output decryption is 
+[test] computed output decryption is 
+[test] decryption is a success
+test_aes_gcm_1()
+[test] expected output cipher is 530f8afbc74536b9a963b4f1c4cb738b
+[test] computed output cipher is 530f8afbc74536b9a963b4f1c4cb738b
+[test] cipher is a success
+[test] expected output decryption is 
+[test] computed output decryption is 
+[test] decryption is a success
+test_aes_gcm_2()
+[test] expected output cipher is cea7403d4d606b6e074ec5d3baf39d18d0d1c8a799996bf0265b98b5d48ab919
+[test] computed output cipher is cea7403d4d606b6e074ec5d3baf39d18d0d1c8a799996bf0265b98b5d48ab919
+[test] cipher is a success
+[test] expected output decryption is 00000000000000000000000000000000
+[test] computed output decryption is 00000000000000000000000000000000
+[test] decryption is a success
+test_aes_gcm_3()
+[test] expected output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f662898015adb094dac5d93471bdec1a502270e3cc6c
+[test] computed output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f662898015adb094dac5d93471bdec1a502270e3cc6c
+[test] cipher is a success
+[test] expected output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b391aafd255
+[test] computed output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b391aafd255
+[test] decryption is a success
+test_aes_gcm_4()
+[test] expected output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f66276fc6ece0f4e1768cddf8853bb2d551b
+[test] computed output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f66276fc6ece0f4e1768cddf8853bb2d551b
+[test] cipher is a success
+[test] expected output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39
+[test] computed output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39
+[test] decryption is a success
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+./../secure_api/out/runtime_switch/quicprovider-test.exe
+==== coverage ====
+SHA256('') =
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+SHA384('') = 
+38b060a751ac96384cd9327eb1b1e36a21fdb71114be07434c0cc7bf63f6e1da
+274edebfe76f65fbd51ad2f14898b95b
+
+SHA512('') = 
+cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce
+47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+
+HMAC-SHA256('Jefe', 'what do ya want for nothing?') = 
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+HMAC-SHA384('Jefe', 'what do ya want for nothing?') = 
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e
+8e2240ca5e69e2c78b3239ecfab21649
+
+HMAC-SHA512('Jefe', 'what do ya want for nothing?') = 
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea250554
+9758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+prk = HKDF-EXTRACT-SHA256('0x000102030405060708090a0b0c', '0x0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b')
+077709362c2e32df0ddc3f0dc47bba6390b6c73bb50f9c3122ec844ad7c2b3e5
+077709362c2e32df0ddc3f0dc47bba6390b6c73bb50f9c3122ec844ad7c2b3e5
+
+okm = HKDF-EXPAND-SHA256(prk, '0xf0f1f2f3f4f5f6f7f8f9', 42)
+3cb25f25faacd57a90434f64d0362f2a2d2d0a90cf1a5a4c5db02d56ecc4c5bf
+34007208d5b887185865
+
+AES-128-GCM encrypt test:
+5936f46d6c7eb7008dbbfb0d40b491fce5328aedcbc0c5272457d347363fd36d
+f238bd17971e982f4449350d
+DECRYPT SUCCES: 
+7768617420646f2079612077616e7420666f72206e6f7468696e673f
+
+CHACHA20-POLY1305 encrypt test:
+a62fe99f3d6001a4f4214a986f04b1f42ea1e5dcea3236ecf35adb5d8cc57db2
+df5e18b278c8c904fcddf440
+DECRYPT SUCCES: 
+7768617420646f2079612077616e7420666f72206e6f7468696e673f
+==== PASS:  coverage ====
+
+
+==== test_crypto(TLS_hash_SHA256,TLS_aead_AES_128_GCM) ====
+PASS
+==== test_crypto(TLS_hash_SHA384,TLS_aead_AES_128_GCM) ====
+PASS
+==== test_crypto(TLS_hash_SHA512,TLS_aead_AES_128_GCM) ====
+PASS
+==== test_crypto(TLS_hash_SHA256,TLS_aead_AES_256_GCM) ====
+PASS
+==== test_crypto(TLS_hash_SHA384,TLS_aead_AES_256_GCM) ====
+PASS
+==== test_crypto(TLS_hash_SHA512,TLS_aead_AES_256_GCM) ====
+PASS
+==== test_crypto(TLS_hash_SHA256,TLS_aead_CHACHA20_POLY1305) ====
+PASS
+==== test_crypto(TLS_hash_SHA384,TLS_aead_CHACHA20_POLY1305) ====
+PASS
+==== test_crypto(TLS_hash_SHA512,TLS_aead_CHACHA20_POLY1305) ====
+PASS
+==== test_handshake_secrets() ====
+==== PASS: test_handshake_secrets ==== 
+==== ALL TESTS PASS ====
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+OCAMLPATH="C:/build/agent1/_work/2/s/fstar/bin" ocamlfind opt -package fstarlib,zarith -g -I C:/build/agent1/_work/2/s/fstar/ulib/ml -c LowCProvider/HaclProvider.ml -I LowCProvider -I ../secure_api/out/runtime_switch -I ../secure_api/out/runtime_switch/extracted -I C:/build/agent1/_work/2/s/mlcrypto -o LowCProvider/HaclProvider.cmx
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+OCAMLPATH="C:/build/agent1/_work/2/s/fstar/bin" ocamlfind opt -package fstarlib,zarith -g -I C:/build/agent1/_work/2/s/fstar/ulib/ml -c LowCProvider/LowCProvider.ml -I LowCProvider -I ../secure_api/out/runtime_switch -I ../secure_api/out/runtime_switch/extracted -I C:/build/agent1/_work/2/s/mlcrypto -o LowCProvider/LowCProvider.cmx
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+OCAMLPATH="C:/build/agent1/_work/2/s/fstar/bin" ocamlfind opt -package fstarlib,zarith -g -I C:/build/agent1/_work/2/s/fstar/ulib/ml -c LowCProvider/Tests.ml -I LowCProvider -I ../secure_api/out/runtime_switch -I ../secure_api/out/runtime_switch/extracted -I C:/build/agent1/_work/2/s/mlcrypto -o LowCProvider/Tests.cmx
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+Unknown option -ppx
+OCAMLPATH="C:/build/agent1/_work/2/s/fstar/bin" ocamlfind mklib -package fstarlib,zarith -g -I C:/build/agent1/_work/2/s/fstar/ulib/ml -I ../secure_api/out/runtime_switch/extracted ../secure_api/out/runtime_switch/uint128/uint128_wrapper.o LowCProvider/LowCProvider.cmx LowCProvider/HaclProvider.cmx LowCProvider/lowc_stub.o ../secure_api/out/runtime_switch/crypto/Crypto_AEAD_Main_Crypto_Indexing.o ../secure_api/out/runtime_switch/crypto/Crypto_HKDF_Crypto_HMAC.o ../secure_api/out/runtime_switch/crypto/Crypto_Symmetric_Bytes.o ../code/curve25519/x25519-c/Curve25519.o ../code/curve25519/x25519-c/FStar.o vale/asm/sha256_main_i.o vale/asm/sha256-x86_64.o vale/asm/Vale_Hash_SHA2_256.o vale/asm/vale_aes_glue.o vale/asm/aes-x86_64.o -o ../secure_api/out/runtime_switch/LowC
+don't know what to do with C:\cygwin64\home\everbld\.opam\4.05.0+mingw64c\lib\ppx_deriving\.\ppx_deriving.exe
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+Usage: ocamlc <options> <files>
+Options are:
+-a  Build a library
+-absname  Show absolute filenames in error messages
+-annot  Save information in <filename>.annot
+-bin-annot  Save typedtree in <filename>.cmt
+-c  Compile only (do not link)
+-cc <command>  Use <command> as the C compiler and linker
+-cclib <opt>  Pass option <opt> to the C linker
+-ccopt <opt>  Pass option <opt> to the C compiler and linker
+-color {auto|always|never}  Enable or disable colors in compiler messages
+The following settings are supported:
+auto    use heuristics to enable colors only if supported
+always  enable colors
+never   disable colors
+The default setting is 'auto', and the current heuristic
+checks that the TERM environment variable exists and is
+not empty or "dumb", and that isatty(stderr) holds.
+-compat-32  Check that generated bytecode can run on 32-bit platforms
+-config  Print configuration values and exit
+-custom  Link in custom mode
+-dllib <lib>  Use the dynamically-loaded library <lib>
+-dllpath <dir>  Add <dir> to the run-time search path for shared libraries
+-dtypes  (deprecated) same as -annot
+-for-pack <ident>  Generate code that can later be `packed' with
+ocamlc -pack -o <ident>.cmo
+-g  Save debugging information
+-i  Print inferred interface
+-I <dir>  Add <dir> to the list of include directories
+-impl <file>  Compile <file> as a .ml file
+-intf <file>  Compile <file> as a .mli file
+-intf-suffix <string>  Suffix for interface files (default: .mli)
+-intf_suffix <string>  (deprecated) same as -intf-suffix
+-keep-docs  Keep documentation strings in .cmi files
+-no-keep-docs  Do not keep documentation strings in .cmi files (default)
+-keep-locs  Keep locations in .cmi files
+-no-keep-locs  Do not keep locations in .cmi files (default)
+-labels  Use commuting label mode
+-linkall  Link all modules, even unused ones
+-make-runtime  Build a runtime system with given C objects and libraries
+-make_runtime  (deprecated) same as -make-runtime
+-modern  (deprecated) same as -labels
+-alias-deps  Do record dependencies for module aliases
+-no-alias-deps  Do not record dependencies for module aliases
+-app-funct  Activate applicative functors
+-no-app-funct  Deactivate applicative functors
+-no-check-prims  Do not check runtime for primitives
+-noassert  Do not compile assertion checks
+-noautolink  Do not automatically link C libraries specified in .cma files
+-nolabels  Ignore non-optional labels in types
+-nostdlib  Do not add default directory to the list of include directories
+-o <file>  Set output file name to <file>
+-opaque  Does not generate cross-module optimization information
+(reduces necessary recompilation on module change)
+-open <module>  Opens the module <module> before typing
+-output-obj  Output an object file instead of an executable
+-output-complete-obj  Output an object file, including runtime, instead of an executable
+-pack  Package the given .cmo files into one .cmo
+-pp <command>  Pipe sources through preprocessor <command>
+-ppx <command>  Pipe abstract syntax trees through preprocessor <command>
+-plugin <plugin>  Load dynamic plugin <plugin>
+-principal  Check principality of type inference
+-no-principal  Do not check principality of type inference (default)
+-rectypes  Allow arbitrary recursive types
+-no-rectypes  Do not allow arbitrary recursive types (default)
+-runtime-variant <str>  Use the <str> variant of the run-time system
+-safe-string  Make strings immutable
+-short-paths  Shorten paths in types
+-strict-sequence  Left-hand part of a sequence must have type unit
+-no-strict-sequence  Left-hand part of a sequence need not have type unit (default)
+-strict-formats  Reject invalid formats accepted by legacy implementations
+(Warning: Invalid formats may behave differently from
+previous OCaml versions, and will become always-rejected
+in future OCaml versions. You should always use this flag
+to detect invalid formats so you can fix them.)
+-no-strict-formats  Accept invalid formats accepted by legacy implementations (default)
+(Warning: Invalid formats may behave differently from
+previous OCaml versions, and will become always-rejected
+in future OCaml versions. You should never use this flag
+and instead fix invalid formats.)
+-thread  Generate code that supports the system threads library
+-unboxed-types  unannotated unboxable types will be unboxed
+-no-unboxed-types  unannotated unboxable types will not be unboxed (default)
+-unsafe  Do not compile bounds checking on array and string access
+-unsafe-string  Make strings mutable (default)
+-use-runtime <file>  Generate bytecode for the given runtime system
+-use_runtime <file>  (deprecated) same as -use-runtime
+-v  Print compiler version and location of standard library and exit
+-verbose  Print calls to external commands
+-version  Print version and exit
+--version  Print version and exit
+-vmthread  Generate code that supports the threads library with VM-level
+scheduling
+-vnum  Print version number and exit
+-w <list>  Enable or disable warnings according to <list>:
++<spec>   enable warnings in <spec>
+-<spec>   disable warnings in <spec>
+@<spec>   enable warnings in <spec> and treat them as errors
+<spec> can be:
+<num>             a single warning number
+<num1>..<num2>    a range of consecutive warning numbers
+<letter>          a predefined set
+default setting is "+a-4-6-7-9-27-29-32..39-41..42-44-45-48-50-60"
+-warn-error <list>  Enable or disable error status for warnings according
+to <list>.  See option -w for the syntax of <list>.
+Default setting is "-a+31"
+-warn-help  Show description of warning numbers
+-where  Print location of standard library and exit
+- <file>  Treat <file> as a file name (even if it starts with `-')
+-nopervasives  (undocumented)
+-use-prims <file>  (undocumented)
+-dsource  (undocumented)
+-dparsetree  (undocumented)
+-dtypedtree  (undocumented)
+-drawlambda  (undocumented)
+-dlambda  (undocumented)
+-dinstr  (undocumented)
+-dtimings  Print timings
+-args <file> Read additional newline-terminated command line arguments
+from <file>
+-args0 <file> Read additional null character terminated command line arguments
+from <file>
+-help  Display this list of options
+--help  Display this list of options
+make[2]: *** [Makefile.extract:297: ../secure_api/out/runtime_switch/LowC.cmxa] Error 2
+make[1]: *** [Makefile:17: runtime_switch] Error 2
+make: *** [Makefile:5: all] Error 2
