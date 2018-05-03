@@ -1,0 +1,1458 @@
+This is /home/everbld/everest-ci/ci
+Working directory: /cygdrive/c/build/agent2/_work/12/s
+About to run: ./everest --yes -windows -j 16 test
+BUILD_SOURCEBRANCHNAME: quic2c
+BUILD_DEFINITIONNAME: Everest-CI-Windows-fnouint128
+BUILD_BUILDID: 20211
+DEFINITIONNAME:
+Z3 is /home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin/z3
+# Switching to the everest directory ... now in /cygdrive/c/build/agent2/_work/12/s
+
+exported FSTAR_HOME=C:/build/agent2/_work/12/s/FStar
+exported OPENSSL_HOME=C:/build/agent2/_work/12/s/MLCrypto/openssl
+exported KREMLIN_HOME=C:/build/agent2/_work/12/s/kremlin
+exported VALE_HOME=C:/build/agent2/_work/12/s/vale
+exported HACL_HOME=C:/build/agent2/_work/12/s/hacl-star
+exported MLCRYPTO_HOME=C:/build/agent2/_work/12/s/MLCrypto
+exported PATH=/cygdrive/c/build/agent2/_work/12/s/MLCrypto/openssl:/cygdrive/c/build/agent2/_work/12/s/FStar/bin:/cygdrive/c/build/agent2/_work/12/s/kremlin:/home/everbld/.opam/4.05.0+mingw64c/bin:/cygdrive/c/Windows/Microsoft.NET/Framework64/v4.0.30319/:/home/everbld/everest/nuget/bin:/home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin:/cygdrive/c/PROGRA~2/MICROS~1.0/VC/bin/amd64:/cygdrive/c/PROGRA~2/MICROS~1.0/VC/bin:/cygdrive/c/PROGRA~2/MICROS~4/F#/4.0/FRAMEW~1/v4.0/:/usr/x86_64-w64-mingw32/sys-root/mingw/bin:/usr/local/bin:/usr/bin:/cygdrive/c/build/agent2/externals/git/cmd:/cygdrive/c/Python36/Scripts:/cygdrive/c/Python36:/cygdrive/c/Docker/Resources/bin:/cygdrive/c/windows/system32:/cygdrive/c/windows:/cygdrive/c/windows/System32/Wbem:/cygdrive/c/windows/System32/WindowsPowerShell/v1.0:/cygdrive/c/Users/everbld/AppData/Local/Microsoft/WindowsApps:/cygdrive/c/Program Files/Docker/Docker/resources/bin:%USERPROFILE%/.dnx/bin:/cygdrive/c/Program Files/Microsoft DNX/Dnvm:/cygdrive/c/Program Files/Microsoft SQL Server/120/Tools/Binn:/cygdrive/c/Program Files/Microsoft SQL Server/130/Tools/Binn:/cygdrive/c/Program Files/dotnet:/cygdrive/c/Program Files/nodejs:/usr/bin:/cygdrive/c/Program Files/Git/mingw64/bin:/cygdrive/c/Users/everbld/AppData/Roaming/npm:/cygdrive/c/build/agent2/bin:/cygdrive/c/build/agent2/bin
++ hacl-star/secure_api/out/vale_aes_concrete_id/krml-test.exe
+================================================================================
+Running tests (commands shown below)
+test()
+[test] expected output cipher is d31a8d34648e60db7b86afbc53ef7ec2a4aded51296e08fea9e2b5a736ee62d63dbea45e8ca9671282fafb69da92728b1a71de0a9e060b2905d6a5b67ecd3b3692ddbd7f2d778b8c9803aee328091b58fab324e4fad675945585808b4831d7bc3ff4def08e4b7a9de576d26586cec64b61161ae10b594f09e26a7e902ecbd0600691
++ hacl-star/secure_api/out/hacl_aes_concrete_id/krml-test.exe
+[test] computed output cipher is d31a8d34648e60db7b86afbc53ef7ec2a4aded51296e08fea9e2b5a736ee62d63dbea45e8ca9671282fafb69da92728b1a71de0a9e060b2905d6a5b67ecd3b3692ddbd7f2d778b8c9803aee328091b58fab324e4fad675945585808b4831d7bc3ff4def08e4b7a9de576d26586cec64b61161ae10b594f09e26a7e902ecbd0600691
+[test] cipher is a success
+[test] expected output decryption is 4c616469657320616e642047656e746c656d656e206f662074686520636c617373206f66202739393a204966204920636f756c64206f6666657220796f75206f6e6c79206f6e652074697020666f7220746865206675747572652c2073756e73637265656e20776f756c642062652069742e
+[test] computed output decryption is 4c616469657320616e642047656e746c656d656e206f662074686520636c617373206f66202739393a204966204920636f756c64206f6666657220796f75206f6e6c79206f6e652074697020666f7220746865206675747572652c2073756e73637265656e20776f756c642062652069742e
+[test] decryption is a success
+test_aes_gcm_0()
+[test] expected output cipher is 58e2fccefa7e3061367f1d57a4e7455a
+[test] computed output cipher is 58e2fccefa7e3061367f1d57a4e7455a
+[test] cipher is a success
+[test] expected output decryption is 
+[test] computed output decryption is 
+[test] decryption is a success
++ make -C hacl-star/secure_api -f Makefile.extract test
+test_aes_gcm_1()
+[test] expected output cipher is 530f8afbc74536b9a963b4f1c4cb738b
+[test] computed output cipher is 530f8afbc74536b9a963b4f1c4cb738b
+[test] cipher is a success
+[test] expected output decryption is 
+[test] computed output decryption is 
+[test] decryption is a success
+test_aes_gcm_2()
+[test] expected output cipher is cea7403d4d606b6e074ec5d3baf39d18d0d1c8a799996bf0265b98b5d48ab919
+[test] computed output cipher is cea7403d4d606b6e074ec5d3baf39d18d0d1c8a799996bf0265b98b5d48ab919
+[test] cipher is a success
+[test] expected output decryption is 00000000000000000000000000000000
+[test] computed output decryption is 00000000000000000000000000000000
+[test] decryption is a success
+test_aes_gcm_3()
+[test] expected output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f662898015adb094dac5d93471bdec1a502270e3cc6c
+[test] computed output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f662898015adb094dac5d93471bdec1a502270e3cc6c
+[test] cipher is a success
+[test] expected output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b391aafd255
+[test] computed output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b391aafd255
+[test] decryption is a success
+test_aes_gcm_4()
+[test] expected output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f66276fc6ece0f4e1768cddf8853bb2d551b
+[test] computed output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f66276fc6ece0f4e1768cddf8853bb2d551b
+[test] cipher is a success
+[test] expected output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39
+[test] computed output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39
+[test] decryption is a success
+test()
+[test] expected output cipher is d31a8d34648e60db7b86afbc53ef7ec2a4aded51296e08fea9e2b5a736ee62d63dbea45e8ca9671282fafb69da92728b1a71de0a9e060b2905d6a5b67ecd3b3692ddbd7f2d778b8c9803aee328091b58fab324e4fad675945585808b4831d7bc3ff4def08e4b7a9de576d26586cec64b61161ae10b594f09e26a7e902ecbd0600691
+[test] computed output cipher is d31a8d34648e60db7b86afbc53ef7ec2a4aded51296e08fea9e2b5a736ee62d63dbea45e8ca9671282fafb69da92728b1a71de0a9e060b2905d6a5b67ecd3b3692ddbd7f2d778b8c9803aee328091b58fab324e4fad675945585808b4831d7bc3ff4def08e4b7a9de576d26586cec64b61161ae10b594f09e26a7e902ecbd0600691
+[test] cipher is a success
+[test] expected output decryption is 4c616469657320616e642047656e746c656d656e206f662074686520636c617373206f66202739393a204966204920636f756c64206f6666657220796f75206f6e6c79206f6e652074697020666f7220746865206675747572652c2073756e73637265656e20776f756c642062652069742e
+[test] computed output decryption is 4c616469657320616e642047656e746c656d656e206f662074686520636c617373206f66202739393a204966204920636f756c64206f6666657220796f75206f6e6c79206f6e652074697020666f7220746865206675747572652c2073756e73637265656e20776f756c642062652069742e
+[test] decryption is a success
+test_aes_gcm_0()
+[test] expected output cipher is 58e2fccefa7e3061367f1d57a4e7455a
+[test] computed output cipher is 58e2fccefa7e3061367f1d57a4e7455a
+[test] cipher is a success
+[test] expected output decryption is 
+[test] computed output decryption is 
+[test] decryption is a success
+test_aes_gcm_1()
+[test] expected output cipher is 530f8afbc74536b9a963b4f1c4cb738b
+[test] computed output cipher is 530f8afbc74536b9a963b4f1c4cb738b
+[test] cipher is a success
+[test] expected output decryption is 
+[test] computed output decryption is 
+[test] decryption is a success
+test_aes_gcm_2()
+[test] expected output cipher is cea7403d4d606b6e074ec5d3baf39d18d0d1c8a799996bf0265b98b5d48ab919
+[test] computed output cipher is cea7403d4d606b6e074ec5d3baf39d18d0d1c8a799996bf0265b98b5d48ab919
+[test] cipher is a success
+[test] expected output decryption is 00000000000000000000000000000000
+[test] computed output decryption is 00000000000000000000000000000000
+[test] decryption is a success
+test_aes_gcm_3()
+[test] expected output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f662898015adb094dac5d93471bdec1a502270e3cc6c
+[test] computed output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f662898015adb094dac5d93471bdec1a502270e3cc6c
+[test] cipher is a success
+[test] expected output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b391aafd255
+[test] computed output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b391aafd255
+[test] decryption is a success
+test_aes_gcm_4()
+[test] expected output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f66276fc6ece0f4e1768cddf8853bb2d551b
+[test] computed output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f66276fc6ece0f4e1768cddf8853bb2d551b
+[test] cipher is a success
+[test] expected output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39
+[test] computed output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39
+[test] decryption is a success
+make: Entering directory '/cygdrive/c/build/agent2/_work/12/s/hacl-star/secure_api'
+./../secure_api/out/runtime_switch/krml-test.exe
+test()
+[test] expected output cipher is d31a8d34648e60db7b86afbc53ef7ec2a4aded51296e08fea9e2b5a736ee62d63dbea45e8ca9671282fafb69da92728b1a71de0a9e060b2905d6a5b67ecd3b3692ddbd7f2d778b8c9803aee328091b58fab324e4fad675945585808b4831d7bc3ff4def08e4b7a9de576d26586cec64b61161ae10b594f09e26a7e902ecbd0600691
+[test] computed output cipher is d31a8d34648e60db7b86afbc53ef7ec2a4aded51296e08fea9e2b5a736ee62d63dbea45e8ca9671282fafb69da92728b1a71de0a9e060b2905d6a5b67ecd3b3692ddbd7f2d778b8c9803aee328091b58fab324e4fad675945585808b4831d7bc3ff4def08e4b7a9de576d26586cec64b61161ae10b594f09e26a7e902ecbd0600691
+[test] cipher is a success
+[test] expected output decryption is 4c616469657320616e642047656e746c656d656e206f662074686520636c617373206f66202739393a204966204920636f756c64206f6666657220796f75206f6e6c79206f6e652074697020666f7220746865206675747572652c2073756e73637265656e20776f756c642062652069742e
+[test] computed output decryption is 4c616469657320616e642047656e746c656d656e206f662074686520636c617373206f66202739393a204966204920636f756c64206f6666657220796f75206f6e6c79206f6e652074697020666f7220746865206675747572652c2073756e73637265656e20776f756c642062652069742e
+[test] decryption is a success
+test_aes_gcm_0()
+[test] expected output cipher is 58e2fccefa7e3061367f1d57a4e7455a
+[test] computed output cipher is 58e2fccefa7e3061367f1d57a4e7455a
+[test] cipher is a success
+[test] expected output decryption is 
+[test] computed output decryption is 
+[test] decryption is a success
+test_aes_gcm_1()
+[test] expected output cipher is 530f8afbc74536b9a963b4f1c4cb738b
+[test] computed output cipher is 530f8afbc74536b9a963b4f1c4cb738b
+[test] cipher is a success
+[test] expected output decryption is 
+[test] computed output decryption is 
+[test] decryption is a success
+test_aes_gcm_2()
+[test] expected output cipher is cea7403d4d606b6e074ec5d3baf39d18d0d1c8a799996bf0265b98b5d48ab919
+[test] computed output cipher is cea7403d4d606b6e074ec5d3baf39d18d0d1c8a799996bf0265b98b5d48ab919
+[test] cipher is a success
+[test] expected output decryption is 00000000000000000000000000000000
+[test] computed output decryption is 00000000000000000000000000000000
+[test] decryption is a success
+test_aes_gcm_3()
+[test] expected output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f662898015adb094dac5d93471bdec1a502270e3cc6c
+[test] computed output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f662898015adb094dac5d93471bdec1a502270e3cc6c
+[test] cipher is a success
+[test] expected output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b391aafd255
+[test] computed output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b391aafd255
+[test] decryption is a success
+test_aes_gcm_4()
+[test] expected output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f66276fc6ece0f4e1768cddf8853bb2d551b
+[test] computed output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f66276fc6ece0f4e1768cddf8853bb2d551b
+[test] cipher is a success
+[test] expected output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39
+[test] computed output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39
+[test] decryption is a success
+make -C C:/build/agent2/_work/12/s/MLCrypto
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/12/s/MLCrypto'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/12/s/MLCrypto'
+OCAMLPATH="C:/build/agent2/_work/12/s/FStar/bin" ocamlfind opt -package fstarlib,zarith -g -I C:/build/agent2/_work/12/s/FStar/ulib/ml -c LowCProvider/LowCProvider.ml -I LowCProvider -I ../secure_api/out/runtime_switch -I ../secure_api/out/runtime_switch/extracted -I C:/build/agent2/_work/12/s/MLCrypto -o LowCProvider/LowCProvider.cmx
+OCAMLPATH="C:/build/agent2/_work/12/s/FStar/bin" ocamlfind mklib -g -I C:/build/agent2/_work/12/s/FStar/ulib/ml -I ../secure_api/out/runtime_switch/extracted ../secure_api/out/runtime_switch/uint128/uint128_wrapper.o LowCProvider/LowCProvider.cmx LowCProvider/HaclProvider.cmx LowCProvider/lowc_stub.o ../secure_api/out/runtime_switch/crypto/Crypto_AEAD_Main_Crypto_Indexing.o ../secure_api/out/runtime_switch/crypto/Crypto_HKDF_Crypto_HMAC.o ../secure_api/out/runtime_switch/crypto/Crypto_Symmetric_Bytes.o ../code/curve25519/x25519-c/Curve25519.o ../code/curve25519/x25519-c/FStar.o vale/asm/sha256_main_i.o vale/asm/sha256-x86_64.o vale/asm/Vale_Hash_SHA2_256.o vale/asm/vale_aes_glue.o vale/asm/aes-x86_64.o -o ../secure_api/out/runtime_switch/LowC
+OCAMLPATH="C:/build/agent2/_work/12/s/FStar/bin" ocamlfind opt -package fstarlib,zarith -g -I C:/build/agent2/_work/12/s/FStar/ulib/ml -c LowCProvider/Tests.ml -I LowCProvider -I ../secure_api/out/runtime_switch -I ../secure_api/out/runtime_switch/extracted -I C:/build/agent2/_work/12/s/MLCrypto -o LowCProvider/Tests.cmx
+OCAMLPATH="C:/build/agent2/_work/12/s/FStar/bin" ocamlfind opt -package fstarlib,zarith -g -I C:/build/agent2/_work/12/s/FStar/ulib/ml -I ../secure_api/out/runtime_switch/extracted -I LowCProvider \
+-ccopt -L../secure_api/out/runtime_switch -linkpkg ../secure_api/out/runtime_switch/copied/kremstr.o C:/build/agent2/_work/12/s/MLCrypto/CryptoTypes.cmx ../secure_api/out/runtime_switch/LowC.cmxa LowCProvider/Tests.cmx -o ../secure_api/out/runtime_switch/LowCTests.exe
+./../secure_api/out/runtime_switch/LowCTests.exe
+Tests started
+Test 1 OK
+
+Test 2 OK
+
+Test 3 OK
+
+Test 4 OK
+
+Test 5 OK
+
+Test 6 OK
+
+Output cipher:	ed3dc05f9d4877f5db78c69c3a8a3d8e8602646a0b2febe4fca07a426a9ace4163cb26eddbb5b0d5f56d7038512ac73d667397d129c3044e0eb8052e
+Output tag:	e6f0c7f7b8920ba02a3942df2b8b2a04
+cipher:		AES-128-GCM
+key:		"feffe9928665731c6d6a8f9467308308"
+iv:		"cafebabefacedbad"
+aad:		"feedfacedeadbeeffeedfacedeadbeefabaddad2"
+tag:		"3612d2e79e3b0785561be14aaca2fccb"
+plaintext:	"d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39"
+ciphertext:	"61353b4c2806934a777ff51fa22a4755699b2a714fcdc6f83766e5f97b6c742373806900e49f24b22b097544d4896b424989b5e1ebac0f07c23f4598"
+
+Test 7 failed, but this is expected because |IV| <> 12 bytes and we don't do IV expansion.
++ cd mitls-fstar/src/tls
+Please disregard.
++ make -j 16 test
+
+Output cipher:	8076eba01a51d7702d398c6dc3adaaadfe061c23a7ffc3c4623ea2be7a08d982b8f331d21ac6b8db541df43510561a3fff90b942215b7fb6fbcea43d
+Output tag:	1606863da7ad74443b3a89fd2489363d
+cipher:		AES-128-GCM
+key:		"feffe9928665731c6d6a8f9467308308"
+iv:		"9313225df88406e555909c5aff5269aa6a7a9538534f7da1e4c303d2a318a728c3c0c95156809539fcf0e2429a6b525416aedbf5a0de6a57a637b39b"
+aad:		"feedfacedeadbeeffeedfacedeadbeefabaddad2"
+tag:		"619cc5aefffe0bfa462af43c1699d050"
+plaintext:	"d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39"
+ciphertext:	"8ce24998625615b603a033aca13fb894be9112a5c3a211a8ba262a3cca7e2ca701e4a9a4fba43c90ccdcb281d48c7c6fd62875d2aca417034c34aee5"
+
+Test 8 failed, but this is expected because |IV| <> 12 bytes and we don't do IV expansion.
+Please disregard.
+
+Test 9 OK
+
+Test 10 OK
+
+Test 11 OK
+
+Test 12 OK
+
+Output cipher:	677a374b4dd797f8ea0252a721fa83784f68c4877cf4e60f8c1f56972e9c20f789efb32096dd6336c6e5ef833b041251fdf04ce41fbcf2fea0d1e83c
+Output tag:	91b8ee617f7c50dab5bc75abff3bc1c3
+cipher:		AES-256-GCM
+key:		"feffe9928665731c6d6a8f9467308308feffe9928665731c6d6a8f9467308308"
+iv:		"cafebabefacedbad"
+aad:		"feedfacedeadbeeffeedfacedeadbeefabaddad2"
+tag:		"3a337dbf46a792c45e454913fe2ea8f2"
+plaintext:	"d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39"
+ciphertext:	"c3762df1ca787d32ae47c13bf19844cbaf1ae14d0b976afac52ff7d79bba9de0feb582d33934a4f0954cc2363bc73f7862ac430e64abe499f47c9b1f"
+
+Test 13 failed, but this is expected because |IV| <> 12 bytes and we don't do IV expansion.
+Please disregard.
+
+Output cipher:	cf3b9ab7a70a2ac55a7bcf74cda369c5b32e7870a937cb4d7679ef877de6403b7126c8ca2d6c620755e8ff330af0e7fa003585282b2d7a3d8f785bcc
+Output tag:	881390e147e8fc6b2923305b6413a594
+cipher:		AES-256-GCM
+key:		"feffe9928665731c6d6a8f9467308308feffe9928665731c6d6a8f9467308308"
+iv:		"9313225df88406e555909c5aff5269aa6a7a9538534f7da1e4c303d2a318a728c3c0c95156809539fcf0e2429a6b525416aedbf5a0de6a57a637b39b"
+aad:		"feedfacedeadbeeffeedfacedeadbeefabaddad2"
+tag:		"a44a8266ee1c8eb0c8b5d4cf5ae9f19a"
+plaintext:	"d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39"
+ciphertext:	"5a8def2f0c9e53f1f75d7853659e2a20eeb2b22aafde6419a058ab4f6f746bf40fc0c3b780f244452da3ebf1c5d82cdea2418997200ef82e44ae7e3f"
+
+Test 14 failed, but this is expected because |IV| <> 12 bytes and we don't do IV expansion.
+Please disregard.
+
+Test 15 OK
+
+Test 16 OK
+
+Test 17 OK
+
+Test 18 OK
+
+Output cipher:	eff01b40f151144abb70955cedcbe564afd7d338ce2c3eb2ac13b1228ef785edc5bf4b7501cdc522a855c4e5843a3a0af67e4c8285f641951d9dcb727fb5d53bffe8165999884aa1626b20328a233f189b48820f19d2cf1551f21d0ae749227f1d47344d687533456994f11584dfd15d4791ceedf45f3774821bcd340d4b18ec8ed70e7ce40859ec159363caab3eaa87261cbda3733c01bbd39f03f21d3c4f1b3af2cadd75c67fbe96929c20a13077991908a0d23adbcecd49ed2ed71dd8f659
+Output tag:	1f200ef9ef5218a0a69331c8304f873d
+cipher:		AES-128-GCM
+key:		"00000000000000000000000000000000"
+iv:		"ffffffff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+aad:		""
+tag:		"566f8ef683078bfdeeffa869d751a017"
+plaintext:	"000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+ciphertext:	"56b3373ca9ef6e4a2b64fe1e9a17b61425f10d47a75a5fce13efc6bc784af24f4141bdd48cf7c770887afd573cca5418a9aeffcd7c5ceddfc6a78397b9a85b499da558257267caab2ad0b23ca476a53cb17fb41c4b8b475cb4f3f7165094c229c9e8c4dc0a2a5ff1903e501511221376a1cdb8364c5061a20cae74bc4acd76ceb0abc9fd3217ef9f8c90be402ddf6d8697f4f880dff15bfb7a6b28241ec8fe183c2d59e3f9dfff653c7126f0acb9e64211f42bae12af462b1070bef1ab5e3606"
+
+Test 19 failed, but this is expected because |IV| <> 12 bytes and we don't do IV expansion.
+Please disregard.
+
+Output cipher:	eff01b40f151144abb70955cedcbe564afd7d338ce2c3eb2ac13b1228ef785edc5bf4b7501cdc522a855c4e5843a3a0af67e4c8285f641951d9dcb727fb5d53bffe8165999884aa1626b20328a233f189b48820f19d2cf1551f21d0ae749227f1d47344d687533456994f11584dfd15d4791ceedf45f3774821bcd340d4b18ec8ed70e7ce40859ec159363caab3eaa87261cbda3733c01bbd39f03f21d3c4f1b3af2cadd75c67fbe96929c20a13077991908a0d23adbcecd49ed2ed71dd8f65954f4ff316fe216dd9e29b1ea55824efb884af85d0e6743d586acfc3088f200284dcb744dcf6fe40745827d98067e32af9b279d8f8354d7e47b8bb6736de3b66479f0d1ee5cb7796d966955cc6dea4ae5e4205b07040a0d9ec6594c2c6d2350a4
+Output tag:	99b156f6881899ee456476976e9f5414
+cipher:		AES-128-GCM
+key:		"00000000000000000000000000000000"
+iv:		"ffffffff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+aad:		""
+tag:		"8b307f6b33286d0ab026a9ed3fe1e85f"
+plaintext:	"000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+ciphertext:	"56b3373ca9ef6e4a2b64fe1e9a17b61425f10d47a75a5fce13efc6bc784af24f4141bdd48cf7c770887afd573cca5418a9aeffcd7c5ceddfc6a78397b9a85b499da558257267caab2ad0b23ca476a53cb17fb41c4b8b475cb4f3f7165094c229c9e8c4dc0a2a5ff1903e501511221376a1cdb8364c5061a20cae74bc4acd76ceb0abc9fd3217ef9f8c90be402ddf6d8697f4f880dff15bfb7a6b28241ec8fe183c2d59e3f9dfff653c7126f0acb9e64211f42bae12af462b1070bef1ab5e3606872ca10dee15b3249b1a1b958f23134c4bccb7d03200bce420a2f8eb66dcf3644d1423c1b5699003c13ecef4bf38a3b60eedc34033bac1902783dc6d89e2e774188a439c7ebcc0672dbda4ddcfb2794613b0be41315ef778708a70ee7d75165c"
+
+Test 20 failed, but this is expected because |IV| <> 12 bytes and we don't do IV expansion.
+Please disregard.
+
+Test 21 OK
+
+AEAD: 21/21 tests passed
+./../secure_api/out/runtime_switch/quicprovider-test.exe
+==== coverage ====
+SHA256('') =
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+SHA384('') = 
+38b060a751ac96384cd9327eb1b1e36a21fdb71114be07434c0cc7bf63f6e1da
+274edebfe76f65fbd51ad2f14898b95b
+
+SHA512('') = 
+cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce
+47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+
+HMAC-SHA256('Jefe', 'what do ya want for nothing?') = 
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+HMAC-SHA384('Jefe', 'what do ya want for nothing?') = 
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e
+8e2240ca5e69e2c78b3239ecfab21649
+
+HMAC-SHA512('Jefe', 'what do ya want for nothing?') = 
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea250554
+9758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+prk = HKDF-EXTRACT-SHA256('0x000102030405060708090a0b0c', '0x0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b')
+077709362c2e32df0ddc3f0dc47bba6390b6c73bb50f9c3122ec844ad7c2b3e5
+077709362c2e32df0ddc3f0dc47bba6390b6c73bb50f9c3122ec844ad7c2b3e5
+
+okm = HKDF-EXPAND-SHA256(prk, '0xf0f1f2f3f4f5f6f7f8f9', 42)
+3cb25f25faacd57a90434f64d0362f2a2d2d0a90cf1a5a4c5db02d56ecc4c5bf
+34007208d5b887185865
+
+AES-128-GCM encrypt test:
+5936f46d6c7eb7008dbbfb0d40b491fce5328aedcbc0c5272457d347363fd36d
+f238bd17971e982f4449350d
+DECRYPT SUCCES: 
+7768617420646f2079612077616e7420666f72206e6f7468696e673f
+
+CHACHA20-POLY1305 encrypt test:
+a62fe99f3d6001a4f4214a986f04b1f42ea1e5dcea3236ecf35adb5d8cc57db2
+df5e18b278c8c904fcddf440
+DECRYPT SUCCES: 
+7768617420646f2079612077616e7420666f72206e6f7468696e673f
+==== PASS:  coverage ====
+
+
+==== test_crypto(TLS_hash_SHA256,TLS_aead_AES_128_GCM) ====
+PASS
+==== test_crypto(TLS_hash_SHA384,TLS_aead_AES_128_GCM) ====
+PASS
+==== test_crypto(TLS_hash_SHA512,TLS_aead_AES_128_GCM) ====
+PASS
+==== test_crypto(TLS_hash_SHA256,TLS_aead_AES_256_GCM) ====
+PASS
+==== test_crypto(TLS_hash_SHA384,TLS_aead_AES_256_GCM) ====
+PASS
+==== test_crypto(TLS_hash_SHA512,TLS_aead_AES_256_GCM) ====
+PASS
+==== test_crypto(TLS_hash_SHA256,TLS_aead_CHACHA20_POLY1305) ====
+PASS
+==== test_crypto(TLS_hash_SHA384,TLS_aead_CHACHA20_POLY1305) ====
+PASS
+==== test_crypto(TLS_hash_SHA512,TLS_aead_CHACHA20_POLY1305) ====
+PASS
+==== test_handshake_secrets() ====
+==== PASS: test_handshake_secrets ==== 
+==== ALL TESTS PASS ====
+make: Leaving directory '/cygdrive/c/build/agent2/_work/12/s/hacl-star/secure_api'
+rm -f cache/OCaml/.depend cache/Kremlin/.depend cache/Model/.depend
+make -f Makefile.Kremlin test
+make -f Makefile.OCaml test
+make -C ../../apps/quicMinusNet test -k
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/apps/quicMinusNet'
+./quic.exe
+server create
+client create
+client call clen=8192 slen=   0
+client done clen= 175 slen=   0 status=would_block
+16030300aa010000a603035aeb7488772e4b79303308df33df04f2be461f3a64
+d4ed14f6a3f4bfd4e98bdd0000041303130101000079001a0009ffff00050a0b
+0c0d0e002b0003027f1c003300260024001d002020227df36a7f1c2b4a25f6c7
+bf6bb113578ff1ad842a76082ae9fab0b7e8e5120000000e000c0000096c6f63
+616c686f73740010000800060568712d303800170000000d0006000408040403
+000a00040002001d002d0003020001
+server call clen= 175 slen=8192
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+003d001a0009ffff00050a0b0c0d0e0000000e000c0000096c6f63616c686f73
+740010000800060568712d3038000d0006000408040403000a00040002001d
+Transport parameters offered:
+ffff00050a0b0c0d0e
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+======== TO BE SIGNED <0403>: (130 octets) ========
+2020202020202020202020202020202020202020202020202020202020202020
+2020202020202020202020202020202020202020202020202020202020202020
+544c5320312e332c207365727665722043657274696669636174655665726966
+7900c3a7c314fdff11e823b4c31ecbe33c5403fe37874de269c042b79e1c79ea
+6104
+===================================================
+sender done clen= 175 slen= 834 status=server_accept
+160303005a0200005603035aeb74885e85b1c9c1ec0ca2e7e6f33539bddf155c
+ac6274b9c774c20e21fa2a00130300002e002b00027f1c00330024001d002001
+16ee4ad24416953c0c7642e689de34a7f392b2aaf2e85b1b94e0c019e6273617
+030302dedad9152825499516a077801db7bf4d617fd68e3ffdd361f56d547344
+a129c49a13af598fb4024e9a584457e32a591f4fc156e6066e570eb11698e8e3
+e6c6bded2f649b407ef1ef0e981cb9e6a3dc2cbdc71aec793f4910106d34428a
+0e1d58c95eb65e754d0a25fb865281f85fe7f5f82d265f63271122a1cc90bf25
+9fb1d0f63de7abee32310da86a3fe70a880e2f80bfb1ec16d414f780e7cfc1ad
+4002f66cddf474d1b8e2dd92487fe6d43defcc01d571ac1a37f10ba0b6e99f3c
+569e2d6d58f15d504e0026883748fff7103f1c1c36d2a592065520b85af9a8fe
+c949e857433f65057950d05603edfaeb9ada1e7703b2e61b008e0a93107abe36
+62dbab2f30736f10463dbcec28e4483cb43bfadc384d8e53a25e83b818fbe607
+540889346a973f0b5b765b33f238ce6ffcf9d79dffa0f723209d2e7be6b63463
+b019f4ff17a5091201e9c3a8989aae82a378f7f726e762149f25629251699cad
+4582bb7169ec978b01cda6ad91181aa6403b79be7ab3df9744fc7f9a948a6e30
+8116f6e1c3f86a565e19e8bca6ba25dd5bb9a7d9393906b5deed1f169d39f701
+2643418e4eb24ae7e8dfdb9f5fd1853010367c7110a602bc9da019d8ffb61ba1
+78dc1d318009d9846af4921d6c8454e942b81e217a4b0eb604e93e49736c7cc5
+84329eb76e2667f5df5b9d8d79d5b75e86b9567db6cbd571a32b71e40a1c0e54
+394a170eadd56c86c6d70f6745e773944178a3f75b4425652ec302beb7f9d304
+e37d67a628569c85211fedd68f5d10746e1429ce98bc9c45b3016b87dfcfc4b8
+2c9c3cef5d0502547bf84ae93c2938f88ecfd62974c921e22236353a17269aa2
+18b3070b83d285c41cf18f7d7bb109985432979d6ab8eae30188dd65237011d8
+b86ea0a271683f2d69cf6ecf91c50192695df45300c830209893a27d541a6893
+6f60b808cb21adfa3b6e871ad211a4341bfa387a17adde0d00d38efd800f9b91
+00d5ad41c30822bf867188c7fc1f3f1ab590cda022f998cac964748b976bb2b2
+3376
+client call clen=8017 slen= 834
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+001b0010000800060568712d3038000a00040002001d001a0003000102
+Transport parameters offered:
+000102
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+WARNING: chain validation failed, ignoring.
+client done clen=  58 slen= 834 status=client_complete
+17030300356b9cbbd9b194fbbc3eca063cc6a97c77a7095d0edfdc50f40ba21a
+33b9e63fcb2954aa737b00948ce24090017af6880a54b3dd35e0
+server call clen=  58 slen=7358
+sender done clen=  58 slen=   0 status=server_complete
+=== Exporter secret ===
+4fd054461a15fbbef99849964ae4632548a7ff2fe5ca6558cca6d35adffae1d3
+=== QUIC 1-RTT secrets ===
+C: fc8c9a6b0b662b0f62bb7756880a32148a3321144ab03a290d16a193c155dbf9
+S: 2be741106ae40a0f73ca4523df921afd3decfa4688a8d7aab0bf23e0de04edc5
+=== AEAD client key test ===
+ba91176a32ae956594b9b7a118d926ac4df2f7e6ac8d58f5b7d6df
+=== Decrypt successful ===
+Ok
+./quic.exe 0rtt
+
+INITIAL ECDHE HANDSHAKE (NO EARLY SECRET)
+
+server create
+client create
+client returns would_block clen=175 slen=0
+ClientHello[ 175] ---->
+
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+003d001a0009ffff00050a0b0c0d0e0000000e000c0000096c6f63616c686f73
+740010000800060568712d3038000d0006000408040403000a00040002001d
+Transport parameters offered:
+ffff00050a0b0c0d0e
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+======== TO BE SIGNED <0403>: (130 octets) ========
+2020202020202020202020202020202020202020202020202020202020202020
+2020202020202020202020202020202020202020202020202020202020202020
+544c5320312e332c207365727665722043657274696669636174655665726966
+79001e42d32484a00ed417429a5b11e0cd9447ec5d5d6b21db3bb839016f5254
+2f22
+===================================================
+server returns server_accept clen=175 slen=833
+secret=53bcd2aa72526c5996d094991301414075eb671f1e006e75d2213ccc22ee13d2
+<---- ServerHello;(EncryptedExtensions; Certificate; CertVerify; Finished)[ 833]
+
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+001b0010000800060568712d3038000a00040002001d001a0003000102
+Transport parameters offered:
+000102
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+WARNING: chain validation failed, ignoring.
+client returns client_complete clen=58 slen=833
+secret=53bcd2aa72526c5996d094991301414075eb671f1e006e75d2213ccc22ee13d2
+(Finished) [  58] ---->
+
+server returns server_complete clen=58 slen=0
+server returns would_block clen=0 slen=135
+<---- {Ticket}[ 135]
+
+##### New session ticket received! #####
+Host: localhost
+Ticket:
+b8c7c0768c61a6a4a13be5122fdc758acaa017120087fa145e3cbdf048b6d174
+753a134bf21fb6b51250da563ab74ac2bdf4894a7e9410aed3e096c1615201ef
+9c3de826c1862eeed2c945ff
+########################################
+client returns clen=0 slen=135 status=would_block
+
+TICKET-BASED RESUMPTION
+
+server create
+client create
+client returns client_early_data clen=302 slen=0
+early secret=5f3c62684ab325819dda3024c79cbf1738b6cca76470eea60320b10a5c72479d
+ClientHello[ 302] ---->
+
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+003d001a0009ffff00050a0b0c0d0e0000000e000c0000096c6f63616c686f73
+740010000800060568712d3038000d0006000408040403000a00040002001d
+Transport parameters offered:
+ffff00050a0b0c0d0e
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+server returns server_accept_early_data clen=302 slen=196
+early secret=5f3c62684ab325819dda3024c79cbf1738b6cca76470eea60320b10a5c72479d
+secret=629b6129ccd554a88cef7801a02ea435a62183381f8b1590e8c623a8958ab933
+<---- ServerHello;(EncryptedExtensions; Certificate; CertVerify; Finished)[ 196]
+
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+001b0010000800060568712d3038000a00040002001d001a0003000102
+Transport parameters offered:
+000102
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+client returns client_complete_early_data clen=84 slen=196
+secret=629b6129ccd554a88cef7801a02ea435a62183381f8b1590e8c623a8958ab933
+(Finished) [  84] ---->
+
+server returns clen=84 slen=0 status=server_complete
+server returns would_block clen=0 slen=135
+<---- {Ticket}[ 135]
+
+##### New session ticket received! #####
+Host: localhost
+Ticket:
+255f47f2f5857fb7665317a38baf4bf76ba5c0c7f1e9f90f126b1076d4e66294
+bceba769d7d54321c234228e3a3895e025d779eab8ca3fc8c8d7c5fd5dfe3f68
+dfaae517d01acf96b5f55b8a
+########################################
+client returns clen=0 slen=135 status=would_block
+Ok
+./quic.exe hrr
+
+STATELESS RETRY TEST
+
+server create
+client create
+client returns would_block clen=175 slen=0
+ClientHello[ 175] ---->
+
+~~~~~~~~~ Client Hello Summary ~~~~~~~~~~~
+~ SNI = localhost
+~ ALPN = 00060568712d3038
+~ Cookie = NULL
+~ Extensions = 0079001a0009ffff00050a0b0c0d0e002b0003027f1c003300260024001d0020
+22530ed8c439462e6af92b752d3524db9550b2f0171da72b7d206a479c97cf5a
+0000000e000c0000096c6f63616c686f73740010000800060568712d30380017
+0000000d0006000408040403000a00040002001d002d0003020001
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+003d001a0009ffff00050a0b0c0d0e0000000e000c0000096c6f63616c686f73
+740010000800060568712d3038000d0006000408040403000a00040002001d
+Transport parameters offered:
+ffff00050a0b0c0d0e
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+server returns server_stateless_retry clen=175 slen=188
+<---- HRR[ 188]
+
+server re-create
+client returns would_block clen=308 slen=188
+ClientHello2[ 308] ---->
+
+~~~~~~~~~ Client Hello Summary ~~~~~~~~~~~
+~ SNI = localhost
+~ ALPN = 00060568712d3038
+~ Cookie = 48656c6c6f20576f726c64
+~ Extensions = 00fe002c0081007f3e7e1423d49783202999dcd8c1a66c5cdc41e0b7740a7e06
+6b4ece06d7b40288e05de6ce19cb2f62703cf62868b22c9762f3747787f2c59e
+db2af07b6fd484fd91567887204431d9719f5a72540bf0429156d2660d02430f
+8becd9cb79f609504d27d99257ed6a5e291b6a3003300db68fe6a953edc07ccd
+11c41ca4b3ca5a001a0009ffff00050a0b0c0d0e002b0003027f1c0033002600
+24001d002022530ed8c439462e6af92b752d3524db9550b2f0171da72b7d206a
+479c97cf5a0000000e000c0000096c6f63616c686f7374001000080006056871
+2d303800170000000d0006000408040403000a00040002001d002d0003020001
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+003d001a0009ffff00050a0b0c0d0e0000000e000c0000096c6f63616c686f73
+740010000800060568712d3038000d0006000408040403000a00040002001d
+Transport parameters offered:
+ffff00050a0b0c0d0e
+Stateless cookie found, application contents:
+48656c6c6f20576f726c64
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+======== TO BE SIGNED <0403>: (130 octets) ========
+2020202020202020202020202020202020202020202020202020202020202020
+2020202020202020202020202020202020202020202020202020202020202020
+544c5320312e332c207365727665722043657274696669636174655665726966
+79004aa4d7430b006fdd9f80080da20ad73b15075f9c60ad4e83316906ced998
+235c
+===================================================
+server returns server_accept clen=308 slen=834
+secret=e15aa76c4f0dc31e55b8e82a760b537f6d1d7d3c0df5e3433cace7ed1a5e0967
+<---- ServerHello;(EncryptedExtensions; Certificate; CertVerify; Finished)[ 834]
+
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+001b0010000800060568712d3038000a00040002001d001a0003000102
+Transport parameters offered:
+000102
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+WARNING: chain validation failed, ignoring.
+client returns client_complete clen=58 slen=834
+secret=e15aa76c4f0dc31e55b8e82a760b537f6d1d7d3c0df5e3433cace7ed1a5e0967
+(Finished) [  58] ---->
+
+server returns server_complete clen=58 slen=0
+server returns would_block clen=0 slen=135
+<---- {Ticket}[ 135]
+
+##### New session ticket received! #####
+Host: localhost
+Ticket:
+6a539b4eae221ba75d77e4662245f2eefbe371806a35424bba9029ea0bd96b91
+09e0ff6086eb8d979feede090e4361a1ce05f8648eafefd31eac501e26ba6f28
+3cbb94cc3ef4218bdce51596
+########################################
+client returns clen=0 slen=135 status=would_block
+Ok
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/apps/quicMinusNet'
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls'
+C:/build/agent2/_work/12/s/FStar/bin/fstar.exe --cache_dir cache/Kremlin --cache_checked_modules --print_z3_statistics --use_hints --query_stats --cache_dir cache/Kremlin --odir extract/Kremlin --extract '* -DHDB -LowCProvider -FFICallbacks -BufferBytes' --dep full --include C:/build/agent2/_work/12/s/FStar/contrib/CoreCrypto/fst/ --include C:/build/agent2/_work/12/s/hacl-star/secure_api --include C:/build/agent2/_work/12/s/hacl-star/secure_api/utils --include C:/build/agent2/_work/12/s/hacl-star/secure_api/concrete_specializations --include C:/build/agent2/_work/12/s/hacl-star/secure_api/LowCProvider/fst --include C:/build/agent2/_work/12/s/hacl-star/code/curve25519/api --include C:/build/agent2/_work/12/s/hacl-star/code/lib --include C:/build/agent2/_work/12/s/kremlin/kremlib --include ../../libs/ffi --include ../../src/tls/concrete-flags --include ../../src/tls/concrete-flags/Kremlin --include ./concrete-flags/Debug QUIC.fst Test.Main.fst  > cache/Kremlin/.depend
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls'
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls'
+C:/build/agent2/_work/12/s/FStar/bin/fstar.exe --cache_dir cache/OCaml --cache_checked_modules --print_z3_statistics --use_hints --query_stats --cache_dir cache/OCaml --odir extract/OCaml --extract '* -Prims -FStar +FStar.Test +FStar.Kremlin.Endianness -CoreCrypto -CryptoTypes -DHDB -LowCProvider -HaclProvider -FFICallbacks -Crypto.AEAD -Crypto.Symmetric -Crypto.Plain -Spec.Loops -Buffer.Utils -C +C.Loops -LowParse.SLow.Tac -BufferBytes' --dep full --include C:/build/agent2/_work/12/s/FStar/contrib/CoreCrypto/fst/ --include C:/build/agent2/_work/12/s/hacl-star/secure_api --include C:/build/agent2/_work/12/s/hacl-star/secure_api/utils --include C:/build/agent2/_work/12/s/hacl-star/secure_api/concrete_specializations --include C:/build/agent2/_work/12/s/hacl-star/secure_api/LowCProvider/fst --include C:/build/agent2/_work/12/s/hacl-star/code/curve25519/api --include C:/build/agent2/_work/12/s/hacl-star/code/lib --include C:/build/agent2/_work/12/s/kremlin/kremlib --include ../../libs/ffi --include ../../src/tls/concrete-flags --include ../../src/tls/concrete-flags/OCaml --include ./concrete-flags/Debug QUIC.fst Test.Main.fst  > cache/OCaml/.depend
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls'
+make -C extract/Kremlin-Internal-Test test
+make[2]: Entering directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls/extract/Kremlin-Internal-Test'
+cp ../../../../data/CAFile.pem .
+make[2]: Leaving directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls/extract/Kremlin-Internal-Test'
+make[2]: Entering directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls/extract/Kremlin-Internal-Test'
+cp ../../../../data/server-ecdsa.crt .
+make[2]: Leaving directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls/extract/Kremlin-Internal-Test'
+make[2]: Entering directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls/extract/Kremlin-Internal-Test'
+cp ../../../../data/server-ecdsa.key .
+make[2]: Leaving directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls/extract/Kremlin-Internal-Test'
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls'
+cp ../../data/CAFile.pem .
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls'
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls'
+cp ../../data/server-ecdsa.crt .
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls'
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls'
+cp ../../data/server-ecdsa.key .
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls'
+make[2]: Entering directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls/extract/Kremlin-Internal-Test'
+./test.exe
+✔ RNG initialization
+b1 = 1234567890abcdef1234567890abcdef
+b2 = cafedecafbabedeadbeeffeec0ffee33
+b12= 1234567890abcdef1234567890abcdefcafedecafbabedeadbeeffeec0ffee33
+b3 = 1234567890abcdef1234567890abcdefcafedecafbabedeadbeeffeec0ffee33
+✔ BufferBytes
+✔ TLSConstants
+✔ AEAD
+AEP| LowProvider: COERCE(K=feffe9928665731c6d6a8f9467308308feffe9928665731c6d6a8f9467308308)
+Test.StAE: c0 size=33 data=000000000000000017b5db7a6412522a62d32d2b5a94a9348c80cbc7b20bdcfa5c.
+Test.StAE: c1 size=28 data=0000000000000001a93cd0e67431db38a93a169cd79b29c82f69d7e4.
+Test.StAE: start.
+Test.StAE: decryption fails on wrong cipher.
+Test.StAE: decryption fails on wrong sequence number.
+Test.StAE: decryption fails on wrong CT.
+Test.StAE: first decryption succeeds.
+Test.StAE: second decryption succeeds.
+AEP| LowProvider: COERCE(K=feffe9928665731c6d6a8f9467308308feffe9928665731c6d6a8f9467308308)
+Test.StAE: c0 size=26 data=d12a84f232589f6bc797322d5f5d3f43e95bc07640538c50dded.
+Test.StAE: c1 size=21 data=2adba81a76d2814ee2aba4406c861ecbc19825461a.
+Test.StAE: start.
+Test.StAE: decryption fails on wrong cipher.
+Test.StAE: decryption fails on wrong sequence number.
+Test.StAE: TLS 1.3 does not intend to provide outer CT authentication.
+Test.StAE: first decryption succeeds.
+Test.StAE: second decryption succeeds.
+✔ StAE
+Test.CommonDH: Testing FFDHE2048.
+CDH| Keygen on FFDHE2048
+CDH| DH responder on FFDHE2048
+CDH| Keygen on FFDHE2048
+CDH| DH initiator on FFDHE2048
+CDH| DH initiator on FFDHE2048
+Test.CommonDH: Testing FFDHE3072.
+CDH| Keygen on FFDHE3072
+CDH| DH responder on FFDHE3072
+CDH| Keygen on FFDHE3072
+CDH| DH initiator on FFDHE3072
+CDH| DH initiator on FFDHE3072
+Test.CommonDH: Testing FFDHE4096.
+CDH| Keygen on FFDHE4096
+CDH| DH responder on FFDHE4096
+CDH| Keygen on FFDHE4096
+CDH| DH initiator on FFDHE4096
+CDH| DH initiator on FFDHE4096
+Test.CommonDH: Testing FFDHE6144.
+CDH| Keygen on FFDHE6144
+CDH| DH responder on FFDHE6144
+CDH| Keygen on FFDHE6144
+CDH| DH initiator on FFDHE6144
+CDH| DH initiator on FFDHE6144
+Test.CommonDH: Testing FFDHE8192.
+CDH| Keygen on FFDHE8192
+CDH| DH responder on FFDHE8192
+CDH| Keygen on FFDHE8192
+CDH| DH initiator on FFDHE8192
+CDH| DH initiator on FFDHE8192
+Test.CommonDH: Testing P256.
+CDH| Keygen on P256
+CDH| DH responder on P256
+CDH| Keygen on P256
+CDH| DH initiator on P256
+CDH| DH initiator on P256
+Test.CommonDH: Testing P384.
+CDH| Keygen on P384
+CDH| DH responder on P384
+CDH| Keygen on P384
+CDH| DH initiator on P384
+CDH| DH initiator on P384
+Test.CommonDH: Testing P521.
+CDH| Keygen on P521
+CDH| DH responder on P521
+CDH| Keygen on P521
+CDH| DH initiator on P521
+CDH| DH initiator on P521
+Test.CommonDH: Testing X255519.
+CDH| Keygen on X255519
+CDH| DH responder on X255519
+CDH| Keygen on X255519
+CDH| DH initiator on X255519
+CDH| DH initiator on X255519
+✔ CommonDH
+HS | next_fragment
+HS | offering ClientHello 1.3
+KS | ks_client_init 1.3
+CDH| Keygen on X255519
+NGO| No PSK or 0-RTT disabled
+NGO| offering client extensions [ supported_versions key_share extended_master_secret signature_algorithms ec_point_formats supported_groups psk_key_exchange_modes ]
+NGO| offering cipher suites ; TLS_AES_128_GCM_SHA256; TLS_AES_256_GCM_SHA384; TLS_CHACHA20_POLY1305_SHA256; TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256; TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256; TLS_DHE_RSA_WITH_AES_128_GCM_SHA256; TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384; TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384; TLS_DHE_RSA_WITH_AES_256_GCM_SHA384; TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256; TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256; TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256
+HSL| emit ClientHello
+Test.Handshake: ----client-hello---> 010000b303035aeb748b...010100002d0003020001 (183 bytes).
+HS | recv_fragment
+HSL| parsed [ClientHello] -- end of flight 
+HS | Processing ClientHello
+NGO| offered client extensions [ supported_versions key_share extended_master_secret signature_algorithms ec_point_formats supported_groups psk_key_exchange_modes ]
+NGO| offered cipher suites ; TLS_AES_128_GCM_SHA256; TLS_AES_256_GCM_SHA384; TLS_CHACHA20_POLY1305_SHA256; TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256; TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256; TLS_DHE_RSA_WITH_AES_128_GCM_SHA256; TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384; TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384; TLS_DHE_RSA_WITH_AES_256_GCM_SHA384; TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256; TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256; TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256
+NGO| offered versions 1.3
+NGO| Negotiated Pure EDH key exchange
+NGO| Negotiated ECDSA_SHA1
+NGO| Negotiation callback to handle extra extensions and query for stateless retry.
+NGO| Application data in cookie: none
+NGO| negotiated 1.3 TLS_AES_128_GCM_SHA256
+KS | ks_server_init
+KS | No PSK selected.
+KS | Computed early secret:           33ad0a1c607ec03b09e6cd9893680ce210adf300aa1f2660e1b22e10f170f92a
+KS | Handshake salt:                  6f2615a108c702c5678f54fc9dbab69716c076189c48250cebeac3576c3611ba
+CDH| DH responder on X255519
+CDH| Keygen on X255519
+CDH| DH initiator on X255519
+KS | DH shared secret: 27a79ea0981f3bc4d298048fc34827f913e574cd8f0ae3a7d9fa09e74eb4b00f
+KS | Handshake secret:                69c3da6015b54404e92b771323dce70cd9485e8f27a741b228562eadd0112b1a
+NGO| processing client extensions [ supported_versions key_share extended_master_secret signature_algorithms ec_point_formats supported_groups psk_key_exchange_modes ]
+NGO| including server extensions (SH + EE) [ supported_versions key_share supported_groups ]
+NGO| extra extensions from application callback: 
+HSL| emit ServerHello and hash
+HS | derive handshake keys
+KS | ks_server_13_sh, hashed log = 62a131def592d8a5f207250a448625ac13f74d6019153ce3cee34c226bba84e8
+KS | handshake traffic secret[C]:     27daec94e70e34ee9c96aa08746ba1b4216f68190ffb57b7595651dc938d119b
+KS | handshake traffic secret[S]:     3b1c6a526ac0c9fc7f9f1509556352b1f45bead2b7532f19c3557d6346db35dc
+KS | handshake key[C]:                a1fbe82526f31eaeaa43c66ad2ef60c0, IV=6dc5f3874d363e567aaf6e61
+KS | handshake key[S]: 0654a478782b1fd8251546642f258b1b, IV=578682f5d3acf811f1d94661
+AEP| LowProvider: COERCE(K=0654a478782b1fd8251546642f258b1b)
+AEP| LowProvider: COERCE(K=a1fbe82526f31eaeaa43c66ad2ef60c0)
+KS | finished key[C]:                 91444a4fe3c79a22dfea75f2585618bae08c2071dceaec29e537be31ae11f673
+KS | finished key[S]:                 28ed8515bb6d7776988b99cc0e742dd93da5c53ce2b7c6e18de9fe02f2c0dbf2
+KS | Application salt:                41235a454b59a1c5942fa9d324dac942959698ad604ab07155476413a86c4e1e
+KS | Application secret:              cb7cb39bbb115f2f49117cf285d9cebfebae857cba3a7ab4df33209d849f7fef
+HS | next_fragment
+Test.Handshake: <---server-hello---- 0200005603035aeb748b...b707396a15d9af87136c (90 bytes).
+HS | recv_fragment
+HSL| parsed ServerHello
+HSL| end of flight
+HS | client_ServerHello
+NGO| processing server extensions [ supported_versions key_share ]
+NGO| negotiated 1.3 TLS_AES_128_GCM_SHA256
+HS | Running TLS 1.3
+KS | ks_client_13_sh hashed_log = 62a131def592d8a5f207250a448625ac13f74d6019153ce3cee34c226bba84e8
+KS | no PSK negotiated. Early secret: 33ad0a1c607ec03b09e6cd9893680ce210adf300aa1f2660e1b22e10f170f92a
+KS | handshake salt:                  6f2615a108c702c5678f54fc9dbab69716c076189c48250cebeac3576c3611ba
+CDH| DH initiator on X255519
+KS | DH shared secret: 27a79ea0981f3bc4d298048fc34827f913e574cd8f0ae3a7d9fa09e74eb4b00f
+KS | handshake secret:                69c3da6015b54404e92b771323dce70cd9485e8f27a741b228562eadd0112b1a
+KS | handshake traffic secret[C]:     27daec94e70e34ee9c96aa08746ba1b4216f68190ffb57b7595651dc938d119b
+KS | handshake traffic secret[S]:     3b1c6a526ac0c9fc7f9f1509556352b1f45bead2b7532f19c3557d6346db35dc
+KS | handshake key[C]:                a1fbe82526f31eaeaa43c66ad2ef60c0, IV=6dc5f3874d363e567aaf6e61
+KS | handshake key[S]:                0654a478782b1fd8251546642f258b1b, IV=578682f5d3acf811f1d94661
+KS | finished key[C]: 91444a4fe3c79a22dfea75f2585618bae08c2071dceaec29e537be31ae11f673
+KS | finished key[S]: 28ed8515bb6d7776988b99cc0e742dd93da5c53ce2b7c6e18de9fe02f2c0dbf2
+KS | application salt:                41235a454b59a1c5942fa9d324dac942959698ad604ab07155476413a86c4e1e
+KS | application secret:              cb7cb39bbb115f2f49117cf285d9cebfebae857cba3a7ab4df33209d849f7fef
+AEP| LowProvider: COERCE(K=a1fbe82526f31eaeaa43c66ad2ef60c0)
+AEP| LowProvider: COERCE(K=0654a478782b1fd8251546642f258b1b)
+EPO| reader++ 0/-1
+HS | next_fragment
+HS | prepare Server Finished
+HSL| emit EncryptedExtensions
+HSL| emit Certificate13 and hash
+HSL| emit CertificateVerify and hash
+HSL| emit Finished and hash
+KS | ks_server_13_sf hashed_log = 5d05d469eea093b41dfaa7691dee68ef001f16ddcb42b7b58ef9105b4186e115
+KS | application traffic secret[C]:   05296cf35b43d3691f963a9448272cb44a5171b1e1765c6e5d82b15441dace90
+KS | application traffic secret[S]:   0f4b64520e351267824153d6e4279fa7e9e78d3f51ff352b63d904c62f62adac
+KS | exporter master secret:          610373b16615ecbcac9fdb564b5f4162ff3cbb553f0e76ec691380aff519b5bd
+KS | application key[C]:              1b05f9bdfdf0eb938d6ed9f2f787be02, IV=619924596c157cf9a05ca459
+KS | application key[S]:              5c8b24c62eb3b69737366001908cbfcc, IV=b26cdd8c7fdaf673095e27db
+AEP| LowProvider: COERCE(K=5c8b24c62eb3b69737366001908cbfcc)
+AEP| LowProvider: COERCE(K=1b05f9bdfdf0eb938d6ed9f2f787be02)
+HS | exporting a key
+EPO| reader++ 0/-1
+Test.Handshake: <--server-finished-- 080000160014000a0010...319fcb7ab00ace3dd712 (709 bytes).
+HS | recv_fragment
+HSL| parsed EncryptedExtensions
+HSL| parsed Certificate13
+HSL| parsed CertificateVerify
+HSL| parsed Finished
+HSL| end of flight
+NGO| Nego.clientComplete_13
+NGO| EE: supported_groups 
+NGO| Negotiation callback to process application extensions.
+NGO| Certificate & signature 1.3 callback result: valid
+KS | ks_client_13_sf hashed_log = 5d05d469eea093b41dfaa7691dee68ef001f16ddcb42b7b58ef9105b4186e115
+KS | application traffic secret[C]:   05296cf35b43d3691f963a9448272cb44a5171b1e1765c6e5d82b15441dace90
+KS | application traffic secret[S]:   0f4b64520e351267824153d6e4279fa7e9e78d3f51ff352b63d904c62f62adac
+KS | exporter master secret:          610373b16615ecbcac9fdb564b5f4162ff3cbb553f0e76ec691380aff519b5bd
+KS | application key[C]:              1b05f9bdfdf0eb938d6ed9f2f787be02, IV=619924596c157cf9a05ca459
+KS | application key[S]:              5c8b24c62eb3b69737366001908cbfcc, IV=b26cdd8c7fdaf673095e27db
+AEP| LowProvider: COERCE(K=1b05f9bdfdf0eb938d6ed9f2f787be02)
+AEP| LowProvider: COERCE(K=5c8b24c62eb3b69737366001908cbfcc)
+HS | exporting a key
+HS | Early data rejected
+EPO| writer++ 0/0
+HSL| emit Finished and hash
+KS | ks_client_13_cf hashed_log = e67c94bd16acebf8141d39eddae6ec535f6d0e2f15f7aa9ac1511aa36289fbea
+KS | resumption master secret:        70d0563fb5404ef38de7cd7b3e0882004227c9f171dea2eeda26413a33e46367
+EPO| reader++ 1/0
+HS | next_fragment
+Test.Handshake: --client-finished---> 140000208b2a0aa6ed1c...2ff9a9242ef313efa07b (36 bytes).
+HS | recv_fragment
+HSL| parsed Finished
+HSL| end of flight
+HS | Process Client Finished
+KS | ks_server_13_cf hashed_log = e67c94bd16acebf8141d39eddae6ec535f6d0e2f15f7aa9ac1511aa36289fbea
+KS | resumption master secret:        70d0563fb5404ef38de7cd7b3e0882004227c9f171dea2eeda26413a33e46367
+AEP| LowProvider: COERCE(K=e05cfc7bdfd654fddeae0ec1e89c809eb7dc05f8522d510d042370208b5c6a95)
+HS | Sending ticket: 16c0399b705541aa527879ef7c2dbbe7c29af11e6d4804a3e70fb4d64e6c6a4dd6a0a4b8db0b7405c2195ecaab0849cd8ab6b595a17fb7d8927edbf3f16d961ab2361ff3dfde2871ed7d71c3
+HSL| emit NewSessionTicket13
+EPO| reader++ 1/-1
+HS | next_fragment
+Test.Handshake: <--session-ticket-- 0400006500000e108894...dfde2871ed7d71c30000 (105 bytes).
+HS | recv_fragment
+HSL| parsed NewSessionTicket13
+HSL| end of flight
+HS | Received ticket: 16c0399b705541aa527879ef7c2dbbe7c29af11e6d4804a3e70fb4d64e6c6a4dd6a0a4b8db0b7405c2195ecaab0849cd8ab6b595a17fb7d8927edbf3f16d961ab2361ff3dfde2871ed7d71c3
+KS | ks_client_13_rms
+KS | Recall RMS: 70d0563fb5404ef38de7cd7b3e0882004227c9f171dea2eeda26413a33e46367
+Test.Handshake: Done.
+✔ Handshake
+make[2]: Leaving directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls/extract/Kremlin-Internal-Test'
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls'
+OCAMLPATH="C:/build/agent2/_work/12/s/FStar/bin" ocamlfind opt -g -I C:/build/agent2/_work/12/s/FStar/ulib/ml -I extract/OCaml -I C:/build/agent2/_work/12/s/MLCrypto -I ../../libs/ffi -I C:/build/agent2/_work/12/s/hacl-star/secure_api/LowCProvider -I C:/build/agent2/_work/12/s/hacl-star/secure_api/out/runtime_switch/ -I C:/build/agent2/_work/12/s/kremlin/_build/kremlib -I test -I extract/mlstubs -I . -package fstarlib,zarith,ctypes,ctypes.foreign -cclib -L../pki -cclib -lmipki -linkall -linkpkg -g extract/OCaml/BufferBytes.cmx extract/OCaml/Crypto_AEAD_Main.cmx C:/build/agent2/_work/12/s/kremlin/_build/kremlib/C.cmx C:/build/agent2/_work/12/s/MLCrypto/CoreCrypto.cmxa C:/build/agent2/_work/12/s/hacl-star/secure_api/out/runtime_switch/LowC.cmxa ../../libs/ffi/FFICallbacks.cmxa extract/OCaml/Hashing_Spec.cmx extract/OCaml/Hashing_OpenSSL.cmx extract/OCaml/Hashing.cmx extract/OCaml/Flags.cmx extract/OCaml/TLSError.cmx extract/OCaml/Parse.cmx extract/OCaml/TLSConstants.cmx extract/OCaml/PKI.cmx extract/OCaml/Nonce.cmx extract/OCaml/TLS_Curve25519.cmx extract/OCaml/ECGroup.cmx extract/OCaml/DHGroup.cmx extract/OCaml/DebugFlags.cmx extract/OCaml/CommonDH.cmx extract/OCaml/Hashing_Flags.cmx extract/OCaml/Hashing_CRF.cmx extract/OCaml/PSK.cmx extract/OCaml/Extensions.cmx extract/OCaml/Cert.cmx extract/OCaml/RSAKey.cmx extract/OCaml/PMS.cmx extract/OCaml/TLSInfoFlags.cmx extract/OCaml/TLSInfo.cmx extract/OCaml/Crypto_Indexing.cmx extract/OCaml/Flag.cmx extract/OCaml/Specializations_Providers_AEAD.cmx extract/OCaml/C_Loops.cmx extract/OCaml/AEADOpenssl.cmx extract/OCaml/AEADProvider.cmx extract/OCaml/Range.cmx extract/OCaml/HandshakeMessages.cmx extract/OCaml/HandshakeLog.cmx extract/OCaml/FStar_Kremlin_Endianness.cmx extract/OCaml/Test_BufferBytes.cmx extract/OCaml/Ticket.cmx extract/OCaml/HMAC.cmx extract/OCaml/TLSPRF.cmx extract/OCaml/HMAC_UFCMA.cmx extract/OCaml/DataStream.cmx extract/OCaml/Alert.cmx extract/OCaml/Content.cmx extract/OCaml/StreamPlain.cmx extract/OCaml/StreamAE.cmx extract/OCaml/StatefulPlain.cmx extract/OCaml/LHAEPlain.cmx extract/OCaml/AEAD_GCM.cmx extract/OCaml/StatefulLHAE.cmx extract/OCaml/StAE.cmx extract/OCaml/HKDF.cmx extract/OCaml/KeySchedule.cmx extract/OCaml/Negotiation.cmx extract/OCaml/Epochs.cmx extract/OCaml/Handshake.cmx extract/OCaml/FStar_Test.cmx extract/OCaml/Test_CommonDH.cmx extract/OCaml/Transport.cmx extract/OCaml/Record.cmx extract/OCaml/Connection.cmx extract/OCaml/StreamDeltas.cmx extract/OCaml/TLS.cmx extract/OCaml/FFI.cmx extract/OCaml/QUIC.cmx extract/OCaml/Test_StAE.cmx extract/OCaml/Test_TLSConstants.cmx extract/OCaml/Test_Handshake.cmx extract/OCaml/Test_AEAD.cmx extract/OCaml/Test_Main.cmx extract/OCaml/FFIRegister.cmx extract/copied/kremstr.o test/mitls.cmx -o mitls.exe -thread
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls'
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls'
+./mitls.exe
+✔ RNG initialization
+b1 = 1234567890abcdef1234567890abcdef
+b2 = cafedecafbabedeadbeeffeec0ffee33
+b12= 1234567890abcdef1234567890abcdefcafedecafbabedeadbeeffeec0ffee33
+b3 = 1234567890abcdef1234567890abcdefcafedecafbabedeadbeeffeec0ffee33
+✔ BufferBytes
+✔ TLSConstants
++ cd mitls-fstar/apps/cmitls
+✔ AEAD
++ make test
+AEP| LowCProvider: COERCE(K=feffe9928665731c6d6a8f9467308308feffe9928665731c6d6a8f9467308308)
+Test.StAE: c0 size=33 data=000000000000000017b5db7a6412522a62d32d2b5a94a9348c80cbc7b20bdcfa5c.
+Test.StAE: c1 size=28 data=0000000000000001a93cd0e67431db38a93a169cd79b29c82f69d7e4.
+Test.StAE: start.
+Test.StAE: decryption fails on wrong cipher.
+Test.StAE: decryption fails on wrong sequence number.
+Test.StAE: decryption fails on wrong CT.
+Test.StAE: first decryption succeeds.
+Test.StAE: second decryption succeeds.
+AEP| LowCProvider: COERCE(K=feffe9928665731c6d6a8f9467308308feffe9928665731c6d6a8f9467308308)
+Test.StAE: c0 size=26 data=d12a84f232589f6bc797322d5f5d3f43e95bc07640538c50dded.
+Test.StAE: c1 size=21 data=2adba81a76d2814ee2aba4406c861ecbc19825461a.
+Test.StAE: start.
+Test.StAE: decryption fails on wrong cipher.
+Test.StAE: decryption fails on wrong sequence number.
+Test.StAE: TLS 1.3 does not intend to provide outer CT authentication.
+Test.StAE: first decryption succeeds.
+Test.StAE: second decryption succeeds.
+✔ StAE
+Test.CommonDH: Testing FFDHE2048.
+CDH| Keygen on FFDHE2048
+CDH| DH responder on FFDHE2048
+CDH| Keygen on FFDHE2048
+CDH| DH initiator on FFDHE2048
+CDH| DH initiator on FFDHE2048
+Test.CommonDH: Testing FFDHE3072.
+CDH| Keygen on FFDHE3072
+CDH| DH responder on FFDHE3072
+CDH| Keygen on FFDHE3072
+CDH| DH initiator on FFDHE3072
+CDH| DH initiator on FFDHE3072
+Test.CommonDH: Testing FFDHE4096.
+CDH| Keygen on FFDHE4096
+CDH| DH responder on FFDHE4096
+CDH| Keygen on FFDHE4096
+CDH| DH initiator on FFDHE4096
+CDH| DH initiator on FFDHE4096
+Test.CommonDH: Testing FFDHE6144.
+CDH| Keygen on FFDHE6144
+CDH| DH responder on FFDHE6144
+CDH| Keygen on FFDHE6144
+CDH| DH initiator on FFDHE6144
+CDH| DH initiator on FFDHE6144
+Test.CommonDH: Testing FFDHE8192.
+CDH| Keygen on FFDHE8192
+CDH| DH responder on FFDHE8192
+CDH| Keygen on FFDHE8192
+CDH| DH initiator on FFDHE8192
+CDH| DH initiator on FFDHE8192
+Test.CommonDH: Testing P256.
+CDH| Keygen on P256
+CDH| DH responder on P256
+CDH| Keygen on P256
+CDH| DH initiator on P256
+CDH| DH initiator on P256
+Test.CommonDH: Testing P384.
+CDH| Keygen on P384
+CDH| DH responder on P384
+CDH| Keygen on P384
+CDH| DH initiator on P384
+CDH| DH initiator on P384
+Test.CommonDH: Testing P521.
+CDH| Keygen on P521
+CDH| DH responder on P521
+CDH| Keygen on P521
+CDH| DH initiator on P521
+CDH| DH initiator on P521
+Test.CommonDH: Testing X255519.
+CDH| Keygen on X255519
+CDH| DH responder on X255519
+CDH| Keygen on X255519
+CDH| DH initiator on X255519
+CDH| DH initiator on X255519
+✔ CommonDH
+HS | next_fragment
+HS | offering ClientHello 1.3
+KS | ks_client_init 1.3
+CDH| Keygen on X255519
+NGO| No PSK or 0-RTT disabled
+NGO| offering client extensions [ supported_versions key_share extended_master_secret signature_algorithms ec_point_formats supported_groups psk_key_exchange_modes ]
+NGO| offering cipher suites ; TLS_AES_128_GCM_SHA256; TLS_AES_256_GCM_SHA384; TLS_CHACHA20_POLY1305_SHA256; TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256; TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256; TLS_DHE_RSA_WITH_AES_128_GCM_SHA256; TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384; TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384; TLS_DHE_RSA_WITH_AES_256_GCM_SHA384; TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256; TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256; TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256
+HSL| emit ClientHello
+Test.Handshake: ----client-hello---> 010000b303035aeb748e...010100002d0003020001 (183 bytes).
+HS | recv_fragment
+HSL| parsed [ClientHello] -- end of flight 
+HS | Processing ClientHello
+NGO| offered client extensions [ supported_versions key_share extended_master_secret signature_algorithms ec_point_formats supported_groups psk_key_exchange_modes ]
+NGO| offered cipher suites ; TLS_AES_128_GCM_SHA256; TLS_AES_256_GCM_SHA384; TLS_CHACHA20_POLY1305_SHA256; TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256; TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256; TLS_DHE_RSA_WITH_AES_128_GCM_SHA256; TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384; TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384; TLS_DHE_RSA_WITH_AES_256_GCM_SHA384; TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256; TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256; TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256
+NGO| offered versions 1.3
+NGO| Negotiated Pure EDH key exchange
+NGO| Negotiated ECDSA_SHA1
+NGO| Negotiation callback to handle extra extensions and query for stateless retry.
+NGO| Application data in cookie: none
+NGO| negotiated 1.3 TLS_AES_128_GCM_SHA256
+KS | ks_server_init
+KS | No PSK selected.
+KS | Computed early secret:           33AD0A1C607EC03B09E6CD9893680CE210ADF300AA1F2660E1B22E10F170F92A
+KS | Handshake salt:                  6F2615A108C702C5678F54FC9DBAB69716C076189C48250CEBEAC3576C3611BA
+CDH| DH responder on X255519
+CDH| Keygen on X255519
+CDH| DH initiator on X255519
+KS | DH shared secret: 5793CBA69933F5F0B93C7CD9A616E120717FB14052C27065E58570CC63F58B0E
+KS | Handshake secret:                A852A1A87FC701A0888659D8977AED874E9F4F5D610ED056018B558DD2C64EA7
+NGO| processing client extensions [ supported_versions key_share extended_master_secret signature_algorithms ec_point_formats supported_groups psk_key_exchange_modes ]
+NGO| including server extensions (SH + EE) [ supported_versions key_share supported_groups ]
+NGO| extra extensions from application callback: 
+HSL| emit ServerHello and hash
+HS | derive handshake keys
+KS | ks_server_13_sh, hashed log = B30D48A99B4F162F50E619DA62E10DC36430B3D93D4C50CF2A4A1FBB725D1F11
+KS | handshake traffic secret[C]:     2D9A649F53E091CC953CFC59A9A2EA02B80F79380AD797DF2D3155516D838E7D
+KS | handshake traffic secret[S]:     2E6A3D14E3639F108028ADAC7F7A416C03DC41F45F1E3DAEE464196A94D685A3
+KS | handshake key[C]:                5EE5B6452B10B5840BAF4D327BCEFA13, IV=9406E345AF2D2DAA24C8A04D
+KS | handshake key[S]: F92930B0873C05F406B7DFEB14E1BB50, IV=258CBF701818836EA3A7E818
+AEP| LowCProvider: COERCE(K=f92930b0873c05f406b7dfeb14e1bb50)
+AEP| LowCProvider: COERCE(K=5ee5b6452b10b5840baf4d327bcefa13)
+KS | finished key[C]:                 A76D2B80723F639F296082DB2C4EC2FCF4ADD2F95FB270723B89D06A4790577F
+KS | finished key[S]:                 7C2116EE4A934081DC75622587DDE5912CC8A8517FFFDA64E484B4051AADF859
+KS | Application salt:                790979C78B784FA69C0C2C07ED8A3A2B6D6B0AFA1C4E575316A4E15116B91F1F
+KS | Application secret:              C366EE329BF552504D1A88DA19EE9CB0287D54C35CBA4209EAA9F612435E7EE2
+HS | next_fragment
+Test.Handshake: <---server-hello---- 0200005603035aeb748e...7d9dfb9d7dc5a2203715 (90 bytes).
+HS | recv_fragment
+HSL| parsed ServerHello
+HSL| end of flight
+HS | client_ServerHello
+NGO| processing server extensions [ supported_versions key_share ]
+NGO| negotiated 1.3 TLS_AES_128_GCM_SHA256
+HS | Running TLS 1.3
+KS | ks_client_13_sh hashed_log = B30D48A99B4F162F50E619DA62E10DC36430B3D93D4C50CF2A4A1FBB725D1F11
+KS | no PSK negotiated. Early secret: 33AD0A1C607EC03B09E6CD9893680CE210ADF300AA1F2660E1B22E10F170F92A
+KS | handshake salt:                  6F2615A108C702C5678F54FC9DBAB69716C076189C48250CEBEAC3576C3611BA
+CDH| DH initiator on X255519
+KS | DH shared secret: 5793CBA69933F5F0B93C7CD9A616E120717FB14052C27065E58570CC63F58B0E
+KS | handshake secret:                A852A1A87FC701A0888659D8977AED874E9F4F5D610ED056018B558DD2C64EA7
+KS | handshake traffic secret[C]:     2D9A649F53E091CC953CFC59A9A2EA02B80F79380AD797DF2D3155516D838E7D
+KS | handshake traffic secret[S]:     2E6A3D14E3639F108028ADAC7F7A416C03DC41F45F1E3DAEE464196A94D685A3
+KS | handshake key[C]:                5EE5B6452B10B5840BAF4D327BCEFA13, IV=9406E345AF2D2DAA24C8A04D
+KS | handshake key[S]:                F92930B0873C05F406B7DFEB14E1BB50, IV=258CBF701818836EA3A7E818
+KS | finished key[C]: A76D2B80723F639F296082DB2C4EC2FCF4ADD2F95FB270723B89D06A4790577F
+KS | finished key[S]: 7C2116EE4A934081DC75622587DDE5912CC8A8517FFFDA64E484B4051AADF859
+KS | application salt:                790979C78B784FA69C0C2C07ED8A3A2B6D6B0AFA1C4E575316A4E15116B91F1F
+KS | application secret:              C366EE329BF552504D1A88DA19EE9CB0287D54C35CBA4209EAA9F612435E7EE2
+AEP| LowCProvider: COERCE(K=5ee5b6452b10b5840baf4d327bcefa13)
+AEP| LowCProvider: COERCE(K=f92930b0873c05f406b7dfeb14e1bb50)
+EPO| reader++ 0/-1
+HS | next_fragment
+HS | prepare Server Finished
+HSL| emit EncryptedExtensions
+HSL| emit Certificate13 and hash
+HSL| emit CertificateVerify and hash
+HSL| emit Finished and hash
+KS | ks_server_13_sf hashed_log = 687F00406F78DC4FA9C35C379CAEEF654BDE5AB1B362A65DBEA8741E86243BB7
+KS | application traffic secret[C]:   11A9DAB81F1B5B6353FFA70E130F31D1339E2833E55DD3B95741C1598DCF29AE
+KS | application traffic secret[S]:   423547ECD30F87C090EFEBA7CD35C2B5CC92A48E9069FBAFD6BE989F07A9B616
+KS | exporter master secret:          9BE2A70591CB967F15BC6DE9DC830213D323F177E9A378516E1A654DA3906E36
+KS | application key[C]:              C05D400DA0DD90BDCB3551B786272558, IV=53B697772503AC1A0541ED8C
+KS | application key[S]:              0AA87EAD31B15DE6998D0A88A496AA84, IV=CD2601773890B8968047CA19
+AEP| LowCProvider: COERCE(K=0aa87ead31b15de6998d0a88a496aa84)
+AEP| LowCProvider: COERCE(K=c05d400da0dd90bdcb3551b786272558)
+HS | exporting a key
+EPO| reader++ 0/-1
+Test.Handshake: <--server-finished-- 080000160014000a0010...8253710b59622b0687dd (710 bytes).
+HS | recv_fragment
+HSL| parsed EncryptedExtensions
+HSL| parsed Certificate13
+HSL| parsed CertificateVerify
+HSL| parsed Finished
+HSL| end of flight
+NGO| Nego.clientComplete_13
+NGO| EE: supported_groups 
+NGO| Negotiation callback to process application extensions.
+NGO| Certificate & signature 1.3 callback result: valid
+KS | ks_client_13_sf hashed_log = 687F00406F78DC4FA9C35C379CAEEF654BDE5AB1B362A65DBEA8741E86243BB7
+KS | application traffic secret[C]:   11A9DAB81F1B5B6353FFA70E130F31D1339E2833E55DD3B95741C1598DCF29AE
+KS | application traffic secret[S]:   423547ECD30F87C090EFEBA7CD35C2B5CC92A48E9069FBAFD6BE989F07A9B616
+KS | exporter master secret:          9BE2A70591CB967F15BC6DE9DC830213D323F177E9A378516E1A654DA3906E36
+KS | application key[C]:              C05D400DA0DD90BDCB3551B786272558, IV=53B697772503AC1A0541ED8C
+KS | application key[S]:              0AA87EAD31B15DE6998D0A88A496AA84, IV=CD2601773890B8968047CA19
+AEP| LowCProvider: COERCE(K=c05d400da0dd90bdcb3551b786272558)
+AEP| LowCProvider: COERCE(K=0aa87ead31b15de6998d0a88a496aa84)
+HS | exporting a key
+HS | Early data rejected
+EPO| writer++ 0/0
+HSL| emit Finished and hash
+KS | ks_client_13_cf hashed_log = B0D7E96B69D09711DA12236158AEE2BD50420C963E37A624789869422F0339BB
+KS | resumption master secret:        1256DD798C5B8EA8CDBFE5DC8AC4626387E5A1E52CE7ECBBFE733151257FB68F
+EPO| reader++ 1/0
+HS | next_fragment
+Test.Handshake: --client-finished---> 1400002087fbcc2dff2e...4ee48fd28f635457509f (36 bytes).
+HS | recv_fragment
+HSL| parsed Finished
+HSL| end of flight
+HS | Process Client Finished
+KS | ks_server_13_cf hashed_log = B0D7E96B69D09711DA12236158AEE2BD50420C963E37A624789869422F0339BB
+KS | resumption master secret:        1256DD798C5B8EA8CDBFE5DC8AC4626387E5A1E52CE7ECBBFE733151257FB68F
+AEP| LowCProvider: COERCE(K=c716bbc93d8e7858a8e7ee085c9b3f57321fc61ba6a9cebc88d454dc7fcc4226)
+HS | Sending ticket: 2D1DAE17589EF14EAE2622EBD9A8207A7D1ED0C88C768B73D2B4FD166E6D8AFD9F91794C1B5AFB146720695ED4AE27AC44B9560DF1784AE3F6E4B93722733F69DFF8FB2CC71A26F71F89DC1C
+HSL| emit NewSessionTicket13
+EPO| reader++ 1/-1
+HS | next_fragment
+Test.Handshake: <--session-ticket-- 0400006500000e104f03...c71a26f71f89dc1c0000 (105 bytes).
+HS | recv_fragment
+HSL| parsed NewSessionTicket13
+HSL| end of flight
+HS | Received ticket: 2d1dae17589ef14eae2622ebd9a8207a7d1ed0c88c768b73d2b4fd166e6d8afd9f91794c1b5afb146720695ed4ae27ac44b9560df1784ae3f6e4b93722733f69dff8fb2cc71a26f71f89dc1c
+KS | ks_client_13_rms
+KS | Recall RMS: 1256dd798c5b8ea8cdbfe5dc8ac4626387e5a1e52ce7ecbbfe733151257fb68f
+Test.Handshake: Done.
+✔ Handshake
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/12/s/mitls-fstar/src/tls'
+./cmitls.exe google.com 443
+cmitls.exe ===================
+cmitls.exe calling FFI_mitls_init
+cmitls.exe about to act as client or server
+===============================================
+Starting test client...
+Read OK, sending HTTP request...
+Received 693 bytes of data:
+Download speed: 1.#INF00kB/s
+HTTP/1.1 301 Moved Permanently
+Location: https://www.google.com/
+Content-Type: text/html; charset=UTF-8
+Date: Thu, 03 May 2018 20:43:59 GMT
+Expires: Sat, 02 Jun 2018 20:43:59 GMT
+Cache-Control: public, max-age=2592000
+Server: gws
+Content-Length: 220
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+Alt-Svc: hq=":443"; ma=2592000; quic=51303433; quic=51303432; quic=51303431; quic=51303339; quic=51303335,quic=":443"; ma=2592000; v="43,42,41,39,35"
+
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="https://www.google.com/">here</A>.
+</BODY></HTML>
+
+Closing connection, irrespective of the response
++ cd mitls-fstar/apps/quicMinusNet
+./cmitls.exe tls13.cloudflare.com 443
+cmitls.exe ===================
++ make test
+cmitls.exe calling FFI_mitls_init
+cmitls.exe about to act as client or server
+===============================================
+Starting test client...
+Read OK, sending HTTP request...
+Received 1369 bytes of data:
+Download speed: 1.#INF00kB/s
+HTTP/1.1 521 Origin Down
+Date: Thu, 03 May 2018 20:43:59 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: __cfduid=d9e8f4a0c7d9f5ccbd3d487bc4a1b37f51525380239; expires=Fri, 03-May-19 20:43:59 GMT; path=/; domain=.cloudflare.com; HttpOnly
+Expires: Thu, 01 Jan 1970 00:00:01 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: cf_use_ob=443; expires=Thu, 03-May-18 20:44:29 GMT; path=/
+Set-Cookie: cf_ob_info=521:4155901faf9079d9:SEA; expires=Thu, 03-May-18 20:44:29 GMT; path=/
+Strict-Transport-Security: max-age=15780000; includeSubDomains
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Server: cloudflare
+CF-RAY: 4155901faf9079d9-SEA
+
+11c7
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<meta http-equiv="refresh" content="0">
+
+<title>tls13.cloudflare.com | 521: Web server is down</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8
+Closing connection, irrespective of the response
+./quic.exe
+server create
+client create
+client call clen=8192 slen=   0
+client done clen= 175 slen=   0 status=would_block
+16030300aa010000a603035aeb748f622e2c1eb4c53c4a2086b15c79a0e2828e
+6dffb0147b4e57aafb14d50000041303130101000079001a0009ffff00050a0b
+0c0d0e002b0003027f1c003300260024001d002020e8eccf509c41c4ef6ad213
+48281557d693b14793f2a586c664d4f28c582c610000000e000c0000096c6f63
+616c686f73740010000800060568712d303800170000000d0006000408040403
+000a00040002001d002d0003020001
+server call clen= 175 slen=8192
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+003d001a0009ffff00050a0b0c0d0e0000000e000c0000096c6f63616c686f73
+740010000800060568712d3038000d0006000408040403000a00040002001d
+Transport parameters offered:
+ffff00050a0b0c0d0e
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+======== TO BE SIGNED <0403>: (130 octets) ========
+2020202020202020202020202020202020202020202020202020202020202020
+2020202020202020202020202020202020202020202020202020202020202020
+544c5320312e332c207365727665722043657274696669636174655665726966
+79009336079dbeab52f7885798f10d9b2e7e4aa2cd4e571732c9a4a7aa6ec45c
+76a3
+===================================================
+sender done clen= 175 slen= 834 status=server_accept
+160303005a0200005603035aeb748ff281ee802dbd7937a89a97a93c48c8d9ac
+c8c3e7564ce4b6dea1634400130300002e002b00027f1c00330024001d002085
+89b3862aeaa0df0c4295044bb8fdf8be727e101d70747ffc9af7c46f8d222017
+030302dec2259bd167abfa7ca4102f0cf77a7cb1544bbe2082179eee8b739be3
+df06477d404717167239297e71c936cc87207696bc3b75f968075d9dd209f939
+77834277e0086b693d712c8462e2990b5e06df1646111a1ac0bbeef9ab56a644
+bc668fc30180f5ad4fa9033cf2a0c6c467659718cad051261da2cb789913eaf5
+0f4761dac0c48fc4150925c088aa363f1d13777470c9eeaa314129e77c0994be
+4be3d962ede4eb87f92b3b3e4fc66499ee12088c8e50ce8ab770ae1ce4e574aa
+f17baa29d6d47540c6da9e4d5920b83aa0faaa99ef7737297b4cb2ddb9fb4734
+feb610b8f5c7cf4aade0d7457f9d5dde8ef966a7e9acd40c2b58b60094cd9160
+eb9fbe247d955bbc8ba78f66c37788e311ce09b13568e3af8f8d5d9d864ffcdd
+53c99a8f6fe72c960f6a493a6e310e9824f939d9cff4e986e75cd6c9580fd3ba
+4c425c1d4cbdded6ce69305299e36169daa40b0ab1b4c78b63d5cc93f4483fe5
+31e01d65331b99baf2721f80f2e79b289fa754a9f95f1210c3ba5629fbc4f0eb
+ad5e884e1ce4c42c0ae3b090ebd24953ba5fb913510b5b9b048f08c18d469899
+08373bc43a2c75c3e87f63a01ebf14e4f108f61607482c5bb95a0264daf93426
+da6627bc3a91537c4c699b68290706eed125903e0d543754a7687b2904c445a1
+564c1a50c7a31b91ae036f27a51671a7fe79c5fa3531387dc73e8f6c6aa0a2eb
+2546bd1c6ba86d8e6485cce759cea7fa8051b02a9b7f96e297cf09cae724789e
+20e8f2ab707ec946852125c2930ba61b0b898ec22245969a2727bf02137a7a7a
+eef74caff968d664015f5447997ac4efcb9177100144558a38aecb4fccf87254
+28256f615aac01c91fbfe5b00d47784466b14e104c53029419213dbf04553ed5
+b923adeedef02afbc500ba97c583e7d54b38e67b0654826134b2dd94350b61a2
+924ccc1ea1c4e04eae0e5e7e895117049a2502f2b9fbe0bf888b7da7fc405bd5
+5746d1e9acfa33c269ed6b68f9e2e3150002b88846df25f478e91625c04b5117
+c237
+client call clen=8017 slen= 834
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+001b0010000800060568712d3038000a00040002001d001a0003000102
+Transport parameters offered:
+000102
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+WARNING: chain validation failed, ignoring.
+client done clen=  58 slen= 834 status=client_complete
+170303003571a1ea0075f21ea15b0375a3c31a189b3f491d33f292cb64a8e6e0
+238f297b2c0f57e5994f95755989e13a866e88276f336066004c
+server call clen=  58 slen=7358
+sender done clen=  58 slen=   0 status=server_complete
+=== Exporter secret ===
+f0037e3f635bb9b7d0d34f4ac8ebd7f640ad011534cb39dfa1cb1413be632b1c
+=== QUIC 1-RTT secrets ===
+C: 36fe6173494f49e781348d45657b0a4af026a44e493fc1948a27defd1e71630b
+S: b6be2fec837bb72b881ced7ad579388ec7d27bf456e4cb5b2618448906796272
+=== AEAD client key test ===
+0c72f823a8670f71f2a2b9d9b5facffa6526a71e6bc33677125fa9
+=== Decrypt successful ===
+Ok
+./quic.exe 0rtt
+
+INITIAL ECDHE HANDSHAKE (NO EARLY SECRET)
+
+server create
+client create
+client returns would_block clen=175 slen=0
+ClientHello[ 175] ---->
+
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+003d001a0009ffff00050a0b0c0d0e0000000e000c0000096c6f63616c686f73
+740010000800060568712d3038000d0006000408040403000a00040002001d
+Transport parameters offered:
+ffff00050a0b0c0d0e
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+======== TO BE SIGNED <0403>: (130 octets) ========
+2020202020202020202020202020202020202020202020202020202020202020
+2020202020202020202020202020202020202020202020202020202020202020
+544c5320312e332c207365727665722043657274696669636174655665726966
+7900471285fd787770ae04a27887e0cd0e3d6d392be4715053891a1dc3c5a422
+9865
+===================================================
+server returns server_accept clen=175 slen=834
+secret=c7f011451715f011260aa9da2d43fc2980efcf96883375c5037a24149d485618
+<---- ServerHello;(EncryptedExtensions; Certificate; CertVerify; Finished)[ 834]
+
+@@@@ Nego callback for TLS 1.3 @@@@
++ set +x
+Offered extensions:
+001b0010000800060568712d3038000a00040002001d001a0003000102
+Transport parameters offered:
+000102
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+WARNING: chain validation failed, ignoring.
+client returns client_complete clen=58 slen=834
+secret=c7f011451715f011260aa9da2d43fc2980efcf96883375c5037a24149d485618
+(Finished) [  58] ---->
+
+server returns server_complete clen=58 slen=0
+server returns would_block clen=0 slen=135
+<---- {Ticket}[ 135]
+
+##### New session ticket received! #####
+Host: localhost
+Ticket:
+05e4163243ada7fda044e2e42922687233ccdc0cd3ab0b3fa72d8c0fceb7df34
+c59d6a9e5220e286dbed59bc5411904b8f41c50fe215a155e7e0dc3ceff2105c
+65cf4ede66e665c227fa7921
+########################################
+client returns clen=0 slen=135 status=would_block
+
+TICKET-BASED RESUMPTION
+
+server create
+client create
+client returns client_early_data clen=302 slen=0
+early secret=fefe6d482fd72cc64bada0e2d116d705d887ffb5a645634637f21f2d3d0ca913
+ClientHello[ 302] ---->
+
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+003d001a0009ffff00050a0b0c0d0e0000000e000c0000096c6f63616c686f73
+740010000800060568712d3038000d0006000408040403000a00040002001d
+Transport parameters offered:
+ffff00050a0b0c0d0e
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+server returns server_accept_early_data clen=302 slen=196
+early secret=fefe6d482fd72cc64bada0e2d116d705d887ffb5a645634637f21f2d3d0ca913
+secret=85b4ffdfc669a3e3bc124232451b1de5f245d9a28e695e68d2fcab77288d0b20
+<---- ServerHello;(EncryptedExtensions; Certificate; CertVerify; Finished)[ 196]
+
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+001b0010000800060568712d3038000a00040002001d001a0003000102
+Transport parameters offered:
+000102
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+client returns client_complete_early_data clen=84 slen=196
+secret=85b4ffdfc669a3e3bc124232451b1de5f245d9a28e695e68d2fcab77288d0b20
+(Finished) [  84] ---->
+
+server returns clen=84 slen=0 status=server_complete
+server returns would_block clen=0 slen=135
+<---- {Ticket}[ 135]
+
+##### New session ticket received! #####
+Host: localhost
+Ticket:
+4f2c49c3d2a651e86c5f1badd47a105badb50732ab950e976077e995109b0830
+bc7908421a97d77713e1162cd31268b1857c584ae9498f6627ee51a4845ca05d
+d75995bd291765957b43087e
+########################################
+client returns clen=0 slen=135 status=would_block
+Ok
+./quic.exe hrr
+
+STATELESS RETRY TEST
+
+server create
+client create
+client returns would_block clen=175 slen=0
+ClientHello[ 175] ---->
+
+~~~~~~~~~ Client Hello Summary ~~~~~~~~~~~
+~ SNI = localhost
+~ ALPN = 00060568712d3038
+~ Cookie = NULL
+~ Extensions = 0079001a0009ffff00050a0b0c0d0e002b0003027f1c003300260024001d0020
+6620e0a0f2b25b73176f6fdb1d95c4d87c3d54e08c611b96ca12d957d22f6d52
+0000000e000c0000096c6f63616c686f73740010000800060568712d30380017
+0000000d0006000408040403000a00040002001d002d0003020001
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+003d001a0009ffff00050a0b0c0d0e0000000e000c0000096c6f63616c686f73
+740010000800060568712d3038000d0006000408040403000a00040002001d
+Transport parameters offered:
+ffff00050a0b0c0d0e
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+server returns server_stateless_retry clen=175 slen=188
+<---- HRR[ 188]
+
+server re-create
+client returns would_block clen=308 slen=188
+ClientHello2[ 308] ---->
+
+~~~~~~~~~ Client Hello Summary ~~~~~~~~~~~
+~ SNI = localhost
+~ ALPN = 00060568712d3038
+~ Cookie = 48656c6c6f20576f726c64
+~ Extensions = 00fe002c0081007f997659ca0e83541d5203f5eef3282f357ba1c3e9aa7331c2
+bc265c6ab2270b3497a6eda0a0863960a301233bd921271540ecea31df19c0aa
+47e1318d700baaf83ce8e4f76cd79577fecbaa53a1f5b184814fd35f37b4e736
+b18248b1081255ff24234c71556dbc1562ae0cb488b9c835cc51852b9608bcf1
+1ce2cc4958e3cd001a0009ffff00050a0b0c0d0e002b0003027f1c0033002600
+24001d00206620e0a0f2b25b73176f6fdb1d95c4d87c3d54e08c611b96ca12d9
+57d22f6d520000000e000c0000096c6f63616c686f7374001000080006056871
+2d303800170000000d0006000408040403000a00040002001d002d0003020001
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+003d001a0009ffff00050a0b0c0d0e0000000e000c0000096c6f63616c686f73
+740010000800060568712d3038000d0006000408040403000a00040002001d
+Transport parameters offered:
+ffff00050a0b0c0d0e
+Stateless cookie found, application contents:
+48656c6c6f20576f726c64
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+======== TO BE SIGNED <0403>: (130 octets) ========
+2020202020202020202020202020202020202020202020202020202020202020
+2020202020202020202020202020202020202020202020202020202020202020
+544c5320312e332c207365727665722043657274696669636174655665726966
+79008159b283142536455465a1b0385e0d95fcf5cec8641ace93861636d781b9
+a7a2
+===================================================
+server returns server_accept clen=308 slen=834
+secret=8fd3b73f382077abfcd71ec2389195b0806312da1d3725dcf55d0ca6add655e7
+<---- ServerHello;(EncryptedExtensions; Certificate; CertVerify; Finished)[ 834]
+
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+001b0010000800060568712d3038000a00040002001d001a0003000102
+Transport parameters offered:
+000102
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+WARNING: chain validation failed, ignoring.
+client returns client_complete clen=58 slen=834
+secret=8fd3b73f382077abfcd71ec2389195b0806312da1d3725dcf55d0ca6add655e7
+(Finished) [  58] ---->
+
+server returns server_complete clen=58 slen=0
+server returns would_block clen=0 slen=135
+<---- {Ticket}[ 135]
+
+##### New session ticket received! #####
+Host: localhost
+Ticket:
+fa4e53159373bcfc99676bb624ca39d7fc7e2f5d3a45e7b7e95bf8a3d6e0ab05
+e573862dd4612baac3da490fa112d15a5626ade21102cf4176d3b18bb78b1d7d
+862db0479566701ba9f8e4f0
+########################################
+client returns clen=0 slen=135 status=would_block
+Ok
+================================================================================
