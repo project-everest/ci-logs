@@ -1,0 +1,604 @@
+This is /home/everbld/everest-ci/ci
+Working directory: /cygdrive/c/build/agent1/_work/2/s
+About to run: mitls_verify
+BUILD_SOURCEBRANCHNAME: quic2c
+BUILD_DEFINITIONNAME: miTLS-CI-Windows
+BUILD_BUILDID: 20358
+DEFINITIONNAME:
+Z3 is /home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin/z3
+From https://github.com/FStarLang/FStar
+0be9a7a93..c611a6534  master             -> origin/master
+* [new branch]          c_delta-equational -> origin/c_delta-equational
+49016426d..12128c61f  c_prop-dev         -> origin/c_prop-dev
+a50fb3734..f5ed64068  guido_tactics      -> origin/guido_tactics
+74d6b3c33..ad93ad3dd  nik_rel            -> origin/nik_rel
+Switching to F* origin/master
+HEAD is now at c611a6534 [CI] regenerate hints + ocaml snapshot
+make: Entering directory '/cygdrive/c/build/agent1/_work/2/s/fstar/src/ocaml-output'
+cp "../extraction/ml/FStar_Extraction_ML_PrintML_4.05.X.ml" ../extraction/ml/FStar_Extraction_ML_PrintML.ml
+make: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/fstar/src/ocaml-output'
+make: Entering directory '/cygdrive/c/build/agent1/_work/2/s/fstar/src/ocaml-output'
+echo 'open FStar_Util' > FStar_Version.ml
+echo 'let dummy () = ();;' >> FStar_Version.ml
+echo 'FStar_Options._version := "0.9.6.0~alpha1";;' >> FStar_Version.ml
+echo 'FStar_Options._platform := "Windows_x64";;' >> FStar_Version.ml
+echo 'FStar_Options._compiler := "OCaml 4.05.0";;' >> FStar_Version.ml
+echo 'FStar_Options._date := "2018-05-07T03:51:33-07:00";;' >> FStar_Version.ml
+echo 'FStar_Options._commit:= "c611a6534";;' >> FStar_Version.ml
+make: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/fstar/src/ocaml-output'
+make: Entering directory '/cygdrive/c/build/agent1/_work/2/s/fstar/src/ocaml-output'
+cd ../../ && ocamlbuild -cflag -g -I src/ocaml-output -I src/basic/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/prettyprint/ml -I src/tactics/ml -I src/tests/ml -I ulib/ml -j 24 -build-dir src/ocaml-output/_build -use-ocamlfind main.native src/ocaml-output/FStar_Syntax_Syntax.inferred.mli
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Version.ml > src/ocaml-output/FStar_Version.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Version.cmo src/ocaml-output/FStar_Version.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Version.cmx src/ocaml-output/FStar_Version.ml
+ocamlfind ocamlopt -linkpkg -linkall -thread -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/basic/ml -I ulib/ml -I src/ocaml-output -I src/parser/ml -I src/prettyprint/ml -I src/extraction/ml -I src/tactics/ml -I src/fstar/ml src/basic/ml/FStar_BigInt.cmx ulib/ml/FStar_Monotonic_Heap.cmx ulib/ml/FStar_CommonST.cmx ulib/ml/FStar_List_Tot_Base.cmx ulib/ml/FStar_List.cmx ulib/ml/FStar_ST.cmx ulib/ml/prims.cmx src/basic/ml/FStar_Util.cmx src/basic/ml/FStar_Compiler_Bytes.cmx ulib/ml/FStar_Char.cmx ulib/ml/FStar_String.cmx src/basic/ml/FStar_Getopt.cmx src/basic/ml/FStar_Platform.cmx ulib/ml/FStar_All.cmx src/basic/ml/FStar_Unionfind.cmx ulib/ml/FStar_Pervasives_Native.cmx src/ocaml-output/FStar_Common.cmx src/ocaml-output/FStar_Range.cmx src/ocaml-output/FStar_Ident.cmx ulib/ml/FStar_Float.cmx ulib/ml/FStar_Int16.cmx ulib/ml/FStar_Int32.cmx ulib/ml/FStar_Int64.cmx ulib/ml/FStar_Int8.cmx ulib/ml/FStar_UInt16.cmx ulib/ml/FStar_UInt8.cmx ulib/ml/FStar_BaseTypes.cmx src/ocaml-output/FStar_Const.cmx ulib/ml/FStar_Exn.cmx ulib/ml/FStar_Option.cmx src/ocaml-output/FStar_Options.cmx src/ocaml-output/FStar_Errors.cmx src/ocaml-output/FStar_Parser_Const.cmx ulib/ml/FStar_Dyn.cmx src/ocaml-output/FStar_Syntax_Syntax.cmx src/ocaml-output/FStar_Extraction_ML_Syntax.cmx src/ocaml-output/FStar_Parser_AST.cmx src/ocaml-output/FStar_Syntax_Unionfind.cmx src/ocaml-output/FStar_Syntax_Subst.cmx src/ocaml-output/FStar_Syntax_Free.cmx src/ocaml-output/FStar_Syntax_InstFV.cmx src/ocaml-output/FStar_Syntax_Util.cmx src/parser/ml/FStar_Parser_Util.cmx src/ocaml-output/FStar_Parser_Parse.cmx src/parser/ml/FStar_Ulexing.cmx src/parser/ml/FStar_Parser_LexFStar.cmx src/parser/ml/FStar_Parser_ParseIt.cmx src/ocaml-output/FStar_Parser_Driver.cmx src/ocaml-output/FStar_Parser_Dep.cmx src/ocaml-output/FStar_Pervasives.cmx src/prettyprint/ml/FStar_Pprint.cmx src/ocaml-output/FStar_Parser_ToDocument.cmx src/ocaml-output/FStar_Syntax_DsEnv.cmx src/ocaml-output/FStar_Syntax_Resugar.cmx src/ocaml-output/FStar_Syntax_Print.cmx src/ocaml-output/FStar_TypeChecker_Common.cmx src/ocaml-output/FStar_TypeChecker_Env.cmx src/ocaml-output/FStar_Extraction_ML_UEnv.cmx src/ocaml-output/FStar_Reflection_Data.cmx src/ocaml-output/FStar_Syntax_Embeddings.cmx src/ocaml-output/FStar_TypeChecker_Normalize.cmx src/ocaml-output/FStar_Extraction_ML_Util.cmx src/ocaml-output/FStar_Format.cmx src/ocaml-output/FStar_Extraction_ML_Code.cmx src/extraction/ml/FStar_Extraction_ML_PrintML.cmx src/ocaml-output/FStar_Dependencies.cmx src/ocaml-output/FStar_Extraction_Kremlin.cmx src/ocaml-output/FStar_Order.cmx src/ocaml-output/FStar_Reflection_Basic.cmx src/ocaml-output/FStar_Reflection_Embeddings.cmx src/ocaml-output/FStar_Syntax_MutRecTy.cmx src/ocaml-output/FStar_ToSyntax_ToSyntax.cmx src/ocaml-output/FStar_TypeChecker_Err.cmx src/ocaml-output/FStar_TypeChecker_Rel.cmx src/ocaml-output/FStar_TypeChecker_Util.cmx src/ocaml-output/FStar_TypeChecker_TcTerm.cmx src/ocaml-output/FStar_Extraction_ML_Term.cmx src/ocaml-output/FStar_Extraction_ML_Modul.cmx src/ocaml-output/FStar_Fsdoc_Generator.cmx src/ocaml-output/FStar_Indent.cmx src/ocaml-output/FStar_Interactive_CompletionTable.cmx src/ocaml-output/FStar_Reflection_Interpreter.cmx src/ocaml-output/FStar_SMTEncoding_Term.cmx src/ocaml-output/FStar_SMTEncoding_Util.cmx src/ocaml-output/FStar_SMTEncoding_Env.cmx src/ocaml-output/FStar_SMTEncoding_EncodeTerm.cmx src/ocaml-output/FStar_SMTEncoding_Z3.cmx src/ocaml-output/FStar_SMTEncoding_ErrorReporting.cmx src/ocaml-output/FStar_SMTEncoding_Encode.cmx src/ocaml-output/FStar_SMTEncoding_Solver.cmx src/ocaml-output/FStar_Tactics_Types.cmx src/ocaml-output/FStar_Tactics_Result.cmx src/ocaml-output/FStar_Tactics_Basic.cmx src/ocaml-output/FStar_Tactics_Embedding.cmx src/tactics/ml/FStar_Tactics_Native.cmx src/ocaml-output/FStar_Tactics_Interpreter.cmx src/ocaml-output/FStar_ToSyntax_Interleave.cmx src/ocaml-output/FStar_TypeChecker_DMFF.cmx src/ocaml-output/FStar_TypeChecker_TcInductive.cmx src/ocaml-output/FStar_TypeChecker_Tc.cmx src/ocaml-output/FStar_Universal.cmx src/ocaml-output/FStar_Interactive_Ide.cmx src/ocaml-output/FStar_Interactive_Legacy.cmx src/ocaml-output/FStar_Version.cmx src/tactics/ml/FStar_Tactics_Load.cmx src/ocaml-output/FStar_Main.cmx src/fstar/ml/main.cmx -o src/fstar/ml/main.native
+# No parallelism done
+cp -f _build/src/fstar/ml/main.native ../../bin/fstar.exe
+cp -f _build/src/fstar/ml/main.native ../../bin/fstar.ocaml
+make: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/fstar/src/ocaml-output'
+make: Entering directory '/cygdrive/c/build/agent1/_work/2/s/fstar/src/ocaml-output'
+mkdir -p ../../bin/fstar-compiler-lib/
+find . \( -name '*.cmi' -or -name '*.cmx' \) -exec cp {} ../../bin/fstar-compiler-lib/ \;
+make: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/fstar/src/ocaml-output'
+make: Entering directory '/cygdrive/c/build/agent1/_work/2/s/fstar/src/ocaml-output'
+cd ../../ && ocamlbuild -cflag -g -I src/ocaml-output -I src/basic/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/prettyprint/ml -I src/tactics/ml -I src/tests/ml -I ulib/ml -j 24 -build-dir src/ocaml-output/_build -use-ocamlfind FStar_Tests_Main.native
+ocamlfind ocamlopt -linkpkg -thread -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/basic/ml -I ulib/ml -I src/ocaml-output -I src/parser/ml -I src/prettyprint/ml -I src/extraction/ml -I src/tactics/ml -I src/tests/ml src/basic/ml/FStar_BigInt.cmx ulib/ml/FStar_Monotonic_Heap.cmx ulib/ml/FStar_CommonST.cmx ulib/ml/FStar_List_Tot_Base.cmx ulib/ml/FStar_List.cmx ulib/ml/FStar_ST.cmx ulib/ml/prims.cmx src/basic/ml/FStar_Util.cmx src/basic/ml/FStar_Compiler_Bytes.cmx ulib/ml/FStar_Char.cmx ulib/ml/FStar_String.cmx src/basic/ml/FStar_Getopt.cmx src/basic/ml/FStar_Platform.cmx ulib/ml/FStar_All.cmx src/basic/ml/FStar_Unionfind.cmx ulib/ml/FStar_Pervasives_Native.cmx src/ocaml-output/FStar_Common.cmx src/ocaml-output/FStar_Range.cmx src/ocaml-output/FStar_Ident.cmx ulib/ml/FStar_Float.cmx ulib/ml/FStar_Int16.cmx ulib/ml/FStar_Int32.cmx ulib/ml/FStar_Int64.cmx ulib/ml/FStar_Int8.cmx ulib/ml/FStar_UInt16.cmx ulib/ml/FStar_UInt8.cmx ulib/ml/FStar_BaseTypes.cmx src/ocaml-output/FStar_Const.cmx ulib/ml/FStar_Exn.cmx ulib/ml/FStar_Option.cmx src/ocaml-output/FStar_Options.cmx src/ocaml-output/FStar_Errors.cmx src/ocaml-output/FStar_Parser_Const.cmx ulib/ml/FStar_Dyn.cmx src/ocaml-output/FStar_Syntax_Syntax.cmx src/ocaml-output/FStar_Extraction_ML_Syntax.cmx src/ocaml-output/FStar_Parser_AST.cmx src/ocaml-output/FStar_Syntax_Unionfind.cmx src/ocaml-output/FStar_Syntax_Subst.cmx src/ocaml-output/FStar_Syntax_Free.cmx src/ocaml-output/FStar_Syntax_InstFV.cmx src/ocaml-output/FStar_Syntax_Util.cmx src/parser/ml/FStar_Parser_Util.cmx src/ocaml-output/FStar_Parser_Parse.cmx src/parser/ml/FStar_Ulexing.cmx src/parser/ml/FStar_Parser_LexFStar.cmx src/parser/ml/FStar_Parser_ParseIt.cmx src/ocaml-output/FStar_Parser_Driver.cmx src/ocaml-output/FStar_Parser_Dep.cmx src/ocaml-output/FStar_Pervasives.cmx src/prettyprint/ml/FStar_Pprint.cmx src/ocaml-output/FStar_Parser_ToDocument.cmx src/ocaml-output/FStar_Syntax_DsEnv.cmx src/ocaml-output/FStar_Syntax_Resugar.cmx src/ocaml-output/FStar_Syntax_Print.cmx src/ocaml-output/FStar_TypeChecker_Common.cmx src/ocaml-output/FStar_TypeChecker_Env.cmx src/ocaml-output/FStar_Extraction_ML_UEnv.cmx src/ocaml-output/FStar_Reflection_Data.cmx src/ocaml-output/FStar_Syntax_Embeddings.cmx src/ocaml-output/FStar_TypeChecker_Normalize.cmx src/ocaml-output/FStar_Extraction_ML_Util.cmx src/ocaml-output/FStar_Format.cmx src/ocaml-output/FStar_Extraction_ML_Code.cmx src/extraction/ml/FStar_Extraction_ML_PrintML.cmx src/ocaml-output/FStar_Dependencies.cmx src/ocaml-output/FStar_Extraction_Kremlin.cmx src/ocaml-output/FStar_Order.cmx src/ocaml-output/FStar_Reflection_Basic.cmx src/ocaml-output/FStar_Reflection_Embeddings.cmx src/ocaml-output/FStar_Syntax_MutRecTy.cmx src/ocaml-output/FStar_ToSyntax_ToSyntax.cmx src/ocaml-output/FStar_TypeChecker_Err.cmx src/ocaml-output/FStar_TypeChecker_Rel.cmx src/ocaml-output/FStar_TypeChecker_Util.cmx src/ocaml-output/FStar_TypeChecker_TcTerm.cmx src/ocaml-output/FStar_Extraction_ML_Term.cmx src/ocaml-output/FStar_Extraction_ML_Modul.cmx src/ocaml-output/FStar_Fsdoc_Generator.cmx src/ocaml-output/FStar_Indent.cmx src/ocaml-output/FStar_Interactive_CompletionTable.cmx src/ocaml-output/FStar_Reflection_Interpreter.cmx src/ocaml-output/FStar_SMTEncoding_Term.cmx src/ocaml-output/FStar_SMTEncoding_Util.cmx src/ocaml-output/FStar_SMTEncoding_Env.cmx src/ocaml-output/FStar_SMTEncoding_EncodeTerm.cmx src/ocaml-output/FStar_SMTEncoding_Z3.cmx src/ocaml-output/FStar_SMTEncoding_ErrorReporting.cmx src/ocaml-output/FStar_SMTEncoding_Encode.cmx src/ocaml-output/FStar_SMTEncoding_Solver.cmx src/ocaml-output/FStar_Tactics_Types.cmx src/ocaml-output/FStar_Tactics_Result.cmx src/ocaml-output/FStar_Tactics_Basic.cmx src/ocaml-output/FStar_Tactics_Embedding.cmx src/tactics/ml/FStar_Tactics_Native.cmx src/ocaml-output/FStar_Tactics_Interpreter.cmx src/ocaml-output/FStar_ToSyntax_Interleave.cmx src/ocaml-output/FStar_TypeChecker_DMFF.cmx src/ocaml-output/FStar_TypeChecker_TcInductive.cmx src/ocaml-output/FStar_TypeChecker_Tc.cmx src/ocaml-output/FStar_Universal.cmx src/ocaml-output/FStar_Interactive_Ide.cmx src/ocaml-output/FStar_Interactive_Legacy.cmx src/ocaml-output/FStar_Version.cmx src/tactics/ml/FStar_Tactics_Load.cmx src/ocaml-output/FStar_Main.cmx src/ocaml-output/FStar_Tests_Pars.cmx src/ocaml-output/FStar_Tests_Util.cmx src/ocaml-output/FStar_Tests_Norm.cmx src/ocaml-output/FStar_Tests_Unif.cmx src/ocaml-output/FStar_Tests_Test.cmx src/tests/ml/FStar_Tests_Main.cmx -o src/tests/ml/FStar_Tests_Main.native
+# No parallelism done
+cp -f _build/src/tests/ml/FStar_Tests_Main.native ../../bin/tests.exe
+make: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/fstar/src/ocaml-output'
+make: Entering directory '/cygdrive/c/build/agent1/_work/2/s/fstar/ulib/ml'
+make -C .. install-fstarlib
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/2/s/fstar/ulib'
+cd ../ && OCAMLPATH="../../../bin/" ocamlbuild -cflag -g -use-ocamlfind -build-dir ulib/ml/_build -I ulib/ml -I ulib/ml/extracted fstarlib.a fstarlib.cma fstarlib.cmxs fstarlib.cmxa
+ocamlfind ocamlopt -shared -linkall -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml ulib/ml/fstarlib.cmxa -o ulib/ml/fstarlib.cmxs
+mkdir -p ../bin/fstarlib/
+cp ml/_build/ulib/ml/*.cmi ml/_build/ulib/ml/*.cmx ml/_build/ulib/ml/extracted/*.cmi ml/_build/ulib/ml/extracted/*.cmx ml/_build/ulib/ml/fstarlib.a ml/_build/ulib/ml/fstarlib.cma ml/_build/ulib/ml/fstarlib.cmxs ml/_build/ulib/ml/fstarlib.cmxa ../bin/fstarlib/
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/fstar/ulib'
+make -C .. install-fstar-tactics
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/2/s/fstar/ulib'
+cd ../ && OCAMLPATH="../../../bin/" ocamlbuild -cflag -g -use-ocamlfind -build-dir ulib/tactics_ml/_build -I ulib/tactics_ml/ -I ulib/tactics_ml/extracted -I ulib/tactics_ml/fstarlib_leftovers fstartaclib.cma fstartaclib.cmxs fstartaclib.cmxa
+ocamlfind ocamlopt -shared -linkall -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/tactics_ml ulib/tactics_ml/fstartaclib.cmxa -o ulib/tactics_ml/fstartaclib.cmxs
+mkdir -p ../bin/fstar-tactics-lib/
+cp tactics_ml/_build/ulib/tactics_ml/*.cmi tactics_ml/_build/ulib/tactics_ml/*.cmx tactics_ml/_build/ulib/tactics_ml/fstarlib_leftovers/*.cmi tactics_ml/_build/ulib/tactics_ml/fstarlib_leftovers/*.cmx tactics_ml/_build/ulib/tactics_ml/extracted/*.cmi tactics_ml/_build/ulib/tactics_ml/extracted/*.cmx tactics_ml/_build/ulib/tactics_ml/fstartaclib.cma tactics_ml/_build/ulib/tactics_ml/fstartaclib.cmxs tactics_ml/_build/ulib/tactics_ml/fstartaclib.cmxa ../bin/fstar-tactics-lib/
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/fstar/ulib'
+make: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/fstar/ulib/ml'
+From https://github.com/FStarLang/kremlin
+9d328e0..2739d4f  cleanup-kremlib-2 -> origin/cleanup-kremlib-2
+a3d914d..2739d4f  fstar-master      -> origin/fstar-master
+Switching to KreMLin origin/fstar-master
+HEAD is now at 2739d4f Don't generate an include header loop, this function is not exercised anyhow
+make: Entering directory '/cygdrive/c/build/agent1/_work/2/s/kremlin'
+ocamlbuild -I src -I lib -I parser -I kremlib -use-menhir -use-ocamlfind -classic-display -menhir "menhir --infer --explain" Kremlin.native Tests.native
+ocamlfind ocamldep -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -modules src/Kremlin.ml > src/Kremlin.ml.depends
+ocamlfind ocamldep -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -modules lib/KList.ml > lib/KList.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I lib -I src -I parser -I kremlib -o lib/KList.cmo lib/KList.ml
+ocamlfind ocamldep -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -modules src/AstToCFlat.ml > src/AstToCFlat.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Ast.cmo src/Ast.ml
+ocamlfind ocamldep -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -modules src/CFlat.ml > src/CFlat.ml.depends
+ocamlfind ocamldep -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -modules src/CFlatToWasm.ml > src/CFlatToWasm.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/CFlat.cmo src/CFlat.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Bundle.cmo src/Bundle.ml
+menhir --infer --explain --ocamlc ' ocamlfind ocamlc -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I parser -I src -I lib -I kremlib' --infer parser/parser.mly
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I parser -I src -I lib -I kremlib -o parser/parser.cmi parser/parser.mli
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -syntax camlp4o -syntax pa_ulex -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I parser -I src -I lib -I kremlib -o parser/Lexer.cmo parser/Lexer.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I lib -I src -I parser -I kremlib -o lib/Utils.cmo lib/Utils.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/PrintCommon.cmo src/PrintCommon.ml
+ocamlfind ocamldep -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -modules src/Options.ml > src/Options.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Options.cmo src/Options.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Location.cmo src/Location.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/PrintAst.cmo src/PrintAst.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Warnings.cmo src/Warnings.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/DeBruijn.cmo src/DeBruijn.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/CFlatToWasm.cmo src/CFlatToWasm.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Helpers.cmo src/Helpers.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Checker.cmo src/Checker.ml
+ocamlfind ocamldep -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -modules src/Builtin.ml > src/Builtin.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/GlobalNames.cmo src/GlobalNames.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/SimplifyC89.cmo src/SimplifyC89.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Drop.cmo src/Drop.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Simplify.cmo src/Simplify.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Inlining.cmo src/Inlining.ml
+ocamlfind ocamldep -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -modules src/Driver.ml > src/Driver.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/InputAst.cmo src/InputAst.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Driver.cmo src/Driver.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/PrintC.cmo src/PrintC.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/AstToCFlat.cmo src/AstToCFlat.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/AstToCStar.cmo src/AstToCStar.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Builtin.cmo src/Builtin.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Bundles.cmo src/Bundles.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/CStarToC11.cmo src/CStarToC11.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/DataTypes.cmo src/DataTypes.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Diagnostics.cmo src/Diagnostics.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/GcTypes.cmo src/GcTypes.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/InputAstToAst.cmo src/InputAstToAst.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Monomorphization.cmo src/Monomorphization.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Output.cmo src/Output.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/OutputJs.cmo src/OutputJs.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Parsers.cmo src/Parsers.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Print.cmo src/Print.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/SimplifyWasm.cmo src/SimplifyWasm.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Structs.cmo src/Structs.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Kremlin.cmo src/Kremlin.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I lib -I src -I parser -I kremlib -o lib/KList.cmx lib/KList.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Ast.cmx src/Ast.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/CFlat.cmx src/CFlat.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Bundle.cmx src/Bundle.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I parser -I src -I lib -I kremlib -o parser/parser.cmx parser/parser.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -syntax camlp4o -syntax pa_ulex -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I parser -I src -I lib -I kremlib -o parser/Lexer.cmx parser/Lexer.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I lib -I src -I parser -I kremlib -o lib/Utils.cmx lib/Utils.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/PrintCommon.cmx src/PrintCommon.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Options.cmx src/Options.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Location.cmx src/Location.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/PrintAst.cmx src/PrintAst.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Warnings.cmx src/Warnings.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/DeBruijn.cmx src/DeBruijn.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/CFlatToWasm.cmx src/CFlatToWasm.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Helpers.cmx src/Helpers.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Checker.cmx src/Checker.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/GlobalNames.cmx src/GlobalNames.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/SimplifyC89.cmx src/SimplifyC89.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Drop.cmx src/Drop.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Simplify.cmx src/Simplify.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Inlining.cmx src/Inlining.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/InputAst.cmx src/InputAst.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Driver.cmx src/Driver.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/PrintC.cmx src/PrintC.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/AstToCFlat.cmx src/AstToCFlat.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/AstToCStar.cmx src/AstToCStar.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Builtin.cmx src/Builtin.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Bundles.cmx src/Bundles.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/CStarToC11.cmx src/CStarToC11.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/DataTypes.cmx src/DataTypes.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Diagnostics.cmx src/Diagnostics.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/GcTypes.cmx src/GcTypes.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/InputAstToAst.cmx src/InputAstToAst.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Monomorphization.cmx src/Monomorphization.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Output.cmx src/Output.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/OutputJs.cmx src/OutputJs.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Parsers.cmx src/Parsers.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Print.cmx src/Print.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/SimplifyWasm.cmx src/SimplifyWasm.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Structs.cmx src/Structs.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Kremlin.cmx src/Kremlin.ml
+ocamlfind ocamlopt -linkpkg -g -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I lib -I src -I parser lib/Ansi.cmx lib/KList.cmx lib/KPrint.cmx lib/KString.cmx lib/Option.cmx src/Atom.cmx src/Common.cmx src/Constant.cmx src/Ast.cmx src/Idents.cmx src/Bundle.cmx src/Flags.cmx parser/parser.cmx parser/Lexer.cmx lib/Utils.cmx src/CFlat.cmx src/PrintCommon.cmx src/Location.cmx src/Options.cmx src/PrintAst.cmx src/Warnings.cmx src/CFlatToWasm.cmx src/DeBruijn.cmx src/Helpers.cmx src/AstToCFlat.cmx src/CStar.cmx src/Checker.cmx src/AstToCStar.cmx src/Builtin.cmx src/Drop.cmx src/GlobalNames.cmx src/SimplifyC89.cmx src/Simplify.cmx src/Inlining.cmx src/Bundles.cmx src/C11.cmx src/CStarToC11.cmx src/DataTypes.cmx src/Diagnostics.cmx src/Driver.cmx src/GcTypes.cmx src/InputAst.cmx src/InputAstToAst.cmx src/Monomorphization.cmx src/PrintC.cmx src/Output.cmx src/OutputJs.cmx src/Parsers.cmx src/Print.cmx src/SimplifyWasm.cmx src/Structs.cmx src/Kremlin.cmx -o src/Kremlin.native
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o Tests.cmo Tests.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o Tests.cmx Tests.ml
+ocamlfind ocamlopt -linkpkg -g -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I lib -I src -I parser lib/KList.cmx lib/KPrint.cmx lib/KString.cmx lib/Option.cmx src/Atom.cmx src/Common.cmx src/Constant.cmx src/Ast.cmx src/Idents.cmx src/Bundle.cmx src/Flags.cmx parser/parser.cmx parser/Lexer.cmx lib/Utils.cmx src/C11.cmx src/CStar.cmx src/PrintCommon.cmx src/Location.cmx src/Options.cmx src/PrintAst.cmx src/Warnings.cmx src/CStarToC11.cmx src/Print.cmx src/PrintC.cmx Tests.cmx -o Tests.native
+ln -sf Kremlin.native krml
+make: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/kremlin'
+make: Entering directory '/cygdrive/c/build/agent1/_work/2/s/kremlin'
+OCAMLPATH=C:/build/agent1/_work/2/s/fstar/bin ocamlbuild -I src -I lib -I parser -I kremlib -use-menhir -use-ocamlfind -classic-display -menhir "menhir --infer --explain" Ast.inferred.mli kremlib/C.cmx kremlib/TestLib.cmx kremlib/C.cmo kremlib/TestLib.cmo
+ocamlfind ocamlc -I src -I parser -I lib -I kremlib -i -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime src/Ast.ml > src/Ast.inferred.mli
+make: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/kremlin'
+From https://github.com/mitls/hacl-star
+95f62556..bada504f  dev_providers -> origin/dev_providers
+70f9797d..bc3e49ce  fstar-master  -> origin/fstar-master
+a13ea5c8..b69319a0  stable        -> origin/stable
+Switching to HACL origin/fstar-master
+HEAD is now at bc3e49ce Merge remote-tracking branch 'origin/cleanup-kremlib-2' into fstar-master
+Switching to MLCrypto origin/master
+HEAD is now at 12f3f1e Revert "Link libcrypto"
+make: Nothing to be done for 'all'.
+make -C ../../code/curve25519 x25519-c/Hacl_Curve25519.c
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/code/curve25519'
+Warning 10: : -drop is deprecated
+use a combination of -bundle and -d reachability to make sure the functions are eliminated as you wish
+C:/build/agent1/_work/2/s/kremlin/krml   -I C:/build/agent1/_work/2/s/hacl-star/code/lib/kremlin -I C:/build/agent1/_work/2/s/kremlin/kremlib -I C:/build/agent1/_work/2/s/hacl-star/specs -I . -ccopt -march=native -verbose -ldopt -flto -I ../bignum -tmpdir x25519-c -drop Spec.*,Hacl.Spec.*,Hacl.Cast,Hacl.UInt.*,Hacl.Endianness,Hacl.UInt8,Hacl.UInt16,Hacl.UInt32,Hacl.UInt64,Hacl.UInt128,Prims -add-include '"kremlin/testlib.h"' C:/build/agent1/_work/2/s/kremlin/kremlib/testlib.c -skip-translation ../bignum/Hacl.Bignum.Fdifference.fst ../bignum/Hacl.Bignum.Fmul.fst ../bignum/Hacl.Bignum.Fproduct.fst ../bignum/Hacl.Bignum.Fscalar.fst ../bignum/Hacl.Bignum.Fsum.fst ../bignum/Hacl.Bignum.Limb.fst ../bignum/Hacl.Bignum.Wide.fst ../bignum/Hacl.Bignum.fst ../bignum/Hacl.Spec.Bignum.Bigint.fst ../bignum/Hacl.Spec.Bignum.Fdifference.fst ../bignum/Hacl.Spec.Bignum.Field.fst ../bignum/Hacl.Spec.Bignum.Fmul.fst ../bignum/Hacl.Spec.Bignum.Fproduct.fst ../bignum/Hacl.Spec.Bignum.Fscalar.fst ../bignum/Hacl.Spec.Bignum.Fsum.fst ../bignum/Hacl.Spec.Bignum.fst Hacl.Spec.Curve25519.Lemmas.fst Hacl.Bignum.Parameters.fst Hacl.Spec.Bignum.Modulo.fst Hacl.Spec.EC.AddAndDouble.fst Hacl.Spec.Bignum.Fsquare.fst Hacl.Spec.Bignum.Crecip.fst Hacl.Bignum.Modulo.fst Hacl.Bignum.Fsquare.fst Hacl.Bignum.Crecip.fst Hacl.Spec.EC.Point.fst Hacl.EC.Point.fst Hacl.Spec.EC.AddAndDouble2.fst Hacl.Spec.EC.AddAndDouble3.fst Hacl.Spec.EC.Format.Lemmas.fst Hacl.Spec.EC.Format.fst Hacl.EC.Format.fst Hacl.EC.AddAndDouble.fst Hacl.Spec.EC.Ladder.Lemmas.fst Hacl.Spec.EC.Ladder.fst Hacl.EC.Ladder.SmallLoop.fst Hacl.EC.Ladder.BigLoop.fst Hacl.EC.Ladder.fst Hacl.Spec.EC.fst Hacl.EC.fst Hacl.Curve25519.fst Hacl.Test.X25519.fst -o x25519-c/out.krml
+[38;5;81m⚙ KreMLin auto-detecting tools.[0m Here's what we found:
+[4mreadlink is:[0m readlink
+[4mKreMLin called via:[0m C:\build\agent1\_work\2\s\kremlin\_build\src\Kremlin.native
+[4mthe Kremlin executable is:[0m C:\build\agent1\_work\2\s\kremlin\_build\src\Kremlin.native
+[4mKreMLin home is:[0m C:/build/agent1/_work/2/s/kremlin
+[38;5;81m⚙ KreMLin will drive F*.[0m Here's what we found:
+read FSTAR_HOME via the environment
+[4mfstar converted to windows path:[0m C:/build/agent1/_work/2/s/fstar/bin/fstar.exe
+[4mfstar home converted to windows path:[0m C:/build/agent1/_work/2/s/fstar
+[4mfstar lib converted to windows path:[0m C:/build/agent1/_work/2/s/fstar/ulib
+fstar is on [38;5;119mbranch master[0m
+[4mfstar is:[0m C:/build/agent1/_work/2/s/fstar/bin/fstar.exe C:/build/agent1/_work/2/s/kremlin/runtime/WasmSupport.fst C:/build/agent1/_work/2/s/fstar/ulib/FStar.UInt128.fst --trace_error --cache_checked_modules --expose_interfaces --include C:/build/agent1/_work/2/s/hacl-star/code/lib/kremlin --include C:/build/agent1/_work/2/s/kremlin/kremlib --include C:/build/agent1/_work/2/s/hacl-star/specs --include . --include ../bignum --include C:/build/agent1/_work/2/s/kremlin/include
+[38;5;81m⚡ Calling F* (use -verbose to see the output)[0m
+C:/build/agent1/_work/2/s/fstar/bin/fstar.exe --odir x25519-c --codegen Kremlin --lax C:/build/agent1/_work/2/s/kremlin/runtime/WasmSupport.fst C:/build/agent1/_work/2/s/fstar/ulib/FStar.UInt128.fst --trace_error --cache_checked_modules --expose_interfaces --include C:/build/agent1/_work/2/s/hacl-star/code/lib/kremlin --include C:/build/agent1/_work/2/s/kremlin/kremlib --include C:/build/agent1/_work/2/s/hacl-star/specs --include . --include ../bignum --include C:/build/agent1/_work/2/s/kremlin/include ../bignum/Hacl.Bignum.Fdifference.fst ../bignum/Hacl.Bignum.Fmul.fst ../bignum/Hacl.Bignum.Fproduct.fst ../bignum/Hacl.Bignum.Fscalar.fst ../bignum/Hacl.Bignum.Fsum.fst ../bignum/Hacl.Bignum.Limb.fst ../bignum/Hacl.Bignum.Wide.fst ../bignum/Hacl.Bignum.fst ../bignum/Hacl.Spec.Bignum.Bigint.fst ../bignum/Hacl.Spec.Bignum.Fdifference.fst ../bignum/Hacl.Spec.Bignum.Field.fst ../bignum/Hacl.Spec.Bignum.Fmul.fst ../bignum/Hacl.Spec.Bignum.Fproduct.fst ../bignum/Hacl.Spec.Bignum.Fscalar.fst ../bignum/Hacl.Spec.Bignum.Fsum.fst ../bignum/Hacl.Spec.Bignum.fst Hacl.Spec.Curve25519.Lemmas.fst Hacl.Bignum.Parameters.fst Hacl.Spec.Bignum.Modulo.fst Hacl.Spec.EC.AddAndDouble.fst Hacl.Spec.Bignum.Fsquare.fst Hacl.Spec.Bignum.Crecip.fst Hacl.Bignum.Modulo.fst Hacl.Bignum.Fsquare.fst Hacl.Bignum.Crecip.fst Hacl.Spec.EC.Point.fst Hacl.EC.Point.fst Hacl.Spec.EC.AddAndDouble2.fst Hacl.Spec.EC.AddAndDouble3.fst Hacl.Spec.EC.Format.Lemmas.fst Hacl.Spec.EC.Format.fst Hacl.EC.Format.fst Hacl.EC.AddAndDouble.fst Hacl.Spec.EC.Ladder.Lemmas.fst Hacl.Spec.EC.Ladder.fst Hacl.EC.Ladder.SmallLoop.fst Hacl.EC.Ladder.BigLoop.fst Hacl.EC.Ladder.fst Hacl.Spec.EC.fst Hacl.EC.fst Hacl.Curve25519.fst Hacl.Test.X25519.fst
+[38;5;119m✔[0m [F*,extract]
+Extracted module Native
+Extracted module Pervasives
+Extracted module Mul
+Extracted module Squash
+Extracted module StrongExcludedMiddle
+Extracted module Classical
+Extracted module Base
+Extracted module Properties
+Extracted module Tot
+Extracted module Base
+Extracted module Properties
+Extracted module Seq
+Extracted module Lib
+Extracted module Lemmas
+Extracted module BitVector
+Extracted module UInt
+Extracted module UInt32
+Extracted module UInt64
+Extracted module Int
+Extracted module Int64
+Extracted module Int63
+Extracted module Int32
+Extracted module Int16
+Extracted module Int8
+Extracted module UInt63
+Extracted module UInt16
+Extracted module UInt8
+Extracted module Cast
+Extracted module FunctionalExtensionality
+Extracted module Set
+Extracted module Preorder
+Extracted module PropositionalExtensionality
+Extracted module PredicateExtensionality
+Extracted module TSet
+Extracted module Heap
+Extracted module Heap
+Extracted module Map
+Extracted module Witnessed
+Extracted module Ghost
+Extracted module HyperHeap
+Extracted module HyperStack
+Extracted module HyperStack
+Extracted module ST
+Extracted module WasmSupport
+Extracted module UInt128
+Extracted module Loops
+Extracted module Buffer
+Extracted module Loops
+Extracted module UInt64
+Extracted module All
+Extracted module UInt128
+Extracted module UInt8
+Extracted module Constants
+Extracted module UInt32
+Extracted module Full
+Extracted module Cast
+Extracted module Parameters
+Extracted module Limb
+Extracted module Wide
+Extracted module Field
+Extracted module Bigint
+Extracted module Fdifference
+Extracted module Fdifference
+Extracted module Modulo
+Extracted module Fproduct
+Extracted module Fmul
+Extracted module Modulo
+Extracted module Fproduct
+Extracted module Fmul
+Extracted module Fscalar
+Extracted module Fscalar
+Extracted module Fsum
+Extracted module Fsum
+Extracted module Axioms
+Extracted module Bignum
+Extracted module AddAndDouble
+Extracted module Fsquare
+Extracted module Endianness
+Extracted module Lemmas
+Extracted module Lib
+Extracted module Curve25519
+Extracted module Lemmas
+Extracted module Crecip
+Extracted module Fsquare
+Extracted module Crecip
+Extracted module Bignum
+Extracted module Lemmas
+Extracted module Lemmas
+Extracted module Point
+Extracted module Point
+Extracted module AddAndDouble2
+Extracted module AddAndDouble3
+Extracted module Lemmas
+Extracted module Endianness
+Extracted module Endianness
+Extracted module C
+Extracted module UInt16
+Extracted module Endianness
+Extracted module Endianness
+Extracted module Format
+Extracted module Format
+Extracted module AddAndDouble
+Extracted module Ladder
+Extracted module SmallLoop
+Extracted module BigLoop
+Extracted module Ladder
+Extracted module EC
+Extracted module Quantifiers
+Extracted module EC
+Extracted module Curve25519
+Extracted module Exn
+Extracted module ST
+Extracted module All
+Extracted module List
+Extracted module Char
+Extracted module String
+Extracted module String
+Extracted module TestLib
+Extracted module X25519
+Attempting to translate module FStar.Pervasives.Native
+Attempting to translate module FStar.Pervasives
+Attempting to translate module FStar.Mul
+Attempting to translate module FStar.Squash
+Attempting to translate module FStar.StrongExcludedMiddle
+Attempting to translate module FStar.Classical
+Attempting to translate module FStar.List.Tot.Base
+Attempting to translate module FStar.List.Tot.Properties
+Attempting to translate module FStar.List.Tot
+Attempting to translate module FStar.Seq.Base
+Attempting to translate module FStar.Seq.Properties
+Attempting to translate module FStar.Seq
+Attempting to translate module FStar.Math.Lib
+Attempting to translate module FStar.Math.Lemmas
+Attempting to translate module FStar.BitVector
+Attempting to translate module FStar.UInt
+Attempting to translate module FStar.UInt32
+Attempting to translate module FStar.UInt64
+Attempting to translate module FStar.Int
+Attempting to translate module FStar.Int64
+Attempting to translate module FStar.Int63
+Attempting to translate module FStar.Int32
+Attempting to translate module FStar.Int16
+Attempting to translate module FStar.Int8
+Attempting to translate module FStar.UInt63
+Attempting to translate module FStar.UInt16
+Attempting to translate module FStar.UInt8
+Attempting to translate module FStar.Int.Cast
+Attempting to translate module FStar.FunctionalExtensionality
+Attempting to translate module FStar.Set
+Attempting to translate module FStar.Preorder
+Attempting to translate module FStar.PropositionalExtensionality
+Attempting to translate module FStar.PredicateExtensionality
+Attempting to translate module FStar.TSet
+Attempting to translate module FStar.Monotonic.Heap
+Attempting to translate module FStar.Heap
+Attempting to translate module FStar.Map
+Attempting to translate module FStar.Monotonic.Witnessed
+Attempting to translate module FStar.Ghost
+Attempting to translate module FStar.Monotonic.HyperHeap
+Attempting to translate module FStar.Monotonic.HyperStack
+Attempting to translate module FStar.HyperStack
+Attempting to translate module FStar.HyperStack.ST
+Attempting to translate module WasmSupport
+Attempting to translate module FStar.UInt128
+Attempting to translate module Spec.Loops
+Attempting to translate module FStar.Buffer
+Attempting to translate module C.Loops
+Attempting to translate module Hacl.UInt64
+Attempting to translate module FStar.HyperStack.All
+Attempting to translate module Hacl.UInt128
+Attempting to translate module Hacl.UInt8
+Attempting to translate module Hacl.Bignum.Constants
+Attempting to translate module Hacl.UInt32
+Attempting to translate module FStar.Int.Cast.Full
+Attempting to translate module Hacl.Cast
+Attempting to translate module Hacl.Bignum.Parameters
+Attempting to translate module Hacl.Bignum.Limb
+Attempting to translate module Hacl.Bignum.Wide
+Attempting to translate module Hacl.Spec.Bignum.Field
+Attempting to translate module Hacl.Spec.Bignum.Bigint
+Attempting to translate module Hacl.Spec.Bignum.Fdifference
+Attempting to translate module Hacl.Bignum.Fdifference
+Attempting to translate module Hacl.Spec.Bignum.Modulo
+Attempting to translate module Hacl.Spec.Bignum.Fproduct
+Attempting to translate module Hacl.Spec.Bignum.Fmul
+Attempting to translate module Hacl.Bignum.Modulo
+Attempting to translate module Hacl.Bignum.Fproduct
+Attempting to translate module Hacl.Bignum.Fmul
+Attempting to translate module Hacl.Spec.Bignum.Fscalar
+Attempting to translate module Hacl.Bignum.Fscalar
+Attempting to translate module Hacl.Spec.Bignum.Fsum
+Attempting to translate module Hacl.Bignum.Fsum
+Attempting to translate module FStar.Math.Axioms
+Attempting to translate module Hacl.Spec.Bignum
+Attempting to translate module Hacl.Spec.EC.AddAndDouble
+Attempting to translate module Hacl.Spec.Bignum.Fsquare
+Attempting to translate module FStar.Endianness
+Attempting to translate module Spec.Curve25519.Lemmas
+Attempting to translate module Spec.Lib
+Attempting to translate module Spec.Curve25519
+Attempting to translate module Hacl.Spec.Bignum.Crecip.Lemmas
+Attempting to translate module Hacl.Spec.Bignum.Crecip
+Attempting to translate module Hacl.Bignum.Fsquare
+Attempting to translate module Hacl.Bignum.Crecip
+Attempting to translate module Hacl.Bignum
+Attempting to translate module Hacl.Spec.EC.Ladder.Lemmas
+Attempting to translate module Hacl.Spec.Curve25519.Lemmas
+Attempting to translate module Hacl.Spec.EC.Point
+Attempting to translate module Hacl.EC.Point
+Attempting to translate module Hacl.Spec.EC.AddAndDouble2
+Attempting to translate module Hacl.Spec.EC.AddAndDouble3
+Attempting to translate module Hacl.Spec.EC.Format.Lemmas
+Attempting to translate module FStar.Kremlin.Endianness
+Attempting to translate module C.Endianness
+Attempting to translate module C
+Attempting to translate module Hacl.UInt16
+Attempting to translate module Hacl.Spec.Endianness
+Attempting to translate module Hacl.Endianness
+Attempting to translate module Hacl.Spec.EC.Format
+Attempting to translate module Hacl.EC.Format
+Attempting to translate module Hacl.EC.AddAndDouble
+Attempting to translate module Hacl.Spec.EC.Ladder
+Attempting to translate module Hacl.EC.Ladder.SmallLoop
+Attempting to translate module Hacl.EC.Ladder.BigLoop
+Attempting to translate module Hacl.EC.Ladder
+Attempting to translate module Hacl.Spec.EC
+Attempting to translate module FStar.Buffer.Quantifiers
+Attempting to translate module Hacl.EC
+Attempting to translate module Hacl.Curve25519
+Attempting to translate module FStar.Exn
+Attempting to translate module FStar.ST
+Warning 10: : -drop is deprecated
+Attempting to translate module FStar.All
+Attempting to translate module FStar.List
+use a combination of -bundle and -d reachability to make sure the functions are eliminated as you wish
+Attempting to translate module FStar.Char
+Warning 2: in the definition of b0', after the definition of b4', in top-level declaration Hacl.Bignum.Modulo.carry_top_wide, in file Hacl_Curve25519: Reference to FStar.UInt128.mul_wide has no corresponding implementation; please provide a C implementation
+Attempting to translate module FStar.String
+Attempting to translate module C.String
+Warning 2: after the definition of yi, in the definition of f', in the last element of the sequence, after the definition of h0, in top-level declaration Hacl.Bignum.Fproduct.sum_scalar_multiplication_, in file Hacl_Curve25519: Reference to FStar.UInt128.mul_wide has no corresponding implementation; please provide a C implementation
+Attempting to translate module TestLib
+Attempting to translate module Hacl.Test.X25519
+Warning 2: after the definition of xi, in the definition of f', in the last element of the sequence, after the definition of h0, in top-level declaration Hacl.Bignum.Fscalar.fscalar, in file Hacl_Curve25519: Reference to FStar.UInt128.mul_wide has no corresponding implementation; please provide a C implementation
+All verification conditions discharged successfully
+
+Warning 2: in the definition of s0, after the definition of d4, in top-level declaration Hacl.Bignum.Fsquare.fsquare__, in file Hacl_Curve25519: Reference to FStar.UInt128.mul_wide has no corresponding implementation; please provide a C implementation
+C:/build/agent1/_work/2/s/kremlin/runtime/WasmSupport.fst(0,0-0,0): (Warning 241) Stale cache file C:/build/agent1/_work/2/s/kremlin/runtime/WasmSupport.fst.checked.lax; will recheck C:/build/agent1/_work/2/s/kremlin/runtime/WasmSupport.fst and all subsequent files
+Warning 2: in the definition of s0, after the definition of d4, in top-level declaration Hacl.Bignum.Fsquare.fsquare__, in file Hacl_Curve25519: Reference to FStar.UInt128.mul_wide has no corresponding implementation; please provide a C implementation
+Not extracting type definition FStar.Monotonic.Heap.heap to KreMLin (assumed type)
+Not extracting type definition FStar.Monotonic.Heap.equal to KreMLin (assumed type)
+Warning 2: in the definition of s0, after the definition of d4, in top-level declaration Hacl.Bignum.Fsquare.fsquare__, in file Hacl_Curve25519: Reference to FStar.UInt128.mul_wide has no corresponding implementation; please provide a C implementation
+Not extracting type definition FStar.Monotonic.Heap.mref to KreMLin (assumed type)
+Warning 2: in the definition of s1, after the definition of s0, in top-level declaration Hacl.Bignum.Fsquare.fsquare__, in file Hacl_Curve25519: Reference to FStar.UInt128.mul_wide has no corresponding implementation; please provide a C implementation
+Not extracting FStar.Monotonic.Heap.compare_addrs to KreMLin (polymorphic assumes are not supported)
+Not extracting type definition FStar.Monotonic.Heap.contains to KreMLin (assumed type)
+Warning 2: in the definition of s1, after the definition of s0, in top-level declaration Hacl.Bignum.Fsquare.fsquare__, in file Hacl_Curve25519: Reference to FStar.UInt128.mul_wide has no corresponding implementation; please provide a C implementation
+Not extracting type definition FStar.Monotonic.Heap.addr_unused_in to KreMLin (assumed type)
+Not extracting type definition FStar.Monotonic.Heap.unused_in to KreMLin (assumed type)
+Warning 2: in the definition of s1, after the definition of s0, in top-level declaration Hacl.Bignum.Fsquare.fsquare__, in file Hacl_Curve25519: Reference to FStar.UInt128.mul_wide has no corresponding implementation; please provide a C implementation
+Not extracting FStar.Monotonic.Heap.sel_tot to KreMLin (polymorphic assumes are not supported)
+Not extracting FStar.Monotonic.Heap.upd_tot to KreMLin (polymorphic assumes are not supported)
+Warning 2: in the definition of s2, after the definition of s1, in top-level declaration Hacl.Bignum.Fsquare.fsquare__, in file Hacl_Curve25519: Reference to FStar.UInt128.mul_wide has no corresponding implementation; please provide a C implementation
+Not extracting FStar.Monotonic.Heap.alloc to KreMLin (polymorphic assumes are not supported)
+Not extracting FStar.Monotonic.Heap.free_mm to KreMLin (polymorphic assumes are not supported)
+Warning 2: in the definition of s2, after the definition of s1, in top-level declaration Hacl.Bignum.Fsquare.fsquare__, in file Hacl_Curve25519: Reference to FStar.UInt128.mul_wide has no corresponding implementation; please provide a C implementation
+Not extracting type definition FStar.Monotonic.Heap.aref to KreMLin (assumed type)
+Not extracting FStar.Monotonic.Heap.aref_of to KreMLin (polymorphic assumes are not supported)
+Warning 2: in the definition of s2, after the definition of s1, in top-level declaration Hacl.Bignum.Fsquare.fsquare__, in file Hacl_Curve25519: Reference to FStar.UInt128.mul_wide has no corresponding implementation; please provide a C implementation
+Not extracting type definition FStar.Monotonic.Heap.aref_unused_in to KreMLin (assumed type)
+Not extracting type definition FStar.Monotonic.Heap.aref_live_at to KreMLin (assumed type)
+Warning 2: in the definition of s3, after the definition of s2, in top-level declaration Hacl.Bignum.Fsquare.fsquare__, in file Hacl_Curve25519: Reference to FStar.UInt128.mul_wide has no corresponding implementation; please provide a C implementation
+Not extracting type definition FStar.Monotonic.Witnessed.witnessed to KreMLin (assumed type)
+Not extracting type definition FStar.Ghost.erased to KreMLin (assumed type)
+Warning 2: in the definition of s3, after the definition of s2, in top-level declaration Hacl.Bignum.Fsquare.fsquare__, in file Hacl_Curve25519: Reference to FStar.UInt128.mul_wide has no corresponding implementation; please provide a C implementation
+Not extracting FStar.HyperStack.ST.gst_witness to KreMLin (polymorphic assumes are not supported)
+Not extracting FStar.HyperStack.ST.gst_recall to KreMLin (polymorphic assumes are not supported)
+Warning 2: in the definition of s3, after the definition of s2, in top-level declaration Hacl.Bignum.Fsquare.fsquare__, in file Hacl_Curve25519: Reference to FStar.UInt128.mul_wide has no corresponding implementation; please provide a C implementation
+Not extracting FStar.HyperStack.All.pipe_right to KreMLin (polymorphic assumes are not supported)
+Not extracting FStar.HyperStack.All.pipe_left to KreMLin (polymorphic assumes are not supported)
+Warning 2: in the definition of s4, after the definition of s3, in top-level declaration Hacl.Bignum.Fsquare.fsquare__, in file Hacl_Curve25519: Reference to FStar.UInt128.mul_wide has no corresponding implementation; please provide a C implementation
+Not extracting FStar.HyperStack.All.failwith to KreMLin (polymorphic assumes are not supported)
+Not extracting FStar.HyperStack.All.exit to KreMLin (polymorphic assumes are not supported)
+Warning 2: in the definition of s4, after the definition of s3, in top-level declaration Hacl.Bignum.Fsquare.fsquare__, in file Hacl_Curve25519: Reference to FStar.UInt128.mul_wide has no corresponding implementation; please provide a C implementation
+Not extracting FStar.HyperStack.All.try_with to KreMLin (polymorphic assumes are not supported)
+Not extracting type definition C.channel to KreMLin (assumed type)
+Warning 2: in the definition of s4, after the definition of s3, in top-level declaration Hacl.Bignum.Fsquare.fsquare__, in file Hacl_Curve25519: Reference to FStar.UInt128.mul_wide has no corresponding implementation; please provide a C implementation
+Not extracting type definition C.intptr_t to KreMLin (assumed type)
+Not extracting type definition C.char to KreMLin (assumed type)
+Not extracting type definition C.int to KreMLin (assumed type)
+Warning 13: : C.exit_code, a monomorphic instance, is first used, and therefore inserted, in file C which is about to be dropped; you may get a C compiler error about C_exit_code if any other module uses this definition
+Not extracting type definition C.clock_t to KreMLin (assumed type)
+Warning 13: : Hacl.UInt128.t, a monomorphic instance, is first used, and therefore inserted, in file Hacl_UInt128 which is about to be dropped; you may get a C compiler error about Hacl_UInt128_t if any other module uses this definition
+Not extracting FStar.Exn.raise to KreMLin (polymorphic assumes are not supported)
+Not extracting FStar.ST.gst_witness to KreMLin (polymorphic assumes are not supported)
+Warning 7: : After inlining, Hacl.Bignum.Fproduct.copy_from_wide_ (going into Hacl_Curve25519) calls FStar.UInt128.uint128_to_uint64 (going into FStar) -- removing the static qualifier from FStar.UInt128.uint128_to_uint64
+Not extracting FStar.ST.gst_recall to KreMLin (polymorphic assumes are not supported)
+Not extracting FStar.All.pipe_right to KreMLin (polymorphic assumes are not supported)
+Warning 7: : After inlining, Hacl.Bignum.Fproduct.sum_scalar_multiplication_ (going into Hacl_Curve25519) calls FStar.UInt128.add_mod (going into FStar) -- removing the static qualifier from FStar.UInt128.add_mod
+Not extracting FStar.All.pipe_left to KreMLin (polymorphic assumes are not supported)
+Not extracting FStar.All.exit to KreMLin (polymorphic assumes are not supported)
+Warning 7: : After inlining, Hacl.Bignum.Fproduct.carry_wide_ (going into Hacl_Curve25519) calls FStar.UInt128.shift_right (going into FStar) -- removing the static qualifier from FStar.UInt128.shift_right
+Not extracting FStar.All.try_with to KreMLin (polymorphic assumes are not supported)
+Warning 7: : After inlining, Hacl.Bignum.Fproduct.carry_wide_ (going into Hacl_Curve25519) calls FStar.UInt128.uint64_to_uint128 (going into FStar) -- removing the static qualifier from FStar.UInt128.uint64_to_uint128
+Not extracting exception Failure to KreMLin (exceptions unsupported)
+Not extracting FStar.All.failwith to KreMLin (polymorphic assumes are not supported)
+Warning 7: : After inlining, Hacl.Bignum.Fproduct.carry_wide_ (going into Hacl_Curve25519) calls FStar.UInt128.add (going into FStar) -- removing the static qualifier from FStar.UInt128.add
+<dummy>(0,0-0,0): (Warning 250) Error while extracting FStar.List.filter_map to KreMLin (Failure("Internal error: name not found filter_map_acc\n"))
+
+Warning 7: : After inlining, Hacl.Bignum.Fmul.fmul (going into Hacl_Curve25519) calls FStar.UInt128.logand (going into FStar) -- removing the static qualifier from FStar.UInt128.logand
+<dummy>(0,0-0,0): (Warning 250) Error while extracting FStar.List.index to KreMLin (Failure("Internal error: name not found index1\n"))
+
+Warning 7: : After inlining, Hacl.EC.Format.fcontract_trim (going into Hacl_Curve25519) calls FStar.UInt64.gte_mask (going into FStar) -- removing the static qualifier from FStar.UInt64.gte_mask
+Not extracting type definition FStar.Char.char to KreMLin (assumed type)
+Not extracting type definition TestLib.cycles to KreMLin (assumed type)
+Warning 7: : After inlining, Hacl.EC.Format.fcontract_trim (going into Hacl_Curve25519) calls FStar.UInt64.eq_mask (going into FStar) -- removing the static qualifier from FStar.UInt64.eq_mask
+
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/code/curve25519'
+Warning 7: : After inlining, Hacl.Test.X25519.main (going into Hacl_Test_X25519) calls Hacl.EC.crypto_scalarmult (going into Hacl_Curve25519) -- removing the static qualifier from Hacl.EC.crypto_scalarmult
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/code/curve25519'
+C:/build/agent1/_work/2/s/kremlin/krml   -I C:/build/agent1/_work/2/s/hacl-star/code/lib/kremlin -I C:/build/agent1/_work/2/s/kremlin/kremlib -I C:/build/agent1/_work/2/s/hacl-star/specs -I . -ccopt -march=native -verbose -ldopt -flto -I ../bignum -tmpdir x25519-c -drop Spec.*,Hacl.Spec.*,Hacl.Cast,Hacl.UInt.*,Hacl.Endianness,Hacl.UInt8,Hacl.UInt16,Hacl.UInt32,Hacl.UInt64,Hacl.UInt128,Prims -add-include '"kremlin/testlib.h"' C:/build/agent1/_work/2/s/kremlin/kremlib/testlib.c -no-prefix Hacl.Test.X25519 \
+-bundle 'Hacl.Curve25519=Hacl.Bignum,Hacl.Bignum.*,Hacl.EC,Hacl.EC.*' \
+-skip-compilation x25519-c/out.krml -o x25519-c/Hacl_Curve25519.c
+[38;5;119m✔[0m [Monomorphization] ⏱️ 16ms
+[38;5;119m✔[0m [Inlining] ⏱️ 16ms
+[38;5;119m✔[0m [Pattern matches compilation] ⏱️ 16ms
+[38;5;119m✔[0m [Simplify 2] ⏱️ 16ms
+[38;5;119m✔[0m [Structs + Simplify 2] ⏱️ 31ms
+[38;5;119m✔[0m [Drop] ⏱️ <1ms
+[38;5;119m✔[0m [AstToCStar] ⏱️ <1ms
+[38;5;119m✔[0m [CStarToC] ⏱️ <1ms
+[38;5;81m⚙ KreMLin auto-detecting tools.[0m Here's what we found:
+[4mreadlink is:[0m readlink
+[4mKreMLin called via:[0m C:\build\agent1\_work\2\s\kremlin\_build\src\Kremlin.native
+[4mthe Kremlin executable is:[0m C:\build\agent1\_work\2\s\kremlin\_build\src\Kremlin.native
+[4mKreMLin home is:[0m C:/build/agent1/_work/2/s/kremlin
+[38;5;81m⚙ KreMLin will drive F*.[0m Here's what we found:
+read FSTAR_HOME via the environment
+[4mfstar converted to windows path:[0m C:/build/agent1/_work/2/s/fstar/bin/fstar.exe
+[4mfstar home converted to windows path:[0m C:/build/agent1/_work/2/s/fstar
+[4mfstar lib converted to windows path:[0m C:/build/agent1/_work/2/s/fstar/ulib
+fstar is on [38;5;119mbranch master[0m
+[4mfstar is:[0m C:/build/agent1/_work/2/s/fstar/bin/fstar.exe C:/build/agent1/_work/2/s/kremlin/runtime/WasmSupport.fst C:/build/agent1/_work/2/s/fstar/ulib/FStar.UInt128.fst --trace_error --cache_checked_modules --expose_interfaces --include C:/build/agent1/_work/2/s/hacl-star/code/lib/kremlin --include C:/build/agent1/_work/2/s/kremlin/kremlib --include C:/build/agent1/_work/2/s/hacl-star/specs --include . --include ../bignum --include C:/build/agent1/_work/2/s/kremlin/include
+[38;5;119m✔[0m [PrettyPrinting] ⏱️ <1ms
+KreMLin: wrote out .c files for FStar, C_Loops_Spec_Loops, Hacl_Curve25519, Hacl_Test_X25519
+KreMLin: wrote out .h files for FStar, C_Loops_Spec_Loops, Hacl_Curve25519, Hacl_Test_X25519
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/code/curve25519'
+make -C .. hacl_aes_abstract_id vale_aes_abstract_id runtime_switch
+IMPL_CHOICE=hacl_aes_abstract_id make -f Makefile.extract abstract
+IMPL_CHOICE=vale_aes_abstract_id make -f Makefile.extract abstract
+IMPL_CHOICE=runtime_switch make -f Makefile.extract all concrete test vale
+make[2]: *** No rule to make target 'C:/build/agent1/_work/2/s/hacl-star/code/hash/Hacl.Hash.SHA2_384.Lemmas.fst', needed by '../secure_api/out/runtime_switch/cache/Hacl.Hash.SHA2_384.Lemmas.fst.checked.lax'.  Stop.
+make[2]: *** Waiting for unfinished jobs....
+make[2]: *** No rule to make target 'C:/build/agent1/_work/2/s/hacl-star/code/hash/Hacl.Hash.SHA2_384.Lemmas.fst', needed by '../secure_api/out/vale_aes_abstract_id/cache/Hacl.Hash.SHA2_384.Lemmas.fst.checked.lax'.  Stop.
+make[2]: *** Waiting for unfinished jobs....
+make[2]: *** No rule to make target 'C:/build/agent1/_work/2/s/hacl-star/code/hash/Hacl.Hash.SHA2_384.Lemmas.fst', needed by '../secure_api/out/hacl_aes_abstract_id/cache/Hacl.Hash.SHA2_384.Lemmas.fst.checked.lax'.  Stop.
+make[2]: *** Waiting for unfinished jobs....
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+C:/build/agent1/_work/2/s/hacl-star/code/lib/kremlin/Hacl.UInt128.fst(0,0-0,0): (Warning 241) Stale cache file ..\secure_api\out\vale_aes_abstract_id\cache\Hacl.UInt128.fst.checked.lax; will recheck C:/build/agent1/_work/2/s/hacl-star/code/lib/kremlin/Hacl.UInt128.fst and all subsequent files
+C:/build/agent1/_work/2/s/fstar/bin/fstar.exe --print_z3_statistics --use_hints --query_stats --cache_dir ../secure_api/out/vale_aes_abstract_id/cache --cache_checked_modules --include ../specs --include ../code/bignum --include ../code/experimental/aesgcm --include ../code/lib/kremlin --include ../code/poly1305 --include ../code/hash --include ../code/salsa-family --include C:/build/agent1/_work/2/s/kremlin/kremlib --include ../secure_api --include ../secure_api/aead --include ../secure_api/prf --include ../secure_api/hkdf --include ../secure_api/vale --include ../secure_api/uf1cma --include ../secure_api/utils --include ../secure_api/LowCProvider/fst --include C:/build/agent1/_work/2/s/fstar/contrib/CoreCrypto/fst --include ../secure_api/concrete_specializations --include ../secure_api/concrete_specializations/vale_aes_abstract_id --include ../secure_api/test --odir ../secure_api/out/vale_aes_abstract_id/extracted --lax C:/build/agent1/_work/2/s/hacl-star/code/lib/kremlin/Hacl.UInt128.fst
+All verification conditions discharged successfully
+C:/build/agent1/_work/2/s/hacl-star/code/lib/kremlin/Hacl.UInt128.fst(0,0-0,0): (Warning 241) Stale cache file ..\secure_api\out\hacl_aes_abstract_id\cache\Hacl.UInt128.fst.checked.lax; will recheck C:/build/agent1/_work/2/s/hacl-star/code/lib/kremlin/Hacl.UInt128.fst and all subsequent files
+TOTAL TIME 999 ms: C:\build\agent1\_work\2\s\fstar\bin\fstar.exe --print_z3_statistics --use_hints --query_stats --cache_dir ../secure_api/out/vale_aes_abstract_id/cache --cache_checked_modules --include ../specs --include ../code/bignum --include ../code/experimental/aesgcm --include ../code/lib/kremlin --include ../code/poly1305 --include ../code/hash --include ../code/salsa-family --include C:/build/agent1/_work/2/s/kremlin/kremlib --include ../secure_api --include ../secure_api/aead --include ../secure_api/prf --include ../secure_api/hkdf --include ../secure_api/vale --include ../secure_api/uf1cma --include ../secure_api/utils --include ../secure_api/LowCProvider/fst --include C:/build/agent1/_work/2/s/fstar/contrib/CoreCrypto/fst --include ../secure_api/concrete_specializations --include ../secure_api/concrete_specializations/vale_aes_abstract_id --include ../secure_api/test --odir ../secure_api/out/vale_aes_abstract_id/extracted --lax C:/build/agent1/_work/2/s/hacl-star/code/lib/kremlin/Hacl.UInt128.fst
+C:/build/agent1/_work/2/s/hacl-star/code/lib/kremlin/Hacl.UInt128.fst(0,0-0,0): (Warning 241) Stale cache file ..\secure_api\out\runtime_switch\cache\Hacl.UInt128.fst.checked.lax; will recheck C:/build/agent1/_work/2/s/hacl-star/code/lib/kremlin/Hacl.UInt128.fst and all subsequent files
+touch ../secure_api/out/vale_aes_abstract_id/cache/Hacl.UInt128.fst.checked.lax
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+C:/build/agent1/_work/2/s/fstar/bin/fstar.exe --print_z3_statistics --use_hints --query_stats --cache_dir ../secure_api/out/hacl_aes_abstract_id/cache --cache_checked_modules --include ../specs --include ../code/bignum --include ../code/experimental/aesgcm --include ../code/lib/kremlin --include ../code/poly1305 --include ../code/hash --include ../code/salsa-family --include C:/build/agent1/_work/2/s/kremlin/kremlib --include ../secure_api --include ../secure_api/aead --include ../secure_api/prf --include ../secure_api/hkdf --include ../secure_api/vale --include ../secure_api/uf1cma --include ../secure_api/utils --include ../secure_api/LowCProvider/fst --include C:/build/agent1/_work/2/s/fstar/contrib/CoreCrypto/fst --include ../secure_api/concrete_specializations --include ../secure_api/concrete_specializations/hacl_aes_abstract_id --include ../secure_api/test --odir ../secure_api/out/hacl_aes_abstract_id/extracted --lax C:/build/agent1/_work/2/s/hacl-star/code/lib/kremlin/Hacl.UInt128.fst
+All verification conditions discharged successfully
+TOTAL TIME 1037 ms: C:\build\agent1\_work\2\s\fstar\bin\fstar.exe --print_z3_statistics --use_hints --query_stats --cache_dir ../secure_api/out/hacl_aes_abstract_id/cache --cache_checked_modules --include ../specs --include ../code/bignum --include ../code/experimental/aesgcm --include ../code/lib/kremlin --include ../code/poly1305 --include ../code/hash --include ../code/salsa-family --include C:/build/agent1/_work/2/s/kremlin/kremlib --include ../secure_api --include ../secure_api/aead --include ../secure_api/prf --include ../secure_api/hkdf --include ../secure_api/vale --include ../secure_api/uf1cma --include ../secure_api/utils --include ../secure_api/LowCProvider/fst --include C:/build/agent1/_work/2/s/fstar/contrib/CoreCrypto/fst --include ../secure_api/concrete_specializations --include ../secure_api/concrete_specializations/hacl_aes_abstract_id --include ../secure_api/test --odir ../secure_api/out/hacl_aes_abstract_id/extracted --lax C:/build/agent1/_work/2/s/hacl-star/code/lib/kremlin/Hacl.UInt128.fst
+touch ../secure_api/out/hacl_aes_abstract_id/cache/Hacl.UInt128.fst.checked.lax
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+C:/build/agent1/_work/2/s/fstar/bin/fstar.exe --print_z3_statistics --use_hints --query_stats --cache_dir ../secure_api/out/runtime_switch/cache --cache_checked_modules --include ../specs --include ../code/bignum --include ../code/experimental/aesgcm --include ../code/lib/kremlin --include ../code/poly1305 --include ../code/hash --include ../code/salsa-family --include C:/build/agent1/_work/2/s/kremlin/kremlib --include ../secure_api --include ../secure_api/aead --include ../secure_api/prf --include ../secure_api/hkdf --include ../secure_api/vale --include ../secure_api/uf1cma --include ../secure_api/utils --include ../secure_api/LowCProvider/fst --include C:/build/agent1/_work/2/s/fstar/contrib/CoreCrypto/fst --include ../secure_api/concrete_specializations --include ../secure_api/concrete_specializations/runtime_switch --include ../secure_api/test --odir ../secure_api/out/runtime_switch/extracted --lax C:/build/agent1/_work/2/s/hacl-star/code/lib/kremlin/Hacl.UInt128.fst
+All verification conditions discharged successfully
+TOTAL TIME 1032 ms: C:\build\agent1\_work\2\s\fstar\bin\fstar.exe --print_z3_statistics --use_hints --query_stats --cache_dir ../secure_api/out/runtime_switch/cache --cache_checked_modules --include ../specs --include ../code/bignum --include ../code/experimental/aesgcm --include ../code/lib/kremlin --include ../code/poly1305 --include ../code/hash --include ../code/salsa-family --include C:/build/agent1/_work/2/s/kremlin/kremlib --include ../secure_api --include ../secure_api/aead --include ../secure_api/prf --include ../secure_api/hkdf --include ../secure_api/vale --include ../secure_api/uf1cma --include ../secure_api/utils --include ../secure_api/LowCProvider/fst --include C:/build/agent1/_work/2/s/fstar/contrib/CoreCrypto/fst --include ../secure_api/concrete_specializations --include ../secure_api/concrete_specializations/runtime_switch --include ../secure_api/test --odir ../secure_api/out/runtime_switch/extracted --lax C:/build/agent1/_work/2/s/hacl-star/code/lib/kremlin/Hacl.UInt128.fst
+touch ../secure_api/out/runtime_switch/cache/Hacl.UInt128.fst.checked.lax
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+C:\build\agent1\_work\2\s\kremlin\kremlib\C.Endianness.fst(0,0-0,0): (Warning 241) Stale cache file ..\secure_api\out\vale_aes_abstract_id\cache\C.Endianness.fst.checked.lax; will recheck C:\build\agent1\_work\2\s\kremlin\kremlib\C.Endianness.fst and all subsequent files
+C:/build/agent1/_work/2/s/fstar/bin/fstar.exe --print_z3_statistics --use_hints --query_stats --cache_dir ../secure_api/out/vale_aes_abstract_id/cache --cache_checked_modules --include ../specs --include ../code/bignum --include ../code/experimental/aesgcm --include ../code/lib/kremlin --include ../code/poly1305 --include ../code/hash --include ../code/salsa-family --include C:/build/agent1/_work/2/s/kremlin/kremlib --include ../secure_api --include ../secure_api/aead --include ../secure_api/prf --include ../secure_api/hkdf --include ../secure_api/vale --include ../secure_api/uf1cma --include ../secure_api/utils --include ../secure_api/LowCProvider/fst --include C:/build/agent1/_work/2/s/fstar/contrib/CoreCrypto/fst --include ../secure_api/concrete_specializations --include ../secure_api/concrete_specializations/vale_aes_abstract_id --include ../secure_api/test --odir ../secure_api/out/vale_aes_abstract_id/extracted --lax C:/build/agent1/_work/2/s/kremlin/kremlib/C.fst
+All verification conditions discharged successfully
+make[1]: *** [Makefile:26: vale_aes_abstract_id] Error 2
+TOTAL TIME 1041 ms: C:\build\agent1\_work\2\s\fstar\bin\fstar.exe --print_z3_statistics --use_hints --query_stats --cache_dir ../secure_api/out/vale_aes_abstract_id/cache --cache_checked_modules --include ../specs --include ../code/bignum --include ../code/experimental/aesgcm --include ../code/lib/kremlin --include ../code/poly1305 --include ../code/hash --include ../code/salsa-family --include C:/build/agent1/_work/2/s/kremlin/kremlib --include ../secure_api --include ../secure_api/aead --include ../secure_api/prf --include ../secure_api/hkdf --include ../secure_api/vale --include ../secure_api/uf1cma --include ../secure_api/utils --include ../secure_api/LowCProvider/fst --include C:/build/agent1/_work/2/s/fstar/contrib/CoreCrypto/fst --include ../secure_api/concrete_specializations --include ../secure_api/concrete_specializations/vale_aes_abstract_id --include ../secure_api/test --odir ../secure_api/out/vale_aes_abstract_id/extracted --lax C:/build/agent1/_work/2/s/kremlin/kremlib/C.fst
+make[1]: *** Waiting for unfinished jobs....
+touch ../secure_api/out/vale_aes_abstract_id/cache/C.fst.checked.lax
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+C:\build\agent1\_work\2\s\kremlin\kremlib\C.Endianness.fst(0,0-0,0): (Warning 241) Stale cache file ..\secure_api\out\runtime_switch\cache\C.Endianness.fst.checked.lax; will recheck C:\build\agent1\_work\2\s\kremlin\kremlib\C.Endianness.fst and all subsequent files
+C:/build/agent1/_work/2/s/fstar/bin/fstar.exe --print_z3_statistics --use_hints --query_stats --cache_dir ../secure_api/out/runtime_switch/cache --cache_checked_modules --include ../specs --include ../code/bignum --include ../code/experimental/aesgcm --include ../code/lib/kremlin --include ../code/poly1305 --include ../code/hash --include ../code/salsa-family --include C:/build/agent1/_work/2/s/kremlin/kremlib --include ../secure_api --include ../secure_api/aead --include ../secure_api/prf --include ../secure_api/hkdf --include ../secure_api/vale --include ../secure_api/uf1cma --include ../secure_api/utils --include ../secure_api/LowCProvider/fst --include C:/build/agent1/_work/2/s/fstar/contrib/CoreCrypto/fst --include ../secure_api/concrete_specializations --include ../secure_api/concrete_specializations/runtime_switch --include ../secure_api/test --odir ../secure_api/out/runtime_switch/extracted --lax C:/build/agent1/_work/2/s/kremlin/kremlib/C.fst
+All verification conditions discharged successfully
+make[1]: *** [Makefile:17: runtime_switch] Error 2
+TOTAL TIME 1078 ms: C:\build\agent1\_work\2\s\fstar\bin\fstar.exe --print_z3_statistics --use_hints --query_stats --cache_dir ../secure_api/out/runtime_switch/cache --cache_checked_modules --include ../specs --include ../code/bignum --include ../code/experimental/aesgcm --include ../code/lib/kremlin --include ../code/poly1305 --include ../code/hash --include ../code/salsa-family --include C:/build/agent1/_work/2/s/kremlin/kremlib --include ../secure_api --include ../secure_api/aead --include ../secure_api/prf --include ../secure_api/hkdf --include ../secure_api/vale --include ../secure_api/uf1cma --include ../secure_api/utils --include ../secure_api/LowCProvider/fst --include C:/build/agent1/_work/2/s/fstar/contrib/CoreCrypto/fst --include ../secure_api/concrete_specializations --include ../secure_api/concrete_specializations/runtime_switch --include ../secure_api/test --odir ../secure_api/out/runtime_switch/extracted --lax C:/build/agent1/_work/2/s/kremlin/kremlib/C.fst
+touch ../secure_api/out/runtime_switch/cache/C.fst.checked.lax
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
+C:\build\agent1\_work\2\s\kremlin\kremlib\C.Endianness.fst(0,0-0,0): (Warning 241) Stale cache file ..\secure_api\out\hacl_aes_abstract_id\cache\C.Endianness.fst.checked.lax; will recheck C:\build\agent1\_work\2\s\kremlin\kremlib\C.Endianness.fst and all subsequent files
+C:/build/agent1/_work/2/s/fstar/bin/fstar.exe --print_z3_statistics --use_hints --query_stats --cache_dir ../secure_api/out/hacl_aes_abstract_id/cache --cache_checked_modules --include ../specs --include ../code/bignum --include ../code/experimental/aesgcm --include ../code/lib/kremlin --include ../code/poly1305 --include ../code/hash --include ../code/salsa-family --include C:/build/agent1/_work/2/s/kremlin/kremlib --include ../secure_api --include ../secure_api/aead --include ../secure_api/prf --include ../secure_api/hkdf --include ../secure_api/vale --include ../secure_api/uf1cma --include ../secure_api/utils --include ../secure_api/LowCProvider/fst --include C:/build/agent1/_work/2/s/fstar/contrib/CoreCrypto/fst --include ../secure_api/concrete_specializations --include ../secure_api/concrete_specializations/hacl_aes_abstract_id --include ../secure_api/test --odir ../secure_api/out/hacl_aes_abstract_id/extracted --lax C:/build/agent1/_work/2/s/kremlin/kremlib/C.fst
+All verification conditions discharged successfully
+make[1]: *** [Makefile:29: hacl_aes_abstract_id] Error 2
+TOTAL TIME 1108 ms: C:\build\agent1\_work\2\s\fstar\bin\fstar.exe --print_z3_statistics --use_hints --query_stats --cache_dir ../secure_api/out/hacl_aes_abstract_id/cache --cache_checked_modules --include ../specs --include ../code/bignum --include ../code/experimental/aesgcm --include ../code/lib/kremlin --include ../code/poly1305 --include ../code/hash --include ../code/salsa-family --include C:/build/agent1/_work/2/s/kremlin/kremlib --include ../secure_api --include ../secure_api/aead --include ../secure_api/prf --include ../secure_api/hkdf --include ../secure_api/vale --include ../secure_api/uf1cma --include ../secure_api/utils --include ../secure_api/LowCProvider/fst --include C:/build/agent1/_work/2/s/fstar/contrib/CoreCrypto/fst --include ../secure_api/concrete_specializations --include ../secure_api/concrete_specializations/hacl_aes_abstract_id --include ../secure_api/test --odir ../secure_api/out/hacl_aes_abstract_id/extracted --lax C:/build/agent1/_work/2/s/kremlin/kremlib/C.fst
+make: *** [Makefile:5: all] Error 2
+touch ../secure_api/out/hacl_aes_abstract_id/cache/C.fst.checked.lax
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/2/s/hacl-star/secure_api'
