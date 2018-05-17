@@ -1,0 +1,185 @@
+This is /home/everest/everest-ci/ci
+Working directory: /home/everest/vsts-agent/_work/1/s
+About to run: fstar_and_friends uregressions
+BUILD_SOURCEBRANCHNAME: v0.9.6+
+BUILD_DEFINITIONNAME: FStar-BinaryBuild-Linux
+BUILD_BUILDID: 21045
+DEFINITIONNAME:
+Z3 is /home/everest/everest/z3-4.5.1.1f29cebd4df6-x64-ubuntu-14.04/bin/z3
+make: Entering directory '/home/everest/vsts-agent/_work/1/s/src'
+make: Leaving directory '/home/everest/vsts-agent/_work/1/s/src'
+
+
+[0;31mWarning:[0m could not find "msbuild", trying (deprecated) "xbuild"
+
+
+make fstar-in-fsharp
+
+
+[0;31mWarning:[0m could not find "msbuild", trying (deprecated) "xbuild"
+
+
+make[1]: Entering directory '/home/everest/vsts-agent/_work/1/s/src'
+make[1]: Leaving directory '/home/everest/vsts-agent/_work/1/s/src'
+Switching to KreMLin origin/master
+HEAD is now at 34cff2c Updated Changelog
+Switching to vale to fstar_ci
+HEAD is now at efa92a0 bump F* version
+/home/everest/everest-ci/ci: line 615: nuget.exe: command not found
+Switching to HACL origin/fstar-master
+Switching to mitls-fstar origin/fstar-master
+HEAD is now at d10f9033 remove fstar_home option
+HEAD is now at b682c5cd KreMLin is back on master -- ensure CI catches up
+make: Entering directory '/home/everest/vsts-agent/_work/1/s/kremlin'
+ocamlbuild -I src -I lib -I parser -I kremlib -use-menhir -use-ocamlfind -classic-display -menhir "menhir --infer --explain" Kremlin.native Tests.native
+ln -sf Kremlin.native krml
+make: Leaving directory '/home/everest/vsts-agent/_work/1/s/kremlin'
+make[1]: Entering directory '/home/everest/vsts-agent/_work/1/s/src'
+mono VS/.nuget/NuGet.exe restore VS/FStar.sln
+Installing 'FsLexYacc.Runtime 6.1.0'.
+Installing 'PPrintForFSharp 0.0.2'.
+Installing 'FSharp.Compatibility.OCaml 0.1.10'.
+Installing 'FsLexYacc 6.1.0'.
+Successfully installed 'PPrintForFSharp 0.0.2'.
+Successfully installed 'FSharp.Compatibility.OCaml 0.1.10'.
+Successfully installed 'FsLexYacc.Runtime 6.1.0'.
+Successfully installed 'FsLexYacc 6.1.0'.
+make[1]: Leaving directory '/home/everest/vsts-agent/_work/1/s/src'
+make -C VS install-packages
+[ -d packages ] || make update-nuget
+make[2]: Entering directory '/home/everest/vsts-agent/_work/1/s/src/VS'
+mono .nuget/NuGet.exe restore FStar.sln
+All packages listed in packages.config are already installed.
+find packages -name '*.exe' -exec chmod +x '{}' ';'
+make[2]: Leaving directory '/home/everest/vsts-agent/_work/1/s/src/VS'
+make[1]: Entering directory '/home/everest/vsts-agent/_work/1/s/src'
+/usr/bin/xbuild /verbosity:minimal /p:Configuration=Release VS/FStar.sln
+XBuild Engine Version 12.0
+Mono, Version 4.2.1.0
+Copyright (C) 2005-2013 Various Mono authors
+Configuration: Release Platform: AnyCPU
+Configuration: Release Platform: AnyCPU
+Configuration: Release Platform: AnyCPU
+compiling to dfas (can take a while...)
+367 states
+writing output
+building tables
+computing first function...time: 00:00:00.1960382
+building kernels...time: 00:00:00.2261885
+building kernel table...time: 00:00:00.0137277
+computing lookahead relations..............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................time: 00:00:01.3499018
+building lookahead table...time: 00:00:00.6015459
+building action table...state 469: shift/reduce error on SEMICOLON
+state 469: shift/reduce error on SEMICOLON_SEMICOLON
+state 508: shift/reduce error on BAR
+state 512: shift/reduce error on BAR
+state 531: shift/reduce error on BAR
+state 615: shift/reduce error on COLON_EQUALS
+state 647: shift/reduce error on COLON_EQUALS
+time: 00:00:02.1370212
+building goto table...time: 00:00:00.6131250
+returning tables.
+7 shift/reduce conflicts
+891 states
+156 nonterminals
+150 terminals
+471 productions
+#rows in action table: 891
+Configuration: Release Platform: AnyCPU
+Configuration: Release Platform: AnyCPU
+Configuration: Release Platform: AnyCPU
+Configuration: Release Platform: AnyCPU
+Configuration: Release Platform: AnyCPU
+/home/everest/vsts-agent/_work/1/s/src/typechecker/FStar.TypeChecker.Tc.fs(1076,15): warning FS0025: Incomplete pattern matches on this expression.
+Configuration: Release Platform: AnyCPU
+Configuration: Release Platform: AnyCPU
+Configuration: Release Platform: AnyCPU
+Configuration: Release Platform: AnyCPU
+Configuration: Release Platform: AnyCPU
+Configuration: Release Platform: AnyCPU
+true parser/parse.fsi
+chmod a+x ../bin/tests.exe
+chmod a+x ../bin/fstar.exe
+make[1]: Leaving directory '/home/everest/vsts-agent/_work/1/s/src'
+make fsharp-unit-tests
+make[1]: Entering directory '/home/everest/vsts-agent/_work/1/s/src'
+make[1]: Leaving directory '/home/everest/vsts-agent/_work/1/s/src'
+
+
+[0;31mWarning:[0m could not find "msbuild", trying (deprecated) "xbuild"
+
+
+make[1]: Entering directory '/home/everest/vsts-agent/_work/1/s/src'
+ulimit -s unlimited; mono ../bin/tests.exe
+Initializing ...
+Testing the normalizer
+0: ...
+1: ...
+2: ...
+3: ...
+4: ...
+5: ...
+6: ...
+7: ...
+8: ...
+9: ...
+10: ...
+11: ...
+12: ...
+13: ...
+Stacktrace:
+14: ...
+15: ...
+16: ...
+
+17: ...
+18: ...
+at <unknown> <0xffffffff>
+19: ...
+20: ...
+* Assertion at metadata.c:939, condition `index < meta->heap_strings.size' not met
+at (wrapper managed-to-native) System.RuntimeType.GetMethodsByName (System.RuntimeType,string,System.Reflection.BindingFlags,bool,System.Type) <0xffffffff>
+
+Makefile:138: recipe for target 'fsharp-unit-tests' failed
+make[1]: Leaving directory '/home/everest/vsts-agent/_work/1/s/src'
+at System.RuntimeType.GetMethodCandidates (string,System.Reflection.BindingFlags,System.Reflection.CallingConventions,System.Type[],bool) <0x0009c>
+Makefile:143: recipe for target 'fsharp-build-and-test' failed
+at System.RuntimeType.GetMethods (System.Reflection.BindingFlags) <0x00044>
+at System.Diagnostics.StackTrace.GetFullNameForStackTrace (System.Text.StringBuilder,System.Reflection.MethodBase) <0x00082>
+at System.Diagnostics.StackTrace.AddFrames (System.Text.StringBuilder) <0x001c4>
+at System.Diagnostics.StackTrace.ToString () <0x000c8>
+at System.Exception.get_StackTrace () <0x00062>
+at System.Exception.ToString () <0x000fc>
+at (wrapper runtime-invoke) <Module>.runtime_invoke_object__this__ (object,intptr,intptr,intptr) <0xffffffff>
+
+Native stacktrace:
+
+mono() [0x49ff2f]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x11390) [0x2b049a979390]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0x38) [0x2b049abba428]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0x16a) [0x2b049abbc02a]
+mono() [0x630409]
+mono() [0x63069c]
+mono() [0x630833]
+mono() [0x55e1ff]
+mono() [0x546a04]
+mono() [0x546d80]
+mono() [0x51f8c1]
+mono() [0x53dbb7]
+mono() [0x53e09d]
+[0x41c52d53]
+
+Debug info from gdb:
+
+
+=================================================================
+Got a SIGABRT while executing native code. This usually indicates
+a fatal error in the mono runtime or one of the native libraries
+used by your application.
+=================================================================
+
+Aborted
+make[1]: *** [fsharp-unit-tests] Error 134
+make: *** [fsharp-build-and-test] Error 2
+make: Target 'utest-prelude' not remade because of errors.
+warm-up failed

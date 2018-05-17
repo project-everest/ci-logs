@@ -1,0 +1,59 @@
+
+
+[0;31mWarning:[0m could not find "msbuild", trying (deprecated) "xbuild"
+
+
+
+
+[0;31mWarning:[0m could not find "msbuild", trying (deprecated) "xbuild"
+
+
+/home/everest/everest-ci/ci: line 615: nuget.exe: command not found
+
+
+[0;31mWarning:[0m could not find "msbuild", trying (deprecated) "xbuild"
+
+
+Stacktrace:
+
+at <unknown> <0xffffffff>
+at (wrapper managed-to-native) System.RuntimeType.GetMethodsByName (System.RuntimeType,string,System.Reflection.BindingFlags,bool,System.Type) <0xffffffff>
+at System.RuntimeType.GetMethodCandidates (string,System.Reflection.BindingFlags,System.Reflection.CallingConventions,System.Type[],bool) <0x0009c>
+at System.RuntimeType.GetMethods (System.Reflection.BindingFlags) <0x00044>
+at System.Diagnostics.StackTrace.GetFullNameForStackTrace (System.Text.StringBuilder,System.Reflection.MethodBase) <0x00082>
+at System.Diagnostics.StackTrace.AddFrames (System.Text.StringBuilder) <0x001c4>
+at System.Diagnostics.StackTrace.ToString () <0x000c8>
+at System.Exception.get_StackTrace () <0x00062>
+at System.Exception.ToString () <0x000fc>
+at (wrapper runtime-invoke) <Module>.runtime_invoke_object__this__ (object,intptr,intptr,intptr) <0xffffffff>
+
+Native stacktrace:
+
+mono() [0x49ff2f]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x11390) [0x2b049a979390]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0x38) [0x2b049abba428]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0x16a) [0x2b049abbc02a]
+mono() [0x630409]
+mono() [0x63069c]
+mono() [0x630833]
+mono() [0x55e1ff]
+mono() [0x546a04]
+mono() [0x546d80]
+mono() [0x51f8c1]
+mono() [0x53dbb7]
+mono() [0x53e09d]
+[0x41c52d53]
+
+Debug info from gdb:
+
+
+=================================================================
+Got a SIGABRT while executing native code. This usually indicates
+a fatal error in the mono runtime or one of the native libraries
+used by your application.
+=================================================================
+
+Aborted
+make[1]: *** [fsharp-unit-tests] Error 134
+make: *** [fsharp-build-and-test] Error 2
+make: Target 'utest-prelude' not remade because of errors.
