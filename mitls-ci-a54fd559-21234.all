@@ -1,0 +1,260 @@
+This is /home/everbld/everest-ci/ci
+Working directory: /cygdrive/c/build/agent2/_work/4/s
+About to run: mitls_verify_and_hints
+BUILD_SOURCEBRANCHNAME: master
+BUILD_DEFINITIONNAME: miTLS-Nightly-Windows
+BUILD_BUILDID: 21234
+DEFINITIONNAME:
+Z3 is /home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin/z3
+From https://github.com/FStarLang/FStar
+cd4fd4b87..c860bb2b3  master                  -> origin/master
+* [new branch]          nik_integer_overloading -> origin/nik_integer_overloading
+743819b90..0dac839cd  v0.9.6+                 -> origin/v0.9.6+
+Switching to F* origin/master
+HEAD is now at c860bb2b3 [CI] regenerate hints + ocaml snapshot
+make: Entering directory '/cygdrive/c/build/agent2/_work/4/s/fstar/src/ocaml-output'
+echo 'open FStar_Util' > FStar_Version.ml
+echo 'let dummy () = ();;' >> FStar_Version.ml
+echo 'FStar_Options._version := "0.9.7.0~dev";;' >> FStar_Version.ml
+echo 'FStar_Options._platform := "Windows_x64";;' >> FStar_Version.ml
+echo 'FStar_Options._compiler := "OCaml 4.05.0";;' >> FStar_Version.ml
+echo 'FStar_Options._date := "2018-05-24T01:02:30-07:00";;' >> FStar_Version.ml
+echo 'FStar_Options._commit:= "c860bb2b3";;' >> FStar_Version.ml
+make: Leaving directory '/cygdrive/c/build/agent2/_work/4/s/fstar/src/ocaml-output'
+make: Entering directory '/cygdrive/c/build/agent2/_work/4/s/fstar/src/ocaml-output'
+cd ../../ && ocamlbuild -cflag -g -I src/ocaml-output -I src/basic/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/prettyprint/ml -I src/tactics/ml -I src/tests/ml -I ulib/ml -j 24 -build-dir src/ocaml-output/_build -use-ocamlfind main.native src/ocaml-output/FStar_Syntax_Syntax.inferred.mli
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Version.ml > src/ocaml-output/FStar_Version.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Version.cmo src/ocaml-output/FStar_Version.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Version.cmx src/ocaml-output/FStar_Version.ml
+ocamlfind ocamlopt -linkpkg -linkall -thread -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/basic/ml -I ulib/ml -I src/ocaml-output -I src/parser/ml -I src/prettyprint/ml -I src/extraction/ml -I src/tactics/ml -I src/fstar/ml src/basic/ml/FStar_BigInt.cmx ulib/ml/FStar_Monotonic_Heap.cmx ulib/ml/FStar_CommonST.cmx ulib/ml/FStar_List_Tot_Base.cmx ulib/ml/FStar_List.cmx ulib/ml/FStar_ST.cmx ulib/ml/prims.cmx src/basic/ml/FStar_Util.cmx src/basic/ml/FStar_Compiler_Bytes.cmx ulib/ml/FStar_Char.cmx ulib/ml/FStar_String.cmx src/basic/ml/FStar_Getopt.cmx src/basic/ml/FStar_Platform.cmx ulib/ml/FStar_All.cmx src/basic/ml/FStar_Unionfind.cmx ulib/ml/FStar_Pervasives_Native.cmx src/ocaml-output/FStar_Common.cmx ulib/ml/FStar_Float.cmx ulib/ml/FStar_Int16.cmx ulib/ml/FStar_Int32.cmx ulib/ml/FStar_Int64.cmx ulib/ml/FStar_Int8.cmx ulib/ml/FStar_UInt16.cmx ulib/ml/FStar_UInt8.cmx ulib/ml/FStar_BaseTypes.cmx ulib/ml/FStar_Exn.cmx ulib/ml/FStar_Option.cmx src/ocaml-output/FStar_Options.cmx src/ocaml-output/FStar_Range.cmx src/ocaml-output/FStar_Ident.cmx src/ocaml-output/FStar_Const.cmx src/ocaml-output/FStar_Errors.cmx src/ocaml-output/FStar_Parser_Const.cmx ulib/ml/FStar_Dyn.cmx src/ocaml-output/FStar_Syntax_Syntax.cmx src/ocaml-output/FStar_Extraction_ML_Syntax.cmx src/ocaml-output/FStar_Parser_AST.cmx src/ocaml-output/FStar_Syntax_Unionfind.cmx src/ocaml-output/FStar_Syntax_Subst.cmx src/ocaml-output/FStar_Syntax_Free.cmx src/ocaml-output/FStar_Syntax_InstFV.cmx src/ocaml-output/FStar_Syntax_Util.cmx src/parser/ml/FStar_Parser_Util.cmx src/ocaml-output/FStar_Parser_Parse.cmx src/parser/ml/FStar_Ulexing.cmx src/parser/ml/FStar_Parser_LexFStar.cmx src/parser/ml/FStar_Parser_ParseIt.cmx src/ocaml-output/FStar_Parser_Driver.cmx src/ocaml-output/FStar_Parser_Dep.cmx src/ocaml-output/FStar_Pervasives.cmx src/prettyprint/ml/FStar_Pprint.cmx src/ocaml-output/FStar_Parser_ToDocument.cmx src/ocaml-output/FStar_Syntax_DsEnv.cmx src/ocaml-output/FStar_Syntax_Resugar.cmx src/ocaml-output/FStar_Syntax_Print.cmx src/ocaml-output/FStar_TypeChecker_Common.cmx src/ocaml-output/FStar_TypeChecker_Env.cmx src/ocaml-output/FStar_Extraction_ML_UEnv.cmx src/ocaml-output/FStar_Reflection_Data.cmx src/ocaml-output/FStar_Syntax_Embeddings.cmx src/ocaml-output/FStar_TypeChecker_Normalize.cmx src/ocaml-output/FStar_Extraction_ML_Util.cmx src/ocaml-output/FStar_Format.cmx src/ocaml-output/FStar_Extraction_ML_Code.cmx src/extraction/ml/FStar_Extraction_ML_PrintML.cmx src/ocaml-output/FStar_Dependencies.cmx src/ocaml-output/FStar_Extraction_Kremlin.cmx src/ocaml-output/FStar_Order.cmx src/ocaml-output/FStar_Reflection_Basic.cmx src/ocaml-output/FStar_Reflection_Embeddings.cmx src/ocaml-output/FStar_Syntax_MutRecTy.cmx src/ocaml-output/FStar_ToSyntax_ToSyntax.cmx src/ocaml-output/FStar_TypeChecker_Err.cmx src/ocaml-output/FStar_TypeChecker_Rel.cmx src/ocaml-output/FStar_TypeChecker_Util.cmx src/ocaml-output/FStar_TypeChecker_TcTerm.cmx src/ocaml-output/FStar_Extraction_ML_Term.cmx src/ocaml-output/FStar_Extraction_ML_Modul.cmx src/ocaml-output/FStar_Fsdoc_Generator.cmx src/ocaml-output/FStar_Indent.cmx src/ocaml-output/FStar_Interactive_CompletionTable.cmx src/ocaml-output/FStar_Reflection_Interpreter.cmx src/ocaml-output/FStar_SMTEncoding_Term.cmx src/ocaml-output/FStar_SMTEncoding_Util.cmx src/ocaml-output/FStar_SMTEncoding_Env.cmx src/ocaml-output/FStar_SMTEncoding_EncodeTerm.cmx src/ocaml-output/FStar_SMTEncoding_Z3.cmx src/ocaml-output/FStar_SMTEncoding_ErrorReporting.cmx src/ocaml-output/FStar_SMTEncoding_Encode.cmx src/ocaml-output/FStar_SMTEncoding_Solver.cmx src/ocaml-output/FStar_Tactics_Types.cmx src/ocaml-output/FStar_Tactics_Result.cmx src/ocaml-output/FStar_Tactics_Basic.cmx src/ocaml-output/FStar_Tactics_Embedding.cmx src/tactics/ml/FStar_Tactics_Native.cmx src/ocaml-output/FStar_Tactics_Interpreter.cmx src/ocaml-output/FStar_ToSyntax_Interleave.cmx src/ocaml-output/FStar_TypeChecker_DMFF.cmx src/ocaml-output/FStar_TypeChecker_TcInductive.cmx src/ocaml-output/FStar_TypeChecker_Tc.cmx src/ocaml-output/FStar_Universal.cmx src/ocaml-output/FStar_Interactive_Ide.cmx src/ocaml-output/FStar_Interactive_Legacy.cmx src/ocaml-output/FStar_Version.cmx src/tactics/ml/FStar_Tactics_Load.cmx src/ocaml-output/FStar_Main.cmx src/fstar/ml/main.cmx -o src/fstar/ml/main.native
+# No parallelism done
+cp -f _build/src/fstar/ml/main.native ../../bin/fstar.exe
+cp -f _build/src/fstar/ml/main.native ../../bin/fstar.ocaml
+make: Leaving directory '/cygdrive/c/build/agent2/_work/4/s/fstar/src/ocaml-output'
+make: Entering directory '/cygdrive/c/build/agent2/_work/4/s/fstar/src/ocaml-output'
+mkdir -p ../../bin/fstar-compiler-lib/
+find . \( -name '*.cmi' -or -name '*.cmx' \) -exec cp {} ../../bin/fstar-compiler-lib/ \;
+make: Leaving directory '/cygdrive/c/build/agent2/_work/4/s/fstar/src/ocaml-output'
+make: Entering directory '/cygdrive/c/build/agent2/_work/4/s/fstar/src/ocaml-output'
+cd ../../ && ocamlbuild -cflag -g -I src/ocaml-output -I src/basic/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/prettyprint/ml -I src/tactics/ml -I src/tests/ml -I ulib/ml -j 24 -build-dir src/ocaml-output/_build -use-ocamlfind FStar_Tests_Main.native
+ocamlfind ocamlopt -linkpkg -thread -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/basic/ml -I ulib/ml -I src/ocaml-output -I src/parser/ml -I src/prettyprint/ml -I src/extraction/ml -I src/tactics/ml -I src/tests/ml src/basic/ml/FStar_BigInt.cmx ulib/ml/FStar_Monotonic_Heap.cmx ulib/ml/FStar_CommonST.cmx ulib/ml/FStar_List_Tot_Base.cmx ulib/ml/FStar_List.cmx ulib/ml/FStar_ST.cmx ulib/ml/prims.cmx src/basic/ml/FStar_Util.cmx src/basic/ml/FStar_Compiler_Bytes.cmx ulib/ml/FStar_Char.cmx ulib/ml/FStar_String.cmx src/basic/ml/FStar_Getopt.cmx src/basic/ml/FStar_Platform.cmx ulib/ml/FStar_All.cmx src/basic/ml/FStar_Unionfind.cmx ulib/ml/FStar_Pervasives_Native.cmx src/ocaml-output/FStar_Common.cmx ulib/ml/FStar_Float.cmx ulib/ml/FStar_Int16.cmx ulib/ml/FStar_Int32.cmx ulib/ml/FStar_Int64.cmx ulib/ml/FStar_Int8.cmx ulib/ml/FStar_UInt16.cmx ulib/ml/FStar_UInt8.cmx ulib/ml/FStar_BaseTypes.cmx ulib/ml/FStar_Exn.cmx ulib/ml/FStar_Option.cmx src/ocaml-output/FStar_Options.cmx src/ocaml-output/FStar_Range.cmx src/ocaml-output/FStar_Ident.cmx src/ocaml-output/FStar_Const.cmx src/ocaml-output/FStar_Errors.cmx src/ocaml-output/FStar_Parser_Const.cmx ulib/ml/FStar_Dyn.cmx src/ocaml-output/FStar_Syntax_Syntax.cmx src/ocaml-output/FStar_Extraction_ML_Syntax.cmx src/ocaml-output/FStar_Parser_AST.cmx src/ocaml-output/FStar_Syntax_Unionfind.cmx src/ocaml-output/FStar_Syntax_Subst.cmx src/ocaml-output/FStar_Syntax_Free.cmx src/ocaml-output/FStar_Syntax_InstFV.cmx src/ocaml-output/FStar_Syntax_Util.cmx src/parser/ml/FStar_Parser_Util.cmx src/ocaml-output/FStar_Parser_Parse.cmx src/parser/ml/FStar_Ulexing.cmx src/parser/ml/FStar_Parser_LexFStar.cmx src/parser/ml/FStar_Parser_ParseIt.cmx src/ocaml-output/FStar_Parser_Driver.cmx src/ocaml-output/FStar_Parser_Dep.cmx src/ocaml-output/FStar_Pervasives.cmx src/prettyprint/ml/FStar_Pprint.cmx src/ocaml-output/FStar_Parser_ToDocument.cmx src/ocaml-output/FStar_Syntax_DsEnv.cmx src/ocaml-output/FStar_Syntax_Resugar.cmx src/ocaml-output/FStar_Syntax_Print.cmx src/ocaml-output/FStar_TypeChecker_Common.cmx src/ocaml-output/FStar_TypeChecker_Env.cmx src/ocaml-output/FStar_Extraction_ML_UEnv.cmx src/ocaml-output/FStar_Reflection_Data.cmx src/ocaml-output/FStar_Syntax_Embeddings.cmx src/ocaml-output/FStar_TypeChecker_Normalize.cmx src/ocaml-output/FStar_Extraction_ML_Util.cmx src/ocaml-output/FStar_Format.cmx src/ocaml-output/FStar_Extraction_ML_Code.cmx src/extraction/ml/FStar_Extraction_ML_PrintML.cmx src/ocaml-output/FStar_Dependencies.cmx src/ocaml-output/FStar_Extraction_Kremlin.cmx src/ocaml-output/FStar_Order.cmx src/ocaml-output/FStar_Reflection_Basic.cmx src/ocaml-output/FStar_Reflection_Embeddings.cmx src/ocaml-output/FStar_Syntax_MutRecTy.cmx src/ocaml-output/FStar_ToSyntax_ToSyntax.cmx src/ocaml-output/FStar_TypeChecker_Err.cmx src/ocaml-output/FStar_TypeChecker_Rel.cmx src/ocaml-output/FStar_TypeChecker_Util.cmx src/ocaml-output/FStar_TypeChecker_TcTerm.cmx src/ocaml-output/FStar_Extraction_ML_Term.cmx src/ocaml-output/FStar_Extraction_ML_Modul.cmx src/ocaml-output/FStar_Fsdoc_Generator.cmx src/ocaml-output/FStar_Indent.cmx src/ocaml-output/FStar_Interactive_CompletionTable.cmx src/ocaml-output/FStar_Reflection_Interpreter.cmx src/ocaml-output/FStar_SMTEncoding_Term.cmx src/ocaml-output/FStar_SMTEncoding_Util.cmx src/ocaml-output/FStar_SMTEncoding_Env.cmx src/ocaml-output/FStar_SMTEncoding_EncodeTerm.cmx src/ocaml-output/FStar_SMTEncoding_Z3.cmx src/ocaml-output/FStar_SMTEncoding_ErrorReporting.cmx src/ocaml-output/FStar_SMTEncoding_Encode.cmx src/ocaml-output/FStar_SMTEncoding_Solver.cmx src/ocaml-output/FStar_Tactics_Types.cmx src/ocaml-output/FStar_Tactics_Result.cmx src/ocaml-output/FStar_Tactics_Basic.cmx src/ocaml-output/FStar_Tactics_Embedding.cmx src/tactics/ml/FStar_Tactics_Native.cmx src/ocaml-output/FStar_Tactics_Interpreter.cmx src/ocaml-output/FStar_ToSyntax_Interleave.cmx src/ocaml-output/FStar_TypeChecker_DMFF.cmx src/ocaml-output/FStar_TypeChecker_TcInductive.cmx src/ocaml-output/FStar_TypeChecker_Tc.cmx src/ocaml-output/FStar_Universal.cmx src/ocaml-output/FStar_Interactive_Ide.cmx src/ocaml-output/FStar_Interactive_Legacy.cmx src/ocaml-output/FStar_Version.cmx src/tactics/ml/FStar_Tactics_Load.cmx src/ocaml-output/FStar_Main.cmx src/ocaml-output/FStar_Tests_Pars.cmx src/ocaml-output/FStar_Tests_Util.cmx src/ocaml-output/FStar_Tests_Norm.cmx src/ocaml-output/FStar_Tests_Unif.cmx src/ocaml-output/FStar_Tests_Test.cmx src/tests/ml/FStar_Tests_Main.cmx -o src/tests/ml/FStar_Tests_Main.native
+# No parallelism done
+cp -f _build/src/tests/ml/FStar_Tests_Main.native ../../bin/tests.exe
+make: Leaving directory '/cygdrive/c/build/agent2/_work/4/s/fstar/src/ocaml-output'
+make: Entering directory '/cygdrive/c/build/agent2/_work/4/s/fstar/ulib/ml'
+make -C .. install-fstarlib
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/4/s/fstar/ulib'
+cd ../ && OCAMLPATH="../../../bin/" ocamlbuild -cflag -g -use-ocamlfind -build-dir ulib/ml/_build -I ulib/ml -I ulib/ml/extracted fstarlib.a fstarlib.cma fstarlib.cmxs fstarlib.cmxa
+ocamlfind ocamlopt -shared -linkall -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml ulib/ml/fstarlib.cmxa -o ulib/ml/fstarlib.cmxs
+mkdir -p ../bin/fstarlib/
+cp ml/_build/ulib/ml/*.cmi ml/_build/ulib/ml/*.cmx ml/_build/ulib/ml/extracted/*.cmi ml/_build/ulib/ml/extracted/*.cmx ml/_build/ulib/ml/fstarlib.a ml/_build/ulib/ml/fstarlib.cma ml/_build/ulib/ml/fstarlib.cmxs ml/_build/ulib/ml/fstarlib.cmxa ../bin/fstarlib/
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/4/s/fstar/ulib'
+make -C .. install-fstar-tactics
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/4/s/fstar/ulib'
+cd ../ && OCAMLPATH="../../../bin/" ocamlbuild -cflag -g -use-ocamlfind -build-dir ulib/tactics_ml/_build -I ulib/tactics_ml/ -I ulib/tactics_ml/extracted -I ulib/tactics_ml/fstarlib_leftovers fstartaclib.cma fstartaclib.cmxs fstartaclib.cmxa
+ocamlfind ocamlopt -shared -linkall -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/tactics_ml ulib/tactics_ml/fstartaclib.cmxa -o ulib/tactics_ml/fstartaclib.cmxs
+mkdir -p ../bin/fstar-tactics-lib/
+cp tactics_ml/_build/ulib/tactics_ml/*.cmi tactics_ml/_build/ulib/tactics_ml/*.cmx tactics_ml/_build/ulib/tactics_ml/fstarlib_leftovers/*.cmi tactics_ml/_build/ulib/tactics_ml/fstarlib_leftovers/*.cmx tactics_ml/_build/ulib/tactics_ml/extracted/*.cmi tactics_ml/_build/ulib/tactics_ml/extracted/*.cmx tactics_ml/_build/ulib/tactics_ml/fstartaclib.cma tactics_ml/_build/ulib/tactics_ml/fstartaclib.cmxs tactics_ml/_build/ulib/tactics_ml/fstartaclib.cmxa ../bin/fstar-tactics-lib/
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/4/s/fstar/ulib'
+make: Leaving directory '/cygdrive/c/build/agent2/_work/4/s/fstar/ulib/ml'
+From https://github.com/FStarLang/kremlin
+6c3b087..3222763  master           -> origin/master
++ 5c9cbc9...30fe580 cwinter_designated_initializers -> origin/cwinter_designated_initializers  (forced update)
++ 9f900db...8111213 cwinter_intcasts -> origin/cwinter_intcasts  (forced update)
+Switching to KreMLin origin/master
+HEAD is now at 3222763 A Makefile to verify KreMLib
+make: Entering directory '/cygdrive/c/build/agent2/_work/4/s/kremlin'
+ocamlbuild -I src -I lib -I parser -I kremlib -use-menhir -use-ocamlfind -classic-display -menhir "menhir --infer --explain" Kremlin.native Tests.native
+ln -sf Kremlin.native krml
+make: Leaving directory '/cygdrive/c/build/agent2/_work/4/s/kremlin'
+make: Entering directory '/cygdrive/c/build/agent2/_work/4/s/kremlin'
+OCAMLPATH=C:/build/agent2/_work/4/s/fstar/bin ocamlbuild -I src -I lib -I parser -I kremlib -use-menhir -use-ocamlfind -classic-display -menhir "menhir --infer --explain" Ast.inferred.mli kremlib/C.cmx kremlib/TestLib.cmx kremlib/C.cmo kremlib/TestLib.cmo
+make: Leaving directory '/cygdrive/c/build/agent2/_work/4/s/kremlin'
+From https://github.com/mitls/hacl-star
+6bcc205a..4627eac0  dev          -> origin/dev
+6c58c506..85600ced  fstar-master -> origin/fstar-master
+8f2c0152..e9345d66  polubelova_rsa_benchmark -> origin/polubelova_rsa_benchmark
+Switching to HACL origin/fstar-master
+HEAD is now at 85600ced Don't recheck FStar.* modules
+Switching to MLCrypto origin/master
+HEAD is now at 048fd71 Add .gitignore
+make: Nothing to be done for 'all'.
+make -C uint128 extract-c
+make -C salsa-family extract-c
+make -C poly1305 extract-c
+make[1]: Nothing to be done for 'extract-c'.
+make -C poly1305_32 extract-c
+make -C curve25519 extract-c
+make -C api extract-c
+make -C hmac extract-c
+make -C ed25519 extract-c
+make -C hash extract-c
+make[1]: Nothing to be done for 'extract-c'.
+make -C lib extract-c
+make -C lib/kremlin extract-c
+make[1]: Nothing to be done for 'extract-c'.
+make[1]: Nothing to be done for 'extract-c'.
+make[1]: Nothing to be done for 'extract-c'.
+make[1]: Nothing to be done for 'extract-c'.
+make[1]: Nothing to be done for 'extract-c'.
+make[1]: Nothing to be done for 'extract-c'.
+make[1]: Nothing to be done for 'extract-c'.
+make[1]: Nothing to be done for 'extract-c'.
+make[1]: Nothing to be done for 'extract-c'.
+make: Entering directory '/cygdrive/c/build/agent2/_work/4/s/hacl-star/providers'
+C:/build/agent2/_work/4/s/kremlin/krml -skip-compilation -minimal \
+-add-include '"kremlib.h"' \
+-add-include '"kremlin/c_string.h"' \
+-add-include '"kremlin/prims_int.h"' \
+-bundle 'FStar.*,Prims,C.Loops,Spec.*,Hacl.Spec.*,Seq.*' \
+-bundle 'LowStar.*' \
+-tmpdir generated  -warn-error +9 \
+&& \
+touch generated/Makefile.include
+KreMLin: from a ML-like subset to C
+
+Usage: C:\build\agent2\_work\4\s\kremlin\_build\src\Kremlin.native [OPTIONS] FILES
+
+High-level description:
+1. If some FILES end with .fst or .fsti, and [-verify] is set, KreMLin will
+call [fstar] on them to perform verification.
+2. If some FILES end with .fst or .fsti, KreMLin will call [fstar] on them to
+perform extraction and produce [out.krml].
+3. If exactly one FILE ends with [.krml] or [.json], or if a [.krml] file was
+produced at step 2., KreMLin will generate a series of [.c] and [.h] files
+in the directory specified by [-tmpdir], or in the current directory.
+4. If some FILES end with [.c], KreMLin will compile them along with the [.c]
+files generated at step 3. to obtain a series of [.o] files.
+5. If some FILES end with [.o], [.S] or [.a], KreMLin will link them along with the
+[.o] files obtained at step 4. to obtain a final executable.
+
+The [-skip-extraction] option stops KreMLin after step 1.
+The [-skip-translation] option stops KreMLin after step 2.
+The [-skip-compilation] option stops KreMLin after step 3.
+The [-skip-linking] option stops KreMLin after step 4.
+
+The [-warn-error] option follows the OCaml syntax, namely:
+- [r] is a range of warnings (either a number [n], or a range [n..n])
+- [-r] silences range [r]
+- [+r] enables range [r]
+- [@r] makes range [r] fatal.
+
+The default is +1..2@3+4..8@9+10@11+12..14 and the available warnings are:
+1: not generating code for a provided file
+2: found a reference to a function without implementation
+3: external command failed
+4: type error / malformed input
+5: type definition contains an application of an undefined type abbreviation
+6: variable-length array
+7: private F* function cannot be marked as C static
+8: C inline function reference across translation units
+9: need to manually call static initializers for globals
+10: deprecated feature
+11: subexpression is not Low*; cannot proceed
+12: cannot be compiled to Wasm
+13: monomorphic instance about to be dropped
+14: cannot perform tail-call optimization
+
+The [-bundle] option takes an argument of the form Api=Pattern1,...,Patternn
+The Api= part is optional and Api is made up of a non-empty list of modules
+separated by + (for instance: Interface1+Interface2). A pattern is either Foo.Bar
+(exact match) or Foo.Baz.* (prefix). The semantics are as follows: all the
+modules that match a pattern are grouped into a single C translation unit, and
+their declarations are marked as static, inasmuch as cross-translation unit
+calls permit. If the Api= part is present, then the module named Api must be
+found within the set of input files, and its declarations are appended to the
+translation unit without any visibility modifications.
+
+The default arguments are: -drop FStar.BaseTypes -drop FStar.Char -drop FStar.Float -drop FStar.Heap -drop FStar.Matrix2 -drop FStar.Option -drop FStar.Squash -drop FStar.Universe -drop FStar.Int.Cast -drop FStar.Monotonic.Heap -drop FStar.Monotonic.RRef -drop FStar.Int8 -drop FStar.UInt8 -drop FStar.Int16 -drop FStar.UInt16 -drop FStar.Int31 -drop FStar.UInt31 -drop FStar.Int32 -drop FStar.UInt32 -drop FStar.Int63 -drop FStar.UInt63 -drop FStar.Int64 -drop FStar.UInt64 -drop FStar.Int128 -drop FStar.Kremlin.Endianness -drop FStar.HyperStack.ST -drop C.String -drop C.Endianness
+
+All include directories and paths supports special prefixes:
+- if a path starts with FSTAR_LIB, this will expand to wherever F*'s ulib
+directory is
+- if a path starts with FSTAR_HOME, this will expand to wherever the source
+checkout of F* is (this does not always exist, e.g. in the case of an OPAM
+setup)
+
+The compiler switches turn on the following options.
+[-cc gcc] (default) adds [-ccopts -Wall,-Werror,-Wno-unused-variable,-Wno-unknown-warning-option,-Wno-unused-but-set-variable,-g,-fwrapv,-fstack-check,-D_BSD_SOURCE,-D_DEFAULT_SOURCE,-D__USE_MINGW_ANSI_STDIO,-Wno-parentheses -ccopt -std=c11]
+[-cc clang] adds [-ccopts -Wall,-Werror,-Wno-unused-variable,-Wno-unknown-warning-option,-Wno-unused-but-set-variable,-g,-fwrapv,-fstack-check,-D_BSD_SOURCE,-D_DEFAULT_SOURCE,-D__USE_MINGW_ANSI_STDIO,-Wno-parentheses -ccopt -std=c11]
+[-cc g++] adds [-ccopts -Wall,-Werror,-Wno-unused-variable,-Wno-unknown-warning-option,-Wno-unused-but-set-variable,-g,-fwrapv,-fstack-check,-D_BSD_SOURCE,-D_DEFAULT_SOURCE,-D__USE_MINGW_ANSI_STDIO,-Wno-parentheses]
+[-cc msvc] adds [-warn-error +6 -fnouint128 -falloca]
+[-cc compcert] adds [-warn-error @6@8 -fnostruct-passing -fnoanonymous-unions -fnouint128 -ccopts -g,-D_BSD_SOURCE,-D_DEFAULT_SOURCE]
+
+The [-fc89] option triggers [-fnouint128], [-fnoanonymous-unions],
+[-fnocompound-literals] and [-fc89-scope]. It also changes the invocations above
+to use [-std=c89].
+
+To debug Wasm codegen, it might be useful to trigger the same compilation path
+as Wasm, but emit C code instead. This can be achieved with [-wasm -d
+force-c,c-calls,wasm-calls -drop C,TestLib -add-include '"hack.h"' -fnouint128]
+where [hack.h] contains [#define WasmSupport_check_buffer_size(X)].
+
+Supported options:
+-cc                     compiler to use; one of gcc (default), compcert, g++, clang, msvc
+-m32                    turn on 32-bit cross-compiling
+-fsopt                  option to pass to F* (use -fsopts to pass a comma-separated list of values)
+-ccopt                  option to pass to the C compiler and linker (use -ccopts to pass a comma-separated list of values)
+-ldopt                  option to pass to the C linker (use -ldopts to pass a comma-separated list of values)
+-skip-extraction        stop after step 1.
+-skip-translation       stop after step 2.
+-skip-compilation       stop after step 3.
+-skip-linking           stop after step 4.
+-verify                 ask F* to verify the program
+-verbose                show the output of intermediary tools when acting as a driver for F* or the C compiler
+-diagnostics            informative report
+-wasm                   emit a .wasm file instead of C
+
+-add-early-include      prepend #include the-argument to every generated file, before kremlib.h
+-add-include            prepend #include the-argument to every generated file, after the #define __FOO_H
+-add-include-tmh        append #include <FILE.tmh>, where FILE is the current basename
+-minimal                do not prepend #include "kremlib.h"; do not bundle FStar
+-static-header          generate a .h for the given module where all functions are marked a static inline
+-no-prefix              don't prepend the module name to declarations from this module
+-bundle                 group modules into a single C translation unit (see above)
+-drop                   do not extract Code for this module (see above)
+-header                 prepend the contents of the given file at the beginning of each .c and .h
+-tmpdir                 temporary directory for .out, .c, .h and .o files
+-I                      add directory to search path (F* and C compiler)
+-o                      name of the resulting executable
+-warn-error             decide which errors are fatal / warnings / silent (default: +1..2@3+4..8@9+10@11+12..14)
+
+-by-ref                 pass the given struct type by reference, always
+-falloca                use alloca(3) for variable-length arrays on the stack
+-fnostruct-passing      disable passing structures by value and use pointers instead
+-fnoanonymous-unions    disable C11 anonymous unions
+-fnouint128             don't assume a built-in type __uint128
+-fnocompound-literals   don't generate C11 compound literals
+-ftail-calls            statically compile tail-calls into loops
+-funroll-loops          textually expand loops smaller than N
+-fparentheses           add unnecessary parentheses to silence GCC and Clang's -Wparentheses
+-fcurly-braces          always add curly braces around blocks
+-fshort-enums           use C macros and uint8_t for enums instead of C11 enum
+-fc89-scope             use C89 scoping rules
+-fc89                   generate C89-compatible code (meta-option, see above)
+
+-djson                  dump the input AST as JSON
+-dast                   pretty-print the internal AST
+-dmonomorphization      pretty-print the internal AST after monomorphization
+-dinline                pretty-print the internal AST after inlining
+-dpattern               pretty-print after pattern matches compilation
+-dsimplify              pretty-print the internal AST after going to a statement language
+-dstructs               pretty-print the internal AST after struct transformations
+-dc                     pretty-print the output C
+-dwasm                  pretty-print the output Wasm
+-d                      debug the specific comma-separated list of values; currently supported: inline,bundle,reachability,c-calls,wasm-calls,wasm-memory,wasm,force-c,cflat
+
+-help                   Display this list of options
+--help                  Display this list of options
+
+make: Leaving directory '/cygdrive/c/build/agent2/_work/4/s/hacl-star/providers'
+rm -f .depend && make .depend
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/4/s/hacl-star/providers'
+(Error 129) File THERFLAGS could not be found
+C:/build/agent2/_work/4/s/fstar/bin/fstar.exe --cache_checked_modules --admit_smt_queries true THERFLAGS --cache_dir .cache --odir .output --include C:/build/agent2/_work/4/s/kremlin/kremlib --include multiplexer --include multiplexer/fst --include C:/build/agent2/_work/4/s/hacl-star/code/lib/kremlin --include C:/build/agent2/_work/4/s/hacl-star/code/curve25519/interfaces --include C:/build/agent2/_work/4/s/hacl-star/code/hash/interfaces --include C:/build/agent2/_work/4/s/hacl-star/code/api/interfaces --include C:/build/agent2/_work/4/s/hacl-star/code/api --include C:/build/agent2/_work/4/s/hacl-star/code/salsa-family --include C:/build/agent2/_work/4/s/hacl-star/code/poly1305 --include C:/build/agent2/_work/4/s/hacl-star/code/bignum --include C:/build/agent2/_work/4/s/hacl-star/specs --dep full EverCrypt.fst EverCrypt.Bytes.fsti --extract Kremlin > .depend
+
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/4/s/hacl-star/providers'
+1 error was reported (see above)
+Makefile:73: .depend: No such file or directory
+make[1]: *** No rule to make target '.depend', needed by 'generated/Makefile.include'.  Stop.
+make: *** [Makefile:36: all] Error 2
