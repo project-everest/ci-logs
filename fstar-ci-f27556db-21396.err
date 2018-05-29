@@ -1,0 +1,23 @@
+From https://github.com/mitls/mitls-fstar
+* [new branch]        taramana_lowparse_20180525 -> origin/taramana_lowparse_20180525
+dos2unix: converting file parser/parse.fsi to Unix format...
+Warning: you are using the standard library and/or the %inline keyword. We
+recommend switching on --infer in order to avoid obscure type error messages.
+warning: CRLF will be replaced by LF in src/parser/parse.fsy.
+The file will have its original line endings in your working directory.
+FStar.Integers.fst(218,0-220,7): (Error 66) Failed to resolve implicit argument of type 'FStar.Integers.signedness' in the type of test (
+x: FStar.Integers.int_t (FStar.Integers.Unsigned) (FStar.Integers.W32) ->
+y: FStar.Integers.int_t (FStar.Integers.Unsigned) (FStar.Integers.W32) ->
+z: FStar.Integers.norm_join (FStar.Integers.join_types x y) ->
+Prims.Tot (FStar.Integers.norm_join (FStar.Integers.join_types x z)))
+1 error was reported (see above)
+make[4]: *** [Makefile.extract:11: FStar.Integers.fst.checked.lax] Error 1
+make[4]: Target 'all-ml' not remade because of errors.
+make[3]: *** [Makefile:32: fstarlib.mgen] Error 2
+make[3]: Target 'install-fstarlib' not remade because of errors.
+make[2]: *** [Makefile:2: all] Error 2
+make[1]: *** [Makefile:173: fstarlib] Error 2
+make: *** [Makefile:158: utest-prelude] Error 2
+Command exited with non-zero status 2
+9.24user 34.12system 4:59.89elapsed 14%CPU (0avgtext+0avgdata 882694144maxresident)k
+0inputs+0outputs (3628638major+0minor)pagefaults 0swaps
