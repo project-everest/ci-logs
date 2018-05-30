@@ -1,0 +1,27 @@
+From https://github.com/project-everest/vale
+be313e1..077f2f5  fstar        -> origin/fstar
+162c164..077f2f5  interop_sems -> origin/interop_sems
+dos2unix: converting file parser/parse.fsi to Unix format...
+Warning: you are using the standard library and/or the %inline keyword. We
+recommend switching on --infer in order to avoid obscure type error messages.
+warning: CRLF will be replaced by LF in src/parser/parse.fsy.
+The file will have its original line endings in your working directory.
+cp: cannot stat './_build/src/ocaml-output/FStar_Tests_Pars.cmx': No such file or directory
+FStar.ST.fst(48,73-48,81): (Error 189) Expected expression of type "FStar.Preorder.preorder (*?u5*) _"; got expression "FStar.ST.heap_rel" of type "h1: FStar.Monotonic.Heap.heap -> h2: FStar.Monotonic.Heap.heap -> Prims.Tot Prims.logical"
+1 error was reported (see above)
+make[4]: *** [Makefile.extract:11: FStar.ST.fst.checked.lax] Error 1
+FStar.HyperStack.ST.fst(52,2-52,9): (Error 189) Expected expression of type "FStar.Preorder.preorder FStar.Monotonic.HyperStack.mem"; got expression "FStar.HyperStack.ST.mem_rel" of type "m1: FStar.Monotonic.HyperStack.mem -> m2: FStar.Monotonic.HyperStack.mem -> Prims.Tot Type0"
+1 error was reported (see above)
+make[4]: *** [Makefile.extract:11: FStar.HyperStack.ST.fst.checked.lax] Error 1
+FStar.Fin.fst(33,30-33,32): (Error 189) Expected expression of type "Prims.int"; got expression "i1" of type "FStar.Fin.in_ s" (see also FStar.Fin.fst(33,19-33,21))
+1 error was reported (see above)
+make[4]: *** [Makefile.extract:11: FStar.Fin.fst.checked.lax] Error 1
+make[4]: Target 'all-ml' not remade because of errors.
+make[3]: *** [Makefile:32: fstarlib.mgen] Error 2
+make[3]: Target 'install-fstarlib' not remade because of errors.
+make[2]: *** [Makefile:2: all] Error 2
+make[1]: *** [Makefile:173: fstarlib] Error 2
+make: *** [Makefile:158: utest-prelude] Error 2
+Command exited with non-zero status 2
+7.51user 26.79system 4:19.01elapsed 13%CPU (0avgtext+0avgdata 812060672maxresident)k
+0inputs+0outputs (3341734major+0minor)pagefaults 0swaps
