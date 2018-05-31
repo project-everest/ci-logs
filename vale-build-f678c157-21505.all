@@ -1,0 +1,69 @@
+This is /home/everest/everest-ci/ci
+Working directory: /home/everest/vsts-agent/_work/5/s
+About to run: scons -j 8 --NOVERIFY
+BUILD_SOURCEBRANCHNAME: master
+BUILD_DEFINITIONNAME: VALE-CI-Linux
+BUILD_BUILDID: 21505
+DEFINITIONNAME:
+Z3 is /home/everest/everest/z3-4.5.1.1f29cebd4df6-x64-ubuntu-14.04/bin/z3
+scons: Reading SConscript files ...
+***
+*** WARNING:  NOT VERIFYING ANY CODE
+***
+Not building Poly1305 for this target architecture
+scons: done reading SConscript files.
+scons: Building targets ...
+Copy file(s): "tools/Dafny/Provers.SMTLib.dll" to "bin/Provers.SMTLib.dll"
+dmcs -t:library -out:bin/DafnyInterface.dll tools/Vale/DafnyInterface/Source/DafnyInterface/DafnyDriver.cs tools/Vale/DafnyInterface/Source/DafnyInterface/Properties/AssemblyInfo.cs -r:/home/everest/vsts-agent/_work/5/s/tools/Dafny/BoogieAbsInt.dll -r:/home/everest/vsts-agent/_work/5/s/tools/Dafny/BoogieConcurrency.dll -r:/home/everest/vsts-agent/_work/5/s/tools/Dafny/BoogieCore.dll -r:/home/everest/vsts-agent/_work/5/s/tools/Dafny/BoogieExecutionEngine.dll -r:/home/everest/vsts-agent/_work/5/s/tools/Dafny/BoogieParserHelper.dll -r:/home/everest/vsts-agent/_work/5/s/tools/Dafny/BoogieVCGeneration.dll -r:/home/everest/vsts-agent/_work/5/s/tools/Dafny/Dafny.exe -r:/home/everest/vsts-agent/_work/5/s/tools/Dafny/DafnyPipeline.dll -r:/home/everest/vsts-agent/_work/5/s/tools/Dafny/Provers.SMTLib.dll
+mono tools/FsLexYacc/FsLexYacc.6.1.0/build/fsyacc.exe --module "Parse" tools/Vale/src/parse.fsy -o obj/Vale/parse.fs
+mono tools/FsLexYacc/FsLexYacc.6.1.0/build/fslex.exe tools/Vale/src/lex.fsl -o obj/Vale/lex.fs
+mono tools/Dafny/Dafny.exe /ironDafny /allocated:1 /induction:1 /compile:0 /timeLimit:30 /errorLimit:1 /errorTrace:0 /trace /noNLarith /z3exe:/home/everest/everest/z3-4.5.1.1f29cebd4df6-x64-ubuntu-14.04/bin/z3 src/lib/util/types.s.dfy /noVerify > obj/lib/util/types.s.tmp
+mono tools/Dafny/Dafny.exe /ironDafny /allocated:1 /induction:1 /compile:0 /timeLimit:30 /errorLimit:1 /errorTrace:0 /trace /noNLarith /z3exe:/home/everest/everest/z3-4.5.1.1f29cebd4df6-x64-ubuntu-14.04/bin/z3 src/lib/collections/Seqs.s.dfy /noVerify > obj/lib/collections/Seqs.s.tmp
+mono tools/Dafny/Dafny.exe /ironDafny /allocated:1 /induction:1 /compile:0 /timeLimit:30 /errorLimit:1 /errorTrace:0 /trace /noNLarith /z3exe:/home/everest/everest/z3-4.5.1.1f29cebd4df6-x64-ubuntu-14.04/bin/z3 src/lib/util/Io.s.dfy /noVerify > obj/lib/util/Io.s.tmp
+Copy file(s): "src/crypto/aes/testaes.c" to "obj/crypto/aes/testaes.c"
+Copy file(s): "tools/Dafny/DafnyRuntime.cs" to "bin/DafnyRuntime.cs"
+gcc -o obj/crypto/aes/testaes.o -c -O3 -flto -g -DKRML_NOUINT128 -Ikremlin/kremlib -Isrc/lib/util -Isrc/crypto/aes obj/crypto/aes/testaes.c
+Copy file(s): "tools/Dafny/DafnyPrelude.bpl" to "bin/DafnyPrelude.bpl"
+Copy file(s): "tools/Dafny/Dafny.exe" to "bin/Dafny.exe"
+Copy file(s): "tools/Dafny/DafnyPipeline.dll" to "bin/DafnyPipeline.dll"
+Copy file(s): "tools/Dafny/BoogieVCGeneration.dll" to "bin/BoogieVCGeneration.dll"
+Copy file(s): "tools/Dafny/BoogieVCExpr.dll" to "bin/BoogieVCExpr.dll"
+Copy file(s): "tools/Dafny/BoogieParserHelper.dll" to "bin/BoogieParserHelper.dll"
+Copy file(s): "tools/Dafny/BoogieModel.dll" to "bin/BoogieModel.dll"
+Copy file(s): "tools/Dafny/BoogieHoudini.dll" to "bin/BoogieHoudini.dll"
+warning CS8001: SDK path could not be resolved
+Copy file(s): "tools/Dafny/BoogieGraph.dll" to "bin/BoogieGraph.dll"
+Copy file(s): "tools/Dafny/BoogieExecutionEngine.dll" to "bin/BoogieExecutionEngine.dll"
+Copy file(s): "tools/Dafny/BoogieDoomed.dll" to "bin/BoogieDoomed.dll"
+Copy file(s): "tools/Dafny/BoogieCore.dll" to "bin/BoogieCore.dll"
+Copy file(s): "tools/Dafny/BoogieConcurrency.dll" to "bin/BoogieConcurrency.dll"
+Copy file(s): "tools/Dafny/BoogieCodeContractsExtender.dll" to "bin/BoogieCodeContractsExtender.dll"
+Copy file(s): "tools/Dafny/BoogieBasetypes.dll" to "bin/BoogieBasetypes.dll"
+Copy file(s): "tools/Dafny/BoogieAbsInt.dll" to "bin/BoogieAbsInt.dll"
+Copy file(s): "src/crypto/aes/testcbc.c" to "obj/crypto/aes/testcbc.c"
+gcc -o obj/crypto/aes/testcbc.o -c -O3 -flto -g -DKRML_NOUINT128 -Ikremlin/kremlib -Isrc/lib/util obj/crypto/aes/testcbc.c
+compiling to dfas (can take a while...)
+building tables
+computing first function...Compilation succeeded - 1 warning(s)
+obj/crypto/aes/testaes.c:3:24: fatal error: gcc_compat.h: No such file or directory
+compilation terminated.
+scons: *** [obj/crypto/aes/testaes.o] Error 1
+time: 00:00:00.0353801
+obj/crypto/aes/testcbc.c:2:24: fatal error: gcc_compat.h: No such file or directory
+compilation terminated.
+scons: *** [obj/crypto/aes/testcbc.o] Error 1
+building kernels...time: 00:00:00.0314601
+building kernel table...time: 00:00:00.0061690
+computing lookahead relations.............................................................................................................................................................................................................................................................................................................................................................................................................................................................time: 00:00:00.3498035
+building lookahead table...time: 00:00:00.0366277
+building action table...time: 00:00:00.3880014
+building goto table...time: 00:00:00.0326673
+returning tables.
+442 states
+58 nonterminals
+96 terminals
+209 productions
+#rows in action table: 442
+388 states
+writing output
+scons: building terminated because of errors.
