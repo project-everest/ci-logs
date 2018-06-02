@@ -1,0 +1,1581 @@
+This is /home/everbld/everest-ci/ci
+Working directory: /cygdrive/c/build/agent2/_work/6/s
+About to run: ./everest --yes -j 16 test
+BUILD_SOURCEBRANCHNAME: quic2c
+BUILD_DEFINITIONNAME: Everest-CI-Windows
+BUILD_BUILDID: 21570
+DEFINITIONNAME:
+Z3 is /home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin/z3
+# Switching to the everest directory ... now in /cygdrive/c/build/agent2/_work/6/s
+
+exported FSTAR_HOME=C:/build/agent2/_work/6/s/FStar
+exported OPENSSL_HOME=C:/build/agent2/_work/6/s/MLCrypto/openssl
+exported KREMLIN_HOME=C:/build/agent2/_work/6/s/kremlin
+exported VALE_HOME=C:/build/agent2/_work/6/s/vale
+exported HACL_HOME=C:/build/agent2/_work/6/s/hacl-star
+exported MLCRYPTO_HOME=C:/build/agent2/_work/6/s/MLCrypto
+exported PATH=/cygdrive/c/build/agent2/_work/6/s/MLCrypto/openssl:/cygdrive/c/build/agent2/_work/6/s/FStar/bin:/cygdrive/c/build/agent2/_work/6/s/kremlin:/home/everbld/.opam/4.05.0+mingw64c/bin:/cygdrive/c/Windows/Microsoft.NET/Framework64/v4.0.30319/:/home/everbld/everest/nuget/bin:/home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin:/cygdrive/c/PROGRA~2/MICROS~1.0/VC/bin/amd64:/cygdrive/c/PROGRA~2/MICROS~1.0/VC/bin:/cygdrive/c/PROGRA~2/MICROS~4/F#/4.0/FRAMEW~1/v4.0/:/usr/x86_64-w64-mingw32/sys-root/mingw/bin:/usr/local/bin:/usr/bin:/cygdrive/c/build/agent2/externals/git/cmd:/cygdrive/c/Python36/Scripts:/cygdrive/c/Python36:/cygdrive/c/Docker/Resources/bin:/cygdrive/c/windows/system32:/cygdrive/c/windows:/cygdrive/c/windows/System32/Wbem:/cygdrive/c/windows/System32/WindowsPowerShell/v1.0:/cygdrive/c/Users/everbld/AppData/Local/Microsoft/WindowsApps:/cygdrive/c/Program Files/Docker/Docker/resources/bin:%USERPROFILE%/.dnx/bin:/cygdrive/c/Program Files/Microsoft DNX/Dnvm:/cygdrive/c/Program Files/Microsoft SQL Server/120/Tools/Binn:/cygdrive/c/Program Files/Microsoft SQL Server/130/Tools/Binn:/cygdrive/c/Program Files/dotnet:/cygdrive/c/Program Files/nodejs:/usr/bin:/cygdrive/c/Program Files/Git/mingw64/bin:/cygdrive/c/Users/everbld/AppData/Roaming/npm:/cygdrive/c/build/agent2/bin:/cygdrive/c/build/agent2/bin
++ hacl-star/secure_api/out/vale_aes_concrete_id/krml-test.exe
+================================================================================
+Running tests (commands shown below)
+test()
+[test] expected output cipher is d31a8d34648e60db7b86afbc53ef7ec2a4aded51296e08fea9e2b5a736ee62d63dbea45e8ca9671282fafb69da92728b1a71de0a9e060b2905d6a5b67ecd3b3692ddbd7f2d778b8c9803aee328091b58fab324e4fad675945585808b4831d7bc3ff4def08e4b7a9de576d26586cec64b61161ae10b594f09e26a7e902ecbd0600691
++ hacl-star/secure_api/out/hacl_aes_concrete_id/krml-test.exe
+[test] computed output cipher is d31a8d34648e60db7b86afbc53ef7ec2a4aded51296e08fea9e2b5a736ee62d63dbea45e8ca9671282fafb69da92728b1a71de0a9e060b2905d6a5b67ecd3b3692ddbd7f2d778b8c9803aee328091b58fab324e4fad675945585808b4831d7bc3ff4def08e4b7a9de576d26586cec64b61161ae10b594f09e26a7e902ecbd0600691
+[test] cipher is a success
+[test] expected output decryption is 4c616469657320616e642047656e746c656d656e206f662074686520636c617373206f66202739393a204966204920636f756c64206f6666657220796f75206f6e6c79206f6e652074697020666f7220746865206675747572652c2073756e73637265656e20776f756c642062652069742e
+[test] computed output decryption is 4c616469657320616e642047656e746c656d656e206f662074686520636c617373206f66202739393a204966204920636f756c64206f6666657220796f75206f6e6c79206f6e652074697020666f7220746865206675747572652c2073756e73637265656e20776f756c642062652069742e
+[test] decryption is a success
+test_aes_gcm_0()
+[test] expected output cipher is 58e2fccefa7e3061367f1d57a4e7455a
+[test] computed output cipher is 58e2fccefa7e3061367f1d57a4e7455a
+[test] cipher is a success
+[test] expected output decryption is 
+[test] computed output decryption is 
+[test] decryption is a success
++ make -C hacl-star/secure_api -f Makefile.extract test
+test_aes_gcm_1()
+[test] expected output cipher is 530f8afbc74536b9a963b4f1c4cb738b
+[test] computed output cipher is 530f8afbc74536b9a963b4f1c4cb738b
+[test] cipher is a success
+[test] expected output decryption is 
+[test] computed output decryption is 
+[test] decryption is a success
+test_aes_gcm_2()
+[test] expected output cipher is cea7403d4d606b6e074ec5d3baf39d18d0d1c8a799996bf0265b98b5d48ab919
+[test] computed output cipher is cea7403d4d606b6e074ec5d3baf39d18d0d1c8a799996bf0265b98b5d48ab919
+[test] cipher is a success
+[test] expected output decryption is 00000000000000000000000000000000
+[test] computed output decryption is 00000000000000000000000000000000
+[test] decryption is a success
+test_aes_gcm_3()
+[test] expected output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f662898015adb094dac5d93471bdec1a502270e3cc6c
+[test] computed output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f662898015adb094dac5d93471bdec1a502270e3cc6c
+[test] cipher is a success
+[test] expected output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b391aafd255
+[test] computed output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b391aafd255
+[test] decryption is a success
+test_aes_gcm_4()
+[test] expected output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f66276fc6ece0f4e1768cddf8853bb2d551b
+[test] computed output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f66276fc6ece0f4e1768cddf8853bb2d551b
+[test] cipher is a success
+[test] expected output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39
+[test] computed output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39
+[test] decryption is a success
+test()
+[test] expected output cipher is d31a8d34648e60db7b86afbc53ef7ec2a4aded51296e08fea9e2b5a736ee62d63dbea45e8ca9671282fafb69da92728b1a71de0a9e060b2905d6a5b67ecd3b3692ddbd7f2d778b8c9803aee328091b58fab324e4fad675945585808b4831d7bc3ff4def08e4b7a9de576d26586cec64b61161ae10b594f09e26a7e902ecbd0600691
+[test] computed output cipher is d31a8d34648e60db7b86afbc53ef7ec2a4aded51296e08fea9e2b5a736ee62d63dbea45e8ca9671282fafb69da92728b1a71de0a9e060b2905d6a5b67ecd3b3692ddbd7f2d778b8c9803aee328091b58fab324e4fad675945585808b4831d7bc3ff4def08e4b7a9de576d26586cec64b61161ae10b594f09e26a7e902ecbd0600691
+[test] cipher is a success
+[test] expected output decryption is 4c616469657320616e642047656e746c656d656e206f662074686520636c617373206f66202739393a204966204920636f756c64206f6666657220796f75206f6e6c79206f6e652074697020666f7220746865206675747572652c2073756e73637265656e20776f756c642062652069742e
+[test] computed output decryption is 4c616469657320616e642047656e746c656d656e206f662074686520636c617373206f66202739393a204966204920636f756c64206f6666657220796f75206f6e6c79206f6e652074697020666f7220746865206675747572652c2073756e73637265656e20776f756c642062652069742e
+[test] decryption is a success
+test_aes_gcm_0()
+[test] expected output cipher is 58e2fccefa7e3061367f1d57a4e7455a
+[test] computed output cipher is 58e2fccefa7e3061367f1d57a4e7455a
+[test] cipher is a success
+[test] expected output decryption is 
+[test] computed output decryption is 
+[test] decryption is a success
+test_aes_gcm_1()
+[test] expected output cipher is 530f8afbc74536b9a963b4f1c4cb738b
+[test] computed output cipher is 530f8afbc74536b9a963b4f1c4cb738b
+[test] cipher is a success
+[test] expected output decryption is 
+[test] computed output decryption is 
+[test] decryption is a success
+test_aes_gcm_2()
+[test] expected output cipher is cea7403d4d606b6e074ec5d3baf39d18d0d1c8a799996bf0265b98b5d48ab919
+[test] computed output cipher is cea7403d4d606b6e074ec5d3baf39d18d0d1c8a799996bf0265b98b5d48ab919
+[test] cipher is a success
+[test] expected output decryption is 00000000000000000000000000000000
+[test] computed output decryption is 00000000000000000000000000000000
+[test] decryption is a success
+test_aes_gcm_3()
+[test] expected output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f662898015adb094dac5d93471bdec1a502270e3cc6c
+[test] computed output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f662898015adb094dac5d93471bdec1a502270e3cc6c
+[test] cipher is a success
+[test] expected output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b391aafd255
+[test] computed output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b391aafd255
+[test] decryption is a success
+test_aes_gcm_4()
+[test] expected output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f66276fc6ece0f4e1768cddf8853bb2d551b
+[test] computed output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f66276fc6ece0f4e1768cddf8853bb2d551b
+[test] cipher is a success
+[test] expected output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39
+[test] computed output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39
+[test] decryption is a success
+make: Entering directory '/cygdrive/c/build/agent2/_work/6/s/hacl-star/secure_api'
+C:/build/agent2/_work/6/s/FStar/bin/fstar.exe --print_z3_statistics --use_hints --query_stats --cache_dir ../secure_api/out/runtime_switch/cache --cache_checked_modules --include ../specs --include ../code/bignum --include ../code/experimental/aesgcm --include ../code/lib/kremlin --include ../code/poly1305 --include ../code/hash --include ../code/salsa-family --include C:/build/agent2/_work/6/s/kremlin/kremlib --include ../secure_api --include ../secure_api/aead --include ../secure_api/prf --include ../secure_api/hkdf --include ../secure_api/vale --include ../secure_api/uf1cma --include ../secure_api/utils --include ../secure_api/LowCProvider/fst --include C:/build/agent2/_work/6/s/FStar/contrib/CoreCrypto/fst --include ../secure_api/concrete_specializations --include ../secure_api/concrete_specializations/runtime_switch --include ../secure_api/test --odir ../secure_api/out/runtime_switch/extracted --use_hints --lax \
+prims.fst \
+--codegen Kremlin \
+--extract_module prims
+All verification conditions discharged successfully
+TOTAL TIME 38 ms: C:\build\agent2\_work\6\s\FStar\bin\fstar.exe --print_z3_statistics --use_hints --query_stats --cache_dir ../secure_api/out/runtime_switch/cache --cache_checked_modules --include ../specs --include ../code/bignum --include ../code/experimental/aesgcm --include ../code/lib/kremlin --include ../code/poly1305 --include ../code/hash --include ../code/salsa-family --include C:/build/agent2/_work/6/s/kremlin/kremlib --include ../secure_api --include ../secure_api/aead --include ../secure_api/prf --include ../secure_api/hkdf --include ../secure_api/vale --include ../secure_api/uf1cma --include ../secure_api/utils --include ../secure_api/LowCProvider/fst --include C:/build/agent2/_work/6/s/FStar/contrib/CoreCrypto/fst --include ../secure_api/concrete_specializations --include ../secure_api/concrete_specializations/runtime_switch --include ../secure_api/test --odir ../secure_api/out/runtime_switch/extracted --use_hints --lax prims.fst --codegen Kremlin --extract_module prims
+C:/build/agent2/_work/6/s/kremlin/krml  -no-prefix KrmlTest -bundle \
+Hacl.Impl.Poly1305_64+Hacl.Impl.Chacha20=Hacl.*,Spec,Spec.* -bundle \
+Crypto.AEAD.Main=Crypto.* -add-include '"kremlin/c_string.h"' -add-include \
+'"kremlin/testlib.h"' -add-include '"kremlib.h"' -tmpdir ../secure_api/out/runtime_switch/extracted \
+-add-include '"kremlin/prims_int.h"' \
+../secure_api/out/runtime_switch/uint128/FStar_UInt128.c ../secure_api/out/runtime_switch/extracted/prims.krml ../secure_api/out/runtime_switch/extracted/FStar_Pervasives_Native.krml ../secure_api/out/runtime_switch/extracted/FStar_Pervasives.krml ../secure_api/out/runtime_switch/extracted/FStar_Mul.krml ../secure_api/out/runtime_switch/extracted/FStar_Math_Lib.krml ../secure_api/out/runtime_switch/extracted/FStar_Math_Lemmas.krml ../secure_api/out/runtime_switch/extracted/FStar_Squash.krml ../secure_api/out/runtime_switch/extracted/FStar_StrongExcludedMiddle.krml ../secure_api/out/runtime_switch/extracted/FStar_Classical.krml ../secure_api/out/runtime_switch/extracted/FStar_List_Tot_Base.krml ../secure_api/out/runtime_switch/extracted/FStar_List_Tot_Properties.krml ../secure_api/out/runtime_switch/extracted/FStar_List_Tot.krml ../secure_api/out/runtime_switch/extracted/FStar_Seq_Base.krml ../secure_api/out/runtime_switch/extracted/FStar_Seq_Properties.krml ../secure_api/out/runtime_switch/extracted/FStar_Seq.krml ../secure_api/out/runtime_switch/extracted/FStar_BitVector.krml ../secure_api/out/runtime_switch/extracted/FStar_UInt.krml ../secure_api/out/runtime_switch/extracted/FStar_UInt32.krml ../secure_api/out/runtime_switch/extracted/FStar_Int.krml ../secure_api/out/runtime_switch/extracted/FStar_Int64.krml ../secure_api/out/runtime_switch/extracted/FStar_Int63.krml ../secure_api/out/runtime_switch/extracted/FStar_Int32.krml ../secure_api/out/runtime_switch/extracted/FStar_Int16.krml ../secure_api/out/runtime_switch/extracted/FStar_Int8.krml ../secure_api/out/runtime_switch/extracted/FStar_UInt64.krml ../secure_api/out/runtime_switch/extracted/FStar_UInt63.krml ../secure_api/out/runtime_switch/extracted/FStar_UInt16.krml ../secure_api/out/runtime_switch/extracted/FStar_UInt8.krml ../secure_api/out/runtime_switch/extracted/FStar_Int_Cast.krml ../secure_api/out/runtime_switch/extracted/FStar_UInt128.krml ../secure_api/out/runtime_switch/extracted/Hacl_UInt64.krml ../secure_api/out/runtime_switch/extracted/FStar_Preorder.krml ../secure_api/out/runtime_switch/extracted/FStar_Ghost.krml ../secure_api/out/runtime_switch/extracted/FStar_ErasedLogic.krml ../secure_api/out/runtime_switch/extracted/FStar_FunctionalExtensionality.krml ../secure_api/out/runtime_switch/extracted/FStar_Set.krml ../secure_api/out/runtime_switch/extracted/FStar_PropositionalExtensionality.krml ../secure_api/out/runtime_switch/extracted/FStar_PredicateExtensionality.krml ../secure_api/out/runtime_switch/extracted/FStar_TSet.krml ../secure_api/out/runtime_switch/extracted/FStar_Monotonic_Heap.krml ../secure_api/out/runtime_switch/extracted/FStar_Heap.krml ../secure_api/out/runtime_switch/extracted/FStar_Map.krml ../secure_api/out/runtime_switch/extracted/FStar_Monotonic_HyperHeap.krml ../secure_api/out/runtime_switch/extracted/FStar_Monotonic_HyperStack.krml ../secure_api/out/runtime_switch/extracted/FStar_HyperStack.krml ../secure_api/out/runtime_switch/extracted/FStar_Monotonic_Witnessed.krml ../secure_api/out/runtime_switch/extracted/FStar_HyperStack_ST.krml ../secure_api/out/runtime_switch/extracted/FStar_HyperStack_All.krml ../secure_api/out/runtime_switch/extracted/Hacl_UInt128.krml ../secure_api/out/runtime_switch/extracted/Hacl_UInt8.krml ../secure_api/out/runtime_switch/extracted/Hacl_Bignum_Constants.krml ../secure_api/out/runtime_switch/extracted/Hacl_UInt32.krml ../secure_api/out/runtime_switch/extracted/FStar_Int_Cast_Full.krml ../secure_api/out/runtime_switch/extracted/Hacl_Cast.krml ../secure_api/out/runtime_switch/extracted/FStar_Buffer.krml ../secure_api/out/runtime_switch/extracted/Hacl_Bignum_Parameters.krml ../secure_api/out/runtime_switch/extracted/Hacl_Bignum_Wide.krml ../secure_api/out/runtime_switch/extracted/Spec_Loops.krml ../secure_api/out/runtime_switch/extracted/Hacl_Bignum_Limb.krml ../secure_api/out/runtime_switch/extracted/Hacl_Spec_Bignum_Field.krml ../secure_api/out/runtime_switch/extracted/Hacl_Spec_Bignum_Bigint.krml ../secure_api/out/runtime_switch/extracted/Hacl_Spec_Bignum_Modulo.krml ../secure_api/out/runtime_switch/extracted/Hacl_Spec_Bignum_Fproduct.krml ../secure_api/out/runtime_switch/extracted/Hacl_Spec_Bignum_Fmul.krml ../secure_api/out/runtime_switch/extracted/FStar_Endianness.krml ../secure_api/out/runtime_switch/extracted/Spec_Poly1305_Lemmas.krml ../secure_api/out/runtime_switch/extracted/FStar_Kremlin_Endianness.krml ../secure_api/out/runtime_switch/extracted/C_Endianness.krml ../secure_api/out/runtime_switch/extracted/C.krml ../secure_api/out/runtime_switch/extracted/Hacl_UInt16.krml ../secure_api/out/runtime_switch/extracted/Hacl_Spec_Endianness.krml ../secure_api/out/runtime_switch/extracted/Hacl_Endianness.krml ../secure_api/out/runtime_switch/extracted/Spec_Lib.krml ../secure_api/out/runtime_switch/extracted/Seq_Create.krml ../secure_api/out/runtime_switch/extracted/Spec_SHA2_256.krml ../secure_api/out/runtime_switch/extracted/C_Loops.krml ../secure_api/out/runtime_switch/extracted/Hacl_Hash_Lib_LoadStore.krml ../secure_api/out/runtime_switch/extracted/Hacl_Hash_Lib_Create.krml ../secure_api/out/runtime_switch/extracted/Hacl_Impl_SHA2_256_Lemmas.krml ../secure_api/out/runtime_switch/extracted/Hacl_Impl_SHA2_256.krml ../secure_api/out/runtime_switch/extracted/Hacl_Spec_Bignum_Fsum.krml ../secure_api/out/runtime_switch/extracted/Hacl_Bignum_Fsum.krml ../secure_api/out/runtime_switch/extracted/Crypto_AEAD_BufferUtils.krml ../secure_api/out/runtime_switch/extracted/Vale_AES.krml ../secure_api/out/runtime_switch/extracted/Hacl_Impl_Xor_Lemmas.krml ../secure_api/out/runtime_switch/extracted/Spec_CTR_Lemmas.krml ../secure_api/out/runtime_switch/extracted/Spec_CTR.krml ../secure_api/out/runtime_switch/extracted/Hacl_Lib_LoadStore32.krml ../secure_api/out/runtime_switch/extracted/Spec_Chacha20_Lemmas.krml ../secure_api/out/runtime_switch/extracted/Spec_Chacha20.krml ../secure_api/out/runtime_switch/extracted/Hacl_Impl_Chacha20.krml ../secure_api/out/runtime_switch/extracted/Hacl_SecureAPI_Chacha20.krml ../secure_api/out/runtime_switch/extracted/Crypto_Indexing.krml ../secure_api/out/runtime_switch/extracted/Flag.krml ../secure_api/out/runtime_switch/extracted/Crypto_Symmetric_AES.krml ../secure_api/out/runtime_switch/extracted/Crypto_Symmetric_AES128.krml ../secure_api/out/runtime_switch/extracted/FStar_Float.krml ../secure_api/out/runtime_switch/extracted/FStar_Exn.krml ../secure_api/out/runtime_switch/extracted/FStar_ST.krml ../secure_api/out/runtime_switch/extracted/FStar_All.krml ../secure_api/out/runtime_switch/extracted/FStar_IO.krml ../secure_api/out/runtime_switch/extracted/Buffer_Utils.krml ../secure_api/out/runtime_switch/extracted/Crypto_Symmetric_Bytes.krml ../secure_api/out/runtime_switch/extracted/Crypto_Symmetric_Cipher.krml ../secure_api/out/runtime_switch/extracted/C_Nullity.krml ../secure_api/out/runtime_switch/extracted/Hacl_Spec_Bignum_AddAndMultiply.krml ../secure_api/out/runtime_switch/extracted/Spec_Poly1305.krml ../secure_api/out/runtime_switch/extracted/Hacl_Bignum_Modulo.krml ../secure_api/out/runtime_switch/extracted/Hacl_Bignum_Fproduct.krml ../secure_api/out/runtime_switch/extracted/Hacl_Spec_Poly1305_64_State.krml ../secure_api/out/runtime_switch/extracted/Hacl_Spec_Poly1305_64.krml ../secure_api/out/runtime_switch/extracted/Hacl_Impl_Poly1305_64_State.krml ../secure_api/out/runtime_switch/extracted/Hacl_Bignum_Fmul.krml ../secure_api/out/runtime_switch/extracted/Hacl_Bignum_AddAndMultiply.krml ../secure_api/out/runtime_switch/extracted/Hacl_Spe_Poly1305_64.krml ../secure_api/out/runtime_switch/extracted/Hacl_Impl_Poly1305_64.krml ../secure_api/out/runtime_switch/extracted/Spec_GaloisField.krml ../secure_api/out/runtime_switch/extracted/Spec_GF128.krml ../secure_api/out/runtime_switch/extracted/Crypto_Symmetric_GF128.krml ../secure_api/out/runtime_switch/extracted/Crypto_Symmetric_MAC.krml ../secure_api/out/runtime_switch/extracted/Crypto_Symmetric_UF1CMA.krml ../secure_api/out/runtime_switch/extracted/Crypto_Plain.krml ../secure_api/out/runtime_switch/extracted/Crypto_Symmetric_PRF.krml ../secure_api/out/runtime_switch/extracted/Crypto_AEAD_Encoding.krml ../secure_api/out/runtime_switch/extracted/Crypto_AEAD_Invariant.krml ../secure_api/out/runtime_switch/extracted/Crypto_AEAD_Encrypt_Invariant.krml ../secure_api/out/runtime_switch/extracted/Crypto_AEAD_Wrappers_PRF.krml ../secure_api/out/runtime_switch/extracted/Crypto_AEAD_Wrappers_Encoding.krml ../secure_api/out/runtime_switch/extracted/Crypto_AEAD_Wrappers_CMA.krml ../secure_api/out/runtime_switch/extracted/Crypto_AEAD_EnxorDexor.krml ../secure_api/out/runtime_switch/extracted/Crypto_AEAD_Decrypt.krml ../secure_api/out/runtime_switch/extracted/Spec_HMAC_SHA2_256.krml ../secure_api/out/runtime_switch/extracted/Spec_SHA2_512.krml ../secure_api/out/runtime_switch/extracted/Hacl_Impl_SHA2_512_Lemmas.krml ../secure_api/out/runtime_switch/extracted/Hacl_Impl_SHA2_512.krml ../secure_api/out/runtime_switch/extracted/Spec_SHA2_384.krml ../secure_api/out/runtime_switch/extracted/Hacl_Impl_SHA2_384_Lemmas.krml ../secure_api/out/runtime_switch/extracted/Hacl_Impl_SHA2_384.krml ../secure_api/out/runtime_switch/extracted/Crypto_HMAC.krml ../secure_api/out/runtime_switch/extracted/Crypto_AEAD_Encrypt_Ideal_Invariant.krml ../secure_api/out/runtime_switch/extracted/Crypto_AEAD_MAC_Wrapper_Invariant.krml ../secure_api/out/runtime_switch/extracted/Crypto_AEAD_Enxor_Invariant.krml ../secure_api/out/runtime_switch/extracted/Crypto_AEAD_Encrypt.krml ../secure_api/out/runtime_switch/extracted/Crypto_AEAD.krml ../secure_api/out/runtime_switch/extracted/FStar_List.krml ../secure_api/out/runtime_switch/extracted/FStar_Char.krml ../secure_api/out/runtime_switch/extracted/FStar_String.krml ../secure_api/out/runtime_switch/extracted/C_String.krml ../secure_api/out/runtime_switch/extracted/TestLib.krml ../secure_api/out/runtime_switch/extracted/FStar_Bytes.krml ../secure_api/out/runtime_switch/extracted/Crypto_AEAD_Main.krml ../secure_api/out/runtime_switch/extracted/CryptoTypes.krml ../secure_api/out/runtime_switch/extracted/Crypto_HKDF.krml ../secure_api/out/runtime_switch/extracted/HaclProvider.krml ../secure_api/out/runtime_switch/extracted/KrmlTest.krml ../secure_api/out/runtime_switch/extracted/LowCProvider.krml vale/asm/sha256_main_i.o vale/asm/sha256-x86_64.o vale/asm/Vale_Hash_SHA2_256.o vale/asm/vale_aes_glue.o vale/asm/aes-x86_64.o ../secure_api/out/runtime_switch/copied/testlib.c -o ../secure_api/out/runtime_switch/krml-test.exe \
+-I ../secure_api/out/runtime_switch/uint128 -drop HaclProvider,LowCProvider,CryptoTypes
+Warning 10: : -drop is deprecated
+use a combination of -bundle and -d reachability to make sure the functions are eliminated as you wish
+Warning 2: after the definition of yi, in the definition of f', in the last element of the sequence, after the definition of h0, in top-level declaration Hacl.Bignum.Fproduct.sum_scalar_multiplication_, in file Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20: Reference to FStar.UInt128.mul_wide has no corresponding implementation; please provide a C implementation
+Warning 6: in top-level declaration Crypto.Plain.create, in file Crypto_AEAD_Main: stack newbuf @1 @0 is a non-constant size, stack-allocated array; this is not supported by CompCert and requires the use of alloca(3) for MSVC
+Warning 6: in the definition of keyBuffer, after the definition of h0, in the last element of the sequence, after the definition of macId, in top-level declaration Crypto.Symmetric.PRF.prf_mac, in file Crypto_AEAD_Main: stack newbuf 0uint8 Crypto.Symmetric.UF1CMA.keylen @5 is a non-constant size, stack-allocated array; this is not supported by CompCert and requires the use of alloca(3) for MSVC
+Warning 6: in the definition of cipher1, after the definition of cipherlen, in the last element of the sequence, in top-level declaration KrmlTest.test, in file KrmlTest: stack newbuf 0uint8 @0 is a non-constant size, stack-allocated array; this is not supported by CompCert and requires the use of alloca(3) for MSVC
+Warning 6: in the definition of cipher1, after the definition of cipherlen, in the last element of the sequence, in top-level declaration KrmlTest.test_aes_gcm, in file KrmlTest: stack newbuf 2uint8 @0 is a non-constant size, stack-allocated array; this is not supported by CompCert and requires the use of alloca(3) for MSVC
+Warning 6: in the definition of plain, after the definition of plainlen, in top-level declaration KrmlTest.test_aes_gcm_0, in file KrmlTest: stack newbuf 0uint8 @0 is a non-constant size, stack-allocated array; this is not supported by CompCert and requires the use of alloca(3) for MSVC
+Warning 6: in the definition of aad, after the definition of aadlen, in top-level declaration KrmlTest.test_aes_gcm_0, in file KrmlTest: stack newbuf 0uint8 @0 is a non-constant size, stack-allocated array; this is not supported by CompCert and requires the use of alloca(3) for MSVC
+[38;5;119m✔[0m [Monomorphization] ⏱️ 94ms
+Warning 6: in the definition of plain, after the definition of plainlen, in top-level declaration KrmlTest.test_aes_gcm_1, in file KrmlTest: stack newbuf 0uint8 @0 is a non-constant size, stack-allocated array; this is not supported by CompCert and requires the use of alloca(3) for MSVC
+Warning 6: in the definition of aad, after the definition of aadlen, in top-level declaration KrmlTest.test_aes_gcm_1, in file KrmlTest: stack newbuf 0uint8 @0 is a non-constant size, stack-allocated array; this is not supported by CompCert and requires the use of alloca(3) for MSVC
+Warning 6: in the definition of plain, after the definition of plainlen, in top-level declaration KrmlTest.test_aes_gcm_2, in file KrmlTest: stack newbuf 0uint8 @0 is a non-constant size, stack-allocated array; this is not supported by CompCert and requires the use of alloca(3) for MSVC
+Warning 6: in the definition of aad, after the definition of aadlen, in top-level declaration KrmlTest.test_aes_gcm_2, in file KrmlTest: stack newbuf 0uint8 @0 is a non-constant size, stack-allocated array; this is not supported by CompCert and requires the use of alloca(3) for MSVC
+Warning 6: in the definition of aad, after the definition of aadlen, in top-level declaration KrmlTest.test_aes_gcm_3, in file KrmlTest: stack newbuf 0uint8 @0 is a non-constant size, stack-allocated array; this is not supported by CompCert and requires the use of alloca(3) for MSVC
+Warning 13: : C.exit_code, a monomorphic instance, is first used, and therefore inserted, in file C which is about to be dropped; you may get a C compiler error about C_exit_code if any other module uses this definition
+[38;5;119m✔[0m [Inlining] ⏱️ 63ms
+[38;5;119m✔[0m [Pattern matches compilation] ⏱️ 63ms
+[38;5;119m✔[0m [Simplify 2] ⏱️ 297ms
+Warning 7: : After inlining, Hacl.Bignum.Fproduct.copy_from_wide_ (going into Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20) calls FStar.UInt128.uint128_to_uint64 (going into FStar) -- removing the static qualifier from FStar.UInt128.uint128_to_uint64
+Warning 7: : After inlining, Hacl.Bignum.Fproduct.sum_scalar_multiplication_ (going into Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20) calls FStar.UInt128.add_mod (going into FStar) -- removing the static qualifier from FStar.UInt128.add_mod
+Warning 7: : After inlining, Hacl.Bignum.Fproduct.carry_wide_ (going into Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20) calls FStar.UInt128.shift_right (going into FStar) -- removing the static qualifier from FStar.UInt128.shift_right
+Warning 7: : After inlining, Hacl.Bignum.Fproduct.carry_wide_ (going into Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20) calls FStar.UInt128.uint64_to_uint128 (going into FStar) -- removing the static qualifier from FStar.UInt128.uint64_to_uint128
+Warning 7: : After inlining, Hacl.Bignum.Fproduct.carry_wide_ (going into Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20) calls FStar.UInt128.add (going into FStar) -- removing the static qualifier from FStar.UInt128.add
+Warning 7: : After inlining, Hacl.Bignum.Modulo.carry_top_wide (going into Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20) calls FStar.UInt128.logand (going into FStar) -- removing the static qualifier from FStar.UInt128.logand
+[38;5;119m✔[0m [Structs + Simplify 2] ⏱️ 328ms
+Warning 7: : After inlining, Hacl.Impl.Poly1305_64.poly1305_encode_r (going into Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20) calls FStar.UInt128.shift_left (going into FStar) -- removing the static qualifier from FStar.UInt128.shift_left
+Warning 7: : After inlining, Hacl.Impl.Poly1305_64.poly1305_encode_r (going into Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20) calls FStar.UInt128.logor (going into FStar) -- removing the static qualifier from FStar.UInt128.logor
+Warning 7: : After inlining, Hacl.Impl.Poly1305_64.poly1305_last_pass_ (going into Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20) calls FStar.UInt64.gte_mask (going into FStar) -- removing the static qualifier from FStar.UInt64.gte_mask
+Warning 7: : After inlining, Hacl.Impl.Poly1305_64.poly1305_last_pass_ (going into Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20) calls FStar.UInt64.eq_mask (going into FStar) -- removing the static qualifier from FStar.UInt64.eq_mask
+[38;5;119m✔[0m [Drop] ⏱️ <1ms
+[38;5;119m✔[0m [AstToCStar] ⏱️ 16ms
+Warning 7: : After inlining, Crypto.Symmetric.Bytes.uint128_to_uint8 (going into Crypto_AEAD_Main) calls FStar.Int.Cast.Full.uint128_to_uint64 (going into FStar) -- removing the static qualifier from FStar.Int.Cast.Full.uint128_to_uint64
+[38;5;119m✔[0m [CStarToC] ⏱️ <1ms
+Warning 7: : After inlining, FStar.Seq.Base.createEmpty__uint8_t (going into Crypto_AEAD_Main) calls FStar.Seq.Base.seq__uint8_t (going into Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20) -- removing the static qualifier from FStar.Seq.Base.seq__uint8_t
+Warning 7: : After inlining, FStar.Seq.Base.createEmpty__uint8_t (going into Crypto_AEAD_Main) calls Prims.list__uint8_t_tags (going into Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20) -- removing the static qualifier from Prims.list__uint8_t_tags
+Warning 7: : After inlining, FStar.Seq.Base.create__uint8_t (going into Crypto_AEAD_Main) calls Prims.op_Subtraction (going into Prims) -- removing the static qualifier from Prims.op_Subtraction
+Warning 7: : After inlining, Crypto.Symmetric.GF128.gf128_add (going into Crypto_AEAD_Main) calls FStar.UInt128.logxor (going into FStar) -- removing the static qualifier from FStar.UInt128.logxor
+Warning 7: : After inlining, Crypto.Symmetric.GF128.gf128_shift_reduce (going into Crypto_AEAD_Main) calls FStar.UInt128.eq_mask (going into FStar) -- removing the static qualifier from FStar.UInt128.eq_mask
+Warning 7: : After inlining, Crypto.Symmetric.MAC.update (going into Crypto_AEAD_Main) calls Hacl.Impl.Poly1305_64.State.poly1305_state (going into Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20) -- removing the static qualifier from Hacl.Impl.Poly1305_64.State.poly1305_state
+Warning 8: : After inlining, Crypto.Symmetric.MAC.update (going into Crypto_AEAD_Main) calls Hacl.Impl.Poly1305_64.poly1305_update (going into Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20). This is a call across translation units but Hacl.Impl.Poly1305_64.poly1305_update has a C "inline" qualifier. The C standard allows removing Hacl.Impl.Poly1305_64.poly1305_update from its translation unit (see C11 6.7.3 §5), and CompCert will do it. 
+Warning 7: : After inlining, Crypto.Symmetric.MAC.finish (going into Crypto_AEAD_Main) calls C.Nullity.null (going into C_Nullity) -- removing the static qualifier from C.Nullity.null
+Warning 8: : After inlining, Crypto.Symmetric.MAC.finish (going into Crypto_AEAD_Main) calls Hacl.Impl.Poly1305_64.poly1305_process_last_block (going into Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20). This is a call across translation units but Hacl.Impl.Poly1305_64.poly1305_process_last_block has a C "inline" qualifier. The C standard allows removing Hacl.Impl.Poly1305_64.poly1305_process_last_block from its translation unit (see C11 6.7.3 §5), and CompCert will do it. 
+Warning 8: : After inlining, Crypto.Symmetric.Cipher.compute (going into Crypto_AEAD_Main) calls Hacl.Impl.Chacha20.setup (going into Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20). This is a call across translation units but Hacl.Impl.Chacha20.setup has a C "inline" qualifier. The C standard allows removing Hacl.Impl.Chacha20.setup from its translation unit (see C11 6.7.3 §5), and CompCert will do it. 
+Warning 8: : After inlining, Crypto.Symmetric.Cipher.compute (going into Crypto_AEAD_Main) calls Hacl.Impl.Chacha20.copy_state (going into Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20). This is a call across translation units but Hacl.Impl.Chacha20.copy_state has a C "inline" qualifier. The C standard allows removing Hacl.Impl.Chacha20.copy_state from its translation unit (see C11 6.7.3 §5), and CompCert will do it. 
+Warning 8: : After inlining, Crypto.Symmetric.Cipher.compute (going into Crypto_AEAD_Main) calls Hacl.Impl.Chacha20.rounds (going into Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20). This is a call across translation units but Hacl.Impl.Chacha20.rounds has a C "inline" qualifier. The C standard allows removing Hacl.Impl.Chacha20.rounds from its translation unit (see C11 6.7.3 §5), and CompCert will do it. 
+Warning 8: : After inlining, Crypto.Symmetric.Cipher.compute (going into Crypto_AEAD_Main) calls Hacl.Impl.Chacha20.sum_states (going into Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20). This is a call across translation units but Hacl.Impl.Chacha20.sum_states has a C "inline" qualifier. The C standard allows removing Hacl.Impl.Chacha20.sum_states from its translation unit (see C11 6.7.3 §5), and CompCert will do it. 
+Warning 7: : After inlining, Crypto.Symmetric.Cipher.compute (going into Crypto_AEAD_Main) calls Hacl.Lib.LoadStore32.uint32s_to_le_bytes (going into Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20) -- removing the static qualifier from Hacl.Lib.LoadStore32.uint32s_to_le_bytes
+Warning 7: : After inlining, Crypto.Symmetric.PRF.gen (going into Crypto_AEAD_Main) calls FStar.UInt32.v (going into FStar) -- removing the static qualifier from FStar.UInt32.v
+Warning 7: : After inlining, Crypto.AEAD.Invariant.maxplain (going into Crypto_AEAD_Main) calls Prims.pow2 (going into Prims) -- removing the static qualifier from Prims.pow2
+Warning 7: : After inlining, Crypto.AEAD.Invariant.safelen (going into Crypto_AEAD_Main) calls Prims.op_Multiply (going into Prims) -- removing the static qualifier from Prims.op_Multiply
+Warning 7: : After inlining, Crypto.AEAD.Invariant.safelen (going into Crypto_AEAD_Main) calls Prims.op_LessThanOrEqual (going into Prims) -- removing the static qualifier from Prims.op_LessThanOrEqual
+Warning 7: : After inlining, Crypto.AEAD.Invariant.safelen (going into Crypto_AEAD_Main) calls Prims.op_Addition (going into Prims) -- removing the static qualifier from Prims.op_Addition
+Warning 7: : After inlining, KrmlTest.test (going into KrmlTest) calls Crypto.Indexing.id (going into Crypto_AEAD_Main) -- removing the static qualifier from Crypto.Indexing.id
+Warning 7: : After inlining, KrmlTest.test (going into KrmlTest) calls Crypto.Indexing.aeadAlg (going into Crypto_AEAD_Main) -- removing the static qualifier from Crypto.Indexing.aeadAlg
+Warning 7: : After inlining, KrmlTest.test (going into KrmlTest) calls Crypto.Indexing.testId (going into Crypto_AEAD_Main) -- removing the static qualifier from Crypto.Indexing.testId
+Warning 7: : After inlining, KrmlTest.test (going into KrmlTest) calls Crypto.Plain.unsafe_hide_buffer (going into Crypto_AEAD_Main) -- removing the static qualifier from Crypto.Plain.unsafe_hide_buffer
+Warning 7: : After inlining, KrmlTest.test (going into KrmlTest) calls Crypto.Symmetric.Bytes.load_bytes (going into Crypto_AEAD_Main) -- removing the static qualifier from Crypto.Symmetric.Bytes.load_bytes
+Warning 7: : After inlining, KrmlTest.test (going into KrmlTest) calls Crypto.Symmetric.Bytes.load_uint128 (going into Crypto_AEAD_Main) -- removing the static qualifier from Crypto.Symmetric.Bytes.load_uint128
+Warning 7: : After inlining, KrmlTest.test (going into KrmlTest) calls Crypto.AEAD.Invariant.aead_state (going into Crypto_AEAD_Main) -- removing the static qualifier from Crypto.AEAD.Invariant.aead_state
+Warning 7: : After inlining, KrmlTest.test (going into KrmlTest) calls Crypto.Plain.bufferRepr (going into Crypto_AEAD_Main) -- removing the static qualifier from Crypto.Plain.bufferRepr
+Warning 7: : After inlining, Flag.cipher_prf (going into Flag) calls Crypto.Indexing.cipherAlg (going into Crypto_AEAD_Main) -- removing the static qualifier from Crypto.Indexing.cipherAlg
+Warning 7: : After inlining, Flag.mac_int1cma (going into Flag) calls Crypto.Indexing.macAlg (going into Crypto_AEAD_Main) -- removing the static qualifier from Crypto.Indexing.macAlg
+[38;5;81m⚙ KreMLin auto-detecting tools.[0m Here's what we found:
+[4mreadlink is:[0m readlink
+[4mKreMLin called via:[0m C:\build\agent2\_work\6\s\kremlin\_build\src\Kremlin.native
+[4mthe Kremlin executable is:[0m C:\build\agent2\_work\6\s\kremlin\_build\src\Kremlin.native
+[4mKreMLin home is:[0m C:/build/agent2/_work/6/s/kremlin
+[38;5;81m⚙ KreMLin will drive F*.[0m Here's what we found:
+read FSTAR_HOME via the environment
+[4mfstar converted to windows path:[0m C:/build/agent2/_work/6/s/FStar/bin/fstar.exe
+[4mfstar home converted to windows path:[0m C:/build/agent2/_work/6/s/FStar
+[4mfstar lib converted to windows path:[0m C:/build/agent2/_work/6/s/FStar/ulib
+fstar is on [38;5;119mbranch master[0m
+[4mfstar is:[0m C:/build/agent2/_work/6/s/FStar/bin/fstar.exe C:/build/agent2/_work/6/s/kremlin/runtime/WasmSupport.fst C:/build/agent2/_work/6/s/FStar/ulib/FStar.UInt128.fst --trace_error --cache_checked_modules --expose_interfaces --include ../secure_api/out/runtime_switch/uint128 --include C:/build/agent2/_work/6/s/kremlin/include --include C:/build/agent2/_work/6/s/kremlin/kremlib
+[38;5;119m✔[0m [PrettyPrinting] ⏱️ <1ms
+KreMLin: wrote out .c files for Prims, C_Loops_Spec_Loops, FStar, Buffer_Utils, C_Nullity, Vale_AES, Seq_Create, Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20, Crypto_AEAD_Main, KrmlTest, Flag, LowStar
+KreMLin: wrote out .h files for Prims, C_Loops_Spec_Loops, FStar, Buffer_Utils, C_Nullity, Vale_AES, Seq_Create, Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20, Crypto_AEAD_Main, KrmlTest, Flag, LowStar
+[38;5;81m⚙ KreMLin will drive the C compiler.[0m Here's what we found:
+[4mgcc is:[0m x86_64-w64-mingw32-gcc
+[4mx86_64-w64-mingw32-gcc options are:[0m -I ../secure_api/out/runtime_switch/uint128 -I C:/build/agent2/_work/6/s/kremlin/include -I C:/build/agent2/_work/6/s/kremlin/kremlib -I ../secure_api/out/runtime_switch/extracted -Wall -Werror -Wno-unused-variable -Wno-unknown-warning-option -Wno-unused-but-set-variable -g -fwrapv -fstack-check -D_BSD_SOURCE -D_DEFAULT_SOURCE -D__USE_MINGW_ANSI_STDIO -Wno-parentheses -std=c11
+[38;5;81m⚡ Generating object files[0m
+[38;5;119m✔[0m [CC,../secure_api/out/runtime_switch/extracted/Prims.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,../secure_api/out/runtime_switch/extracted/C_Loops_Spec_Loops.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,../secure_api/out/runtime_switch/extracted/FStar.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,../secure_api/out/runtime_switch/extracted/Buffer_Utils.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,../secure_api/out/runtime_switch/extracted/C_Nullity.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,../secure_api/out/runtime_switch/extracted/Vale_AES.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,../secure_api/out/runtime_switch/extracted/Seq_Create.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,../secure_api/out/runtime_switch/extracted/Hacl_Impl_Poly1305_64_Hacl_Impl_Chacha20.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,../secure_api/out/runtime_switch/extracted/Crypto_AEAD_Main.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,../secure_api/out/runtime_switch/extracted/KrmlTest.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,../secure_api/out/runtime_switch/extracted/Flag.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,../secure_api/out/runtime_switch/extracted/LowStar.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,C:/build/agent2/_work/6/s/kremlin/kremlib/kremlib.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,../secure_api/out/runtime_switch/copied/testlib.c] (use -verbose to see the output)
+[38;5;119m✔[0m [CC,../secure_api/out/runtime_switch/uint128/FStar_UInt128.c] (use -verbose to see the output)
+[38;5;119m✔[0m [LD] (use -verbose to see the output)
+[38;5;119mAll files linked successfully[0m 👍
+./../secure_api/out/runtime_switch/krml-test.exe
+test()
+[test] expected output cipher is d31a8d34648e60db7b86afbc53ef7ec2a4aded51296e08fea9e2b5a736ee62d63dbea45e8ca9671282fafb69da92728b1a71de0a9e060b2905d6a5b67ecd3b3692ddbd7f2d778b8c9803aee328091b58fab324e4fad675945585808b4831d7bc3ff4def08e4b7a9de576d26586cec64b61161ae10b594f09e26a7e902ecbd0600691
+[test] computed output cipher is d31a8d34648e60db7b86afbc53ef7ec2a4aded51296e08fea9e2b5a736ee62d63dbea45e8ca9671282fafb69da92728b1a71de0a9e060b2905d6a5b67ecd3b3692ddbd7f2d778b8c9803aee328091b58fab324e4fad675945585808b4831d7bc3ff4def08e4b7a9de576d26586cec64b61161ae10b594f09e26a7e902ecbd0600691
+[test] cipher is a success
+[test] expected output decryption is 4c616469657320616e642047656e746c656d656e206f662074686520636c617373206f66202739393a204966204920636f756c64206f6666657220796f75206f6e6c79206f6e652074697020666f7220746865206675747572652c2073756e73637265656e20776f756c642062652069742e
+[test] computed output decryption is 4c616469657320616e642047656e746c656d656e206f662074686520636c617373206f66202739393a204966204920636f756c64206f6666657220796f75206f6e6c79206f6e652074697020666f7220746865206675747572652c2073756e73637265656e20776f756c642062652069742e
+[test] decryption is a success
+test_aes_gcm_0()
+[test] expected output cipher is 58e2fccefa7e3061367f1d57a4e7455a
+[test] computed output cipher is 58e2fccefa7e3061367f1d57a4e7455a
+[test] cipher is a success
+[test] expected output decryption is 
+[test] computed output decryption is 
+[test] decryption is a success
+test_aes_gcm_1()
+[test] expected output cipher is 530f8afbc74536b9a963b4f1c4cb738b
+[test] computed output cipher is 530f8afbc74536b9a963b4f1c4cb738b
+[test] cipher is a success
+[test] expected output decryption is 
+[test] computed output decryption is 
+[test] decryption is a success
+test_aes_gcm_2()
+[test] expected output cipher is cea7403d4d606b6e074ec5d3baf39d18d0d1c8a799996bf0265b98b5d48ab919
+[test] computed output cipher is cea7403d4d606b6e074ec5d3baf39d18d0d1c8a799996bf0265b98b5d48ab919
+[test] cipher is a success
+[test] expected output decryption is 00000000000000000000000000000000
+[test] computed output decryption is 00000000000000000000000000000000
+[test] decryption is a success
+test_aes_gcm_3()
+[test] expected output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f662898015adb094dac5d93471bdec1a502270e3cc6c
+[test] computed output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f662898015adb094dac5d93471bdec1a502270e3cc6c
+[test] cipher is a success
+[test] expected output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b391aafd255
+[test] computed output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b391aafd255
+[test] decryption is a success
+test_aes_gcm_4()
+[test] expected output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f66276fc6ece0f4e1768cddf8853bb2d551b
+[test] computed output cipher is 522dc1f099567d07f47f37a32a84427d643a8cdcbfe5c0c97598a2bd2555d1aa8cb08e48590dbb3da7b08b1056828838c5f61e6393ba7a0abcc9f66276fc6ece0f4e1768cddf8853bb2d551b
+[test] cipher is a success
+[test] expected output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39
+[test] computed output decryption is d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39
+[test] decryption is a success
+make -C C:/build/agent2/_work/6/s/MLCrypto
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/6/s/MLCrypto'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/6/s/MLCrypto'
+OCAMLPATH="C:/build/agent2/_work/6/s/FStar/bin" ocamlfind opt -package fstarlib,zarith -g -I C:/build/agent2/_work/6/s/FStar/ulib/ml -c LowCProvider/LowCProvider.ml -I LowCProvider -I ../secure_api/out/runtime_switch -I ../secure_api/out/runtime_switch/extracted -I C:/build/agent2/_work/6/s/MLCrypto -o LowCProvider/LowCProvider.cmx
+OCAMLPATH="C:/build/agent2/_work/6/s/FStar/bin" ocamlfind mklib -g -I C:/build/agent2/_work/6/s/FStar/ulib/ml -I ../secure_api/out/runtime_switch/extracted vale/asm/sha256_main_i.o vale/asm/sha256-x86_64.o vale/asm/Vale_Hash_SHA2_256.o vale/asm/vale_aes_glue.o vale/asm/aes-x86_64.o ../secure_api/out/runtime_switch/uint128/FStar_UInt128.o LowCProvider/LowCProvider.cmx LowCProvider/HaclProvider.cmx LowCProvider/lowc_stub.o ../secure_api/out/runtime_switch/crypto/Crypto_AEAD_Main_Crypto_Indexing.o ../secure_api/out/runtime_switch/crypto/Crypto_HKDF_Crypto_HMAC.o ../code/salsa-family/chacha-c/Hacl_Chacha20.o ../code/poly1305/poly-c/AEAD_Poly1305_64.o ../code/api/aead-c/Hacl_Policies.o ../code/api/aead-c/Hacl_Chacha20Poly1305.o ../secure_api/out/runtime_switch/crypto/Crypto_Symmetric_Bytes.o ../code/curve25519/x25519-c/Hacl_Curve25519.o -o ../secure_api/out/runtime_switch/LowC
+OCAMLPATH="C:/build/agent2/_work/6/s/FStar/bin" ocamlfind opt -package fstarlib,zarith -g -I C:/build/agent2/_work/6/s/FStar/ulib/ml -c LowCProvider/Tests.ml -I LowCProvider -I ../secure_api/out/runtime_switch -I ../secure_api/out/runtime_switch/extracted -I C:/build/agent2/_work/6/s/MLCrypto -o LowCProvider/Tests.cmx
+OCAMLPATH="C:/build/agent2/_work/6/s/FStar/bin" ocamlfind opt -package fstarlib,zarith -g -I C:/build/agent2/_work/6/s/FStar/ulib/ml -I ../secure_api/out/runtime_switch/extracted -I LowCProvider \
+-ccopt -L../secure_api/out/runtime_switch -linkpkg ../secure_api/out/runtime_switch/copied/kremstr.o C:/build/agent2/_work/6/s/MLCrypto/CryptoTypes.cmx ../secure_api/out/runtime_switch/LowC.cmxa LowCProvider/Tests.cmx -o ../secure_api/out/runtime_switch/LowCTests.exe
+./../secure_api/out/runtime_switch/LowCTests.exe
+Tests started
+Test 1 OK
+
+Test 2 OK
+
+Test 3 OK
+
+Test 4 OK
+
+Test 5 OK
+
+Test 6 OK
+
+Output cipher:	ed3dc05f9d4877f5db78c69c3a8a3d8e8602646a0b2febe4fca07a426a9ace4163cb26eddbb5b0d5f56d7038512ac73d667397d129c3044e0eb8052e
+Output tag:	e6f0c7f7b8920ba02a3942df2b8b2a04
+cipher:		AES-128-GCM
+key:		"feffe9928665731c6d6a8f9467308308"
+iv:		"cafebabefacedbad"
+aad:		"feedfacedeadbeeffeedfacedeadbeefabaddad2"
+tag:		"3612d2e79e3b0785561be14aaca2fccb"
+plaintext:	"d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39"
+ciphertext:	"61353b4c2806934a777ff51fa22a4755699b2a714fcdc6f83766e5f97b6c742373806900e49f24b22b097544d4896b424989b5e1ebac0f07c23f4598"
+
+Test 7 failed, but this is expected because |IV| <> 12 bytes and we don't do IV expansion.
+Please disregard.
++ cd mitls-fstar/src/tls
+
+Output cipher:	8076eba01a51d7702d398c6dc3adaaadfe061c23a7ffc3c4623ea2be7a08d982b8f331d21ac6b8db541df43510561a3fff90b942215b7fb6fbcea43d
++ make -j 16 test
+Output tag:	1606863da7ad74443b3a89fd2489363d
+cipher:		AES-128-GCM
+key:		"feffe9928665731c6d6a8f9467308308"
+iv:		"9313225df88406e555909c5aff5269aa6a7a9538534f7da1e4c303d2a318a728c3c0c95156809539fcf0e2429a6b525416aedbf5a0de6a57a637b39b"
+aad:		"feedfacedeadbeeffeedfacedeadbeefabaddad2"
+tag:		"619cc5aefffe0bfa462af43c1699d050"
+plaintext:	"d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39"
+ciphertext:	"8ce24998625615b603a033aca13fb894be9112a5c3a211a8ba262a3cca7e2ca701e4a9a4fba43c90ccdcb281d48c7c6fd62875d2aca417034c34aee5"
+
+Test 8 failed, but this is expected because |IV| <> 12 bytes and we don't do IV expansion.
+Please disregard.
+
+Test 9 OK
+
+Test 10 OK
+
+Test 11 OK
+
+Test 12 OK
+
+Output cipher:	677a374b4dd797f8ea0252a721fa83784f68c4877cf4e60f8c1f56972e9c20f789efb32096dd6336c6e5ef833b041251fdf04ce41fbcf2fea0d1e83c
+Output tag:	91b8ee617f7c50dab5bc75abff3bc1c3
+cipher:		AES-256-GCM
+key:		"feffe9928665731c6d6a8f9467308308feffe9928665731c6d6a8f9467308308"
+iv:		"cafebabefacedbad"
+aad:		"feedfacedeadbeeffeedfacedeadbeefabaddad2"
+tag:		"3a337dbf46a792c45e454913fe2ea8f2"
+plaintext:	"d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39"
+ciphertext:	"c3762df1ca787d32ae47c13bf19844cbaf1ae14d0b976afac52ff7d79bba9de0feb582d33934a4f0954cc2363bc73f7862ac430e64abe499f47c9b1f"
+
+Test 13 failed, but this is expected because |IV| <> 12 bytes and we don't do IV expansion.
+Please disregard.
+
+Output cipher:	cf3b9ab7a70a2ac55a7bcf74cda369c5b32e7870a937cb4d7679ef877de6403b7126c8ca2d6c620755e8ff330af0e7fa003585282b2d7a3d8f785bcc
+Output tag:	881390e147e8fc6b2923305b6413a594
+cipher:		AES-256-GCM
+key:		"feffe9928665731c6d6a8f9467308308feffe9928665731c6d6a8f9467308308"
+iv:		"9313225df88406e555909c5aff5269aa6a7a9538534f7da1e4c303d2a318a728c3c0c95156809539fcf0e2429a6b525416aedbf5a0de6a57a637b39b"
+aad:		"feedfacedeadbeeffeedfacedeadbeefabaddad2"
+tag:		"a44a8266ee1c8eb0c8b5d4cf5ae9f19a"
+plaintext:	"d9313225f88406e5a55909c5aff5269a86a7a9531534f7da2e4c303d8a318a721c3c0c95956809532fcf0e2449a6b525b16aedf5aa0de657ba637b39"
+ciphertext:	"5a8def2f0c9e53f1f75d7853659e2a20eeb2b22aafde6419a058ab4f6f746bf40fc0c3b780f244452da3ebf1c5d82cdea2418997200ef82e44ae7e3f"
+
+Test 14 failed, but this is expected because |IV| <> 12 bytes and we don't do IV expansion.
+Please disregard.
+
+Test 15 OK
+
+Test 16 OK
+
+Test 17 OK
+
+Test 18 OK
+
+Output cipher:	eff01b40f151144abb70955cedcbe564afd7d338ce2c3eb2ac13b1228ef785edc5bf4b7501cdc522a855c4e5843a3a0af67e4c8285f641951d9dcb727fb5d53bffe8165999884aa1626b20328a233f189b48820f19d2cf1551f21d0ae749227f1d47344d687533456994f11584dfd15d4791ceedf45f3774821bcd340d4b18ec8ed70e7ce40859ec159363caab3eaa87261cbda3733c01bbd39f03f21d3c4f1b3af2cadd75c67fbe96929c20a13077991908a0d23adbcecd49ed2ed71dd8f659
+Output tag:	1f200ef9ef5218a0a69331c8304f873d
+cipher:		AES-128-GCM
+key:		"00000000000000000000000000000000"
+iv:		"ffffffff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+aad:		""
+tag:		"566f8ef683078bfdeeffa869d751a017"
+plaintext:	"000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+ciphertext:	"56b3373ca9ef6e4a2b64fe1e9a17b61425f10d47a75a5fce13efc6bc784af24f4141bdd48cf7c770887afd573cca5418a9aeffcd7c5ceddfc6a78397b9a85b499da558257267caab2ad0b23ca476a53cb17fb41c4b8b475cb4f3f7165094c229c9e8c4dc0a2a5ff1903e501511221376a1cdb8364c5061a20cae74bc4acd76ceb0abc9fd3217ef9f8c90be402ddf6d8697f4f880dff15bfb7a6b28241ec8fe183c2d59e3f9dfff653c7126f0acb9e64211f42bae12af462b1070bef1ab5e3606"
+
+Test 19 failed, but this is expected because |IV| <> 12 bytes and we don't do IV expansion.
+Please disregard.
+
+Output cipher:	eff01b40f151144abb70955cedcbe564afd7d338ce2c3eb2ac13b1228ef785edc5bf4b7501cdc522a855c4e5843a3a0af67e4c8285f641951d9dcb727fb5d53bffe8165999884aa1626b20328a233f189b48820f19d2cf1551f21d0ae749227f1d47344d687533456994f11584dfd15d4791ceedf45f3774821bcd340d4b18ec8ed70e7ce40859ec159363caab3eaa87261cbda3733c01bbd39f03f21d3c4f1b3af2cadd75c67fbe96929c20a13077991908a0d23adbcecd49ed2ed71dd8f65954f4ff316fe216dd9e29b1ea55824efb884af85d0e6743d586acfc3088f200284dcb744dcf6fe40745827d98067e32af9b279d8f8354d7e47b8bb6736de3b66479f0d1ee5cb7796d966955cc6dea4ae5e4205b07040a0d9ec6594c2c6d2350a4
+Output tag:	99b156f6881899ee456476976e9f5414
+cipher:		AES-128-GCM
+key:		"00000000000000000000000000000000"
+iv:		"ffffffff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+aad:		""
+tag:		"8b307f6b33286d0ab026a9ed3fe1e85f"
+plaintext:	"000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+ciphertext:	"56b3373ca9ef6e4a2b64fe1e9a17b61425f10d47a75a5fce13efc6bc784af24f4141bdd48cf7c770887afd573cca5418a9aeffcd7c5ceddfc6a78397b9a85b499da558257267caab2ad0b23ca476a53cb17fb41c4b8b475cb4f3f7165094c229c9e8c4dc0a2a5ff1903e501511221376a1cdb8364c5061a20cae74bc4acd76ceb0abc9fd3217ef9f8c90be402ddf6d8697f4f880dff15bfb7a6b28241ec8fe183c2d59e3f9dfff653c7126f0acb9e64211f42bae12af462b1070bef1ab5e3606872ca10dee15b3249b1a1b958f23134c4bccb7d03200bce420a2f8eb66dcf3644d1423c1b5699003c13ecef4bf38a3b60eedc34033bac1902783dc6d89e2e774188a439c7ebcc0672dbda4ddcfb2794613b0be41315ef778708a70ee7d75165c"
+
+Test 20 failed, but this is expected because |IV| <> 12 bytes and we don't do IV expansion.
+Please disregard.
+
+Test 21 OK
+
+AEAD: 21/21 tests passed
+./../secure_api/out/runtime_switch/quicprovider-test.exe
+==== coverage ====
+SHA256('') =
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+SHA384('') = 
+38b060a751ac96384cd9327eb1b1e36a21fdb71114be07434c0cc7bf63f6e1da
+274edebfe76f65fbd51ad2f14898b95b
+
+SHA512('') = 
+cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce
+47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+
+HMAC-SHA256('Jefe', 'what do ya want for nothing?') = 
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+HMAC-SHA384('Jefe', 'what do ya want for nothing?') = 
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e
+8e2240ca5e69e2c78b3239ecfab21649
+
+HMAC-SHA512('Jefe', 'what do ya want for nothing?') = 
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea250554
+9758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+prk = HKDF-EXTRACT-SHA256('0x000102030405060708090a0b0c', '0x0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b')
+077709362c2e32df0ddc3f0dc47bba6390b6c73bb50f9c3122ec844ad7c2b3e5
+077709362c2e32df0ddc3f0dc47bba6390b6c73bb50f9c3122ec844ad7c2b3e5
+
+okm = HKDF-EXPAND-SHA256(prk, '0xf0f1f2f3f4f5f6f7f8f9', 42)
+3cb25f25faacd57a90434f64d0362f2a2d2d0a90cf1a5a4c5db02d56ecc4c5bf
+34007208d5b887185865
+
+AES-128-GCM encrypt test:
+5936f46d6c7eb7008dbbfb0d40b491fce5328aedcbc0c5272457d347363fd36d
+f238bd17971e982f4449350d
+DECRYPT SUCCES: 
+7768617420646f2079612077616e7420666f72206e6f7468696e673f
+
+CHACHA20-POLY1305 encrypt test:
+a62fe99f3d6001a4f4214a986f04b1f42ea1e5dcea3236ecf35adb5d8cc57db2
+df5e18b278c8c904fcddf440
+DECRYPT SUCCES: 
+7768617420646f2079612077616e7420666f72206e6f7468696e673f
+==== PASS:  coverage ====
+
+
+==== test_crypto(TLS_hash_SHA256,TLS_aead_AES_128_GCM) ====
+PASS
+==== test_crypto(TLS_hash_SHA384,TLS_aead_AES_128_GCM) ====
+PASS
+==== test_crypto(TLS_hash_SHA512,TLS_aead_AES_128_GCM) ====
+PASS
+==== test_crypto(TLS_hash_SHA256,TLS_aead_AES_256_GCM) ====
+PASS
+==== test_crypto(TLS_hash_SHA384,TLS_aead_AES_256_GCM) ====
+PASS
+==== test_crypto(TLS_hash_SHA512,TLS_aead_AES_256_GCM) ====
+PASS
+==== test_crypto(TLS_hash_SHA256,TLS_aead_CHACHA20_POLY1305) ====
+PASS
+==== test_crypto(TLS_hash_SHA384,TLS_aead_CHACHA20_POLY1305) ====
+PASS
+==== test_crypto(TLS_hash_SHA512,TLS_aead_CHACHA20_POLY1305) ====
+PASS
+==== test_handshake_secrets() ====
+==== PASS: test_handshake_secrets ==== 
+==== ALL TESTS PASS ====
+make: Leaving directory '/cygdrive/c/build/agent2/_work/6/s/hacl-star/secure_api'
+rm -f cache/OCaml/.depend cache/Kremlin/.depend cache/Model/.depend
+make -f Makefile.Kremlin test
+make -f Makefile.OCaml test
+make -C ../../apps/quicMinusNet test -k
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/apps/quicMinusNet'
+./quic.exe
+server create
+client create
+client call clen=8192 slen=   0
+client done clen= 175 slen=   0 status=would_block
+16030300aa010000a603035b12aff963f35964b5c20cfd362435270196c6dba2
+0ed5189f091ea848b90f6e0000041303130101000079001a0009ffff00050a0b
+0c0d0e002b0003027f1c003300260024001d0020bddf2e08bff951ea588e43e3
+bcdf5d10d8e17491e06ff62f7da2e87d65adbf580000000e000c0000096c6f63
+616c686f73740010000800060568712d313000170000000d0006000408040403
+000a00040002001d002d0003020001
+server call clen= 175 slen=8192
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+003d001a0009ffff00050a0b0c0d0e0000000e000c0000096c6f63616c686f73
+740010000800060568712d3130000d0006000408040403000a00040002001d
+Transport parameters offered:
+ffff00050a0b0c0d0e
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+======== TO BE SIGNED <0403>: (130 octets) ========
+2020202020202020202020202020202020202020202020202020202020202020
+2020202020202020202020202020202020202020202020202020202020202020
+544c5320312e332c207365727665722043657274696669636174655665726966
+79004dbbfdda723ad2261db018054db8c1e4f882fe7d3fad5eb36abefc25a245
+a6cc
+===================================================
+sender done clen= 175 slen= 834 status=server_accept
+160303005a0200005603035b12aff9c18a76e82bc67343a68e48e222b61c81ec
+1cd4df9a2da9f1109bd99c00130300002e002b00027f1c00330024001d0020b1
+6e4ed75ddb3a2b09cd30bc78e08f7a99aa546860e402649b77c7d1321bad1117
+030302dec0a63d3d1010eca6185cb6ddde41cabcef4a5ca0e0801ba49cac67d7
+5dc0461b18eb8edbb1f6197e544460545efb24ccb13831f743b494e00f9e3803
+7936203b144282aa8785157301ea27980604c2da3753df0cdc7965c560663fdb
+27a424eed0dabfbd5c1a8e6ad05b02c57f31952e1647e87798b64e8a1cc75a29
+e172d8ac60e1bff41c92579a9970f010eb3a0d4a0b55c7ec17e581aeca9c2a92
+f6064806ebf9842b6b75968175e2187d7cc456c357a63792a0735186deb08d83
+ee34bb5acf699d39ef430f671bcc552a741271eb8b7dece56eefaa6bda39069e
+eba1d2da6a92234ccbcae19a6a9656eda5a09c943cc688d065a3d35267ae30a1
+4ad6d8d16e1721c59b031700e4e8e7c3e06274de5c524dcf58012fca544eefb3
+5cc4f2bdaec13d553374cb5e4ed5b62ad0019c8dd02653b73e128a620df48ea9
+e939ac8cc6908bc207ac72e0e016dc11ba43c7d47e8b35c97375549eb44b972a
+4748e881824fe28f96368b14a85fdcabd27b57288f50679f9322b93e18d6fb88
+a1ac49dfe8ebd6954cee6919f26b9c6d4873ed9435c7939648617ac82333507a
+157680c416d305bd4bbd850abb93e63abee912fcb4895cba5dcd413ddf74d612
+78b7b5728470a46409bd860b352d86722770dd77873038fe6fa6213cb1eb0971
+62732b6736c1d8cea12bcfeffbb54ad6f37244cdbdbe1b3454a266b65cc687f4
+a616863616c09430031e5b23ba05958f4afa80bff5e45ef9fba147ac709a2514
+ee76700f5908b580e1a24e38bd8afcfae69f9c8c7f394f620a2e130f9167bf48
+8e2d64b36f1cf3df63169476e85c0a43153a3bed3af7fb8d428ba11bfb6f08fe
+e33cbe60c470cc234ec7720a292b511030c38a453fba2257eec35498d88ba308
+ec0ba78b7fe7d525d3f2811e9f831eb204882b8d471d9be0debaa359a04eeba6
+65d36d84e7433f0096d6cd8ae767e45bbe75c43f0eb7952fca1d5b1cb6ba23b7
+999fd00b2b3fe1ab13be80ae1ccbd3a229b330616b604acd788d673f795c1645
+efc9
+client call clen=8017 slen= 834
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+001b0010000800060568712d3130000a00040002001d001a0003000102
+Transport parameters offered:
+000102
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+WARNING: chain validation failed, ignoring.
+client done clen=  58 slen= 834 status=client_complete
+170303003521d22cd6a5eec9268a6daad06626b82457ab202a2a9c7b1f828138
+0f220ad226a25804c70acc7bddb27a9ec7e883b32283c83ff341
+server call clen=  58 slen=7358
+sender done clen=  58 slen=   0 status=server_complete
+=== Exporter secret ===
+ad17649681d0b3ee97c96691d96710147d53923fc7a7beadc5b8f6c3089d2704
+=== QUIC 1-RTT secrets ===
+C: bd28bf584796141d8a73161e2e8cfd58bb2768a8297d1ef06b566ccc0e4739bf
+S: 241f5ca6891333bcd3f23416f1b485f7de1d7d7ef52bd8a241953cb77f3a829f
+=== AEAD client key test ===
+5b6ad862c374a711eb070cf81d90ce7a34010d55a9704846fa70cd
+=== Decrypt successful ===
+Ok
+./quic.exe 0rtt
+
+INITIAL ECDHE HANDSHAKE (NO EARLY SECRET)
+
+server create
+client create
+client returns would_block clen=175 slen=0
+ClientHello[ 175] ---->
+
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+003d001a0009ffff00050a0b0c0d0e0000000e000c0000096c6f63616c686f73
+740010000800060568712d3130000d0006000408040403000a00040002001d
+Transport parameters offered:
+ffff00050a0b0c0d0e
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+======== TO BE SIGNED <0403>: (130 octets) ========
+2020202020202020202020202020202020202020202020202020202020202020
+2020202020202020202020202020202020202020202020202020202020202020
+544c5320312e332c207365727665722043657274696669636174655665726966
+79003cd15b8379c95413731b505cac80a85dd326240a493782afa7156b6cffca
+8903
+===================================================
+server returns server_accept clen=175 slen=835
+secret=f1a7d03ba909035c769dd3724c721092f3386b3daea5de8089a3898849cfc292
+<---- ServerHello;(EncryptedExtensions; Certificate; CertVerify; Finished)[ 835]
+
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+001b0010000800060568712d3130000a00040002001d001a0003000102
+Transport parameters offered:
+000102
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+WARNING: chain validation failed, ignoring.
+client returns client_complete clen=58 slen=835
+secret=f1a7d03ba909035c769dd3724c721092f3386b3daea5de8089a3898849cfc292
+(Finished) [  58] ---->
+
+server returns server_complete clen=58 slen=0
+server returns would_block clen=0 slen=135
+<---- {Ticket}[ 135]
+
+##### New session ticket received! #####
+Host: localhost
+Ticket:
+031a71f39353e19daa5c5e79565c8862af6bd4177b1c9feceff9e41dbb3e4e3b
+e4af03742afaefe3e54deeeadd6b7b4701c2b407e3e62456ca41d63c531d7216
+189baabee5a4dca1b19955a7
+########################################
+client returns clen=0 slen=135 status=would_block
+
+TICKET-BASED RESUMPTION
+
+server create
+client create
+client returns client_early_data clen=302 slen=0
+early secret=7b7215468d6b1900f78a9ce2071377e38083c7300862ab1a6d140d6d56bb902d
+ClientHello[ 302] ---->
+
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+003d001a0009ffff00050a0b0c0d0e0000000e000c0000096c6f63616c686f73
+740010000800060568712d3130000d0006000408040403000a00040002001d
+Transport parameters offered:
+ffff00050a0b0c0d0e
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+server returns server_accept_early_data clen=302 slen=196
+early secret=7b7215468d6b1900f78a9ce2071377e38083c7300862ab1a6d140d6d56bb902d
+secret=4f371bc7a58920d9ea1e28e49d04086ba9959068f345ed8e403d3ee64adc03a1
+<---- ServerHello;(EncryptedExtensions; Certificate; CertVerify; Finished)[ 196]
+
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+001b0010000800060568712d3130000a00040002001d001a0003000102
+Transport parameters offered:
+000102
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+client returns client_complete_early_data clen=84 slen=196
+secret=4f371bc7a58920d9ea1e28e49d04086ba9959068f345ed8e403d3ee64adc03a1
+(Finished) [  84] ---->
+
+server returns clen=84 slen=0 status=server_complete
+server returns would_block clen=0 slen=135
+<---- {Ticket}[ 135]
+
+##### New session ticket received! #####
+Host: localhost
+Ticket:
+f7b98d9104a9366096d92dc66e799374aa0562d62974c7420185df5e82c7044a
+ee381aa2237a62ae09e061e41e573262610f2248e2c2a1812baec257b524483a
+770ccba0e1c9f19ff2f53f31
+########################################
+client returns clen=0 slen=135 status=would_block
+Ok
+./quic.exe hrr
+
+STATELESS RETRY TEST
+
+server create
+client create
+client returns would_block clen=175 slen=0
+ClientHello[ 175] ---->
+
+~~~~~~~~~ Client Hello Summary ~~~~~~~~~~~
+~ SNI = localhost
+~ ALPN = 00060568712d3130
+~ Cookie = NULL
+~ Extensions = 0079001a0009ffff00050a0b0c0d0e002b0003027f1c003300260024001d0020
+8011057788f4d259064b67ffce1e95b17c7984863303131eba2f1ee60e7c9e2e
+0000000e000c0000096c6f63616c686f73740010000800060568712d31300017
+0000000d0006000408040403000a00040002001d002d0003020001
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+003d001a0009ffff00050a0b0c0d0e0000000e000c0000096c6f63616c686f73
+740010000800060568712d3130000d0006000408040403000a00040002001d
+Transport parameters offered:
+ffff00050a0b0c0d0e
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+server returns server_stateless_retry clen=175 slen=188
+<---- HRR[ 188]
+
+server re-create
+client returns would_block clen=308 slen=188
+ClientHello2[ 308] ---->
+
+~~~~~~~~~ Client Hello Summary ~~~~~~~~~~~
+~ SNI = localhost
+~ ALPN = 00060568712d3130
+~ Cookie = 48656c6c6f20576f726c64
+~ Extensions = 00fe002c0081007f466941da347a9f60000e84a7e741c60e5209ea1222a631c1
+e4481feb432e616b0ec57250166337e829923972af709d9262b6ffe86bd5270e
+f2455fb6ab8f17d5d19cc1f7bb1bf7f746014794ac671265efe813ae824d6149
+ebc32de80a2f8375a1d5be603e50d73fa05db8da7d536f83ab691331c61e709e
+4bc2abf46357b6001a0009ffff00050a0b0c0d0e002b0003027f1c0033002600
+24001d00208011057788f4d259064b67ffce1e95b17c7984863303131eba2f1e
+e60e7c9e2e0000000e000c0000096c6f63616c686f7374001000080006056871
+2d313000170000000d0006000408040403000a00040002001d002d0003020001
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+003d001a0009ffff00050a0b0c0d0e0000000e000c0000096c6f63616c686f73
+740010000800060568712d3130000d0006000408040403000a00040002001d
+Transport parameters offered:
+ffff00050a0b0c0d0e
+Stateless cookie found, application contents:
+48656c6c6f20576f726c64
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+======== TO BE SIGNED <0403>: (130 octets) ========
+2020202020202020202020202020202020202020202020202020202020202020
+2020202020202020202020202020202020202020202020202020202020202020
+544c5320312e332c207365727665722043657274696669636174655665726966
+7900c3a6f77af7849baac44e3cc99298c0e5a7f314ea8bad3a62ddf9bfee8a01
+28c8
+===================================================
+server returns server_accept clen=308 slen=834
+secret=625416e12e43b214b67b86f91fda41774f0101fdccab7e504f02f822f504d203
+<---- ServerHello;(EncryptedExtensions; Certificate; CertVerify; Finished)[ 834]
+
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+001b0010000800060568712d3130000a00040002001d001a0003000102
+Transport parameters offered:
+000102
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+WARNING: chain validation failed, ignoring.
+client returns client_complete clen=58 slen=834
+secret=625416e12e43b214b67b86f91fda41774f0101fdccab7e504f02f822f504d203
+(Finished) [  58] ---->
+
+server returns server_complete clen=58 slen=0
+server returns would_block clen=0 slen=135
+<---- {Ticket}[ 135]
+
+##### New session ticket received! #####
+Host: localhost
+Ticket:
+ea1d3b55746efa5b9ea0f3128f83ac5f0422c8f2c1fd4115ed73ac1caa5de954
+61b548e4448c19f34921273b20f6250cf197e5eca9df6e2c5f39b90df2d2fc2e
+6e3247da6ee2c3dce3c1ab5b
+########################################
+client returns clen=0 slen=135 status=would_block
+Ok
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/apps/quicMinusNet'
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls'
+StatefulPlain.fst(75,0-75,5): (Warning 307) logic qualifier is deprecated, please remove it from the source program. In case your program verifies with the qualifier annotated but not without it, please try to minimize the example and file a github issue
+C:/build/agent2/_work/6/s/FStar/bin/fstar.exe --cache_dir cache/Kremlin --cache_checked_modules --print_z3_statistics --use_hints --query_stats --use_two_phase_tc false --cache_dir cache/Kremlin --odir extract/Kremlin --extract '* -DHDB -LowCProvider -FFICallbacks -BufferBytes' --dep full --include C:/build/agent2/_work/6/s/FStar/contrib/CoreCrypto/fst/ --include C:/build/agent2/_work/6/s/hacl-star/secure_api --include C:/build/agent2/_work/6/s/hacl-star/secure_api/utils --include C:/build/agent2/_work/6/s/hacl-star/secure_api/concrete_specializations --include C:/build/agent2/_work/6/s/hacl-star/secure_api/LowCProvider/fst --include C:/build/agent2/_work/6/s/hacl-star/code/curve25519/api --include C:/build/agent2/_work/6/s/hacl-star/code/lib --include C:/build/agent2/_work/6/s/kremlin/kremlib --include ../../libs/ffi --include C:/build/agent2/_work/6/s/hacl-star/providers/multiplexer --include ../../src/tls/concrete-flags --include ../../src/tls/concrete-flags/Kremlin --include ./concrete-flags/Debug QUIC.fst Test.Main.fst > cache/Kremlin/.depend
+StatefulPlain.fst(80,0-80,5): (Warning 307) logic qualifier is deprecated, please remove it from the source program. In case your program verifies with the qualifier annotated but not without it, please try to minimize the example and file a github issue
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls'
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls'
+StatefulPlain.fst(75,0-75,5): (Warning 307) logic qualifier is deprecated, please remove it from the source program. In case your program verifies with the qualifier annotated but not without it, please try to minimize the example and file a github issue
+C:/build/agent2/_work/6/s/FStar/bin/fstar.exe --cache_dir cache/OCaml --cache_checked_modules --print_z3_statistics --use_hints --query_stats --use_two_phase_tc false --cache_dir cache/OCaml --odir extract/OCaml --extract '* -Prims -FStar +FStar.Test +FStar.Kremlin.Endianness -CoreCrypto -CryptoTypes -EverCrypt.Bytes -EverCrypt -DHDB -LowCProvider -HaclProvider -FFICallbacks -Crypto.AEAD -Crypto.Symmetric -Crypto.Plain -Spec.Loops -Buffer.Utils -C +C.Loops -LowParse.SLow.Tac -BufferBytes' --dep full --include C:/build/agent2/_work/6/s/FStar/contrib/CoreCrypto/fst/ --include C:/build/agent2/_work/6/s/hacl-star/secure_api --include C:/build/agent2/_work/6/s/hacl-star/secure_api/utils --include C:/build/agent2/_work/6/s/hacl-star/secure_api/concrete_specializations --include C:/build/agent2/_work/6/s/hacl-star/secure_api/LowCProvider/fst --include C:/build/agent2/_work/6/s/hacl-star/code/curve25519/api --include C:/build/agent2/_work/6/s/hacl-star/code/lib --include C:/build/agent2/_work/6/s/kremlin/kremlib --include ../../libs/ffi --include C:/build/agent2/_work/6/s/hacl-star/providers/multiplexer --include ../../src/tls/concrete-flags --include ../../src/tls/concrete-flags/OCaml --include ./concrete-flags/Debug QUIC.fst Test.Main.fst > cache/OCaml/.depend
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls'
+StatefulPlain.fst(80,0-80,5): (Warning 307) logic qualifier is deprecated, please remove it from the source program. In case your program verifies with the qualifier annotated but not without it, please try to minimize the example and file a github issue
+EVEREST_WINDOWS= make -C extract/Kremlin-Internal-Test test
+make[2]: Entering directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls/extract/Kremlin-Internal-Test'
+cp ../../../../data/CAFile.pem .
+make[2]: Leaving directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls/extract/Kremlin-Internal-Test'
+make[2]: Entering directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls/extract/Kremlin-Internal-Test'
+cp ../../../../data/server-ecdsa.crt .
+make[2]: Leaving directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls/extract/Kremlin-Internal-Test'
+make[2]: Entering directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls/extract/Kremlin-Internal-Test'
+cp ../../../../data/server-ecdsa.key .
+make[2]: Leaving directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls/extract/Kremlin-Internal-Test'
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls'
+cp ../../data/CAFile.pem .
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls'
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls'
+cp ../../data/server-ecdsa.crt .
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls'
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls'
+cp ../../data/server-ecdsa.key .
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls'
+make[2]: Entering directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls/extract/Kremlin-Internal-Test'
+./test.exe
+✔ RNG initialization
+b1 = 1234567890abcdef1234567890abcdef
+b2 = cafedecafbabedeadbeeffeec0ffee33
+b12= 1234567890abcdef1234567890abcdefcafedecafbabedeadbeeffeec0ffee33
+b3 = 1234567890abcdef1234567890abcdefcafedecafbabedeadbeeffeec0ffee33
+✔ BufferBytes
+✔ TLSConstants
+✔ AEAD
+AEP| LowProvider: COERCE(K=feffe9928665731c6d6a8f9467308308feffe9928665731c6d6a8f9467308308)
+Test.StAE: c0 size=33 data=000000000000000017b5db7a6412522a62d32d2b5a94a9348c80cbc7b20bdcfa5c.
+Test.StAE: c1 size=28 data=0000000000000001a93cd0e67431db38a93a169cd79b29c82f69d7e4.
+Test.StAE: start.
+Test.StAE: decryption fails on wrong cipher.
+Test.StAE: decryption fails on wrong sequence number.
+Test.StAE: decryption fails on wrong CT.
+Test.StAE: first decryption succeeds.
+Test.StAE: second decryption succeeds.
+AEP| LowProvider: COERCE(K=feffe9928665731c6d6a8f9467308308feffe9928665731c6d6a8f9467308308)
+Test.StAE: c0 size=26 data=d12a84f232589f6bc797322d5f5d3f43e95bc07640538c50dded.
+Test.StAE: c1 size=21 data=2adba81a76d2814ee2aba4406c861ecbc19825461a.
+Test.StAE: start.
+Test.StAE: decryption fails on wrong cipher.
+Test.StAE: decryption fails on wrong sequence number.
+Test.StAE: TLS 1.3 does not intend to provide outer CT authentication.
+Test.StAE: first decryption succeeds.
+Test.StAE: second decryption succeeds.
+✔ StAE
+Test.CommonDH: Testing FFDHE2048.
+CDH| Keygen on FFDHE2048
+CDH| DH responder on FFDHE2048
+CDH| Keygen on FFDHE2048
+CDH| DH initiator on FFDHE2048
+CDH| DH initiator on FFDHE2048
+Test.CommonDH: Testing FFDHE3072.
+CDH| Keygen on FFDHE3072
+CDH| DH responder on FFDHE3072
+CDH| Keygen on FFDHE3072
+CDH| DH initiator on FFDHE3072
+CDH| DH initiator on FFDHE3072
+Test.CommonDH: Testing FFDHE4096.
+CDH| Keygen on FFDHE4096
+CDH| DH responder on FFDHE4096
+CDH| Keygen on FFDHE4096
+CDH| DH initiator on FFDHE4096
+CDH| DH initiator on FFDHE4096
+Test.CommonDH: Testing FFDHE6144.
+CDH| Keygen on FFDHE6144
+CDH| DH responder on FFDHE6144
+CDH| Keygen on FFDHE6144
+CDH| DH initiator on FFDHE6144
+CDH| DH initiator on FFDHE6144
+Test.CommonDH: Testing FFDHE8192.
+CDH| Keygen on FFDHE8192
+CDH| DH responder on FFDHE8192
+CDH| Keygen on FFDHE8192
+CDH| DH initiator on FFDHE8192
+CDH| DH initiator on FFDHE8192
+Test.CommonDH: Testing P256.
+CDH| Keygen on P256
+CDH| DH responder on P256
+CDH| Keygen on P256
+CDH| DH initiator on P256
+CDH| DH initiator on P256
+Test.CommonDH: Testing P384.
+CDH| Keygen on P384
+CDH| DH responder on P384
+CDH| Keygen on P384
+CDH| DH initiator on P384
+CDH| DH initiator on P384
+Test.CommonDH: Testing P521.
+CDH| Keygen on P521
+CDH| DH responder on P521
+CDH| Keygen on P521
+CDH| DH initiator on P521
+CDH| DH initiator on P521
+Test.CommonDH: Testing X255519.
+CDH| Keygen on X255519
+CDH| DH responder on X255519
+CDH| Keygen on X255519
+CDH| DH initiator on X255519
+CDH| DH initiator on X255519
+✔ CommonDH
+HS | next_fragment
+HS | offering ClientHello 1.3
+KS | ks_client_init 1.3
+CDH| Keygen on X255519
+NGO| No PSK or 0-RTT disabled
+NGO| offering client extensions [ supported_versions key_share extended_master_secret signature_algorithms ec_point_formats supported_groups psk_key_exchange_modes ]
+NGO| offering cipher suites ; TLS_AES_128_GCM_SHA256; TLS_AES_256_GCM_SHA384; TLS_CHACHA20_POLY1305_SHA256; TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256; TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256; TLS_DHE_RSA_WITH_AES_128_GCM_SHA256; TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384; TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384; TLS_DHE_RSA_WITH_AES_256_GCM_SHA384; TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256; TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256; TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256
+HSL| emit ClientHello
+Test.Handshake: ----client-hello---> 010000b303035b12affb...010100002d0003020001 (183 bytes).
+HS | recv_fragment
+HSL| parsed [ClientHello] -- end of flight 
+HS | Processing ClientHello
+NGO| offered client extensions [ supported_versions key_share extended_master_secret signature_algorithms ec_point_formats supported_groups psk_key_exchange_modes ]
+NGO| offered cipher suites ; TLS_AES_128_GCM_SHA256; TLS_AES_256_GCM_SHA384; TLS_CHACHA20_POLY1305_SHA256; TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256; TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256; TLS_DHE_RSA_WITH_AES_128_GCM_SHA256; TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384; TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384; TLS_DHE_RSA_WITH_AES_256_GCM_SHA384; TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256; TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256; TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256
+NGO| offered versions 1.3
+NGO| Negotiated Pure EDH key exchange
+NGO| Negotiated ECDSA_SHA1
+NGO| Negotiation callback to handle extra extensions and query for stateless retry.
+NGO| Application data in cookie: none
+NGO| negotiated 1.3 TLS_AES_128_GCM_SHA256
+KS | ks_server_init
+KS | No PSK selected.
+KS | Computed early secret:           33ad0a1c607ec03b09e6cd9893680ce210adf300aa1f2660e1b22e10f170f92a
+KS | Handshake salt:                  6f2615a108c702c5678f54fc9dbab69716c076189c48250cebeac3576c3611ba
+CDH| DH responder on X255519
+CDH| Keygen on X255519
+CDH| DH initiator on X255519
+KS | DH shared secret: adca90e8f6b34c12c7f252ff0dab4881305a401397ce9687733331ff5d47d26c
+KS | Handshake secret:                fa25520035fa7cf5f54d0c84f7ac7d9460832b5ca1648bd7c95bbfd88eb8af78
+NGO| processing client extensions [ supported_versions key_share extended_master_secret signature_algorithms ec_point_formats supported_groups psk_key_exchange_modes ]
+NGO| including server extensions (SH + EE) [ supported_versions key_share supported_groups ]
+NGO| extra extensions from application callback: 
+HSL| emit ServerHello and hash
+HS | derive handshake keys
+KS | ks_server_13_sh, hashed log = ab8acb564edc903d8ea2d9aa5b8bc4e6a2367a5116e3392a4840a4a7dc3e953f
+KS | handshake traffic secret[C]:     886fead88a9ae2d1ce527c1fed2da754926fac3d8968ea45962da5b202cffe2a
+KS | handshake traffic secret[S]:     0598ae2236e4ef1437bfa0bf5c55ec31bc65047553043331cdfec1a89bded2ed
+KS | handshake key[C]:                c806a6e221d5757300f40ff88b4b94ad, IV=583206b6ee1fe16348e8e13b
+KS | handshake key[S]: 002115ee56de056308d195e1726e0051, IV=b95e01bb6241191ec86a47d6
+AEP| LowProvider: COERCE(K=002115ee56de056308d195e1726e0051)
+AEP| LowProvider: COERCE(K=c806a6e221d5757300f40ff88b4b94ad)
+KS | finished key[C]:                 94238bc0d7cc6dc7f6a9007cfd3984d258836aadb1e3c4a0757ce7dc9d2f595e
+KS | finished key[S]:                 6ff88eefe1df4fd2262b397e9a3d2969343e98db96135f626da4762b95cecfc3
+KS | Application salt:                3a28df9407bdb160dfa1306e79ab61e4a8bacb6ebc0baf3432ca348cc70fa3ec
+KS | Application secret:              4e84c02bc6a415f275d78efc4030def25ec503cc38b9d770224b850d2eea268c
+HS | next_fragment
+Test.Handshake: <---server-hello---- 0200005603035b12affb...7e7b94a9817bd9365367 (90 bytes).
+HS | recv_fragment
+HSL| parsed ServerHello
+HSL| end of flight
+HS | client_ServerHello
+NGO| processing server extensions [ supported_versions key_share ]
+NGO| negotiated 1.3 TLS_AES_128_GCM_SHA256
+HS | Running TLS 1.3
+KS | ks_client_13_sh hashed_log = ab8acb564edc903d8ea2d9aa5b8bc4e6a2367a5116e3392a4840a4a7dc3e953f
+KS | no PSK negotiated. Early secret: 33ad0a1c607ec03b09e6cd9893680ce210adf300aa1f2660e1b22e10f170f92a
+KS | handshake salt:                  6f2615a108c702c5678f54fc9dbab69716c076189c48250cebeac3576c3611ba
+CDH| DH initiator on X255519
+KS | DH shared secret: adca90e8f6b34c12c7f252ff0dab4881305a401397ce9687733331ff5d47d26c
+KS | handshake secret:                fa25520035fa7cf5f54d0c84f7ac7d9460832b5ca1648bd7c95bbfd88eb8af78
+KS | handshake traffic secret[C]:     886fead88a9ae2d1ce527c1fed2da754926fac3d8968ea45962da5b202cffe2a
+KS | handshake traffic secret[S]:     0598ae2236e4ef1437bfa0bf5c55ec31bc65047553043331cdfec1a89bded2ed
+KS | handshake key[C]:                c806a6e221d5757300f40ff88b4b94ad, IV=583206b6ee1fe16348e8e13b
+KS | handshake key[S]:                002115ee56de056308d195e1726e0051, IV=b95e01bb6241191ec86a47d6
+KS | finished key[C]: 94238bc0d7cc6dc7f6a9007cfd3984d258836aadb1e3c4a0757ce7dc9d2f595e
+KS | finished key[S]: 6ff88eefe1df4fd2262b397e9a3d2969343e98db96135f626da4762b95cecfc3
+KS | application salt:                3a28df9407bdb160dfa1306e79ab61e4a8bacb6ebc0baf3432ca348cc70fa3ec
+KS | application secret:              4e84c02bc6a415f275d78efc4030def25ec503cc38b9d770224b850d2eea268c
+AEP| LowProvider: COERCE(K=c806a6e221d5757300f40ff88b4b94ad)
+AEP| LowProvider: COERCE(K=002115ee56de056308d195e1726e0051)
+EPO| reader++ 0/-1
+HS | next_fragment
+HS | prepare Server Finished
+HSL| emit EncryptedExtensions
+HSL| emit Certificate13 and hash
+HSL| emit CertificateVerify and hash
+HSL| emit Finished and hash
+KS | ks_server_13_sf hashed_log = 77bdc0d3e820cb31e638690f6221ca94b95e954d33c3e24a700c61208e76d1e6
+KS | application traffic secret[C]:   6ba8bc2cf9f587e52f6639edb4732338d1276697effa8bc4e75ae4b0fdb2e253
+KS | application traffic secret[S]:   f3bcab15a7ba45584d1dd2fdf1345fa9e51e1e80af7016805a966d232c40152f
+KS | exporter master secret:          5775d172ab592d9772a0203d79b3875ce0c337bf591adfcad4673ed10bfba5ae
+KS | application key[C]:              eb064241e11243130fdac21476c19cdd, IV=c7f98549bca03b231fca1101
+KS | application key[S]:              a755b5c789486b586e3c73d6a54e96e9, IV=c87b8ceb24b1d5ac34094376
+AEP| LowProvider: COERCE(K=a755b5c789486b586e3c73d6a54e96e9)
+AEP| LowProvider: COERCE(K=eb064241e11243130fdac21476c19cdd)
+HS | exporting a key
+EPO| reader++ 0/-1
+Test.Handshake: <--server-finished-- 080000160014000a0010...51ab3b2dfd684c3107f3 (710 bytes).
+HS | recv_fragment
+HSL| parsed EncryptedExtensions
+HSL| parsed Certificate13
+HSL| parsed CertificateVerify
+HSL| parsed Finished
+HSL| end of flight
+NGO| Nego.clientComplete_13
+NGO| EE: supported_groups 
+NGO| Negotiation callback to process application extensions.
+NGO| Certificate & signature 1.3 callback result: valid
+KS | ks_client_13_sf hashed_log = 77bdc0d3e820cb31e638690f6221ca94b95e954d33c3e24a700c61208e76d1e6
+KS | application traffic secret[C]:   6ba8bc2cf9f587e52f6639edb4732338d1276697effa8bc4e75ae4b0fdb2e253
+KS | application traffic secret[S]:   f3bcab15a7ba45584d1dd2fdf1345fa9e51e1e80af7016805a966d232c40152f
+KS | exporter master secret:          5775d172ab592d9772a0203d79b3875ce0c337bf591adfcad4673ed10bfba5ae
+KS | application key[C]:              eb064241e11243130fdac21476c19cdd, IV=c7f98549bca03b231fca1101
+KS | application key[S]:              a755b5c789486b586e3c73d6a54e96e9, IV=c87b8ceb24b1d5ac34094376
+AEP| LowProvider: COERCE(K=eb064241e11243130fdac21476c19cdd)
+AEP| LowProvider: COERCE(K=a755b5c789486b586e3c73d6a54e96e9)
+HS | exporting a key
+HS | Early data rejected
+EPO| writer++ 0/0
+HSL| emit Finished and hash
+KS | ks_client_13_cf hashed_log = 5ab034fc60015e8ae36352b5e3eecc24c84224c01019f88084c0ddc8149c714f
+KS | resumption master secret:        4025da25a3c03aeb5e3761ff2df17c84d90234129ff984fc4e3b269f06cd10d1
+EPO| reader++ 1/0
+HS | next_fragment
+Test.Handshake: --client-finished---> 140000202c93a0f91b7d...a856d49b3207f0eaff58 (36 bytes).
+HS | recv_fragment
+HSL| parsed Finished
+HSL| end of flight
+HS | Process Client Finished
+KS | ks_server_13_cf hashed_log = 5ab034fc60015e8ae36352b5e3eecc24c84224c01019f88084c0ddc8149c714f
+KS | resumption master secret:        4025da25a3c03aeb5e3761ff2df17c84d90234129ff984fc4e3b269f06cd10d1
+AEP| LowProvider: COERCE(K=28709a50fef453ac9c040eb1f7afad1380d518a6e4f2016d3a67f76d9d846533)
+HS | Sending ticket: 4fdeb3d5d91a610d8f45dc3efa1789340febe8ec39f846c98c6976100d5d96ea0b96fa52b7a77329e6058b331bd04f2f85f60311e31923bc7352a1777ab1d5ab254d795b715ac3dd9f9ade95
+HSL| emit NewSessionTicket13
+EPO| reader++ 1/-1
+HS | next_fragment
+Test.Handshake: <--session-ticket-- 0400006500000e10a54e...715ac3dd9f9ade950000 (105 bytes).
+HS | recv_fragment
+HSL| parsed NewSessionTicket13
+HSL| end of flight
+HS | Received ticket: 4fdeb3d5d91a610d8f45dc3efa1789340febe8ec39f846c98c6976100d5d96ea0b96fa52b7a77329e6058b331bd04f2f85f60311e31923bc7352a1777ab1d5ab254d795b715ac3dd9f9ade95
+KS | ks_client_13_rms
+KS | Recall RMS: 4025da25a3c03aeb5e3761ff2df17c84d90234129ff984fc4e3b269f06cd10d1
+Test.Handshake: Done.
+✔ Handshake
+make[2]: Leaving directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls/extract/Kremlin-Internal-Test'
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls'
+OCAMLPATH="C:/build/agent2/_work/6/s/FStar/bin" ocamlfind opt -g -I C:/build/agent2/_work/6/s/FStar/ulib/ml -I extract/OCaml -I C:/build/agent2/_work/6/s/MLCrypto -I ../../libs/ffi -I C:/build/agent2/_work/6/s/hacl-star/secure_api/LowCProvider -I C:/build/agent2/_work/6/s/hacl-star/secure_api/out/runtime_switch/ -I C:/build/agent2/_work/6/s/kremlin/_build/kremlib -I test -I extract/mlstubs -I C:/build/agent2/_work/6/s/hacl-star/providers/multiplexer/ml -I . -package fstarlib,zarith,ctypes,ctypes.foreign -cclib -L../pki -cclib -lmipki \
+-cclib -LC:/build/agent2/_work/6/s/hacl-star/providers/out -cclib -levercrypt -linkall \
+-linkpkg -g extract/OCaml/BufferBytes.cmx extract/OCaml/Crypto_AEAD_Main.cmx C:/build/agent2/_work/6/s/kremlin/_build/kremlib/C.cmx C:/build/agent2/_work/6/s/MLCrypto/CoreCrypto.cmxa C:/build/agent2/_work/6/s/hacl-star/secure_api/out/runtime_switch/LowC.cmxa ../../libs/ffi/FFICallbacks.cmxa C:/build/agent2/_work/6/s/hacl-star/providers/out/evercrypt.cmxa extract/OCaml/Hashing_Spec.cmx extract/OCaml/Hashing_OpenSSL.cmx extract/OCaml/Hashing.cmx extract/OCaml/Flags.cmx extract/OCaml/TLSError.cmx extract/OCaml/Parse.cmx extract/OCaml/TLSConstants.cmx extract/OCaml/PKI.cmx extract/OCaml/Nonce.cmx extract/OCaml/TLS_Curve25519.cmx extract/OCaml/ECGroup.cmx extract/OCaml/DHGroup.cmx extract/OCaml/DebugFlags.cmx extract/OCaml/CommonDH.cmx extract/OCaml/Hashing_Flags.cmx extract/OCaml/Hashing_CRF.cmx extract/OCaml/PSK.cmx extract/OCaml/Extensions.cmx extract/OCaml/Cert.cmx extract/OCaml/RSAKey.cmx extract/OCaml/PMS.cmx extract/OCaml/TLSInfoFlags.cmx extract/OCaml/TLSInfo.cmx extract/OCaml/Crypto_Indexing.cmx extract/OCaml/Flag.cmx extract/OCaml/Specializations_Providers_AEAD.cmx extract/OCaml/C_Loops.cmx extract/OCaml/AEADOpenssl.cmx extract/OCaml/AEADProvider.cmx extract/OCaml/Range.cmx extract/OCaml/HandshakeMessages.cmx extract/OCaml/HandshakeLog.cmx extract/OCaml/FStar_Kremlin_Endianness.cmx extract/OCaml/Test_BufferBytes.cmx extract/OCaml/Ticket.cmx extract/OCaml/HMAC.cmx extract/OCaml/TLSPRF.cmx extract/OCaml/HMAC_UFCMA.cmx extract/OCaml/DataStream.cmx extract/OCaml/Alert.cmx extract/OCaml/Content.cmx extract/OCaml/StreamPlain.cmx extract/OCaml/StreamAE.cmx extract/OCaml/StatefulPlain.cmx extract/OCaml/LHAEPlain.cmx extract/OCaml/AEAD_GCM.cmx extract/OCaml/StatefulLHAE.cmx extract/OCaml/StAE.cmx extract/OCaml/HKDF.cmx extract/OCaml/KeySchedule.cmx extract/OCaml/Negotiation.cmx extract/OCaml/Epochs.cmx extract/OCaml/Handshake.cmx extract/OCaml/FStar_Test.cmx extract/OCaml/Test_CommonDH.cmx extract/OCaml/Transport.cmx extract/OCaml/Record.cmx extract/OCaml/Connection.cmx extract/OCaml/StreamDeltas.cmx extract/OCaml/TLS.cmx extract/OCaml/FFI.cmx extract/OCaml/QUIC.cmx extract/OCaml/Test_StAE.cmx extract/OCaml/Test_TLSConstants.cmx extract/OCaml/Test_Handshake.cmx extract/OCaml/Test_AEAD.cmx extract/OCaml/Test_Main.cmx extract/OCaml/FFIRegister.cmx extract/copied/kremstr.o test/mitls.cmx -o mitls.exe -thread
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls'
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls'
+./mitls.exe
+✔ RNG initialization
+b1 = 1234567890abcdef1234567890abcdef
+b2 = cafedecafbabedeadbeeffeec0ffee33
+b12= 1234567890abcdef1234567890abcdefcafedecafbabedeadbeeffeec0ffee33
+b3 = 1234567890abcdef1234567890abcdefcafedecafbabedeadbeeffeec0ffee33
+✔ BufferBytes
++ cd mitls-fstar/apps/cmitls
+✔ TLSConstants
+✔ AEAD
++ make test
+AEP| LowCProvider: COERCE(K=feffe9928665731c6d6a8f9467308308feffe9928665731c6d6a8f9467308308)
+Test.StAE: c0 size=33 data=000000000000000017b5db7a6412522a62d32d2b5a94a9348c80cbc7b20bdcfa5c.
+Test.StAE: c1 size=28 data=0000000000000001a93cd0e67431db38a93a169cd79b29c82f69d7e4.
+Test.StAE: start.
+Test.StAE: decryption fails on wrong cipher.
+Test.StAE: decryption fails on wrong sequence number.
+Test.StAE: decryption fails on wrong CT.
+Test.StAE: first decryption succeeds.
+Test.StAE: second decryption succeeds.
+AEP| LowCProvider: COERCE(K=feffe9928665731c6d6a8f9467308308feffe9928665731c6d6a8f9467308308)
+Test.StAE: c0 size=26 data=d12a84f232589f6bc797322d5f5d3f43e95bc07640538c50dded.
+Test.StAE: c1 size=21 data=2adba81a76d2814ee2aba4406c861ecbc19825461a.
+Test.StAE: start.
+Test.StAE: decryption fails on wrong cipher.
+Test.StAE: decryption fails on wrong sequence number.
+Test.StAE: TLS 1.3 does not intend to provide outer CT authentication.
+Test.StAE: first decryption succeeds.
+Test.StAE: second decryption succeeds.
+✔ StAE
+Test.CommonDH: Testing FFDHE2048.
+CDH| Keygen on FFDHE2048
+CDH| DH responder on FFDHE2048
+CDH| Keygen on FFDHE2048
+CDH| DH initiator on FFDHE2048
+CDH| DH initiator on FFDHE2048
+Test.CommonDH: Testing FFDHE3072.
+CDH| Keygen on FFDHE3072
+CDH| DH responder on FFDHE3072
+CDH| Keygen on FFDHE3072
+CDH| DH initiator on FFDHE3072
+CDH| DH initiator on FFDHE3072
+Test.CommonDH: Testing FFDHE4096.
+CDH| Keygen on FFDHE4096
+CDH| DH responder on FFDHE4096
+CDH| Keygen on FFDHE4096
+CDH| DH initiator on FFDHE4096
+CDH| DH initiator on FFDHE4096
+Test.CommonDH: Testing FFDHE6144.
+CDH| Keygen on FFDHE6144
+CDH| DH responder on FFDHE6144
+CDH| Keygen on FFDHE6144
+CDH| DH initiator on FFDHE6144
+CDH| DH initiator on FFDHE6144
+Test.CommonDH: Testing FFDHE8192.
+CDH| Keygen on FFDHE8192
+CDH| DH responder on FFDHE8192
+CDH| Keygen on FFDHE8192
+CDH| DH initiator on FFDHE8192
+CDH| DH initiator on FFDHE8192
+Test.CommonDH: Testing P256.
+CDH| Keygen on P256
+CDH| DH responder on P256
+CDH| Keygen on P256
+CDH| DH initiator on P256
+CDH| DH initiator on P256
+Test.CommonDH: Testing P384.
+CDH| Keygen on P384
+CDH| DH responder on P384
+CDH| Keygen on P384
+CDH| DH initiator on P384
+CDH| DH initiator on P384
+Test.CommonDH: Testing P521.
+CDH| Keygen on P521
+CDH| DH responder on P521
+CDH| Keygen on P521
+CDH| DH initiator on P521
+CDH| DH initiator on P521
+Test.CommonDH: Testing X255519.
+CDH| Keygen on X255519
+CDH| DH responder on X255519
+CDH| Keygen on X255519
+CDH| DH initiator on X255519
+CDH| DH initiator on X255519
+✔ CommonDH
+HS | next_fragment
+HS | offering ClientHello 1.3
+KS | ks_client_init 1.3
+CDH| Keygen on X255519
+NGO| No PSK or 0-RTT disabled
+NGO| offering client extensions [ supported_versions key_share extended_master_secret signature_algorithms ec_point_formats supported_groups psk_key_exchange_modes ]
+NGO| offering cipher suites ; TLS_AES_128_GCM_SHA256; TLS_AES_256_GCM_SHA384; TLS_CHACHA20_POLY1305_SHA256; TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256; TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256; TLS_DHE_RSA_WITH_AES_128_GCM_SHA256; TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384; TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384; TLS_DHE_RSA_WITH_AES_256_GCM_SHA384; TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256; TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256; TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256
+HSL| emit ClientHello
+Test.Handshake: ----client-hello---> 010000b303035b12afff...010100002d0003020001 (183 bytes).
+HS | recv_fragment
+HSL| parsed [ClientHello] -- end of flight 
+HS | Processing ClientHello
+NGO| offered client extensions [ supported_versions key_share extended_master_secret signature_algorithms ec_point_formats supported_groups psk_key_exchange_modes ]
+NGO| offered cipher suites ; TLS_AES_128_GCM_SHA256; TLS_AES_256_GCM_SHA384; TLS_CHACHA20_POLY1305_SHA256; TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256; TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256; TLS_DHE_RSA_WITH_AES_128_GCM_SHA256; TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384; TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384; TLS_DHE_RSA_WITH_AES_256_GCM_SHA384; TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256; TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256; TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256
+NGO| offered versions 1.3
+NGO| Negotiated Pure EDH key exchange
+NGO| Negotiated ECDSA_SHA1
+NGO| Negotiation callback to handle extra extensions and query for stateless retry.
+NGO| Application data in cookie: none
+NGO| negotiated 1.3 TLS_AES_128_GCM_SHA256
+KS | ks_server_init
+KS | No PSK selected.
+KS | Computed early secret:           33AD0A1C607EC03B09E6CD9893680CE210ADF300AA1F2660E1B22E10F170F92A
+KS | Handshake salt:                  6F2615A108C702C5678F54FC9DBAB69716C076189C48250CEBEAC3576C3611BA
+CDH| DH responder on X255519
+CDH| Keygen on X255519
+CDH| DH initiator on X255519
+KS | DH shared secret: 972C3F88AF74B75CDF97EEECDF09F2538A1F1447F92ABA810BAEE92B13DF4507
+KS | Handshake secret:                9DAD3092DB3558BD97800415FD1944797606C130D29DEF1EC895C269DC1D3555
+NGO| processing client extensions [ supported_versions key_share extended_master_secret signature_algorithms ec_point_formats supported_groups psk_key_exchange_modes ]
+NGO| including server extensions (SH + EE) [ supported_versions key_share supported_groups ]
+NGO| extra extensions from application callback: 
+HSL| emit ServerHello and hash
+HS | derive handshake keys
+KS | ks_server_13_sh, hashed log = 6382DBBF79D43CE71F2A02CD7D79614A6BA2F7860F5C5EFEE69062BB27E1FF64
+KS | handshake traffic secret[C]:     CABD294C55A59AE19B3C37DDE03B5D1549078D13420A20293DFB148B7B34DE87
+KS | handshake traffic secret[S]:     CB374748BAA9AF2FA00CF0232424F99337CF2CD182C0891231493B1326DD7F4A
+KS | handshake key[C]:                E9E2367983ED887D94A7BA128B7136F3, IV=3185F30619D275980C6CFF72
+KS | handshake key[S]: 267F43944ECEFC08D25BAFE914649C14, IV=67137E56CE1426074954B96C
+AEP| LowCProvider: COERCE(K=267f43944ecefc08d25bafe914649c14)
+AEP| LowCProvider: COERCE(K=e9e2367983ed887d94a7ba128b7136f3)
+KS | finished key[C]:                 B4E485EFB704B4A231DBDF28DD89B4F21F7CFA48AF5262CAFF9978C4787D05F0
+KS | finished key[S]:                 7543F6F88CA7ABBC908592D67D5D992776B0BC261B5D6921C5170D87AF959BCB
+KS | Application salt:                EC96EA6A780BC1178BE0F6E1E9F9F1302A74121B771E0BB926001C386D628608
+KS | Application secret:              E7D2C1D8D74F8C464383FC6795C17156033DAB87D3EF621FDECCDC18D490C711
+HS | next_fragment
+Test.Handshake: <---server-hello---- 0200005603035b12afff...0b2f1658bd4f5fc0156f (90 bytes).
+HS | recv_fragment
+HSL| parsed ServerHello
+HSL| end of flight
+HS | client_ServerHello
+NGO| processing server extensions [ supported_versions key_share ]
+NGO| negotiated 1.3 TLS_AES_128_GCM_SHA256
+HS | Running TLS 1.3
+KS | ks_client_13_sh hashed_log = 6382DBBF79D43CE71F2A02CD7D79614A6BA2F7860F5C5EFEE69062BB27E1FF64
+KS | no PSK negotiated. Early secret: 33AD0A1C607EC03B09E6CD9893680CE210ADF300AA1F2660E1B22E10F170F92A
+KS | handshake salt:                  6F2615A108C702C5678F54FC9DBAB69716C076189C48250CEBEAC3576C3611BA
+CDH| DH initiator on X255519
+KS | DH shared secret: 972C3F88AF74B75CDF97EEECDF09F2538A1F1447F92ABA810BAEE92B13DF4507
+KS | handshake secret:                9DAD3092DB3558BD97800415FD1944797606C130D29DEF1EC895C269DC1D3555
+KS | handshake traffic secret[C]:     CABD294C55A59AE19B3C37DDE03B5D1549078D13420A20293DFB148B7B34DE87
+KS | handshake traffic secret[S]:     CB374748BAA9AF2FA00CF0232424F99337CF2CD182C0891231493B1326DD7F4A
+KS | handshake key[C]:                E9E2367983ED887D94A7BA128B7136F3, IV=3185F30619D275980C6CFF72
+KS | handshake key[S]:                267F43944ECEFC08D25BAFE914649C14, IV=67137E56CE1426074954B96C
+KS | finished key[C]: B4E485EFB704B4A231DBDF28DD89B4F21F7CFA48AF5262CAFF9978C4787D05F0
+KS | finished key[S]: 7543F6F88CA7ABBC908592D67D5D992776B0BC261B5D6921C5170D87AF959BCB
+KS | application salt:                EC96EA6A780BC1178BE0F6E1E9F9F1302A74121B771E0BB926001C386D628608
+KS | application secret:              E7D2C1D8D74F8C464383FC6795C17156033DAB87D3EF621FDECCDC18D490C711
+AEP| LowCProvider: COERCE(K=e9e2367983ed887d94a7ba128b7136f3)
+AEP| LowCProvider: COERCE(K=267f43944ecefc08d25bafe914649c14)
+EPO| reader++ 0/-1
+HS | next_fragment
+HS | prepare Server Finished
+HSL| emit EncryptedExtensions
+HSL| emit Certificate13 and hash
+HSL| emit CertificateVerify and hash
+HSL| emit Finished and hash
+KS | ks_server_13_sf hashed_log = F90280CF1E94CD8A8B26BCFFDF13EA5714A0791DB9BBFB0A4801D6ED428BBB59
+KS | application traffic secret[C]:   E344FAC8D2B2DD73A7D6C0B4780D2377F1DE7019BD50431EB62565B67C2008C5
+KS | application traffic secret[S]:   37783B0A4923FFAEB0220BC977C45CC12D8CB03EB63CD0D1DC500A2B30B73B43
+KS | exporter master secret:          4A156892B9A4030E490D34BEBE39A68D086F0468A953ACE7C73938898A7B979A
+KS | application key[C]:              61F9228F59DBC748FC48055E6E3613AE, IV=FE852054968666E767CC31D1
+KS | application key[S]:              2AA8508EE992ED31AED88525B71EF1BC, IV=1D1A6AA9F4AD7A171ECE96DE
+AEP| LowCProvider: COERCE(K=2aa8508ee992ed31aed88525b71ef1bc)
+AEP| LowCProvider: COERCE(K=61f9228f59dbc748fc48055e6e3613ae)
+HS | exporting a key
+EPO| reader++ 0/-1
+Test.Handshake: <--server-finished-- 080000160014000a0010...6cd91641c11fb6f909ca (711 bytes).
+HS | recv_fragment
+HSL| parsed EncryptedExtensions
+HSL| parsed Certificate13
+HSL| parsed CertificateVerify
+HSL| parsed Finished
+HSL| end of flight
+NGO| Nego.clientComplete_13
+NGO| EE: supported_groups 
+NGO| Negotiation callback to process application extensions.
+NGO| Certificate & signature 1.3 callback result: valid
+KS | ks_client_13_sf hashed_log = F90280CF1E94CD8A8B26BCFFDF13EA5714A0791DB9BBFB0A4801D6ED428BBB59
+KS | application traffic secret[C]:   E344FAC8D2B2DD73A7D6C0B4780D2377F1DE7019BD50431EB62565B67C2008C5
+KS | application traffic secret[S]:   37783B0A4923FFAEB0220BC977C45CC12D8CB03EB63CD0D1DC500A2B30B73B43
+KS | exporter master secret:          4A156892B9A4030E490D34BEBE39A68D086F0468A953ACE7C73938898A7B979A
+KS | application key[C]:              61F9228F59DBC748FC48055E6E3613AE, IV=FE852054968666E767CC31D1
+KS | application key[S]:              2AA8508EE992ED31AED88525B71EF1BC, IV=1D1A6AA9F4AD7A171ECE96DE
+AEP| LowCProvider: COERCE(K=61f9228f59dbc748fc48055e6e3613ae)
+AEP| LowCProvider: COERCE(K=2aa8508ee992ed31aed88525b71ef1bc)
+HS | exporting a key
+HS | Early data rejected
+EPO| writer++ 0/0
+HSL| emit Finished and hash
+KS | ks_client_13_cf hashed_log = A4D7F3A0C57CAEEF906326BF4427679C5E55387BC33BF4C8357DC5C75A2FD934
+KS | resumption master secret:        B491CFD791097D6830E31DB7AC447B4F408E613F9BEBAD02044F3E764E7437A9
+EPO| reader++ 1/0
+HS | next_fragment
+Test.Handshake: --client-finished---> 1400002029f620630da4...03ec5216cacb8d1e079f (36 bytes).
+HS | recv_fragment
+HSL| parsed Finished
+HSL| end of flight
+HS | Process Client Finished
+KS | ks_server_13_cf hashed_log = A4D7F3A0C57CAEEF906326BF4427679C5E55387BC33BF4C8357DC5C75A2FD934
+KS | resumption master secret:        B491CFD791097D6830E31DB7AC447B4F408E613F9BEBAD02044F3E764E7437A9
+AEP| LowCProvider: COERCE(K=3b504bf26ec66bcdf31c0ae0717507f19d2641b4fb767b080bd99e99ca0585f9)
+HS | Sending ticket: 719AE3D6E14906A62F282FF7144B92ECF3DAA1CC0C6E65AB33C6A11187D550BD5CB98184F0950C409446F6C2D88442207FC291DF112518B5BE48DE3E0CD41EE51BE2B3294C13804DDBAA47EF
+HSL| emit NewSessionTicket13
+EPO| reader++ 1/-1
+HS | next_fragment
+Test.Handshake: <--session-ticket-- 0400006500000e102ef4...4c13804ddbaa47ef0000 (105 bytes).
+HS | recv_fragment
+HSL| parsed NewSessionTicket13
+HSL| end of flight
+HS | Received ticket: 719ae3d6e14906a62f282ff7144b92ecf3daa1cc0c6e65ab33c6a11187d550bd5cb98184f0950c409446f6c2d88442207fc291df112518b5be48de3e0cd41ee51be2b3294c13804ddbaa47ef
+KS | ks_client_13_rms
+KS | Recall RMS: b491cfd791097d6830e31db7ac447b4f408e613f9bebad02044f3e764e7437a9
+Test.Handshake: Done.
+✔ Handshake
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/6/s/mitls-fstar/src/tls'
+./cmitls.exe google.com 443
+cmitls.exe ===================
+cmitls.exe calling FFI_mitls_init
+cmitls.exe about to act as client or server
+===============================================
+Starting test client...
+Read OK, sending HTTP request...
+Received 596 bytes of data:
+Download speed: 1.#INF00kB/s
+HTTP/1.1 301 Moved Permanently
+Location: https://www.google.com/
+Content-Type: text/html; charset=UTF-8
+Date: Sat, 02 Jun 2018 14:56:00 GMT
+Expires: Mon, 02 Jul 2018 14:56:00 GMT
+Cache-Control: public, max-age=2592000
+Server: gws
+Content-Length: 220
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+Alt-Svc: quic=":443"; ma=2592000; v="43,42,41,39,35"
+
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
++ cd mitls-fstar/apps/quicMinusNet
+<H1>301 Moved</H1>
+The document has moved
++ make test
+<A HREF="https://www.google.com/">here</A>.
+</BODY></HTML>
+
+Closing connection, irrespective of the response
+./cmitls.exe tls13.cloudflare.com 443
+cmitls.exe ===================
+cmitls.exe calling FFI_mitls_init
+cmitls.exe about to act as client or server
+===============================================
+Starting test client...
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+0000
+No application cookie (fist connection).
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Read OK, sending HTTP request...
+Received 1369 bytes of data:
+Download speed: 1.#INF00kB/s
+HTTP/1.1 521 Origin Down
+Date: Sat, 02 Jun 2018 14:56:00 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: __cfduid=d50a739169d0f3b3e9ad07b37d9a2e71f1527951360; expires=Sun, 02-Jun-19 14:56:00 GMT; path=/; domain=.cloudflare.com; HttpOnly
+Expires: Thu, 01 Jan 1970 00:00:01 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: cf_use_ob=443; expires=Sat, 02-Jun-18 14:56:30 GMT; path=/
+Set-Cookie: cf_ob_info=521:424ac3a0fa5e7a17:SEA; expires=Sat, 02-Jun-18 14:56:30 GMT; path=/
+Strict-Transport-Security: max-age=15780000; includeSubDomains
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Server: cloudflare
+CF-RAY: 424ac3a0fa5e7a17-SEA
+
+11c7
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<meta http-equiv="refresh" content="0">
+
+<title>tls13.cloudflare.com | 521: Web server is down</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8
+Closing connection, irrespective of the response
+./quic.exe
+server create
+client create
+client call clen=8192 slen=   0
+client done clen= 175 slen=   0 status=would_block
+16030300aa010000a603035b12b0000191f2c9e1b102093ded55fccf9f2aee64
+60a57c6084b4b0d8445b910000041303130101000079001a0009ffff00050a0b
+0c0d0e002b0003027f1c003300260024001d00206c5f684849e740b9d60701fb
+72c7b001b7dd0d52741f91687b1bc4a3f399e82e0000000e000c0000096c6f63
+616c686f73740010000800060568712d313000170000000d0006000408040403
+000a00040002001d002d0003020001
+server call clen= 175 slen=8192
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+003d001a0009ffff00050a0b0c0d0e0000000e000c0000096c6f63616c686f73
+740010000800060568712d3130000d0006000408040403000a00040002001d
+Transport parameters offered:
+ffff00050a0b0c0d0e
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+======== TO BE SIGNED <0403>: (130 octets) ========
+2020202020202020202020202020202020202020202020202020202020202020
+2020202020202020202020202020202020202020202020202020202020202020
+544c5320312e332c207365727665722043657274696669636174655665726966
+7900a64f298f70992780c28414308e16e41f0abb64470147b773cecbeb6462e1
+20e0
+===================================================
+sender done clen= 175 slen= 834 status=server_accept
+160303005a0200005603035b12b0005cfeeeed98460307625ba455e14ce097f9
+a9a3ed63093bb76e2cf98e00130300002e002b00027f1c00330024001d002024
+0ec8231faed25357ed7c3d86fe6b6facdeae8669469d1acb975d93b5a7244117
+030302de4a1489837250597831d7fa31c7fb56fd736e683693cda31e040787b0
+b05fdf74e07e134e81fe8da5b2b2e81b8f247e4bb144fcbe357ad3d274c2327f
+04dd1b8d77cff5f0944d18695053c8b8b468d65692e3c44c3728021389bc0da2
+19a54601ae6bba3335ad794a4f826c705d42822ac096d3bfb1d27ebf9e22f406
+9a968ea21247f8003202241f5823c743fddf461a77351c93f2863b0bda68da03
+c70b10e0b13e0bfe6931ea3c10932b0ad171c4b5e123fffa6e2f783726d01a83
+815c4b8e6ea858ad557ba7ecaee9532f921c1224df8e506999cd962126684901
+633e649eba1ebbe5d585b3685e73db05e9c28626775fcbd8ee94220345d5209b
+f428fc2d0ac78590c87bbdc4061dd45563513f3844f858d8428171d293cd2bd9
+b318cb228162783b98590744973f54d9ecb6c6120f17981dd63a411d73c84213
+aff7a3f3396216cba925f12e2af9b26c04460bdb76cb5c76bc404fcb6dcc900b
+ec0efea03499bbfeaeedc37b4574f36446ddc9e1a1f2c098a8114421b2043c76
+ca1e4f2da9db6b44cd3f7aa85351404982a2e5a5cac1b4a63af664c4ebd12581
+8e6bf00d96b035a52bdf17b454e1d182dabbce4e70cc29c2aa8b161bfb45ec4f
+3317d780c8019601c5b017f5e9e24c6116a742d4002141a1dff9627a8be8600d
+f80e43de1f31cc8f3840ce8d1e888373fdbfe23b40c864fd7a802b64ddae4b4b
+30c43db1f19b0e8f95f4738ed703ee69416a35a84e3a3465fd9656b0d68a7808
+8bfd6a59baad642db2035b066114f7d76c55ed11ec6db23c911ddd6cb2ac7d15
+23a2df861ba09a98b0113125cefde2c13bd514a4a45505c07e0b70f95a525a6d
+3f551036345787ff5904571bab38d42c4c42f61816a4a45567db55af6af0bcf1
+191381ba8aec975fcdcb5d376e0c5bdc9ae8f7e01350e04545810c409b7a91f8
+3ad00c3506497191cdaab2e20e830d6f998e9b41e897c9136a7d02fb41f63844
+23179367b136b68115c7354eaaadc6021749a31861f8d14523d46c8809457b6e
+2c27
+client call clen=8017 slen= 834
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+001b0010000800060568712d3130000a00040002001d001a0003000102
+Transport parameters offered:
+000102
+No application cookie (fist connection).
+Adding server transport parameters:
++ set +x
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+WARNING: chain validation failed, ignoring.
+client done clen=  58 slen= 834 status=client_complete
+1703030035f9d74c151927d6e2301d677a4181ffce8546ee7b4d1526205a6265
+512afc272cb3b532b89b133b59b40631bbeb5a2553bbb5634e75
+server call clen=  58 slen=7358
+sender done clen=  58 slen=   0 status=server_complete
+=== Exporter secret ===
+0ff9c6a0d4b4de66a1f5845694dc1fcce374fad2d56e59b7798c21f73af27afe
+=== QUIC 1-RTT secrets ===
+C: ff5fff992781757355962e02e1bbb8c46714d1b16fddd56e989a1f79a40900e6
+S: 7fe412e3b4116f5eadd05cc018dad417215a2f72fbb20aef02012fc06465b148
+=== AEAD client key test ===
+805a71d3c64f1a223693ebf888955e4b55dd0f525af2a2adb0ed6f
+=== Decrypt successful ===
+Ok
+./quic.exe 0rtt
+
+INITIAL ECDHE HANDSHAKE (NO EARLY SECRET)
+
+server create
+client create
+client returns would_block clen=175 slen=0
+ClientHello[ 175] ---->
+
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+003d001a0009ffff00050a0b0c0d0e0000000e000c0000096c6f63616c686f73
+740010000800060568712d3130000d0006000408040403000a00040002001d
+Transport parameters offered:
+ffff00050a0b0c0d0e
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+======== TO BE SIGNED <0403>: (130 octets) ========
+2020202020202020202020202020202020202020202020202020202020202020
+2020202020202020202020202020202020202020202020202020202020202020
+544c5320312e332c207365727665722043657274696669636174655665726966
+7900cf2863deed2b761608bf46745a39f4ecc2093a4226915ce8399e9bcf0951
+ad4b
+===================================================
+server returns server_accept clen=175 slen=834
+secret=4d9699bb81a66548c1197f42f75e2c5bb2a5f5c2d5b6e5a1ef7238496c560e02
+<---- ServerHello;(EncryptedExtensions; Certificate; CertVerify; Finished)[ 834]
+
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+001b0010000800060568712d3130000a00040002001d001a0003000102
+Transport parameters offered:
+000102
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+WARNING: chain validation failed, ignoring.
+client returns client_complete clen=58 slen=834
+secret=4d9699bb81a66548c1197f42f75e2c5bb2a5f5c2d5b6e5a1ef7238496c560e02
+(Finished) [  58] ---->
+
+server returns server_complete clen=58 slen=0
+server returns would_block clen=0 slen=135
+<---- {Ticket}[ 135]
+
+##### New session ticket received! #####
+Host: localhost
+Ticket:
+48a930b856afd763537e932935517496c4ab9a1973de4598c5b826945b049122
+491bb34cf1b0ede19f1fd74dba2088798430b4dda7e1c1acda9683b648137787
+d71a9819e56561225dd116b7
+########################################
+client returns clen=0 slen=135 status=would_block
+
+TICKET-BASED RESUMPTION
+
+server create
+client create
+client returns client_early_data clen=302 slen=0
+early secret=6407e916fed1afa7f9f2fe2b48cd7e3bff1a9d8d87ec922d189e85a72bdc1d37
+ClientHello[ 302] ---->
+
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+003d001a0009ffff00050a0b0c0d0e0000000e000c0000096c6f63616c686f73
+740010000800060568712d3130000d0006000408040403000a00040002001d
+Transport parameters offered:
+ffff00050a0b0c0d0e
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+server returns server_accept_early_data clen=302 slen=196
+early secret=6407e916fed1afa7f9f2fe2b48cd7e3bff1a9d8d87ec922d189e85a72bdc1d37
+secret=7512e05cc5305e25e31b39ccf37d3275395344053fd3b079ca6992020927e347
+<---- ServerHello;(EncryptedExtensions; Certificate; CertVerify; Finished)[ 196]
+
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+001b0010000800060568712d3130000a00040002001d001a0003000102
+Transport parameters offered:
+000102
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+client returns client_complete_early_data clen=84 slen=196
+secret=7512e05cc5305e25e31b39ccf37d3275395344053fd3b079ca6992020927e347
+(Finished) [  84] ---->
+
+server returns clen=84 slen=0 status=server_complete
+server returns would_block clen=0 slen=135
+<---- {Ticket}[ 135]
+
+##### New session ticket received! #####
+Host: localhost
+Ticket:
+b3c7f85b889c6cd256f732f8a7ac13bad5f6736a4e1b6a546efc478570760224
+ef7b0c1e7f375c5ac25f5a219704d4af0e743778010b7f2bd3810c8913eba421
+5eb350357e9ccb689e88cdbf
+########################################
+client returns clen=0 slen=135 status=would_block
+Ok
+./quic.exe hrr
+
+STATELESS RETRY TEST
+
+server create
+client create
+client returns would_block clen=175 slen=0
+ClientHello[ 175] ---->
+
+~~~~~~~~~ Client Hello Summary ~~~~~~~~~~~
+~ SNI = localhost
+~ ALPN = 00060568712d3130
+~ Cookie = NULL
+~ Extensions = 0079001a0009ffff00050a0b0c0d0e002b0003027f1c003300260024001d0020
+7beb646e5189c75c9df64e3d567c93e1d18112813a2df35386a99b4f83aefe73
+0000000e000c0000096c6f63616c686f73740010000800060568712d31300017
+0000000d0006000408040403000a00040002001d002d0003020001
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+003d001a0009ffff00050a0b0c0d0e0000000e000c0000096c6f63616c686f73
+740010000800060568712d3130000d0006000408040403000a00040002001d
+Transport parameters offered:
+ffff00050a0b0c0d0e
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+server returns server_stateless_retry clen=175 slen=188
+<---- HRR[ 188]
+
+server re-create
+client returns would_block clen=308 slen=188
+ClientHello2[ 308] ---->
+
+~~~~~~~~~ Client Hello Summary ~~~~~~~~~~~
+~ SNI = localhost
+~ ALPN = 00060568712d3130
+~ Cookie = 48656c6c6f20576f726c64
+~ Extensions = 00fe002c0081007f11fb5086defa34a3cf54dde12b5cad20de22b1f1f0bfd255
+c47b183c918a1f5e21c98bdc9fb7cec0aa6524ab3dae1ced6167b8084f1ed7a3
+4909e35e8f1c3d466c6f30dfe2b02cba2f4e053b6dbae658a47ee81bc7e43728
+ca78a2d718477d210e1b70587618f48e285bea4d5dc97883353a330251c6b6b5
+57f8aaa5428dd6001a0009ffff00050a0b0c0d0e002b0003027f1c0033002600
+24001d00207beb646e5189c75c9df64e3d567c93e1d18112813a2df35386a99b
+4f83aefe730000000e000c0000096c6f63616c686f7374001000080006056871
+2d313000170000000d0006000408040403000a00040002001d002d0003020001
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+003d001a0009ffff00050a0b0c0d0e0000000e000c0000096c6f63616c686f73
+740010000800060568712d3130000d0006000408040403000a00040002001d
+Transport parameters offered:
+ffff00050a0b0c0d0e
+Stateless cookie found, application contents:
+48656c6c6f20576f726c64
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+======== TO BE SIGNED <0403>: (130 octets) ========
+2020202020202020202020202020202020202020202020202020202020202020
+2020202020202020202020202020202020202020202020202020202020202020
+544c5320312e332c207365727665722043657274696669636174655665726966
+79008ea22fd5de742252bcc8a070a9bb8188eca787a4e34269714c2e96eeecf6
+86f8
+===================================================
+server returns server_accept clen=308 slen=834
+secret=eccc9edf3c62496484e55f5983d737c47f99a1cd991779b790e21fc9f9690675
+<---- ServerHello;(EncryptedExtensions; Certificate; CertVerify; Finished)[ 834]
+
+@@@@ Nego callback for TLS 1.3 @@@@
+Offered extensions:
+001b0010000800060568712d3130000a00040002001d001a0003000102
+Transport parameters offered:
+000102
+No application cookie (fist connection).
+Adding server transport parameters:
+000102
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+WARNING: chain validation failed, ignoring.
+client returns client_complete clen=58 slen=834
+secret=eccc9edf3c62496484e55f5983d737c47f99a1cd991779b790e21fc9f9690675
+(Finished) [  58] ---->
+
+server returns server_complete clen=58 slen=0
+server returns would_block clen=0 slen=135
+<---- {Ticket}[ 135]
+
+##### New session ticket received! #####
+Host: localhost
+Ticket:
+e38fedeafa1e8ac10b7f9976717a3e72b4762767f9382cf960c7ed355d9b4595
+d682b56fb605c98fc8df41fe99232008126a5d453bb0ad4a9cf559477b8214f9
+1d19395e566cde43325b957d
+########################################
+client returns clen=0 slen=135 status=would_block
+Ok
+================================================================================
