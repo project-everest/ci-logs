@@ -1,0 +1,58 @@
+dos2unix: converting file parser/parse.fsi to Unix format...
+Warning: you are using the standard library and/or the %inline keyword. We
+recommend switching on --infer in order to avoid obscure type error messages.
+warning: CRLF will be replaced by LF in src/parser/parse.fsy.
+The file will have its original line endings in your working directory.
+FStar.ModifiesGen.fst(240,63-240,64): (Error 92) Inconsistent implicit qualifier;  vs #
+for bvar x#23561 and term r
+1 error was reported (see above)
+make[4]: *** [Makefile.extract:12: FStar.ModifiesGen.fst.checked.lax] Error 1
+LowStar.Modifies.fst(204,27-204,58): (Error 66) Failed to resolve implicit argument ?4 of type FStar.Preorder.preorder (*?u3*) _ introduced for Instantiation of implicit argument
+LowStar.Modifies.fst(204,27-204,58): (Error 12) Expected type "
+i: FStar.Monotonic.HyperHeap.rid ->
+init: a ->
+h: FStar.Monotonic.HyperStack.mem ->
+x:
+FStar.HyperStack.ST.mreference a rel
+{FStar.HyperStack.ST.is_eternal_region (FStar.Monotonic.HyperStack.frameOf x)} ->
+h': FStar.Monotonic.HyperStack.mem ->
+Prims.Lemma Prims.unit"; but "FStar.ModifiesGen.modifies_ralloc_post" has type "
+i: FStar.Monotonic.HyperHeap.rid ->
+init: (*?u3*) _ ->
+h: FStar.Monotonic.HyperStack.mem ->
+x:
+FStar.HyperStack.ST.mreference (*?u3*) _ (*?u4*) _
+{FStar.HyperStack.ST.is_eternal_region (FStar.Monotonic.HyperStack.frameOf x)} ->
+h': FStar.Monotonic.HyperStack.mem ->
+Prims.Lemma Prims.unit"
+2 errors were reported (see above)
+make[4]: *** [Makefile.extract:11: LowStar.Modifies.fst.checked.lax] Error 1
+FStar.Modifies.fst(305,27-305,58): (Error 66) Failed to resolve implicit argument ?4 of type FStar.Preorder.preorder (*?u3*) _ introduced for Instantiation of implicit argument
+FStar.Modifies.fst(305,27-305,58): (Error 12) Expected type "
+i: FStar.Monotonic.HyperHeap.rid ->
+init: a ->
+h: FStar.Monotonic.HyperStack.mem ->
+x:
+FStar.HyperStack.ST.mreference a rel
+{FStar.HyperStack.ST.is_eternal_region (FStar.Monotonic.HyperStack.frameOf x)} ->
+h': FStar.Monotonic.HyperStack.mem ->
+Prims.Lemma Prims.unit"; but "FStar.ModifiesGen.modifies_ralloc_post" has type "
+i: FStar.Monotonic.HyperHeap.rid ->
+init: (*?u3*) _ ->
+h: FStar.Monotonic.HyperStack.mem ->
+x:
+FStar.HyperStack.ST.mreference (*?u3*) _ (*?u4*) _
+{FStar.HyperStack.ST.is_eternal_region (FStar.Monotonic.HyperStack.frameOf x)} ->
+h': FStar.Monotonic.HyperStack.mem ->
+Prims.Lemma Prims.unit"
+2 errors were reported (see above)
+make[4]: *** [Makefile.extract:11: FStar.Modifies.fst.checked.lax] Error 1
+make[4]: Target 'all-ml' not remade because of errors.
+make[3]: *** [Makefile:32: fstarlib.mgen] Error 2
+make[3]: Target 'install-fstarlib' not remade because of errors.
+make[2]: *** [Makefile:2: all] Error 2
+make[1]: *** [Makefile:173: fstarlib] Error 2
+make: *** [Makefile:158: utest-prelude] Error 2
+Command exited with non-zero status 2
+7.90user 28.69system 4:13.85elapsed 14%CPU (0avgtext+0avgdata 868525824maxresident)k
+0inputs+0outputs (3568523major+0minor)pagefaults 0swaps
