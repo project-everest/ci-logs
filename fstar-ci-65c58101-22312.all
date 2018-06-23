@@ -1,0 +1,127 @@
+This is /home/everbld/everest-ci/ci
+Working directory: /cygdrive/c/build/agent1/_work/1/s
+About to run: fstar_and_friends uregressions
+BUILD_SOURCEBRANCHNAME: guido_tactics
+BUILD_DEFINITIONNAME: FStar-CI-Windows
+BUILD_BUILDID: 22312
+DEFINITIONNAME:
+Z3 is /home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin/z3
+make fstar-in-fsharp
+Switching to KreMLin origin/master
+Switching to mitls-fstar origin/master
+HEAD is now at b094358 Revert "C.Endianness with LowStar.Buffer"
+Switching to HACL origin/fstar-master
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src'
+VS/.nuget/NuGet.exe restore VS/FStar.sln
+Installing 'FsLexYacc 6.1.0'.
+Installing 'FsLexYacc.Runtime 6.1.0'.
+Installing 'FSharp.Compatibility.OCaml 0.1.10'.
+Installing 'PPrintForFSharp 0.0.2'.
+Successfully installed 'PPrintForFSharp 0.0.2'.
+Successfully installed 'FSharp.Compatibility.OCaml 0.1.10'.
+Successfully installed 'FsLexYacc.Runtime 6.1.0'.
+Successfully installed 'FsLexYacc 6.1.0'.
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src'
+make -C VS install-packages
+[ -d packages ] || make update-nuget
+From https://github.com/project-everest/vale
+* [new branch]      nik_lowstar -> origin/nik_lowstar
+HEAD is now at 512a5ae8 [CI] regenerate hints
+Switching to vale to fstar_ci
+Removing src/tls/cache/
+Removing src/tls/extract/Model/
+Removing .sconsign.dblite
+Removing bin/
+Removing obj/
+Removing tools/FsLexYacc/
+HEAD is now at efa92a0 bump F* version
+HEAD is now at 34d35f94 Default KREMLIN_HOME for uint128
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src/VS'
+.nuget/NuGet.exe restore FStar.sln
+All packages listed in packages.config are already installed.
+find packages -name '*.exe' -exec chmod +x '{}' ';'
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src/VS'
+Restoring NuGet package FsLexYacc.Runtime.6.1.0.
+Restoring NuGet package FsLexYacc.6.1.0.
+make: Entering directory '/cygdrive/c/build/agent1/_work/1/s/kremlin'
+ocamlbuild -I src -I lib -I parser -I kremlib -use-menhir -use-ocamlfind -classic-display -menhir "menhir --infer --explain" Kremlin.native Tests.native
+ln -sf Kremlin.native krml
+make: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/kremlin'
+make: Nothing to be done for 'all'.
+Adding package 'FsLexYacc.Runtime.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+Adding package 'FsLexYacc.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+Added package 'FsLexYacc.Runtime.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+Added package 'FsLexYacc.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+
+NuGet Config files used:
+C:\Users\everbld\AppData\Roaming\NuGet\NuGet.Config
+C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
+
+Feeds used:
+C:\Users\everbld\.nuget\packages\
+https://api.nuget.org/v3/index.json
+C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
+
+Installed:
+2 package(s) to packages.config projects
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src'
+./msbuild.bat /verbosity:minimal /p:Configuration=Release VS/FStar.sln
+make[1]: *** [Makefile:18: fstar-in-fsharp] Error 1
+**********************************************************************
+** Visual Studio 2017 Developer Command Prompt v15.5.5
+make: *** [Makefile:143: fsharp-build-and-test] Error 2
+** Copyright (c) 2017 Microsoft Corporation
+**********************************************************************
+make: Target 'utest-prelude' not remade because of errors.
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+Command exited with non-zero status 2
+
+0.01user 0.21system 0:24.88elapsed 0%CPU (0avgtext+0avgdata 6330624maxresident)k
+C:\build\agent1\_work\1\s\src\basic\boot\NotFStar.Util.fs(50,5): warning FS3190: Lowercase literal 'max_int' is being shadowed by a new pattern with the same name. Only uppercase and module-prefixed literals can be used as named patterns. [C:\build\agent1\_work\1\s\src\basic\basic.fsproj]
+basic -> C:\build\agent1\_work\1\s\bin\basic.dll
+Restoring NuGet packages...
+0inputs+0outputs (25827major+0minor)pagefaults 0swaps
+To prevent NuGet from downloading packages during build, open the Visual Studio Options dialog, click on the Package Manager node and uncheck 'Allow NuGet to download missing packages'.
+All packages listed in packages.config are already installed.
+prettyprint -> C:\build\agent1\_work\1\s\bin\prettyprint.dll
+compiling to dfas (can take a while...)
+367 states
+writing output
+building tables
+computing first function...time: 00:00:00.2474823
+building kernels...time: 00:00:00.1672125
+building kernel table...time: 00:00:00.0162523
+computing lookahead relations........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................time: 00:00:00.6344910
+building lookahead table...time: 00:00:00.2884801
+building action table...state 294: shift/reduce error on LBRACK
+state 479: shift/reduce error on SEMICOLON
+state 479: shift/reduce error on SEMICOLON_SEMICOLON
+state 518: shift/reduce error on BAR
+state 522: shift/reduce error on BAR
+state 541: shift/reduce error on BAR
+state 625: shift/reduce error on COLON_EQUALS
+state 657: shift/reduce error on COLON_EQUALS
+time: 00:00:00.8920823
+building goto table...time: 00:00:00.3245954
+returning tables.
+8 shift/reduce conflicts
+901 states
+156 nonterminals
+150 terminals
+474 productions
+#rows in action table: 901
+parser -> C:\build\agent1\_work\1\s\bin\parser.dll
+syntax -> C:\build\agent1\_work\1\s\bin\syntax.dll
+tosyntax -> C:\build\agent1\_work\1\s\bin\tosyntax.dll
+typechecker -> C:\build\agent1\_work\1\s\bin\typechecker.dll
+format -> C:\build\agent1\_work\1\s\bin\format.dll
+C:\build\agent1\_work\1\s\src\reflection\FStar.Reflection.Embeddings.fs(530,25): error FS0039: The namespace or module 'Ident' is not defined. [C:\build\agent1\_work\1\s\src\reflection\reflection.fsproj]
+C:\build\agent1\_work\1\s\src\reflection\FStar.Reflection.Embeddings.fs(532,42): error FS0039: The namespace or module 'Ident' is not defined. [C:\build\agent1\_work\1\s\src\reflection\reflection.fsproj]
+C:\build\agent1\_work\1\s\src\reflection\FStar.Reflection.Embeddings.fs(533,25): error FS0039: The value, namespace, type or module 'Ident' is not defined. Maybe you want one of the following:   int   IEvent [C:\build\agent1\_work\1\s\src\reflection\reflection.fsproj]
+C:\build\agent1\_work\1\s\src\reflection\FStar.Reflection.Embeddings.fs(533,46): error FS0039: The value, namespace, type or module 'Ident' is not defined. Maybe you want one of the following:   int   IEvent [C:\build\agent1\_work\1\s\src\reflection\reflection.fsproj]
+C:\build\agent1\_work\1\s\src\reflection\FStar.Reflection.Embeddings.fs(535,43): error FS0039: The namespace or module 'Ident' is not defined. [C:\build\agent1\_work\1\s\src\reflection\reflection.fsproj]
+C:\build\agent1\_work\1\s\src\reflection\FStar.Reflection.Embeddings.fs(537,34): error FS0039: The value, namespace, type or module 'Ident' is not defined. Maybe you want one of the following:   int   IEvent [C:\build\agent1\_work\1\s\src\reflection\reflection.fsproj]
+fsdoc -> C:\build\agent1\_work\1\s\bin\fsdoc.dll
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src'
+warm-up failed
