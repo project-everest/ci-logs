@@ -1,0 +1,295 @@
+This is /home/everbld/everest-ci/ci
+Working directory: /cygdrive/c/build/agent1/_work/1/s
+About to run: fstar_and_friends uregressions
+BUILD_SOURCEBRANCHNAME: nik_nbe
+BUILD_DEFINITIONNAME: FStar-CI-Windows
+BUILD_BUILDID: 22436
+DEFINITIONNAME:
+Z3 is /home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin/z3
+make fstar-in-fsharp
+Switching to vale to fstar_ci
+Switching to KreMLin origin/master
+Removing tools/FsLexYacc/
+Switching to mitls-fstar origin/master
+HEAD is now at b094358 Revert "C.Endianness with LowStar.Buffer"
+Switching to HACL origin/fstar-master
+HEAD is now at efa92a0 bump F* version
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src'
+VS/.nuget/NuGet.exe restore VS/FStar.sln
+Installing 'FsLexYacc 6.1.0'.
+Installing 'FSharp.Compatibility.OCaml 0.1.10'.
+Installing 'PPrintForFSharp 0.0.2'.
+Installing 'FsLexYacc.Runtime 6.1.0'.
+Successfully installed 'PPrintForFSharp 0.0.2'.
+Successfully installed 'FSharp.Compatibility.OCaml 0.1.10'.
+Successfully installed 'FsLexYacc.Runtime 6.1.0'.
+Successfully installed 'FsLexYacc 6.1.0'.
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src'
+HEAD is now at e2490b83 [CI] regenerate hints
+make -C VS install-packages
+[ -d packages ] || make update-nuget
+HEAD is now at 3d6d2979 hints
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src/VS'
+.nuget/NuGet.exe restore FStar.sln
+All packages listed in packages.config are already installed.
+find packages -name '*.exe' -exec chmod +x '{}' ';'
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src/VS'
+Restoring NuGet package FsLexYacc.Runtime.6.1.0.
+Restoring NuGet package FsLexYacc.6.1.0.
+Adding package 'FsLexYacc.Runtime.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+Adding package 'FsLexYacc.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+Added package 'FsLexYacc.Runtime.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+Added package 'FsLexYacc.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+
+NuGet Config files used:
+C:\Users\everbld\AppData\Roaming\NuGet\NuGet.Config
+C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
+
+Feeds used:
+C:\Users\everbld\.nuget\packages\
+https://api.nuget.org/v3/index.json
+C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
+make: Entering directory '/cygdrive/c/build/agent1/_work/1/s/kremlin'
+ocamlbuild -I src -I lib -I parser -I kremlib -use-menhir -use-ocamlfind -classic-display -menhir "menhir --infer --explain" Kremlin.native Tests.native
+ln -sf Kremlin.native krml
+make: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/kremlin'
+
+Installed:
+2 package(s) to packages.config projects
+make: Nothing to be done for 'all'.
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src'
+./msbuild.bat /verbosity:minimal /p:Configuration=Release VS/FStar.sln
+dos2unix: converting file parser/parse.fsi to Unix format...
+**********************************************************************
+** Visual Studio 2017 Developer Command Prompt v15.5.5
+** Copyright (c) 2017 Microsoft Corporation
+**********************************************************************
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+C:\build\agent1\_work\1\s\src\basic\boot\NotFStar.Util.fs(50,5): warning FS3190: Lowercase literal 'max_int' is being shadowed by a new pattern with the same name. Only uppercase and module-prefixed literals can be used as named patterns. [C:\build\agent1\_work\1\s\src\basic\basic.fsproj]
+basic -> C:\build\agent1\_work\1\s\bin\basic.dll
+Restoring NuGet packages...
+To prevent NuGet from downloading packages during build, open the Visual Studio Options dialog, click on the Package Manager node and uncheck 'Allow NuGet to download missing packages'.
+All packages listed in packages.config are already installed.
+prettyprint -> C:\build\agent1\_work\1\s\bin\prettyprint.dll
+compiling to dfas (can take a while...)
+389 states
+writing output
+building tables
+computing first function...time: 00:00:00.2478112
+building kernels...time: 00:00:00.1654948
+building kernel table...time: 00:00:00.0167151
+computing lookahead relations...........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................time: 00:00:00.6091495
+building lookahead table...time: 00:00:00.2949797
+building action table...state 297: shift/reduce error on LBRACK
+state 482: shift/reduce error on SEMICOLON
+state 482: shift/reduce error on SEMICOLON_SEMICOLON
+state 521: shift/reduce error on BAR
+state 525: shift/reduce error on BAR
+state 544: shift/reduce error on BAR
+state 628: shift/reduce error on COLON_EQUALS
+state 660: shift/reduce error on COLON_EQUALS
+time: 00:00:00.8973110
+building goto table...time: 00:00:00.3251354
+returning tables.
+8 shift/reduce conflicts
+904 states
+156 nonterminals
+152 terminals
+476 productions
+#rows in action table: 904
+parser -> C:\build\agent1\_work\1\s\bin\parser.dll
+syntax -> C:\build\agent1\_work\1\s\bin\syntax.dll
+tosyntax -> C:\build\agent1\_work\1\s\bin\tosyntax.dll
+typechecker -> C:\build\agent1\_work\1\s\bin\typechecker.dll
+format -> C:\build\agent1\_work\1\s\bin\format.dll
+reflection -> C:\build\agent1\_work\1\s\bin\reflection.dll
+extraction -> C:\build\agent1\_work\1\s\bin\extraction.dll
+fsdoc -> C:\build\agent1\_work\1\s\bin\fsdoc.dll
+smtencoding -> C:\build\agent1\_work\1\s\bin\smtencoding.dll
+tactics -> C:\build\agent1\_work\1\s\bin\tactics.dll
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets(2041,5): warning MSB3277: Found conflicts between different versions of "FSharp.Core" that could not be resolved.  These reference conflicts are listed in the build log when log verbosity is set to detailed. [C:\build\agent1\_work\1\s\src\fstar\fstar.fsproj]
+fstar -> C:\build\agent1\_work\1\s\bin\fstar.exe
+tests -> C:\build\agent1\_work\1\s\bin\tests.exe
+dos2unix parser/parse.fsi
+chmod a+x ../bin/tests.exe
+chmod a+x ../bin/fstar.exe
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src'
+make fsharp-unit-tests
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src'
+../bin/tests.exe
+
+Initializing ...
+Unhandled Exception: System.Exception: not enough elements
+Norm.ZTesting the normalizer
+0: ...
+at FStar.List.nth[a](FSharpList`1 l, Int32 n)
+
+1: ...
+
+at FStar.TypeChecker.NBE.translate(cfg cfg, FSharpList`1 bs, syntax`1 e)
+1: ...
+
+at FStar.TypeChecker.NBE.curry@741(cfg cfg, t hd, FSharpList`1 args)
+2: ...
+at FStar.TypeChecker.NBE.readback(cfg cfg, t x)
+
+3: ...
+
+at FStar.Tests.Norm.run_either[a](Int32 i, a r, syntax`1 expected, FSharpFunc`2 normalizer)
+4: ...
+
+at FStar.Tests.Norm.run_nbe(Int32 i, syntax`1 r, syntax`1 expected)
+5: ...
+
+at FStar.Tests.Norm.nbe@250.Invoke(Unit unitVar0)
+6: ...
+
+at FStar.Util.return_execution_time[a](FSharpFunc`2 f)
+7: ...
+
+at FStar.Tests.Norm.run_nbe_with_time(Int32 i, syntax`1 r, syntax`1 expected)
+8: ...
+
+at Microsoft.FSharp.Primitives.Basics.List.mapToFreshConsTail[a,b](FSharpList`1 cons, FSharpFunc`2 f, FSharpList`1 x)
+9: ...
+
+at Microsoft.FSharp.Primitives.Basics.List.map[T,TResult](FSharpFunc`2 mapping, FSharpList`1 x)
+10: ...
+at FStar.Tests.Norm.run_tests[a](FSharpFunc`2 run)
+
+11: ...
+at FStar.Tests.Norm.run_all()
+
+12: ...
+at FStar.Tests.Test.main(String[] argv)
+
+13: ...
+make[1]: *** [Makefile:149: fsharp-unit-tests] Error 127
+
+15: ...
+
+make: *** [Makefile:157: fsharp-build-and-test] Error 2
+16: ...
+
+make: Target 'utest-prelude' not remade because of errors.
+17: ...
+
+Command exited with non-zero status 2
+18: ...
+
+0.07user 0.25system 0:38.47elapsed 0%CPU (0avgtext+0avgdata 8983808maxresident)k
+19: ...
+
+0inputs+0outputs (36702major+0minor)pagefaults 0swaps
+20: ...
+
+21: ...
+
+24: ...
+
+241: ...
+
+26: ...
+
+28: ...
+
+29: ...
+
+31: ...
+
+32: ...
+
+33: ...
+
+34: ...
+
+35: ...
+
+36: ...
+
+301: ...
+
+3012: ...
+
+302: ...
+
+303: ...
+
+3031: ...
+
+3032: ...
+
+3033: ...
+
+3034: ...
+
+3035: ...
+
+3036: ...
+
+305: ...
+
+306: ...
+
+304: ...
+
+305: ...
+
+309: ...
+
+310: ...
+
+401: ...
+
+402: ...
+
+403: ...
+
+404: ...
+
+Normalizer ok
+Testing NBE
+0: ...
+
+1: ...
+
+1: ...
+
+2: ...
+
+3: ...
+
+4: ...
+
+5: ...
+
+6: ...
+
+7: ...
+
+8: ...
+
+9: ...
+
+10: ...
+
+11: ...
+
+12: ...
+
+13: ...
+
+15: ...
+
+16: ...
+
+17: ...
+
+18: ...
+
+19: ...
+
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src'
+warm-up failed
