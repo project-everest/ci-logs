@@ -1,0 +1,113 @@
+This is /home/everbld/everest-ci/ci
+Working directory: /cygdrive/c/build/agent1/_work/1/s
+About to run: fstar_and_friends uregressions
+BUILD_SOURCEBRANCHNAME: zoe_nbe2
+BUILD_DEFINITIONNAME: FStar-CI-Windows
+BUILD_BUILDID: 22437
+DEFINITIONNAME:
+Z3 is /home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin/z3
+make fstar-in-fsharp
+Switching to vale to fstar_ci
+Switching to KreMLin origin/master
+Removing tools/FsLexYacc/
+Switching to mitls-fstar origin/master
+HEAD is now at b094358 Revert "C.Endianness with LowStar.Buffer"
+Switching to HACL origin/fstar-master
+HEAD is now at efa92a0 bump F* version
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src'
+VS/.nuget/NuGet.exe restore VS/FStar.sln
+Installing 'FsLexYacc.Runtime 6.1.0'.
+Installing 'PPrintForFSharp 0.0.2'.
+Installing 'FsLexYacc 6.1.0'.
+Installing 'FSharp.Compatibility.OCaml 0.1.10'.
+Successfully installed 'PPrintForFSharp 0.0.2'.
+Successfully installed 'FSharp.Compatibility.OCaml 0.1.10'.
+Successfully installed 'FsLexYacc.Runtime 6.1.0'.
+Successfully installed 'FsLexYacc 6.1.0'.
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src'
+HEAD is now at e2490b83 [CI] regenerate hints
+make -C VS install-packages
+[ -d packages ] || make update-nuget
+HEAD is now at 3d6d2979 hints
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src/VS'
+.nuget/NuGet.exe restore FStar.sln
+All packages listed in packages.config are already installed.
+find packages -name '*.exe' -exec chmod +x '{}' ';'
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src/VS'
+Restoring NuGet package FsLexYacc.6.1.0.
+Restoring NuGet package FsLexYacc.Runtime.6.1.0.
+Adding package 'FsLexYacc.Runtime.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+Adding package 'FsLexYacc.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+Added package 'FsLexYacc.Runtime.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+Added package 'FsLexYacc.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+
+NuGet Config files used:
+C:\Users\everbld\AppData\Roaming\NuGet\NuGet.Config
+C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
+
+Feeds used:
+C:\Users\everbld\.nuget\packages\
+https://api.nuget.org/v3/index.json
+C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
+
+Installed:
+2 package(s) to packages.config projects
+make: Entering directory '/cygdrive/c/build/agent1/_work/1/s/kremlin'
+ocamlbuild -I src -I lib -I parser -I kremlib -use-menhir -use-ocamlfind -classic-display -menhir "menhir --infer --explain" Kremlin.native Tests.native
+ln -sf Kremlin.native krml
+make: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/kremlin'
+make: Nothing to be done for 'all'.
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src'
+./msbuild.bat /verbosity:minimal /p:Configuration=Release VS/FStar.sln
+make[1]: *** [Makefile:18: fstar-in-fsharp] Error 1
+**********************************************************************
+** Visual Studio 2017 Developer Command Prompt v15.5.5
+make: *** [Makefile:152: fsharp-build-and-test] Error 2
+** Copyright (c) 2017 Microsoft Corporation
+**********************************************************************
+make: Target 'utest-prelude' not remade because of errors.
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+Command exited with non-zero status 2
+
+0.09user 0.18system 0:22.74elapsed 1%CPU (0avgtext+0avgdata 6331136maxresident)k
+C:\build\agent1\_work\1\s\src\basic\boot\NotFStar.Util.fs(50,5): warning FS3190: Lowercase literal 'max_int' is being shadowed by a new pattern with the same name. Only uppercase and module-prefixed literals can be used as named patterns. [C:\build\agent1\_work\1\s\src\basic\basic.fsproj]
+basic -> C:\build\agent1\_work\1\s\bin\basic.dll
+0inputs+0outputs (25734major+0minor)pagefaults 0swaps
+Restoring NuGet packages...
+To prevent NuGet from downloading packages during build, open the Visual Studio Options dialog, click on the Package Manager node and uncheck 'Allow NuGet to download missing packages'.
+All packages listed in packages.config are already installed.
+prettyprint -> C:\build\agent1\_work\1\s\bin\prettyprint.dll
+compiling to dfas (can take a while...)
+367 states
+writing output
+building tables
+computing first function...time: 00:00:00.2591169
+building kernels...time: 00:00:00.1725402
+building kernel table...time: 00:00:00.0174844
+computing lookahead relations..............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................time: 00:00:00.6538020
+building lookahead table...time: 00:00:00.2924245
+building action table...state 469: shift/reduce error on SEMICOLON
+state 469: shift/reduce error on SEMICOLON_SEMICOLON
+state 508: shift/reduce error on BAR
+state 512: shift/reduce error on BAR
+state 531: shift/reduce error on BAR
+state 615: shift/reduce error on COLON_EQUALS
+state 647: shift/reduce error on COLON_EQUALS
+time: 00:00:00.9176131
+building goto table...time: 00:00:00.3328501
+returning tables.
+7 shift/reduce conflicts
+891 states
+156 nonterminals
+150 terminals
+471 productions
+#rows in action table: 891
+parser -> C:\build\agent1\_work\1\s\bin\parser.dll
+syntax -> C:\build\agent1\_work\1\s\bin\syntax.dll
+tosyntax -> C:\build\agent1\_work\1\s\bin\tosyntax.dll
+C:\build\agent1\_work\1\s\src\typechecker\boot\FStar.TypeChecker.NBETerm.fsi(101,22): error FS0010: Unexpected symbol ')' in value signature [C:\build\agent1\_work\1\s\src\typechecker\typechecker.fsproj]
+format -> C:\build\agent1\_work\1\s\bin\format.dll
+fsdoc -> C:\build\agent1\_work\1\s\bin\fsdoc.dll
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src'
+warm-up failed
