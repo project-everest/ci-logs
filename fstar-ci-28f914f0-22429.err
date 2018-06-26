@@ -1,0 +1,28 @@
+dos2unix: converting file parser/parse.fsi to Unix format...
+
+Unhandled Exception: System.Exception: Not yet implemented
+at FStar.TypeChecker.NBE.readback(cfg cfg, t x)
+at FStar.TypeChecker.NBE.args@651-1.Invoke(Tuple`2 tupledArg)
+at FStar.TypeChecker.NBE.aux@35-13[a,b](FSharpFunc`2 f, FSharpList`1 l, FSharpList`1 acc)
+at FStar.TypeChecker.NBE.readback(cfg cfg, t x)
+at FStar.TypeChecker.NBE.make_branches@514-1.Invoke(Tuple`3 tupledArg)
+at Microsoft.FSharp.Primitives.Basics.List.mapToFreshConsTail[a,b](FSharpList`1 cons, FSharpFunc`2 f, FSharpList`1 x)
+at Microsoft.FSharp.Primitives.Basics.List.map[T,TResult](FSharpFunc`2 mapping, FSharpList`1 x)
+at FStar.TypeChecker.NBE.readback(cfg cfg, t x)
+at FStar.TypeChecker.NBE.readback(cfg cfg, t x)
+at FStar.Tests.Norm.run_either[a](Int32 i, a r, syntax`1 expected, FSharpFunc`2 normalizer)
+at FStar.Tests.Norm.run_nbe(Int32 i, syntax`1 r, syntax`1 expected)
+at FStar.Tests.Norm.nbe@250.Invoke(Unit unitVar0)
+at FStar.Util.return_execution_time[a](FSharpFunc`2 f)
+at FStar.Tests.Norm.run_nbe_with_time(Int32 i, syntax`1 r, syntax`1 expected)
+at Microsoft.FSharp.Primitives.Basics.List.mapToFreshConsTail[a,b](FSharpList`1 cons, FSharpFunc`2 f, FSharpList`1 x)
+at Microsoft.FSharp.Primitives.Basics.List.map[T,TResult](FSharpFunc`2 mapping, FSharpList`1 x)
+at FStar.Tests.Norm.run_tests[a](FSharpFunc`2 run)
+at FStar.Tests.Norm.run_all()
+at FStar.Tests.Test.main(String[] argv)
+make[1]: *** [Makefile:149: fsharp-unit-tests] Error 127
+make: *** [Makefile:157: fsharp-build-and-test] Error 2
+make: Target 'utest-prelude' not remade because of errors.
+Command exited with non-zero status 2
+0.04user 0.28system 0:34.58elapsed 0%CPU (0avgtext+0avgdata 8982272maxresident)k
+0inputs+0outputs (36601major+0minor)pagefaults 0swaps
