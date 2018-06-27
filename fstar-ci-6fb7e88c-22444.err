@@ -1,0 +1,61 @@
+dos2unix: converting file parser/parse.fsi to Unix format...
+Warning: you are using the standard library and/or the %inline keyword. We
+recommend switching on --infer in order to avoid obscure type error messages.
+warning: CRLF will be replaced by LF in src/parser/parse.fsy.
+The file will have its original line endings in your working directory.
+FStar.Int.fst(20,11-20,22): (Warning 252) (Hint-replay failed): assertion failed (see also FStar.Int.fst(20,23-20,36))
+FStar.Int.fst(22,11-22,22): (Warning 252) assertion failed (see also FStar.Int.fst(22,23-22,38))
+FStar.Int.fst(22,11-22,22): (Warning 252) assertion failed (see also FStar.Int.fst(22,23-22,38))
+FStar.Int.fst(22,11-22,22): (Warning 252) assertion failed (see also FStar.Int.fst(22,23-22,38))
+FStar.Int.fst(22,11-22,22): (Warning 252) assertion failed (see also FStar.Int.fst(22,23-22,38))
+FStar.Int.fst(22,11-22,22): (Error 19) assertion failed (see also FStar.Int.fst(22,23-22,38))
+Verified module: FStar.Int (2149 milliseconds)
+1 error was reported (see above)
+make[3]: *** [gmake/Makefile.tmpl:29: FStar.Int.fst.checked] Error 1
+FStar.Set.fst(129,23-131,47): (Error 34) Computed type "_: a -> Prims.Tot Prims.bool" and effect "PURE" is not compatible with the annotated type "FStar.Set.set a" effect "Tot"
+FStar.Set.fst(129,23-131,47): (Error 12) Expected type "FStar.Set.set a"; but "(match l with
+| [] -> FStar.Set.empty
+| hd :: tl -> FStar.Set.union (FStar.Set.singleton hd) (FStar.Set.as_set' tl))
+<:
+_: a -> Prims.Tot Prims.bool" has type "_: a -> Prims.Tot Prims.bool"
+FStar.Set.fst(130,10-130,15): (Error 12) Expected type "_: a -> Prims.Tot Prims.bool"; but "FStar.Set.empty" has type "FStar.Set.set a"
+FStar.Set.fst(131,14-131,47): (Error 12) Expected type "_: a -> Prims.Tot Prims.bool"; but "FStar.Set.union (FStar.Set.singleton hd) (FStar.Set.as_set' tl)" has type "FStar.Set.set a"
+4 errors were reported (see above)
+make[3]: *** [gmake/Makefile.tmpl:29: FStar.Set.fst.checked] Error 1
+FStar.Monotonic.Witnessed.fst(292,47-292,49): (Warning 252) (Hint-replay failed): could not prove post-condition (see also FStar.Monotonic.Witnessed.fsti(28,70-28,85))
+FStar.Monotonic.Witnessed.fst(296,44-296,70): (Warning 252) (Hint-replay failed): could not prove post-condition (see also FStar.Monotonic.Witnessed.fsti(35,39-35,74))
+FStar.Monotonic.Witnessed.fst(298,42-298,44): (Warning 252) (Hint-replay failed): could not prove post-condition (see also FStar.Monotonic.Witnessed.fsti(40,37-40,100))
+FStar.Monotonic.Witnessed.fst(303,6-303,95): (Warning 252) (Hint-replay failed): could not prove post-condition (see also FStar.Monotonic.Witnessed.fst(302,30-302,67))
+FStar.Monotonic.Witnessed.fst(307,40-307,42): (Warning 252) (Hint-replay failed): could not prove post-condition (see also FStar.Monotonic.Witnessed.fsti(52,75-52,110))
+FStar.Monotonic.Witnessed.fst(312,6-312,15): (Warning 252) (Hint-replay failed): assertion failed (see also FStar.Monotonic.Witnessed.fst(106,50-106,55))
+FStar.Monotonic.Witnessed.fst(319,6-319,18): (Warning 252) (Hint-replay failed): assertion failed (see also FStar.Monotonic.Witnessed.fst(211,63-211,83))
+FStar.Monotonic.Witnessed.fst(323,45-323,47): (Warning 252) (Hint-replay failed): could not prove post-condition (see also FStar.Monotonic.Witnessed.fsti(70,74-70,114))
+FStar.List.Tot.Base.fst(265,10-265,12): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type m:
+Prims.list a
+{ forall (u22638: FStar.Pervasives.Native.option (x: Prims.unit{Prims.hasEq a})).
+FStar.List.Tot.Base.mem_filter_spec f m u22638 }; got type Prims.list a (see also FStar.List.Tot.Base.fst(263,86-263,107))
+FStar.List.Tot.Base.fst(275,2-277,4): (Warning 252) (Hint-replay failed): could not prove post-condition (see also FStar.List.Tot.Base.fst(273,11-273,16))
+FStar.List.Tot.Properties.fst(858,2-858,37): (Warning 252) (Hint-replay failed): could not prove post-condition (see also FStar.List.Tot.Properties.fst(856,12-856,18))
+FStar.List.Tot.Properties.fst(858,2-858,37): (Warning 252) could not prove post-condition (see also FStar.List.Tot.Properties.fst(856,12-856,18))
+FStar.List.Tot.Properties.fst(887,2-888,24): (Warning 252) (Hint-replay failed): could not prove post-condition (see also FStar.List.Tot.Properties.fst(886,12-886,18))
+FStar.Seq.Properties.fst(474,2-477,29): (Warning 252) (Hint-replay failed): could not prove post-condition (see also FStar.Seq.Properties.fst(472,20-472,28))
+prims.fst(408,11-408,24): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type Prims.eqtype; got type Type0 (see also prims.fst(27,21-27,28))
+FStar.Fin.fst(36,2-51,18): (Warning 252) (Hint-replay failed): could not prove post-condition (see also FStar.Fin.fst(33,41-33,68))
+FStar.UInt.fst(24,11-24,22): (Warning 252) (Hint-replay failed): assertion failed (see also FStar.UInt.fst(24,23-24,36))
+FStar.UInt.fst(26,11-26,22): (Warning 252) assertion failed (see also FStar.UInt.fst(26,23-26,38))
+FStar.UInt.fst(26,11-26,22): (Warning 252) assertion failed (see also FStar.UInt.fst(26,23-26,38))
+FStar.UInt.fst(26,11-26,22): (Warning 252) assertion failed (see also FStar.UInt.fst(26,23-26,38))
+FStar.UInt.fst(26,11-26,22): (Warning 252) assertion failed (see also FStar.UInt.fst(26,23-26,38))
+FStar.UInt.fst(747,2-747,13): (Warning 252) (Hint-replay failed): assertion failed (see also FStar.UInt.fst(747,13-747,29))
+FStar.UInt.fst(777,47-777,60): (Warning 252) (Hint-replay failed): assertion failed
+FStar.UInt.fst(26,11-26,22): (Error 19) assertion failed (see also FStar.UInt.fst(26,23-26,38))
+Verified module: FStar.UInt (28638 milliseconds)
+1 error was reported (see above)
+make[3]: *** [gmake/Makefile.tmpl:29: FStar.UInt.fst.checked] Error 1
+make[3]: Target 'verify-core' not remade because of errors.
+make[2]: *** [Makefile:12: all] Error 2
+make[1]: *** [Makefile:175: fstarlib] Error 2
+make: *** [Makefile:158: utest-prelude] Error 2
+Command exited with non-zero status 2
+9.55user 37.24system 7:28.32elapsed 10%CPU (0avgtext+0avgdata 1171172096maxresident)k
+0inputs+0outputs (4800421major+0minor)pagefaults 0swaps
