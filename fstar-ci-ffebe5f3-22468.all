@@ -1,0 +1,400 @@
+This is /home/everbld/everest-ci/ci
+Working directory: /cygdrive/c/build/agent2/_work/2/s
+About to run: fstar_and_friends uregressions
+BUILD_SOURCEBRANCHNAME: zoe_nbe2
+BUILD_DEFINITIONNAME: FStar-CI-Windows
+BUILD_BUILDID: 22468
+DEFINITIONNAME:
+Z3 is /home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin/z3
+make fstar-in-fsharp
+Switching to vale to fstar_ci
+Switching to KreMLin origin/master
+Removing .sconsign.dblite
+Removing bin/
+Removing obj/
+Removing tools/FsLexYacc/
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/2/s/src'
+VS/.nuget/NuGet.exe restore VS/FStar.sln
+Installing 'PPrintForFSharp 0.0.2'.
+Installing 'FsLexYacc.Runtime 6.1.0'.
+Installing 'FsLexYacc 6.1.0'.
+Installing 'FSharp.Compatibility.OCaml 0.1.10'.
+Successfully installed 'PPrintForFSharp 0.0.2'.
+Successfully installed 'FSharp.Compatibility.OCaml 0.1.10'.
+Successfully installed 'FsLexYacc.Runtime 6.1.0'.
+Successfully installed 'FsLexYacc 6.1.0'.
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/2/s/src'
+HEAD is now at efa92a0 bump F* version
+make -C VS install-packages
+HEAD is now at 9ddb7b7 Hints
+[ -d packages ] || make update-nuget
+From https://github.com/mitls/mitls-fstar
+e2490b83..ea7d265d  master     -> origin/master
+From https://github.com/mitls/hacl-star
+3d6d2979..a2651849  fstar-master -> origin/fstar-master
+Switching to mitls-fstar origin/master
+make[2]: Entering directory '/cygdrive/c/build/agent2/_work/2/s/src/VS'
+.nuget/NuGet.exe restore FStar.sln
+All packages listed in packages.config are already installed.
+find packages -name '*.exe' -exec chmod +x '{}' ';'
+make[2]: Leaving directory '/cygdrive/c/build/agent2/_work/2/s/src/VS'
+Switching to HACL origin/fstar-master
+Restoring NuGet package FsLexYacc.6.1.0.
+Restoring NuGet package FsLexYacc.Runtime.6.1.0.
+Adding package 'FsLexYacc.6.1.0' to folder 'C:\build\agent2\_work\2\s\vale\tools\FsLexYacc'
+Adding package 'FsLexYacc.Runtime.6.1.0' to folder 'C:\build\agent2\_work\2\s\vale\tools\FsLexYacc'
+HEAD is now at ea7d265d Hints
+Added package 'FsLexYacc.Runtime.6.1.0' to folder 'C:\build\agent2\_work\2\s\vale\tools\FsLexYacc'
+Added package 'FsLexYacc.6.1.0' to folder 'C:\build\agent2\_work\2\s\vale\tools\FsLexYacc'
+
+NuGet Config files used:
+C:\Users\everbld\AppData\Roaming\NuGet\NuGet.Config
+C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
+
+Feeds used:
+C:\Users\everbld\.nuget\packages\
+https://api.nuget.org/v3/index.json
+C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
+
+Installed:
+2 package(s) to packages.config projects
+Removing src/tls/cache/
+Removing src/tls/extract/Model/
+HEAD is now at a2651849 hints
+make: Entering directory '/cygdrive/c/build/agent2/_work/2/s/kremlin'
+ocamlbuild -I src -I lib -I parser -I kremlib -use-menhir -use-ocamlfind -classic-display -menhir "menhir --infer --explain" Kremlin.native Tests.native
+ocamlfind ocamldep -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -modules src/Kremlin.ml > src/Kremlin.ml.depends
+ocamlfind ocamldep -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -modules src/AstToCFlat.ml > src/AstToCFlat.ml.depends
+ocamlfind ocamldep -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -modules src/Options.ml > src/Options.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Options.cmo src/Options.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Warnings.cmo src/Warnings.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/CFlatToWasm.cmo src/CFlatToWasm.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Helpers.cmo src/Helpers.ml
+ocamlfind ocamldep -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -modules src/AstToCStar.ml > src/AstToCStar.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Checker.cmo src/Checker.ml
+ocamlfind ocamldep -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -modules src/Builtin.ml > src/Builtin.ml.depends
+ocamlfind ocamldep -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -modules src/Bundles.ml > src/Bundles.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/GlobalNames.cmo src/GlobalNames.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/SimplifyC89.cmo src/SimplifyC89.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Drop.cmo src/Drop.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Simplify.cmo src/Simplify.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Inlining.cmo src/Inlining.ml
+ocamlfind ocamldep -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -modules src/CStarToC11.ml > src/CStarToC11.ml.depends
+ocamlfind ocamldep -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -modules src/Diagnostics.ml > src/Diagnostics.ml.depends
+ocamlfind ocamldep -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -modules src/Driver.ml > src/Driver.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Driver.cmo src/Driver.ml
+ocamlfind ocamldep -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -modules src/PrintC.ml > src/PrintC.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/PrintC.cmo src/PrintC.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/AstToCFlat.cmo src/AstToCFlat.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/AstToCStar.cmo src/AstToCStar.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Builtin.cmo src/Builtin.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Bundles.cmo src/Bundles.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/CStarToC11.cmo src/CStarToC11.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/DataTypes.cmo src/DataTypes.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Diagnostics.cmo src/Diagnostics.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/GcTypes.cmo src/GcTypes.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/InputAstToAst.cmo src/InputAstToAst.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Monomorphization.cmo src/Monomorphization.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Output.cmo src/Output.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/OutputJs.cmo src/OutputJs.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/SimplifyWasm.cmo src/SimplifyWasm.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Structs.cmo src/Structs.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Kremlin.cmo src/Kremlin.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Options.cmx src/Options.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Warnings.cmx src/Warnings.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/CFlatToWasm.cmx src/CFlatToWasm.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Helpers.cmx src/Helpers.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Checker.cmx src/Checker.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/GlobalNames.cmx src/GlobalNames.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/SimplifyC89.cmx src/SimplifyC89.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Drop.cmx src/Drop.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Simplify.cmx src/Simplify.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Inlining.cmx src/Inlining.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Driver.cmx src/Driver.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/PrintC.cmx src/PrintC.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/AstToCFlat.cmx src/AstToCFlat.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/AstToCStar.cmx src/AstToCStar.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Builtin.cmx src/Builtin.ml
+/bin/bash: fstar.exe: command not found
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Bundles.cmx src/Bundles.ml
+make: *** [Makefile:51: .depend] Error 127
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/CStarToC11.cmx src/CStarToC11.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/DataTypes.cmx src/DataTypes.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Diagnostics.cmx src/Diagnostics.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/GcTypes.cmx src/GcTypes.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/InputAstToAst.cmx src/InputAstToAst.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Monomorphization.cmx src/Monomorphization.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Output.cmx src/Output.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/OutputJs.cmx src/OutputJs.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/SimplifyWasm.cmx src/SimplifyWasm.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Structs.cmx src/Structs.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o src/Kremlin.cmx src/Kremlin.ml
+ocamlfind ocamlopt -linkpkg -g -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I lib -I src -I parser lib/Ansi.cmx lib/KList.cmx lib/KPrint.cmx lib/KString.cmx lib/Option.cmx src/Atom.cmx src/Common.cmx src/Constant.cmx src/Ast.cmx src/Idents.cmx src/Bundle.cmx src/Flags.cmx parser/parser.cmx parser/Lexer.cmx lib/Utils.cmx src/CFlat.cmx src/PrintCommon.cmx src/Location.cmx src/Options.cmx src/PrintAst.cmx src/Warnings.cmx src/CFlatToWasm.cmx src/DeBruijn.cmx src/Helpers.cmx src/AstToCFlat.cmx src/CStar.cmx src/Checker.cmx src/AstToCStar.cmx src/AutoConfig.cmx src/Builtin.cmx src/Drop.cmx src/GlobalNames.cmx src/SimplifyC89.cmx src/Simplify.cmx src/Inlining.cmx src/Bundles.cmx src/C11.cmx src/CStarToC11.cmx src/DataTypes.cmx src/Diagnostics.cmx src/Driver.cmx src/GcTypes.cmx src/InputAst.cmx src/InputAstToAst.cmx src/Monomorphization.cmx src/PrintC.cmx src/Output.cmx src/OutputJs.cmx src/Parsers.cmx src/Print.cmx src/SimplifyWasm.cmx src/Structs.cmx src/Kremlin.cmx -o src/Kremlin.native
+ocamlfind ocamlc -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o Tests.cmo Tests.ml
+ocamlfind ocamlopt -c -g -annot -bin-annot -strict-sequence -w @1-2-3@8..12@14..21@23..29-30@31..38-39@40-41@43@57 -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I src -I parser -I lib -I kremlib -o Tests.cmx Tests.ml
+ocamlfind ocamlopt -linkpkg -g -package ppx_deriving.std -package ppx_deriving_yojson -package zarith -package pprint -package unix -package menhirLib -package ulex -package process -package fix -package wasm -package visitors.ppx -package visitors.runtime -I lib -I src -I parser lib/KList.cmx lib/KPrint.cmx lib/KString.cmx lib/Option.cmx src/Atom.cmx src/Common.cmx src/Constant.cmx src/Ast.cmx src/Idents.cmx src/Bundle.cmx src/Flags.cmx parser/parser.cmx parser/Lexer.cmx lib/Utils.cmx src/C11.cmx src/CStar.cmx src/PrintCommon.cmx src/Location.cmx src/Options.cmx src/PrintAst.cmx src/Warnings.cmx src/CStarToC11.cmx src/Print.cmx src/PrintC.cmx Tests.cmx -o Tests.native
+ln -sf Kremlin.native krml
+make: Leaving directory '/cygdrive/c/build/agent2/_work/2/s/kremlin'
+make: Entering directory '/cygdrive/c/build/agent2/_work/2/s/kremlin/kremlib'
+mkdir -p extracted
+make: Leaving directory '/cygdrive/c/build/agent2/_work/2/s/kremlin/kremlib'
+make: Entering directory '/cygdrive/c/build/agent2/_work/2/s/kremlin/kremlib'
+fstar.exe --use_hints --use_two_phase_tc true --odir extracted  --cache_checked_modules  --admit_smt_queries true --dep full Spec.Loops.fst C.Loops.fst C.String.fst C.Endianness.fst C.fst C.Failure.fst FStar.Kremlin.Endianness.fst C.Nullity.fsti TestLib.fsti /ulib/FStar.UInt128.fst /ulib/FStar.Date.fsti /ulib/FStar.HyperStack.IO.fst /ulib/FStar.IO.fst /ulib/FStar.Int.Cast.Full.fst /ulib/FStar.Bytes.fsti /ulib/FStar.Dyn.fsti > .depend
+make: Leaving directory '/cygdrive/c/build/agent2/_work/2/s/kremlin/kremlib'
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/2/s/src'
+./msbuild.bat /verbosity:minimal /p:Configuration=Release VS/FStar.sln
+dos2unix: converting file parser/parse.fsi to Unix format...
+**********************************************************************
+** Visual Studio 2017 Developer Command Prompt v15.5.5
+** Copyright (c) 2017 Microsoft Corporation
+**********************************************************************
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+C:\build\agent2\_work\2\s\src\basic\boot\NotFStar.Util.fs(50,5): warning FS3190: Lowercase literal 'max_int' is being shadowed by a new pattern with the same name. Only uppercase and module-prefixed literals can be used as named patterns. [C:\build\agent2\_work\2\s\src\basic\basic.fsproj]
+basic -> C:\build\agent2\_work\2\s\bin\basic.dll
+Restoring NuGet packages...
+To prevent NuGet from downloading packages during build, open the Visual Studio Options dialog, click on the Package Manager node and uncheck 'Allow NuGet to download missing packages'.
+All packages listed in packages.config are already installed.
+prettyprint -> C:\build\agent2\_work\2\s\bin\prettyprint.dll
+compiling to dfas (can take a while...)
+367 states
+writing output
+building tables
+computing first function...time: 00:00:00.2676711
+building kernels...time: 00:00:00.1842605
+building kernel table...time: 00:00:00.0189611
+computing lookahead relations..............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................time: 00:00:00.6275836
+building lookahead table...time: 00:00:00.2983614
+building action table...state 469: shift/reduce error on SEMICOLON
+state 469: shift/reduce error on SEMICOLON_SEMICOLON
+state 508: shift/reduce error on BAR
+state 512: shift/reduce error on BAR
+state 531: shift/reduce error on BAR
+state 615: shift/reduce error on COLON_EQUALS
+state 647: shift/reduce error on COLON_EQUALS
+time: 00:00:00.9142095
+building goto table...time: 00:00:00.3361720
+returning tables.
+7 shift/reduce conflicts
+891 states
+156 nonterminals
+150 terminals
+471 productions
+#rows in action table: 891
+parser -> C:\build\agent2\_work\2\s\bin\parser.dll
+syntax -> C:\build\agent2\_work\2\s\bin\syntax.dll
+tosyntax -> C:\build\agent2\_work\2\s\bin\tosyntax.dll
+C:\build\agent2\_work\2\s\src\typechecker\FStar.TypeChecker.Tc.fs(1076,15): warning FS0025: Incomplete pattern matches on this expression. [C:\build\agent2\_work\2\s\src\typechecker\typechecker.fsproj]
+typechecker -> C:\build\agent2\_work\2\s\bin\typechecker.dll
+format -> C:\build\agent2\_work\2\s\bin\format.dll
+reflection -> C:\build\agent2\_work\2\s\bin\reflection.dll
+extraction -> C:\build\agent2\_work\2\s\bin\extraction.dll
+fsdoc -> C:\build\agent2\_work\2\s\bin\fsdoc.dll
+smtencoding -> C:\build\agent2\_work\2\s\bin\smtencoding.dll
+tactics -> C:\build\agent2\_work\2\s\bin\tactics.dll
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets(2041,5): warning MSB3277: Found conflicts between different versions of "FSharp.Core" that could not be resolved.  These reference conflicts are listed in the build log when log verbosity is set to detailed. [C:\build\agent2\_work\2\s\src\fstar\fstar.fsproj]
+fstar -> C:\build\agent2\_work\2\s\bin\fstar.exe
+tests -> C:\build\agent2\_work\2\s\bin\tests.exe
+dos2unix parser/parse.fsi
+chmod a+x ../bin/tests.exe
+chmod a+x ../bin/fstar.exe
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/2/s/src'
+make fsharp-unit-tests
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/2/s/src'
+../bin/tests.exe
+
+Initializing ...
+Norm.ZTesting the normalizer
+0: ...
+Unhandled Exception: System.Exception: Not yet implemented
+
+1: ...
+at FStar.TypeChecker.NBE.readback(cfg cfg, t x)
+
+1: ...
+at FStar.TypeChecker.NBE.args@651-1.Invoke(Tuple`2 tupledArg)
+
+2: ...
+at FStar.TypeChecker.NBE.aux@34-13[a,b](FSharpFunc`2 f, FSharpList`1 l, FSharpList`1 acc)
+
+3: ...
+
+at FStar.TypeChecker.NBE.readback(cfg cfg, t x)
+4: ...
+
+at FStar.TypeChecker.NBE.make_branches@514-1.Invoke(Tuple`3 tupledArg)
+5: ...
+
+at Microsoft.FSharp.Primitives.Basics.List.mapToFreshConsTail[a,b](FSharpList`1 cons, FSharpFunc`2 f, FSharpList`1 x)
+6: ...
+
+7: ...
+at Microsoft.FSharp.Primitives.Basics.List.map[T,TResult](FSharpFunc`2 mapping, FSharpList`1 x)
+
+8: ...
+
+at FStar.TypeChecker.NBE.readback(cfg cfg, t x)
+9: ...
+
+at FStar.TypeChecker.NBE.readback(cfg cfg, t x)
+10: ...
+
+at FStar.Tests.Norm.run_either[a](Int32 i, a r, syntax`1 expected, FSharpFunc`2 normalizer)
+11: ...
+
+at FStar.Tests.Norm.run_nbe(Int32 i, syntax`1 r, syntax`1 expected)
+12: ...
+
+at FStar.Tests.Norm.nbe@250.Invoke(Unit unitVar0)
+13: ...
+
+at FStar.Util.return_execution_time[a](FSharpFunc`2 f)
+15: ...
+
+at FStar.Tests.Norm.run_nbe_with_time(Int32 i, syntax`1 r, syntax`1 expected)
+16: ...
+
+at Microsoft.FSharp.Primitives.Basics.List.mapToFreshConsTail[a,b](FSharpList`1 cons, FSharpFunc`2 f, FSharpList`1 x)
+17: ...
+
+18: ...
+at Microsoft.FSharp.Primitives.Basics.List.map[T,TResult](FSharpFunc`2 mapping, FSharpList`1 x)
+
+19: ...
+at FStar.Tests.Norm.run_tests[a](FSharpFunc`2 run)
+
+20: ...
+at FStar.Tests.Norm.run_all()
+
+21: ...
+at FStar.Tests.Test.main(String[] argv)
+
+24: ...
+make[1]: *** [Makefile:145: fsharp-unit-tests] Error 127
+
+241: ...
+make: *** [Makefile:153: fsharp-build-and-test] Error 2
+
+25: ...
+make: Target 'utest-prelude' not remade because of errors.
+
+26: ...
+Command exited with non-zero status 2
+
+28: ...
+0.10user 0.28system 0:40.93elapsed 0%CPU (0avgtext+0avgdata 8983296maxresident)k
+
+29: ...
+0inputs+0outputs (36700major+0minor)pagefaults 0swaps
+
+31: ...
+
+32: ...
+
+33: ...
+
+34: ...
+
+35: ...
+
+36: ...
+
+301: ...
+
+3012: ...
+
+302: ...
+
+303: ...
+
+3031: ...
+
+3032: ...
+
+3033: ...
+
+3034: ...
+
+3035: ...
+
+3036: ...
+
+305: ...
+
+306: ...
+
+307: ...
+
+308: ...
+
+304: ...
+
+305: ...
+
+309: ...
+
+310: ...
+
+401: ...
+
+402: ...
+
+403: ...
+
+404: ...
+
+Normalizer ok
+Testing NBE
+0: ...
+
+1: ...
+
+1: ...
+
+2: ...
+
+3: ...
+
+4: ...
+
+5: ...
+
+6: ...
+
+7: ...
+
+8: ...
+
+9: ...
+
+10: ...
+
+11: ...
+
+12: ...
+
+13: ...
+
+15: ...
+
+16: ...
+
+17: ...
+
+18: ...
+
+19: ...
+
+20: ...
+
+21: ...
+
+24: ...
+
+241: ...
+
+25: ...
+
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/2/s/src'
+warm-up failed
