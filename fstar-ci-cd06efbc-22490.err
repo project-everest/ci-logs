@@ -1,0 +1,22 @@
+/bin/bash: krml: command not found
+make: *** [Makefile:78: extracted/Makefile.include] Error 127
+make: *** Waiting for unfinished jobs....
+/bin/bash: krml: command not found
+make: *** [Makefile:84: uint128/Makefile.include] Error 127
+dos2unix: converting file parser/parse.fsi to Unix format...
+
+Unhandled Exception: System.Exception: Empty option
+at FStar.Util.must[a](FSharpOption`1 _arg1)
+at Microsoft.FSharp.Core.FSharpFunc`2.InvokeFast[V,W](FSharpFunc`2 func, T arg1, TResult arg2, V arg3)
+at FStar.Syntax.Resugar.resugar_term'(env env, syntax`1 t)
+at FStar.Syntax.Print.term_to_string(syntax`1 x)
+at FStar.Tests.Util.term_eq(syntax`1 t1, syntax`1 t2)
+at FStar.Tests.Norm.run(Int32 i, syntax`1 r, syntax`1 expected)
+at FStar.Tests.Norm.run_all()
+at FStar.Tests.Test.main(String[] argv)
+make[1]: *** [Makefile:141: fsharp-unit-tests] Error 127
+make: *** [Makefile:149: fsharp-build-and-test] Error 2
+make: Target 'utest-prelude' not remade because of errors.
+Command exited with non-zero status 2
+0.10user 0.24system 0:53.78elapsed 0%CPU (0avgtext+0avgdata 8980736maxresident)k
+0inputs+0outputs (36691major+0minor)pagefaults 0swaps
