@@ -1,0 +1,27 @@
+/bin/bash: krml: command not found
+make: *** [Makefile:78: extracted/Makefile.include] Error 127
+make: *** Waiting for unfinished jobs....
+/bin/bash: krml: command not found
+make: *** [Makefile:84: uint128/Makefile.include] Error 127
+dos2unix: converting file parser/parse.fsi to Unix format...
+
+Unhandled Exception: System.TypeInitializationException: The type initializer for '<StartupCode$tests>.$FStar.Tests.Norm' threw an exception. ---> FStar.Errors+Error: Exception of type 'FStar.Errors+Error' was thrown.
+at FStar.Syntax.DsEnv.fail_or$cont@1272[a](env env, lident lid, Unit unitVar)
+at FStar.ToSyntax.ToSyntax.desugar_name(FSharpFunc`2 mk, FSharpFunc`2 setpos, env env, Boolean resolve, lident l)
+at FStar.ToSyntax.ToSyntax.desugar_term_maybe_top(Boolean top_level, env env, term top)
+at FStar.ToSyntax.ToSyntax.aux@1103-16(env env, term top, FSharpList`1 args, FSharpList`1 aqs, term e)
+at FStar.ToSyntax.ToSyntax.desugar_term_maybe_top(Boolean top_level, env env, term top)
+at FStar.ToSyntax.ToSyntax.desugar_term(env env, term e)
+at FStar.Tests.Pars.pars(String s)
+at FStar.Tests.Pars.tc'(String s)
+at FStar.Tests.Pars.tc_nbe(String s)
+at <StartupCode$tests>.$FStar.Tests.Norm..cctor()
+--- End of inner exception stack trace ---
+at FStar.Tests.Norm.run_all()
+at FStar.Tests.Test.main(String[] argv)
+make[1]: *** [Makefile:149: fsharp-unit-tests] Error 127
+make: *** [Makefile:157: fsharp-build-and-test] Error 2
+make: Target 'utest-prelude' not remade because of errors.
+Command exited with non-zero status 2
+0.07user 0.28system 0:37.06elapsed 0%CPU (0avgtext+0avgdata 8970496maxresident)k
+0inputs+0outputs (36650major+0minor)pagefaults 0swaps
