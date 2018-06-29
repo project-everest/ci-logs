@@ -1,0 +1,266 @@
+From https://github.com/mitls/hacl-star
+17eee5e9..b697e117  fstar-master       -> origin/fstar-master
+eb0e5a72..868ddb8b  mini_hackathon_nyc -> origin/mini_hackathon_nyc
+/bin/bash: krml: command not found
+make: *** [Makefile:78: extracted/Makefile.include] Error 127
+make: *** Waiting for unfinished jobs....
+/bin/bash: krml: command not found
+make: *** [Makefile:84: uint128/Makefile.include] Error 127
+dos2unix: converting file parser/parse.fsi to Unix format...
+Warning: you are using the standard library and/or the %inline keyword. We
+recommend switching on --infer in order to avoid obscure type error messages.
+warning: CRLF will be replaced by LF in src/parser/parse.fsy.
+The file will have its original line endings in your working directory.
+FStar.Set.fst(129,23-131,47): (Error 34) Computed type "_: a -> Prims.Tot Prims.bool" and effect "PURE" is not compatible with the annotated type "FStar.Set.set a" effect "Tot"
+FStar.Set.fst(129,23-131,47): (Error 12) Expected type "FStar.Set.set a"; but "(match l with
+| [] -> FStar.Set.empty
+| hd :: tl -> FStar.Set.union (FStar.Set.singleton hd) (FStar.Set.as_set' tl))
+<:
+_: a -> Prims.Tot Prims.bool" has type "_: a -> Prims.Tot Prims.bool"
+FStar.Set.fst(130,10-130,15): (Error 12) Expected type "_: a -> Prims.Tot Prims.bool"; but "FStar.Set.empty" has type "FStar.Set.set a"
+FStar.Set.fst(131,14-131,47): (Error 12) Expected type "_: a -> Prims.Tot Prims.bool"; but "FStar.Set.union (FStar.Set.singleton hd) (FStar.Set.as_set' tl)" has type "FStar.Set.set a"
+4 errors were reported (see above)
+make[3]: *** [gmake/Makefile.tmpl:29: FStar.Set.fst.checked] Error 1
+FStar.List.Tot.Properties.fst(858,2-858,37): (Warning 252) (Hint-replay failed): could not prove post-condition (see also FStar.List.Tot.Properties.fst(856,12-856,18))
+FStar.List.Tot.Properties.fst(858,2-858,37): (Warning 252) could not prove post-condition (see also FStar.List.Tot.Properties.fst(856,12-856,18))
+FStar.List.Tot.Properties.fst(887,2-888,24): (Warning 252) (Hint-replay failed): could not prove post-condition (see also FStar.List.Tot.Properties.fst(886,12-886,18))
+FStar.Seq.Properties.fst(474,2-477,29): (Warning 252) (Hint-replay failed): could not prove post-condition (see also FStar.Seq.Properties.fst(472,20-472,28))
+prims.fst(408,11-408,24): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type Prims.eqtype; got type Type0 (see also prims.fst(27,21-27,28))
+prims.fst(408,11-408,24): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type Prims.eqtype; got type Type0 (see also prims.fst(27,21-27,28))
+FStar.Seq.Properties.fst(664,4-664,11): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type Prims.eqtype; got type Type0 (see also prims.fst(27,21-27,28))
+FStar.Fin.fst(36,2-51,18): (Warning 252) (Hint-replay failed): could not prove post-condition (see also FStar.Fin.fst(33,41-33,68))
+FStar.Fin.fst(36,2-51,18): (Warning 252) (Hint-replay failed): could not prove post-condition (see also FStar.Fin.fst(33,41-33,68))
+FStar.Integers.fst(84,15-84,30): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type y:
+FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))
+{FStar.Integers.within_bounds sw y}; got type FStar.UInt.uint_t FStar.UInt8.n (see also FStar.Integers.fst(76,30-76,51))
+FStar.Integers.fst(109,37-109,38): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type FStar.UInt.uint_t FStar.UInt8.n; got type x:
+FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))
+{FStar.Integers.within_bounds sw x} (see also FStar.UInt.fst(52,28-52,36))
+FStar.Integers.fst(131,7-131,15): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type x:
+FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))
+{FStar.Integers.within_bounds sw' x}; got type y:
+FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))
+{FStar.Integers.within_bounds sw y} (see also FStar.Integers.fst(76,30-76,51))
+FStar.Integers.fst(144,30-144,31): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type Prims.int; got type y:
+FStar.Integers.int_t sw {FStar.Integers.within_bounds sw (FStar.Integers.v x + FStar.Integers.v y)} (see also FStar.Integers.fst(141,11-141,12))
+FStar.Integers.fst(204,30-204,31): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type Prims.int; got type y:
+FStar.Integers.int_t sw {FStar.Integers.within_bounds sw (FStar.Integers.v x - FStar.Integers.v y)} (see also FStar.Integers.fst(201,20-201,21))
+FStar.Integers.fst(258,43-258,46): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type y:
+FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))
+{ FStar.Integers.within_bounds (FStar.Integers.Signed (FStar.Integers.Winfinite))
+(FStar.Integers.v 0 - FStar.Integers.v y) }; got type y:
+FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))
+{FStar.Integers.within_bounds sw y} (see also FStar.Integers.fst(76,30-76,51))
+FStar.Integers.fst(263,30-263,31): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type FStar.Int8.t; got type x: FStar.Integers.int_t sw {FStar.Integers.within_bounds sw (0 - FStar.Integers.v x)} (see also FStar.Integers.fst(258,10-258,11))
+FStar.Integers.fst(279,30-279,31): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type Prims.int; got type y:
+FStar.Integers.int_t sw {FStar.Integers.within_bounds sw (FStar.Integers.v x * FStar.Integers.v y)} (see also FStar.Integers.fst(276,11-276,12))
+FStar.Integers.fst(415,31-415,32): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type Prims.nonzero; got type y:
+FStar.Integers.int_t sw
+{ 0 <> FStar.Integers.v y /\
+(match sw with
+| FStar.Integers.Unsigned _ ->
+FStar.Integers.within_bounds sw (FStar.Integers.v x / FStar.Integers.v y)
+| FStar.Integers.Signed _ ->
+FStar.Integers.within_bounds sw (FStar.Integers.v x / FStar.Integers.v y)) } (see also FStar.Integers.fst(409,11-409,12))
+FStar.Integers.fst(441,31-441,32): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type Prims.nonzero; got type y:
+FStar.Integers.int_t sw
+{ 0 <> FStar.Integers.v y /\
+(match sw with
+| FStar.Integers.Unsigned _ ->
+FStar.Integers.within_bounds sw (FStar.UInt.mod (FStar.Integers.v x) (FStar.Integers.v y))
+| FStar.Integers.Signed FStar.Integers.Winfinite -> Prims.l_True
+| FStar.Integers.Signed _ ->
+FStar.Integers.within_bounds sw (FStar.Int.mod (FStar.Integers.v x) (FStar.Integers.v y))) } (see also FStar.Integers.fst(434,11-434,12))
+FStar.Integers.fst(640,32-640,33): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type 
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+Prims.Tot (FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))); got type 
+x: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+y:
+FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))
+{ FStar.Integers.within_bounds (FStar.Integers.Signed (FStar.Integers.Winfinite))
+(FStar.Integers.v x * FStar.Integers.v y) } ->
+Prims.Tot (FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))) (see also FStar.Integers.fst(76,30-76,51))
+FStar.Integers.fst(640,70-640,75): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type y:
+FStar.Integers.int_t (FStar.Integers.Unsigned (FStar.Integers.W32))
+{ FStar.Integers.within_bounds (FStar.Integers.Unsigned (FStar.Integers.W32))
+(FStar.Integers.v x + FStar.Integers.v y) }; got type FStar.Integers.int_t (FStar.Integers.Unsigned (FStar.Integers.W32)) (see also FStar.Integers.fst(76,30-76,51))
+FStar.Integers.fst(641,44-641,45): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type x:
+FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))
+{FStar.Integers.within_bounds (FStar.Integers.Signed (FStar.Integers.Winfinite)) x}; got type Prims.nat (see also FStar.Integers.fst(76,30-76,51))
+FStar.Integers.fst(84,15-84,30): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type y:
+FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))
+{FStar.Integers.within_bounds sw y}; got type FStar.UInt.uint_t FStar.UInt8.n (see also FStar.Integers.fst(76,30-76,51))
+FStar.Integers.fst(109,37-109,38): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type FStar.UInt.uint_t FStar.UInt8.n; got type x:
+FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))
+{FStar.Integers.within_bounds sw x} (see also FStar.UInt.fst(52,28-52,36))
+FStar.Integers.fst(144,30-144,31): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type Prims.int; got type y:
+FStar.Integers.int_t sw {FStar.Integers.within_bounds sw (FStar.Integers.v x + FStar.Integers.v y)} (see also FStar.Integers.fst(141,11-141,12))
+FStar.Integers.fst(204,30-204,31): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type Prims.int; got type y:
+FStar.Integers.int_t sw {FStar.Integers.within_bounds sw (FStar.Integers.v x - FStar.Integers.v y)} (see also FStar.Integers.fst(201,20-201,21))
+FStar.Integers.fst(279,30-279,31): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type Prims.int; got type y:
+FStar.Integers.int_t sw {FStar.Integers.within_bounds sw (FStar.Integers.v x * FStar.Integers.v y)} (see also FStar.Integers.fst(276,11-276,12))
+FStar.Integers.fst(415,31-415,32): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type Prims.nonzero; got type y:
+FStar.Integers.int_t sw
+{ 0 <> FStar.Integers.v y /\
+(match sw with
+| FStar.Integers.Unsigned _ ->
+FStar.Integers.within_bounds sw (FStar.Integers.v x / FStar.Integers.v y)
+| FStar.Integers.Signed _ ->
+FStar.Integers.within_bounds sw (FStar.Integers.v x / FStar.Integers.v y)) } (see also FStar.Integers.fst(409,11-409,12))
+FStar.Integers.fst(436,111-436,116): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type FStar.UInt.uint_t (FStar.Integers.nat_of_fixed_width (FStar.Integers.width_of_sw sw)); got type y:
+FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))
+{FStar.Integers.within_bounds' sw y} (see also FStar.UInt.fst(52,28-52,36))
+FStar.Integers.fst(441,31-441,32): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type Prims.nonzero; got type y:
+FStar.Integers.int_t sw
+{ 0 <> FStar.Integers.v y /\
+(match sw with
+| FStar.Integers.Unsigned _ ->
+FStar.Integers.within_bounds sw (FStar.UInt.mod (FStar.Integers.v x) (FStar.Integers.v y))
+| FStar.Integers.Signed FStar.Integers.Winfinite -> Prims.l_True
+| FStar.Integers.Signed _ ->
+FStar.Integers.within_bounds sw (FStar.Int.mod (FStar.Integers.v x) (FStar.Integers.v y))) } (see also FStar.Integers.fst(434,11-434,12))
+FStar.Integers.fst(436,111-436,116): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type FStar.UInt.uint_t (FStar.Integers.nat_of_fixed_width (FStar.Integers.width_of_sw sw)); got type y:
+FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))
+{FStar.Integers.within_bounds' sw y} (see also FStar.UInt.fst(52,28-52,36))
+FStar.Integers.fst(640,32-640,33): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type 
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+Prims.Tot (FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))); got type 
+x: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+y:
+FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))
+{ FStar.Integers.within_bounds' (FStar.Integers.Signed (FStar.Integers.Winfinite))
+(FStar.Integers.v x * FStar.Integers.v y) } ->
+Prims.Tot (FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))) (see also FStar.Integers.fst(76,30-76,51))
+FStar.Integers.fst(640,70-640,75): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type y:
+FStar.Integers.int_t (FStar.Integers.Unsigned (FStar.Integers.W32))
+{ FStar.Integers.within_bounds' (FStar.Integers.Unsigned (FStar.Integers.W32))
+(FStar.Integers.v x + FStar.Integers.v y) }; got type FStar.Integers.int_t (FStar.Integers.Unsigned (FStar.Integers.W32)) (see also FStar.Integers.fst(76,30-76,51))
+FStar.Integers.fst(641,44-641,45): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type x:
+FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))
+{FStar.Integers.within_bounds' (FStar.Integers.Signed (FStar.Integers.Winfinite)) x}; got type Prims.nat (see also FStar.Integers.fst(76,30-76,51))
+FStar.ConstantTime.Integers.fsti(81,37-81,38): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type 
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+Prims.Tot (FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))); got type 
+x: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+y:
+FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))
+{ FStar.Integers.within_bounds' (FStar.Integers.Signed (FStar.Integers.Winfinite))
+(FStar.Integers.v x + FStar.Integers.v y) } ->
+Prims.Tot (FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))) (see also FStar.Integers.fst(76,30-76,51))
+FStar.ConstantTime.Integers.fsti(153,38-153,39): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type 
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+Prims.Tot (FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))); got type 
+x: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+y:
+FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))
+{ FStar.Integers.within_bounds' (FStar.Integers.Signed (FStar.Integers.Winfinite))
+(FStar.Integers.v x + FStar.Integers.v y) } ->
+Prims.Tot (FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))) (see also FStar.Integers.fst(76,30-76,51))
+FStar.ConstantTime.Integers.fsti(166,20-166,29): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type sw: FStar.Integers.signed_width{Unsigned? sw}; got type FStar.Integers.signed_width (see also FStar.Integers.fst(183,18-183,30))
+FStar.ConstantTime.Integers.fsti(176,80-176,81): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type 
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+Prims.Tot (FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))); got type 
+x:
+FStar.ConstantTime.Integers.t (FStar.ConstantTime.Integers.Public
+(FStar.Integers.Signed (FStar.Integers.Winfinite))) ->
+y:
+FStar.ConstantTime.Integers.t (FStar.ConstantTime.Integers.Public
+(FStar.Integers.Signed (FStar.Integers.Winfinite)))
+{ FStar.Integers.ok FStar.Integers.op_Plus
+(FStar.ConstantTime.Integers.i x)
+(FStar.ConstantTime.Integers.i y) } ->
+Prims.Tot
+(FStar.ConstantTime.Integers.t (FStar.ConstantTime.Integers.Public
+(FStar.Integers.Signed (FStar.Integers.Winfinite)))) (see also FStar.Integers.fst(76,30-76,51))
+FStar.ConstantTime.Integers.fsti(182,38-182,39): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type 
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+Prims.Tot (FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))); got type 
+x:
+FStar.ConstantTime.Integers.t (FStar.ConstantTime.Integers.Public
+(FStar.Integers.Signed (FStar.Integers.Winfinite))) ->
+y:
+FStar.ConstantTime.Integers.t (FStar.ConstantTime.Integers.Public
+(FStar.Integers.Signed (FStar.Integers.Winfinite)))
+{ FStar.Integers.ok FStar.Integers.op_Plus
+(FStar.ConstantTime.Integers.i x)
+(FStar.ConstantTime.Integers.i y) } ->
+Prims.Tot
+(FStar.ConstantTime.Integers.t (FStar.ConstantTime.Integers.Public
+(FStar.Integers.Signed (FStar.Integers.Winfinite)))) (see also FStar.Integers.fst(76,30-76,51))
+FStar.ConstantTime.Integers.fst(35,30-35,32): (Warning 252) (Hint-replay failed): could not prove post-condition (see also FStar.ConstantTime.Integers.fsti(51,10-51,42))
+FStar.ConstantTime.Integers.fsti(81,37-81,38): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type 
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+Prims.Tot (FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))); got type 
+x: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+y:
+FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))
+{ FStar.Integers.within_bounds' (FStar.Integers.Signed (FStar.Integers.Winfinite))
+(FStar.Integers.v x + FStar.Integers.v y) } ->
+Prims.Tot (FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))) (see also FStar.Integers.fst(76,30-76,51))
+FStar.ConstantTime.Integers.fst(51,37-51,38): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type 
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+Prims.Tot (FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))); got type 
+x: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+y:
+FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))
+{ FStar.Integers.within_bounds' (FStar.Integers.Signed (FStar.Integers.Winfinite))
+(FStar.Integers.v x + FStar.Integers.v y) } ->
+Prims.Tot (FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))) (see also FStar.Integers.fst(76,30-76,51))
+FStar.ConstantTime.Integers.fsti(153,38-153,39): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type 
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+Prims.Tot (FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))); got type 
+x: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+y:
+FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))
+{ FStar.Integers.within_bounds' (FStar.Integers.Signed (FStar.Integers.Winfinite))
+(FStar.Integers.v x + FStar.Integers.v y) } ->
+Prims.Tot (FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))) (see also FStar.Integers.fst(76,30-76,51))
+FStar.ConstantTime.Integers.fsti(166,20-166,29): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type sw: FStar.Integers.signed_width{Unsigned? sw}; got type FStar.Integers.signed_width (see also FStar.Integers.fst(183,18-183,30))
+FStar.ConstantTime.Integers.fsti(176,80-176,81): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type 
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+Prims.Tot (FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))); got type 
+x:
+FStar.ConstantTime.Integers.t (FStar.ConstantTime.Integers.Public
+(FStar.Integers.Signed (FStar.Integers.Winfinite))) ->
+y:
+FStar.ConstantTime.Integers.t (FStar.ConstantTime.Integers.Public
+(FStar.Integers.Signed (FStar.Integers.Winfinite)))
+{ FStar.Integers.ok FStar.Integers.op_Plus
+(FStar.ConstantTime.Integers.i x)
+(FStar.ConstantTime.Integers.i y) } ->
+Prims.Tot
+(FStar.ConstantTime.Integers.t (FStar.ConstantTime.Integers.Public
+(FStar.Integers.Signed (FStar.Integers.Winfinite)))) (see also FStar.Integers.fst(76,30-76,51))
+FStar.ConstantTime.Integers.fsti(182,38-182,39): (Warning 252) (Hint-replay failed): Subtyping check failed; expected type 
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+_: FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite)) ->
+Prims.Tot (FStar.Integers.int_t (FStar.Integers.Signed (FStar.Integers.Winfinite))); got type 
+x:
+FStar.ConstantTime.Integers.t (FStar.ConstantTime.Integers.Public
+(FStar.Integers.Signed (FStar.Integers.Winfinite))) ->
+y:
+FStar.ConstantTime.Integers.t (FStar.ConstantTime.Integers.Public
+(FStar.Integers.Signed (FStar.Integers.Winfinite)))
+{ FStar.Integers.ok FStar.Integers.op_Plus
+(FStar.ConstantTime.Integers.i x)
+(FStar.ConstantTime.Integers.i y) } ->
+Prims.Tot
+(FStar.ConstantTime.Integers.t (FStar.ConstantTime.Integers.Public
+(FStar.Integers.Signed (FStar.Integers.Winfinite)))) (see also FStar.Integers.fst(76,30-76,51))
+make[3]: Target 'verify-core' not remade because of errors.
+make[2]: *** [Makefile:12: all] Error 2
+make[1]: *** [Makefile:175: fstarlib] Error 2
+make: *** [Makefile:158: utest-prelude] Error 2
+Command exited with non-zero status 2
+10.86user 41.55system 12:01.12elapsed 7%CPU (0avgtext+0avgdata 1220724224maxresident)k
+0inputs+0outputs (5001078major+0minor)pagefaults 0swaps
