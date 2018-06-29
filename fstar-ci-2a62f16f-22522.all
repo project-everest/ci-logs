@@ -1,0 +1,181 @@
+This is /home/everbld/everest-ci/ci
+Working directory: /cygdrive/c/build/agent1/_work/1/s
+About to run: fstar_and_friends uregressions
+BUILD_SOURCEBRANCHNAME: nik_native_compilation
+BUILD_DEFINITIONNAME: FStar-CI-Windows
+BUILD_BUILDID: 22522
+DEFINITIONNAME:
+Z3 is /home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin/z3
+make fstar-in-fsharp
+Switching to vale to fstar_ci
+Switching to KreMLin origin/master
+Removing tools/FsLexYacc/
+Switching to mitls-fstar origin/master
+Switching to HACL origin/fstar-master
+HEAD is now at 37cee45 Fix CI
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src'
+VS/.nuget/NuGet.exe restore VS/FStar.sln
+Installing 'FsLexYacc 6.1.0'.
+Installing 'FSharp.Compatibility.OCaml 0.1.10'.
+Installing 'PPrintForFSharp 0.0.2'.
+Installing 'FsLexYacc.Runtime 6.1.0'.
+Successfully installed 'PPrintForFSharp 0.0.2'.
+Successfully installed 'FSharp.Compatibility.OCaml 0.1.10'.
+Successfully installed 'FsLexYacc.Runtime 6.1.0'.
+Successfully installed 'FsLexYacc 6.1.0'.
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src'
+HEAD is now at efa92a0 bump F* version
+make -C VS install-packages
+[ -d packages ] || make update-nuget
+HEAD is now at 457352fa Change test syntax for miTLS makefile
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src/VS'
+.nuget/NuGet.exe restore FStar.sln
+All packages listed in packages.config are already installed.
+find packages -name '*.exe' -exec chmod +x '{}' ';'
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src/VS'
+HEAD is now at 17eee5e9 arghhh hints, cf. FStarLang/FStar#1484
+Restoring NuGet package FsLexYacc.6.1.0.
+Restoring NuGet package FsLexYacc.Runtime.6.1.0.
+Adding package 'FsLexYacc.Runtime.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+Adding package 'FsLexYacc.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+Added package 'FsLexYacc.Runtime.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+Added package 'FsLexYacc.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+
+NuGet Config files used:
+C:\Users\everbld\AppData\Roaming\NuGet\NuGet.Config
+C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
+
+Feeds used:
+C:\Users\everbld\.nuget\packages\
+https://api.nuget.org/v3/index.json
+C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
+
+Installed:
+2 package(s) to packages.config projects
+make: Entering directory '/cygdrive/c/build/agent1/_work/1/s/kremlin'
+ocamlbuild -I src -I lib -I parser -I kremlib -use-menhir -use-ocamlfind -classic-display -menhir "menhir --infer --explain" Kremlin.native Tests.native
+ln -sf Kremlin.native krml
+make: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/kremlin'
+make: Entering directory '/cygdrive/c/build/agent1/_work/1/s/kremlin/kremlib'
+krml -minimal -tmpdir extracted -warn-error +9+11 -skip-compilation -extract-uint128 \
+/bin/bash: krml: command not found
+-add-include '<inttypes.h>' -add-include '"kremlib.h"' -add-include '"kremlin/internal/compat.h"' \
+
+make: *** [Makefile:78: extracted/Makefile.include] Error 127
+make: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/kremlin/kremlib'
+make: *** Waiting for unfinished jobs....
+make: Entering directory '/cygdrive/c/build/agent1/_work/1/s/kremlin/kremlib'
+/bin/bash: krml: command not found
+krml -minimal -tmpdir uint128 -skip-compilation -extract-uint128 \
+make: *** [Makefile:84: uint128/Makefile.include] Error 127
+-add-include '<inttypes.h>' -add-include '<stdbool.h>' -add-include '"kremlin/internal/types.h"' \
+-bundle FStar.UInt128=* -fparentheses
+make: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/kremlin/kremlib'
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src'
+./msbuild.bat /verbosity:minimal /p:Configuration=Release VS/FStar.sln
+dos2unix: converting file parser/parse.fsi to Unix format...
+**********************************************************************
+** Visual Studio 2017 Developer Command Prompt v15.5.5
+** Copyright (c) 2017 Microsoft Corporation
+**********************************************************************
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+C:\build\agent1\_work\1\s\src\basic\boot\NotFStar.Util.fs(50,5): warning FS3190: Lowercase literal 'max_int' is being shadowed by a new pattern with the same name. Only uppercase and module-prefixed literals can be used as named patterns. [C:\build\agent1\_work\1\s\src\basic\basic.fsproj]
+basic -> C:\build\agent1\_work\1\s\bin\basic.dll
+Restoring NuGet packages...
+To prevent NuGet from downloading packages during build, open the Visual Studio Options dialog, click on the Package Manager node and uncheck 'Allow NuGet to download missing packages'.
+All packages listed in packages.config are already installed.
+prettyprint -> C:\build\agent1\_work\1\s\bin\prettyprint.dll
+compiling to dfas (can take a while...)
+367 states
+writing output
+building tables
+computing first function...time: 00:00:00.2432787
+building kernels...time: 00:00:00.1614777
+building kernel table...time: 00:00:00.0161086
+computing lookahead relations........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................time: 00:00:00.6211589
+building lookahead table...time: 00:00:00.2791481
+building action table...state 294: shift/reduce error on LBRACK
+state 479: shift/reduce error on SEMICOLON
+state 479: shift/reduce error on SEMICOLON_SEMICOLON
+state 518: shift/reduce error on BAR
+state 522: shift/reduce error on BAR
+state 541: shift/reduce error on BAR
+state 625: shift/reduce error on COLON_EQUALS
+state 657: shift/reduce error on COLON_EQUALS
+time: 00:00:00.8750539
+building goto table...time: 00:00:00.3193560
+returning tables.
+8 shift/reduce conflicts
+901 states
+156 nonterminals
+150 terminals
+474 productions
+#rows in action table: 901
+parser -> C:\build\agent1\_work\1\s\bin\parser.dll
+syntax -> C:\build\agent1\_work\1\s\bin\syntax.dll
+tosyntax -> C:\build\agent1\_work\1\s\bin\tosyntax.dll
+typechecker -> C:\build\agent1\_work\1\s\bin\typechecker.dll
+format -> C:\build\agent1\_work\1\s\bin\format.dll
+reflection -> C:\build\agent1\_work\1\s\bin\reflection.dll
+extraction -> C:\build\agent1\_work\1\s\bin\extraction.dll
+fsdoc -> C:\build\agent1\_work\1\s\bin\fsdoc.dll
+smtencoding -> C:\build\agent1\_work\1\s\bin\smtencoding.dll
+tactics -> C:\build\agent1\_work\1\s\bin\tactics.dll
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets(2041,5): warning MSB3277: Found conflicts between different versions of "FSharp.Core" that could not be resolved.  These reference conflicts are listed in the build log when log verbosity is set to detailed. [C:\build\agent1\_work\1\s\src\fstar\fstar.fsproj]
+C:\build\agent1\_work\1\s\src\fstar\FStar.Main.fs(203,30): warning FS0025: Incomplete pattern matches on this expression. For example, the value 'Lazy_embedding (_)' may indicate a case not covered by the pattern(s). [C:\build\agent1\_work\1\s\src\fstar\fstar.fsproj]
+fstar -> C:\build\agent1\_work\1\s\bin\fstar.exe
+tests -> C:\build\agent1\_work\1\s\bin\tests.exe
+dos2unix parser/parse.fsi
+chmod a+x ../bin/tests.exe
+chmod a+x ../bin/fstar.exe
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src'
+make fsharp-unit-tests
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src'
+
+../bin/tests.exe
+Initializing ...
+Unhandled Exception: System.Exception: Empty option
+Testing the normalizer
+0: ...
+at FStar.Util.must[a](FSharpOption`1 _arg1)
+1: ...
+at Microsoft.FSharp.Core.FSharpFunc`2.InvokeFast[V,W](FSharpFunc`2 func, T arg1, TResult arg2, V arg3)
+2: ...
+3: ...
+at FStar.Syntax.Resugar.resugar_term'(env env, syntax`1 t)
+4: ...
+5: ...
+at FStar.Syntax.Print.term_to_string(syntax`1 x)
+6: ...
+7: ...
+at FStar.Tests.Util.term_eq(syntax`1 t1, syntax`1 t2)
+8: ...
+at FStar.Tests.Norm.run(Int32 i, syntax`1 r, syntax`1 expected)
+9: ...
+10: ...
+at FStar.Tests.Norm.run_all()
+11: ...
+12: ...
+at FStar.Tests.Test.main(String[] argv)
+13: ...
+14: ...
+make[1]: *** [Makefile:141: fsharp-unit-tests] Error 127
+15: ...
+16: ...
+make: *** [Makefile:149: fsharp-build-and-test] Error 2
+17: ...
+18: ...
+make: Target 'utest-prelude' not remade because of errors.
+19: ...
+20: ...
+Command exited with non-zero status 2
+21: ...
+22: ...
+0.09user 0.28system 0:56.85elapsed 0%CPU (0avgtext+0avgdata 8984064maxresident)k
+23: ...
+1062: ...
+0inputs+0outputs (36609major+0minor)pagefaults 0swaps
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src'
+warm-up failed
