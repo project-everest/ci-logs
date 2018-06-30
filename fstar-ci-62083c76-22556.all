@@ -1,0 +1,231 @@
+This is /home/everbld/everest-ci/ci
+Working directory: /cygdrive/c/build/agent1/_work/1/s
+About to run: fstar_and_friends uregressions
+BUILD_SOURCEBRANCHNAME: guido_nbe
+BUILD_DEFINITIONNAME: FStar-CI-Windows
+BUILD_BUILDID: 22556
+DEFINITIONNAME:
+Z3 is /home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin/z3
+make fstar-in-fsharp
+Switching to KreMLin origin/master
+Switching to vale to fstar_ci
+Switching to mitls-fstar origin/master
+Removing tools/FsLexYacc/
+HEAD is now at 37cee45 Fix CI
+Switching to HACL origin/fstar-master
+HEAD is now at efa92a0 bump F* version
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src'
+VS/.nuget/NuGet.exe restore VS/FStar.sln
+Installing 'PPrintForFSharp 0.0.2'.
+Installing 'FSharp.Compatibility.OCaml 0.1.10'.
+Installing 'FsLexYacc.Runtime 6.1.0'.
+Installing 'FsLexYacc 6.1.0'.
+Successfully installed 'PPrintForFSharp 0.0.2'.
+Successfully installed 'FSharp.Compatibility.OCaml 0.1.10'.
+Successfully installed 'FsLexYacc.Runtime 6.1.0'.
+Successfully installed 'FsLexYacc 6.1.0'.
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src'
+HEAD is now at 457352fa Change test syntax for miTLS makefile
+make -C VS install-packages
+[ -d packages ] || make update-nuget
+HEAD is now at b697e117 Count CPU cycles in EverCrypt test
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src/VS'
+.nuget/NuGet.exe restore FStar.sln
+All packages listed in packages.config are already installed.
+find packages -name '*.exe' -exec chmod +x '{}' ';'
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src/VS'
+Restoring NuGet package FsLexYacc.Runtime.6.1.0.
+Restoring NuGet package FsLexYacc.6.1.0.
+Adding package 'FsLexYacc.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+Adding package 'FsLexYacc.Runtime.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+Added package 'FsLexYacc.Runtime.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+Added package 'FsLexYacc.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+
+NuGet Config files used:
+C:\Users\everbld\AppData\Roaming\NuGet\NuGet.Config
+C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
+
+Feeds used:
+C:\Users\everbld\.nuget\packages\
+https://api.nuget.org/v3/index.json
+C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
+
+Installed:
+2 package(s) to packages.config projects
+make: Entering directory '/cygdrive/c/build/agent1/_work/1/s/kremlin'
+ocamlbuild -I src -I lib -I parser -I kremlib -use-menhir -use-ocamlfind -classic-display -menhir "menhir --infer --explain" Kremlin.native Tests.native
+ln -sf Kremlin.native krml
+make: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/kremlin'
+make: Entering directory '/cygdrive/c/build/agent1/_work/1/s/kremlin/kremlib'
+krml -minimal -tmpdir extracted -warn-error +9+11 -skip-compilation -extract-uint128 \
+/bin/bash: krml: command not found
+-add-include '<inttypes.h>' -add-include '"kremlib.h"' -add-include '"kremlin/internal/compat.h"' \
+
+make: *** [Makefile:78: extracted/Makefile.include] Error 127
+make: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/kremlin/kremlib'
+make: *** Waiting for unfinished jobs....
+make: Entering directory '/cygdrive/c/build/agent1/_work/1/s/kremlin/kremlib'
+/bin/bash: krml: command not found
+krml -minimal -tmpdir uint128 -skip-compilation -extract-uint128 \
+-add-include '<inttypes.h>' -add-include '<stdbool.h>' -add-include '"kremlin/internal/types.h"' \
+make: *** [Makefile:84: uint128/Makefile.include] Error 127
+-bundle FStar.UInt128=* -fparentheses
+make: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/kremlin/kremlib'
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src'
+./msbuild.bat /verbosity:minimal /p:Configuration=Release VS/FStar.sln
+make[1]: *** [Makefile:18: fstar-in-fsharp] Error 1
+**********************************************************************
+** Visual Studio 2017 Developer Command Prompt v15.5.5
+make: *** [Makefile:156: fsharp-build-and-test] Error 2
+** Copyright (c) 2017 Microsoft Corporation
+**********************************************************************
+make: Target 'utest-prelude' not remade because of errors.
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Command exited with non-zero status 2
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+0.01user 0.22system 0:29.14elapsed 0%CPU (0avgtext+0avgdata 6332160maxresident)k
+C:\build\agent1\_work\1\s\src\basic\boot\NotFStar.Util.fs(50,5): warning FS3190: Lowercase literal 'max_int' is being shadowed by a new pattern with the same name. Only uppercase and module-prefixed literals can be used as named patterns. [C:\build\agent1\_work\1\s\src\basic\basic.fsproj]
+basic -> C:\build\agent1\_work\1\s\bin\basic.dll
+Restoring NuGet packages...
+0inputs+0outputs (25832major+0minor)pagefaults 0swaps
+To prevent NuGet from downloading packages during build, open the Visual Studio Options dialog, click on the Package Manager node and uncheck 'Allow NuGet to download missing packages'.
+All packages listed in packages.config are already installed.
+prettyprint -> C:\build\agent1\_work\1\s\bin\prettyprint.dll
+compiling to dfas (can take a while...)
+389 states
+writing output
+building tables
+computing first function...time: 00:00:00.2429172
+building kernels...time: 00:00:00.1615982
+building kernel table...time: 00:00:00.0160011
+computing lookahead relations...........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................time: 00:00:00.6194587
+building lookahead table...time: 00:00:00.2909153
+building action table...state 297: shift/reduce error on LBRACK
+state 482: shift/reduce error on SEMICOLON
+state 482: shift/reduce error on SEMICOLON_SEMICOLON
+state 521: shift/reduce error on BAR
+state 525: shift/reduce error on BAR
+state 544: shift/reduce error on BAR
+state 628: shift/reduce error on COLON_EQUALS
+state 660: shift/reduce error on COLON_EQUALS
+time: 00:00:00.8810729
+building goto table...time: 00:00:00.3202307
+returning tables.
+8 shift/reduce conflicts
+904 states
+156 nonterminals
+152 terminals
+476 productions
+#rows in action table: 904
+parser -> C:\build\agent1\_work\1\s\bin\parser.dll
+syntax -> C:\build\agent1\_work\1\s\bin\syntax.dll
+tosyntax -> C:\build\agent1\_work\1\s\bin\tosyntax.dll
+typechecker -> C:\build\agent1\_work\1\s\bin\typechecker.dll
+format -> C:\build\agent1\_work\1\s\bin\format.dll
+reflection -> C:\build\agent1\_work\1\s\bin\reflection.dll
+extraction -> C:\build\agent1\_work\1\s\bin\extraction.dll
+fsdoc -> C:\build\agent1\_work\1\s\bin\fsdoc.dll
+smtencoding -> C:\build\agent1\_work\1\s\bin\smtencoding.dll
+C:\build\agent1\_work\1\s\src\tactics\FStar.Tactics.Embedding.fs(171,35): error FS0001: This expression was expected to have type    'embedding<'b>'    but here has type    'TypeChecker.NBETerm.embedding<'a>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\FStar.Tactics.Embedding.fs(172,50): error FS0039: The value or constructor 'rng' is not defined. Maybe you want one of the following:   Range [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\FStar.Tactics.Embedding.fs(173,53): error FS0039: The value or constructor 'rng' is not defined. Maybe you want one of the following:   Range [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\FStar.Tactics.Embedding.fs(174,23): error FS0039: The value or constructor 'rng' is not defined. Maybe you want one of the following:   Range [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\FStar.Tactics.Embedding.fs(177,35): error FS0001: This expression was expected to have type    'embedding<'b>'    but here has type    'TypeChecker.NBETerm.embedding<'a>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\FStar.Tactics.Embedding.fs(178,38): error FS0001: This expression was expected to have type    'embedding<'b>'    but here has type    'TypeChecker.NBETerm.embedding<'a>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\FStar.Tactics.Embedding.fs(178,41): error FS0039: The value or constructor 'rng' is not defined. Maybe you want one of the following:   Range [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\FStar.Tactics.Embedding.fs(179,53): error FS0039: The value or constructor 'rng' is not defined. Maybe you want one of the following:   Range [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\FStar.Tactics.Embedding.fs(180,23): error FS0039: The value or constructor 'rng' is not defined. Maybe you want one of the following:   Range [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\FStar.Tactics.Embedding.fs(190,40): error FS0001: This expression was expected to have type    'embedding<'b>'    but here has type    'TypeChecker.NBETerm.embedding<'a>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\FStar.Tactics.Embedding.fs(204,20): error FS0001: The type 'TypeChecker.NBETerm.t' does not match the type 'term' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\FStar.Tactics.Embedding.fs(205,20): error FS0001: The type 'TypeChecker.NBETerm.t' does not match the type 'bool' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\FStar.Tactics.Embedding.fs(206,33): error FS0039: The value or constructor 'fv_result' is not defined. Maybe you want one of the following:   Result   t_result [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(62,57): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(66,77): error FS0001: This expression was expected to have type    'Embedding.emb<range>'    but here has type    'embedding<range>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(82,72): error FS0001: This expression was expected to have type    'Embedding.emb<env>'    but here has type    'embedding<env>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(82,81): error FS0001: This expression was expected to have type    'Embedding.emb<binder>'    but here has type    'embedding<binder>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(82,93): error FS0001: This expression was expected to have type    'Embedding.emb<env>'    but here has type    'embedding<env>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(84,48): error FS0001: This expression was expected to have type    'Embedding.emb<'a>'    but here has type    'embedding<term>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(84,54): error FS0001: This expression was expected to have type    'Embedding.emb<string>'    but here has type    'embedding<string>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(84,63): error FS0001: This expression was expected to have type    'Embedding.emb<'a>'    but here has type    'embedding<term>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(85,40): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(85,47): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(86,50): error FS0001: This expression was expected to have type    'Embedding.emb<'a>'    but here has type    'embedding<term>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(86,57): error FS0001: This expression was expected to have type    'Embedding.emb<tac<'a>>'    but here has type    'embedding<tac<'b>>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(86,57): error FS0001: This expression was expected to have type    'Embedding.emb<tac<'a>>'    but here has type    'embedding<tac<term>>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(86,77): error FS0001: This expression was expected to have type    'Embedding.emb<'a option>'    but here has type    'embedding<'b option>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(86,77): error FS0001: This expression was expected to have type    'Embedding.emb<'a option>'    but here has type    'embedding<term option>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(87,38): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(87,45): error FS0001: This expression was expected to have type    'Embedding.emb<binder>'    but here has type    'embedding<binder>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(88,42): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(88,50): error FS0001: This expression was expected to have type    'Embedding.emb<binder * binder>'    but here has type    'embedding<'a * 'b>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(88,50): error FS0001: This expression was expected to have type    'Embedding.emb<binder * binder>'    but here has type    'embedding<binder * binder>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(89,38): error FS0001: This expression was expected to have type    'Embedding.emb<norm_step list>'    but here has type    'embedding<'a list>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(89,38): error FS0001: This expression was expected to have type    'Embedding.emb<norm_step list>'    but here has type    'embedding<norm_step list>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(89,58): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(90,46): error FS0001: This expression was expected to have type    'Embedding.emb<env>'    but here has type    'embedding<env>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(90,56): error FS0001: This expression was expected to have type    'Embedding.emb<norm_step list>'    but here has type    'embedding<'a list>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(90,56): error FS0001: This expression was expected to have type    'Embedding.emb<norm_step list>'    but here has type    'embedding<norm_step list>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(90,76): error FS0001: This expression was expected to have type    'Embedding.emb<term>'    but here has type    'embedding<term>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(90,86): error FS0001: This expression was expected to have type    'Embedding.emb<term>'    but here has type    'embedding<term>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(92,50): error FS0001: This expression was expected to have type    'Embedding.emb<norm_step list>'    but here has type    'embedding<'a list>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(92,50): error FS0001: This expression was expected to have type    'Embedding.emb<norm_step list>'    but here has type    'embedding<norm_step list>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(92,70): error FS0001: This expression was expected to have type    'Embedding.emb<binder>'    but here has type    'embedding<binder>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(92,82): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(93,42): error FS0001: This expression was expected to have type    'Embedding.emb<binder>'    but here has type    'embedding<binder>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(93,54): error FS0001: This expression was expected to have type    'Embedding.emb<string>'    but here has type    'embedding<string>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(93,63): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(94,46): error FS0001: This expression was expected to have type    'Embedding.emb<binder>'    but here has type    'embedding<binder>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(94,58): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(95,39): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(95,46): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(96,42): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(96,49): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(97,38): error FS0001: This expression was expected to have type    'Embedding.emb<binder>'    but here has type    'embedding<binder>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(97,50): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(98,40): error FS0001: This expression was expected to have type    'Embedding.emb<binder>'    but here has type    'embedding<binder>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(98,52): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(99,36): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(99,43): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(100,45): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(100,52): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(101,40): error FS0001: This expression was expected to have type    'Embedding.emb<bool>'    but here has type    'embedding<bool>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(101,47): error FS0001: This expression was expected to have type    'Embedding.emb<term>'    but here has type    'embedding<term>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(101,57): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(102,46): error FS0001: This expression was expected to have type    'Embedding.emb<term>'    but here has type    'embedding<term>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(102,56): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(103,46): error FS0001: This expression was expected to have type    'Embedding.emb<term>'    but here has type    'embedding<term>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(103,56): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(104,44): error FS0001: This expression was expected to have type    'Embedding.emb<term>'    but here has type    'embedding<term>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(104,54): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(106,52): error FS0001: This expression was expected to have type    'Embedding.emb<'a>'    but here has type    'embedding<term>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(106,58): error FS0001: This expression was expected to have type    'Embedding.emb<'a>'    but here has type    'embedding<term>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(106,64): error FS0001: This expression was expected to have type    'Embedding.emb<BigInt.t>'    but here has type    'embedding<BigInt.t>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(106,71): error FS0001: This expression was expected to have type    'Embedding.emb<tac<'a>>'    but here has type    'embedding<tac<'b>>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(106,71): error FS0001: This expression was expected to have type    'Embedding.emb<tac<'a>>'    but here has type    'embedding<tac<term>>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(106,91): error FS0001: This expression was expected to have type    'Embedding.emb<tac<'a>>'    but here has type    'embedding<tac<'b>>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(106,91): error FS0001: This expression was expected to have type    'Embedding.emb<tac<'a>>'    but here has type    'embedding<tac<term>>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(107,62): error FS0001: This expression was expected to have type    'Embedding.emb<'a * 'b>'    but here has type    'embedding<'c * 'd>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(107,62): error FS0001: This expression was expected to have type    'Embedding.emb<'a * 'b>'    but here has type    'embedding<term * term>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(108,37): error FS0001: This expression was expected to have type    'Embedding.emb<tac<unit>>'    but here has type    'embedding<tac<'a>>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(108,37): error FS0001: This expression was expected to have type    'Embedding.emb<tac<unit>>'    but here has type    'embedding<tac<unit>>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(108,58): error FS0001: This expression was expected to have type    'Embedding.emb<tac<unit>>'    but here has type    'embedding<tac<'a>>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(108,58): error FS0001: This expression was expected to have type    'Embedding.emb<tac<unit>>'    but here has type    'embedding<tac<unit>>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(108,78): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(110,44): error FS0001: This expression was expected to have type    'Embedding.emb<string>'    but here has type    'embedding<string>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(110,53): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(112,35): error FS0001: This expression was expected to have type    'Embedding.emb<term>'    but here has type    'embedding<term>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(112,45): error FS0001: This expression was expected to have type    'Embedding.emb<Reflection.Data.typ>'    but here has type    'embedding<term>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(113,41): error FS0001: This expression was expected to have type    'Embedding.emb<term>'    but here has type    'embedding<term>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(113,51): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(114,40): error FS0001: This expression was expected to have type    'Embedding.emb<Reflection.Data.typ>'    but here has type    'embedding<term>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(114,46): error FS0001: This expression was expected to have type    'Embedding.emb<term>'    but here has type    'embedding<term>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(114,56): error FS0001: This expression was expected to have type    'Embedding.emb<term>'    but here has type    'embedding<term>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(116,38): error FS0001: This expression was expected to have type    'Embedding.emb<string>'    but here has type    'embedding<string>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(116,47): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(117,38): error FS0001: This expression was expected to have type    'Embedding.emb<string>'    but here has type    'embedding<string>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(117,47): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(119,38): error FS0001: This expression was expected to have type    'Embedding.emb<string>'    but here has type    'embedding<string>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+C:\build\agent1\_work\1\s\src\tactics\boot\FStar.Tactics.Interpreter.fs(119,47): error FS0001: This expression was expected to have type    'Embedding.emb<unit>'    but here has type    'embedding<unit>' [C:\build\agent1\_work\1\s\src\tactics\tactics.fsproj]
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src'
+warm-up failed
