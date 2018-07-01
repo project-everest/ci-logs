@@ -1,0 +1,20 @@
+/bin/bash: krml: command not found
+make: *** [Makefile:78: extracted/Makefile.include] Error 127
+make: *** Waiting for unfinished jobs....
+/bin/bash: krml: command not found
+make: *** [Makefile:84: uint128/Makefile.include] Error 127
+dos2unix: converting file parser/parse.fsi to Unix format...
+
+Unhandled Exception: System.TypeInitializationException: The type initializer for '<StartupCode$reflection>.$FStar.Reflection.Embeddings' threw an exception. ---> System.Exception: Embeddings not defined for type Prims.range * Prims.string
+at FStar.Syntax.Embeddings.term_as_fv(syntax`1 t)
+at FStar.Reflection.Embeddings.mk_emb[a](FSharpFunc`2 f, FSharpFunc`2 g, syntax`1 t)
+at <StartupCode$reflection>.$FStar.Reflection.Embeddings..cctor()
+--- End of inner exception stack trace ---
+at FStar.Main.setup_hooks()
+at FStar.Tests.Test.main(String[] argv)
+make[1]: *** [Makefile:154: fsharp-unit-tests] Error 127
+make: *** [Makefile:162: fsharp-build-and-test] Error 2
+make: Target 'utest-prelude' not remade because of errors.
+Command exited with non-zero status 2
+0.06user 0.22system 0:33.98elapsed 0%CPU (0avgtext+0avgdata 8978176maxresident)k
+0inputs+0outputs (36677major+0minor)pagefaults 0swaps
