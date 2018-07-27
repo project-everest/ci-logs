@@ -1,0 +1,28 @@
+From https://github.com/mitls/hacl-star
+8bd949dd..06392ed2  fstar-master -> origin/fstar-master
+make: *** [Makefile:78: extracted/Makefile.include] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Makefile:84: uint128/Makefile.include] Error 1
+dos2unix: converting file parser/parse.fsi to Unix format...
+Warning: you are using the standard library and/or the %inline keyword. We
+recommend switching on --infer in order to avoid obscure type error messages.
+C:/build/agent2/_work/2/s/src/typechecker/FStar.TypeChecker.Normalize.fs(1038,57-1038,58): (Error 189) Expected expression of type "FStar.Syntax.Syntax.memo (FStar.TypeChecker.Normalize.env * FStar.Syntax.Syntax.term)"; got expression "r" of type "r:
+FStar.Monotonic.Heap.mref (FStar.Pervasives.Native.option (Prims.list (FStar.Pervasives.Native.option 
+(FStar.Syntax.Syntax.bv *
+FStar.Pervasives.Native.option FStar.Syntax.Syntax.arg_qualifier) *
+FStar.TypeChecker.Normalize.closure) *
+FStar.Syntax.Syntax.syntax FStar.Syntax.Syntax.term'))
+(fun _ _ -> Prims.l_True)
+{ x:
+Prims.unit
+{ Prims.c_and (x: Prims.unit{Prims.equals (FStar.Monotonic.Heap.is_mm r = false) true})
+(FStar.ST.witnessed (fun h -> FStar.Monotonic.Heap.contains h r)) } }" (see also C:/build/agent2/_work/2/s/src/typechecker/FStar.TypeChecker.Normalize.fs(1027,32-1027,33))
+1 error was reported (see above)
+make[2]: *** [Makefile.boot:65: .cache.boot/FStar.TypeChecker.Normalize.fs.checked.lax] Error 1
+make[2]: Target 'all-ml' not remade because of errors.
+make[1]: *** [Makefile:121: ocaml] Error 2
+make[1]: Target 'fstar-ocaml' not remade because of errors.
+make: *** [Makefile:169: utest-prelude] Error 2
+Command exited with non-zero status 2
+4.74user 16.63system 3:46.19elapsed 9%CPU (0avgtext+0avgdata 438945024maxresident)k
+0inputs+0outputs (1812659major+0minor)pagefaults 0swaps
