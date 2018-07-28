@@ -1,0 +1,415 @@
+This is /home/everbld/everest-ci/ci
+Working directory: /cygdrive/c/build/agent2/_work/2/s
+About to run: fstar_and_friends uregressions
+BUILD_SOURCEBRANCHNAME: guido_nbe
+BUILD_DEFINITIONNAME: FStar-CI-Windows
+BUILD_BUILDID: 23629
+DEFINITIONNAME:
+Z3 is /home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin/z3
+make fstar-in-fsharp
+Switching to KreMLin origin/master
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/2/s/src'
+VS/.nuget/NuGet.exe restore VS/FStar.sln
+Installing 'FsLexYacc.Runtime 6.1.0'.
+Installing 'FSharp.Compatibility.OCaml 0.1.10'.
+Installing 'PPrintForFSharp 0.0.2'.
+Installing 'FsLexYacc 6.1.0'.
+Successfully installed 'PPrintForFSharp 0.0.2'.
+Successfully installed 'FSharp.Compatibility.OCaml 0.1.10'.
+Successfully installed 'FsLexYacc.Runtime 6.1.0'.
+Successfully installed 'FsLexYacc 6.1.0'.
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/2/s/src'
+HEAD is now at 3b3f0f8 Port Wasm tests to LowStar.Buffer
+make -C VS install-packages
+[ -d packages ] || make update-nuget
+make[2]: Entering directory '/cygdrive/c/build/agent2/_work/2/s/src/VS'
+.nuget/NuGet.exe restore FStar.sln
+All packages listed in packages.config are already installed.
+find packages -name '*.exe' -exec chmod +x '{}' ';'
+make[2]: Leaving directory '/cygdrive/c/build/agent2/_work/2/s/src/VS'
+From https://github.com/mitls/mitls-fstar
+a31918d6..d9f507dc  taramana_lowparse_low -> origin/taramana_lowparse_low
+From https://github.com/project-everest/vale
+c2d90fe..2bb6078  interop_mem_src -> origin/interop_mem_src
+827effb..2bb6078  interop_sems    -> origin/interop_sems
+Switching to mitls-fstar origin/master
+* [new branch]      low256          -> origin/low256
+From https://github.com/mitls/hacl-star
+01a603b0..be18d548  master         -> origin/master
+Switching to vale to fstar_ci
+9bddddbd..9950dc8e  dev            -> origin/dev
+06392ed2..38e84395  fstar-master   -> origin/fstar-master
++ 481ef164...d6bd53e7 gugavaro_newci -> origin/gugavaro_newci  (forced update)
+Removing tools/FsLexYacc/
+HEAD is now at 1f02848 merging in the fstar branch
+HEAD is now at bca27035 Merge pull request #211 from project-everest/guido_new
+Switching to HACL origin/fstar-master
+make: Entering directory '/cygdrive/c/build/agent2/_work/2/s/kremlin'
+ocamlbuild -I src -I lib -I parser -I kremlib -use-menhir -use-ocamlfind -classic-display -menhir "menhir --infer --explain" Kremlin.native Tests.native
+ln -sf Kremlin.native krml
+make: Leaving directory '/cygdrive/c/build/agent2/_work/2/s/kremlin'
+make: Entering directory '/cygdrive/c/build/agent2/_work/2/s/kremlin/kremlib'
+make: *** [Makefile:78: extracted/Makefile.include] Error 1
+../krml -minimal -tmpdir extracted -warn-error +9+11 -skip-compilation -extract-uint128 \
+make: *** Waiting for unfinished jobs....
+-add-include '<inttypes.h>' -add-include '"kremlib.h"' -add-include '"kremlin/internal/compat.h"' \
+
+make: *** [Makefile:84: uint128/Makefile.include] Error 1
+KreMLin: from a ML-like subset to C
+
+Usage: C:\build\agent2\_work\2\s\kremlin\_build\src\Kremlin.native [OPTIONS] FILES
+
+High-level description:
+1. If some FILES end with .fst or .fsti, and [-verify] is set, KreMLin will
+call [fstar] on them to perform verification.
+2. If some FILES end with .fst or .fsti, KreMLin will call [fstar] on them to
+perform extraction and produce [out.krml].
+3. If exactly one FILE ends with [.krml] or [.json], or if a [.krml] file was
+produced at step 2., KreMLin will generate a series of [.c] and [.h] files
+in the directory specified by [-tmpdir], or in the current directory.
+4. If some FILES end with [.c], KreMLin will compile them along with the [.c]
+files generated at step 3. to obtain a series of [.o] files.
+5. If some FILES end with [.o], [.S] or [.a], KreMLin will link them along with the
+[.o] files obtained at step 4. to obtain a final executable.
+
+The [-skip-extraction] option stops KreMLin after step 1.
+The [-skip-translation] option stops KreMLin after step 2.
+The [-skip-compilation] option stops KreMLin after step 3.
+The [-skip-linking] option stops KreMLin after step 4.
+
+The [-warn-error] option follows the OCaml syntax, namely:
+- [r] is a range of warnings (either a number [n], or a range [n..n])
+- [-r] silences range [r]
+- [+r] enables range [r]
+- [@r] makes range [r] fatal.
+
+The default is +1..2@3+4..8@9+10@11+12..15 and the available warnings are:
+1: not generating code for a provided file
+2: found a reference to a function without implementation
+3: external command failed
+4: type error / malformed input
+5: type definition contains an application of an undefined type abbreviation
+6: variable-length array
+7: private F* function cannot be marked as C static
+8: C inline function reference across translation units
+9: need to manually call static initializers for globals
+10: deprecated feature
+11: subexpression is not Low*; cannot proceed
+12: cannot be compiled to Wasm
+13: monomorphic instance about to be dropped
+14: cannot perform tail-call optimization
+15: function is not Low*; need compatibility headers
+
+The [-bundle] option takes an argument of the form Api=Pattern1,...,Patternn
+The Api= part is optional and Api is made up of a non-empty list of modules
+separated by + (for instance: Interface1+Interface2). A pattern is either Foo.Bar
+(exact match) or Foo.Baz.* (prefix). The semantics are as follows: all the
+modules that match a pattern are grouped into a single C translation unit, and
+their declarations are marked as static, inasmuch as cross-translation unit
+calls permit. If the Api= part is present, then the module named Api must be
+found within the set of input files, and its declarations are appended to the
+translation unit without any visibility modifications.
+
+The default arguments are: 
+
+All include directories and paths supports special prefixes:
+- if a path starts with FSTAR_LIB, this will expand to wherever F*'s ulib
+directory is
+- if a path starts with FSTAR_HOME, this will expand to wherever the source
+checkout of F* is (this does not always exist, e.g. in the case of an OPAM
+setup)
+
+The compiler switches turn on the following options.
+[-cc gcc] (default) adds [-ccopts -Wall,-Werror,-Wno-unused-variable,-Wno-unknown-warning-option,-Wno-unused-but-set-variable,-g,-fwrapv,-fstack-check,-D_BSD_SOURCE,-D_DEFAULT_SOURCE,-D__USE_MINGW_ANSI_STDIO,-Wno-parentheses -ccopt -std=c11]
+[-cc clang] adds [-ccopts -Wall,-Werror,-Wno-unused-variable,-Wno-unknown-warning-option,-Wno-unused-but-set-variable,-g,-fwrapv,-fstack-check,-D_BSD_SOURCE,-D_DEFAULT_SOURCE,-D__USE_MINGW_ANSI_STDIO,-Wno-parentheses -ccopt -std=c11]
+[-cc g++] adds [-ccopts -Wall,-Werror,-Wno-unused-variable,-Wno-unknown-warning-option,-Wno-unused-but-set-variable,-g,-fwrapv,-fstack-check,-D_BSD_SOURCE,-D_DEFAULT_SOURCE,-D__USE_MINGW_ANSI_STDIO,-Wno-parentheses]
+[-cc msvc] adds [-warn-error +6 -falloca]
+[-cc compcert] adds [-warn-error @6@8 -fnostruct-passing -fnoanonymous-unions -ccopts -g,-D_BSD_SOURCE,-D_DEFAULT_SOURCE]
+
+The [-fc89] option triggers [-fnoanonymous-unions], [-fnocompound-literals] and
+[-fc89-scope]. It also changes the invocations above to use [-std=c89]. Note
+that if you're using the uint128 type, you will have to manually compile this
+code with -DKRML_VERIFIED_UINT128.
+
+To debug Wasm codegen, it might be useful to trigger the same compilation path
+as Wasm, but emit C code instead. This can be achieved with [-wasm -d
+force-c,c-calls,wasm-calls -drop C,TestLib -add-include '"hack.h"']
+where [hack.h] contains [#define WasmSupport_check_buffer_size(X)].
+
+Supported options:
+-cc                     compiler to use; one of gcc (default), compcert, g++, clang, msvc
+-m32                    turn on 32-bit cross-compiling
+-fsopt                  option to pass to F* (use -fsopts to pass a comma-separated list of values)
+-ccopt                  option to pass to the C compiler and linker (use -ccopts to pass a comma-separated list of values)
+-ldopt                  option to pass to the C linker (use -ldopts to pass a comma-separated list of values)
+-skip-extraction        stop after step 1.
+-skip-translation       stop after step 2.
+-skip-compilation       stop after step 3.
+-skip-linking           stop after step 4.
+-verify                 ask F* to verify the program
+-verbose                show the output of intermediary tools when acting as a driver for F* or the C compiler
+-diagnostics list       recursive functions and overly nested data types (useful for MSVC)
+-wasm                   emit a .wasm file instead of C
+
+-add-early-include      prepend #include the-argument to every generated file, before kremlib.h
+-add-include            prepend #include the-argument to every generated file, after the #define __FOO_H
+-add-include-tmh        append #include <FILE.tmh>, where FILE is the current basename
+-minimal                do not prepend #include "kremlib.h"; do not bundle FStar
+-static-header          generate a .h for the given module where all functions are marked a static inline
+-no-prefix              don't prepend the module name to declarations from this module
+-bundle                 group modules into a single C translation unit (see above)
+-drop                   do not extract code for this module (see above)
+-library                this is a model and all functions should be made abstract
+-header                 prepend the contents of the given file at the beginning of each .c and .h
+-tmpdir                 temporary directory for .out, .c, .h and .o files
+-I                      add directory to search path (F* and C compiler)
+-o                      name of the resulting executable
+-warn-error             decide which errors are fatal / warnings / silent (default: +1..2@3+4..8@9+10@11+12..15)
+
+-by-ref                 pass the given struct type by reference, always
+-falloca                use alloca(3) for variable-length arrays on the stack
+-fnostruct-passing      disable passing structures by value and use pointers instead
+-fnoanonymous-unions    disable C11 anonymous unions
+-fnocompound-literals   don't generate C11 compound literals
+-ftail-calls            statically compile tail-calls into loops
+-funroll-loops          textually expand loops smaller than N
+-fparentheses           add unnecessary parentheses to silence GCC and Clang's -Wparentheses
+-fno-shadow             add unnecessary renamings to defeat GCC and Clang's -Wshadow, as well as the various MSVC warnings
+-fcurly-braces          always add curly braces around blocks
+-fnoshort-enums         use C11 enums instead of C macros and uint8_t for enums
+-fc89-scope             use C89 scoping rules
+-fc89                   generate C89-compatible code (meta-option, see above)
+
+-djson                  dump the input AST as JSON
+-dast                   pretty-print the internal AST
+-dmonomorphization      pretty-print the internal AST after monomorphization
+-dinline                pretty-print the internal AST after inlining
+-dpattern               pretty-print after pattern matches compilation
+-dsimplify              pretty-print the internal AST after going to a statement language
+-dstructs               pretty-print the internal AST after struct transformations
+-dc                     pretty-print the output C
+-dwasm                  pretty-print the output Wasm
+-d                      debug the specific comma-separated list of values; currently supported: inline,bundle,reachability,c-calls,wasm-calls,wasm-memory,wasm,force-c,cflat
+
+-help                   Display this list of options
+--help                  Display this list of options
+
+make: Leaving directory '/cygdrive/c/build/agent2/_work/2/s/kremlin/kremlib'
+make: Entering directory '/cygdrive/c/build/agent2/_work/2/s/kremlin/kremlib'
+../krml -minimal -tmpdir uint128 -skip-compilation -extract-uint128 \
+-add-include '<inttypes.h>' -add-include '<stdbool.h>' -add-include '"kremlin/internal/types.h"' \
+-bundle FStar.UInt128=* -fparentheses
+KreMLin: from a ML-like subset to C
+
+Usage: C:\build\agent2\_work\2\s\kremlin\_build\src\Kremlin.native [OPTIONS] FILES
+
+High-level description:
+1. If some FILES end with .fst or .fsti, and [-verify] is set, KreMLin will
+call [fstar] on them to perform verification.
+2. If some FILES end with .fst or .fsti, KreMLin will call [fstar] on them to
+perform extraction and produce [out.krml].
+3. If exactly one FILE ends with [.krml] or [.json], or if a [.krml] file was
+produced at step 2., KreMLin will generate a series of [.c] and [.h] files
+in the directory specified by [-tmpdir], or in the current directory.
+4. If some FILES end with [.c], KreMLin will compile them along with the [.c]
+files generated at step 3. to obtain a series of [.o] files.
+5. If some FILES end with [.o], [.S] or [.a], KreMLin will link them along with the
+[.o] files obtained at step 4. to obtain a final executable.
+
+The [-skip-extraction] option stops KreMLin after step 1.
+The [-skip-translation] option stops KreMLin after step 2.
+The [-skip-compilation] option stops KreMLin after step 3.
+The [-skip-linking] option stops KreMLin after step 4.
+
+The [-warn-error] option follows the OCaml syntax, namely:
+- [r] is a range of warnings (either a number [n], or a range [n..n])
+- [-r] silences range [r]
+- [+r] enables range [r]
+- [@r] makes range [r] fatal.
+
+The default is +1..2@3+4..8@9+10@11+12..15 and the available warnings are:
+1: not generating code for a provided file
+2: found a reference to a function without implementation
+3: external command failed
+4: type error / malformed input
+5: type definition contains an application of an undefined type abbreviation
+6: variable-length array
+7: private F* function cannot be marked as C static
+8: C inline function reference across translation units
+9: need to manually call static initializers for globals
+10: deprecated feature
+11: subexpression is not Low*; cannot proceed
+12: cannot be compiled to Wasm
+13: monomorphic instance about to be dropped
+14: cannot perform tail-call optimization
+15: function is not Low*; need compatibility headers
+
+The [-bundle] option takes an argument of the form Api=Pattern1,...,Patternn
+The Api= part is optional and Api is made up of a non-empty list of modules
+separated by + (for instance: Interface1+Interface2). A pattern is either Foo.Bar
+(exact match) or Foo.Baz.* (prefix). The semantics are as follows: all the
+modules that match a pattern are grouped into a single C translation unit, and
+their declarations are marked as static, inasmuch as cross-translation unit
+calls permit. If the Api= part is present, then the module named Api must be
+found within the set of input files, and its declarations are appended to the
+translation unit without any visibility modifications.
+
+The default arguments are: 
+
+All include directories and paths supports special prefixes:
+- if a path starts with FSTAR_LIB, this will expand to wherever F*'s ulib
+directory is
+- if a path starts with FSTAR_HOME, this will expand to wherever the source
+checkout of F* is (this does not always exist, e.g. in the case of an OPAM
+setup)
+
+The compiler switches turn on the following options.
+[-cc gcc] (default) adds [-ccopts -Wall,-Werror,-Wno-unused-variable,-Wno-unknown-warning-option,-Wno-unused-but-set-variable,-g,-fwrapv,-fstack-check,-D_BSD_SOURCE,-D_DEFAULT_SOURCE,-D__USE_MINGW_ANSI_STDIO,-Wno-parentheses -ccopt -std=c11]
+[-cc clang] adds [-ccopts -Wall,-Werror,-Wno-unused-variable,-Wno-unknown-warning-option,-Wno-unused-but-set-variable,-g,-fwrapv,-fstack-check,-D_BSD_SOURCE,-D_DEFAULT_SOURCE,-D__USE_MINGW_ANSI_STDIO,-Wno-parentheses -ccopt -std=c11]
+[-cc g++] adds [-ccopts -Wall,-Werror,-Wno-unused-variable,-Wno-unknown-warning-option,-Wno-unused-but-set-variable,-g,-fwrapv,-fstack-check,-D_BSD_SOURCE,-D_DEFAULT_SOURCE,-D__USE_MINGW_ANSI_STDIO,-Wno-parentheses]
+[-cc msvc] adds [-warn-error +6 -falloca]
+[-cc compcert] adds [-warn-error @6@8 -fnostruct-passing -fnoanonymous-unions -ccopts -g,-D_BSD_SOURCE,-D_DEFAULT_SOURCE]
+
+The [-fc89] option triggers [-fnoanonymous-unions], [-fnocompound-literals] and
+[-fc89-scope]. It also changes the invocations above to use [-std=c89]. Note
+that if you're using the uint128 type, you will have to manually compile this
+code with -DKRML_VERIFIED_UINT128.
+
+To debug Wasm codegen, it might be useful to trigger the same compilation path
+as Wasm, but emit C code instead. This can be achieved with [-wasm -d
+force-c,c-calls,wasm-calls -drop C,TestLib -add-include '"hack.h"']
+where [hack.h] contains [#define WasmSupport_check_buffer_size(X)].
+
+Supported options:
+-cc                     compiler to use; one of gcc (default), compcert, g++, clang, msvc
+-m32                    turn on 32-bit cross-compiling
+-fsopt                  option to pass to F* (use -fsopts to pass a comma-separated list of values)
+-ccopt                  option to pass to the C compiler and linker (use -ccopts to pass a comma-separated list of values)
+-ldopt                  option to pass to the C linker (use -ldopts to pass a comma-separated list of values)
+-skip-extraction        stop after step 1.
+-skip-translation       stop after step 2.
+-skip-compilation       stop after step 3.
+-skip-linking           stop after step 4.
+-verify                 ask F* to verify the program
+-verbose                show the output of intermediary tools when acting as a driver for F* or the C compiler
+-diagnostics list       recursive functions and overly nested data types (useful for MSVC)
+-wasm                   emit a .wasm file instead of C
+
+-add-early-include      prepend #include the-argument to every generated file, before kremlib.h
+-add-include            prepend #include the-argument to every generated file, after the #define __FOO_H
+-add-include-tmh        append #include <FILE.tmh>, where FILE is the current basename
+-minimal                do not prepend #include "kremlib.h"; do not bundle FStar
+-static-header          generate a .h for the given module where all functions are marked a static inline
+-no-prefix              don't prepend the module name to declarations from this module
+-bundle                 group modules into a single C translation unit (see above)
+-drop                   do not extract code for this module (see above)
+-library                this is a model and all functions should be made abstract
+-header                 prepend the contents of the given file at the beginning of each .c and .h
+-tmpdir                 temporary directory for .out, .c, .h and .o files
+-I                      add directory to search path (F* and C compiler)
+-o                      name of the resulting executable
+-warn-error             decide which errors are fatal / warnings / silent (default: +1..2@3+4..8@9+10@11+12..15)
+
+-by-ref                 pass the given struct type by reference, always
+-falloca                use alloca(3) for variable-length arrays on the stack
+-fnostruct-passing      disable passing structures by value and use pointers instead
+-fnoanonymous-unions    disable C11 anonymous unions
+-fnocompound-literals   don't generate C11 compound literals
+-ftail-calls            statically compile tail-calls into loops
+-funroll-loops          textually expand loops smaller than N
+-fparentheses           add unnecessary parentheses to silence GCC and Clang's -Wparentheses
+-fno-shadow             add unnecessary renamings to defeat GCC and Clang's -Wshadow, as well as the various MSVC warnings
+-fcurly-braces          always add curly braces around blocks
+-fnoshort-enums         use C11 enums instead of C macros and uint8_t for enums
+-fc89-scope             use C89 scoping rules
+-fc89                   generate C89-compatible code (meta-option, see above)
+
+-djson                  dump the input AST as JSON
+-dast                   pretty-print the internal AST
+-dmonomorphization      pretty-print the internal AST after monomorphization
+-dinline                pretty-print the internal AST after inlining
+-dpattern               pretty-print after pattern matches compilation
+-dsimplify              pretty-print the internal AST after going to a statement language
+-dstructs               pretty-print the internal AST after struct transformations
+-dc                     pretty-print the output C
+-dwasm                  pretty-print the output Wasm
+-d                      debug the specific comma-separated list of values; currently supported: inline,bundle,reachability,c-calls,wasm-calls,wasm-memory,wasm,force-c,cflat
+
+-help                   Display this list of options
+--help                  Display this list of options
+
+make: Leaving directory '/cygdrive/c/build/agent2/_work/2/s/kremlin/kremlib'
+Restoring NuGet package FsLexYacc.6.1.0.
+Restoring NuGet package FsLexYacc.Runtime.6.1.0.
+Adding package 'FsLexYacc.6.1.0' to folder 'C:\build\agent2\_work\2\s\vale\tools\FsLexYacc'
+Adding package 'FsLexYacc.Runtime.6.1.0' to folder 'C:\build\agent2\_work\2\s\vale\tools\FsLexYacc'
+Added package 'FsLexYacc.Runtime.6.1.0' to folder 'C:\build\agent2\_work\2\s\vale\tools\FsLexYacc'
+HEAD is now at 38e84395 Catch up on kremlib changes
+Added package 'FsLexYacc.6.1.0' to folder 'C:\build\agent2\_work\2\s\vale\tools\FsLexYacc'
+
+NuGet Config files used:
+C:\Users\everbld\AppData\Roaming\NuGet\NuGet.Config
+C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
+
+Feeds used:
+C:\Users\everbld\.nuget\packages\
+https://api.nuget.org/v3/index.json
+C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
+
+Installed:
+2 package(s) to packages.config projects
+make[1]: Entering directory '/cygdrive/c/build/agent2/_work/2/s/src'
+make[1]: *** [Makefile:18: fstar-in-fsharp] Error 1
+./msbuild.bat /verbosity:minimal /p:Configuration=Release VS/FStar.sln
+**********************************************************************
+** Visual Studio 2017 Developer Command Prompt v15.5.5
+make: *** [Makefile:161: fsharp-build-and-test] Error 2
+** Copyright (c) 2017 Microsoft Corporation
+**********************************************************************
+make: Target 'utest-prelude' not remade because of errors.
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Command exited with non-zero status 2
+C:\build\agent2\_work\2\s\src\basic\boot\NotFStar.Util.fs(50,5): warning FS3190: Lowercase literal 'max_int' is being shadowed by a new pattern with the same name. Only uppercase and module-prefixed literals can be used as named patterns. [C:\build\agent2\_work\2\s\src\basic\basic.fsproj]
+0.01user 0.30system 0:24.98elapsed 1%CPU (0avgtext+0avgdata 6341632maxresident)k
+basic -> C:\build\agent2\_work\2\s\bin\basic.dll
+Restoring NuGet packages...
+0inputs+0outputs (25890major+0minor)pagefaults 0swaps
+To prevent NuGet from downloading packages during build, open the Visual Studio Options dialog, click on the Package Manager node and uncheck 'Allow NuGet to download missing packages'.
+All packages listed in packages.config are already installed.
+prettyprint -> C:\build\agent2\_work\2\s\bin\prettyprint.dll
+compiling to dfas (can take a while...)
+389 states
+writing output
+building tables
+computing first function...time: 00:00:00.2677662
+building kernels...time: 00:00:00.1805881
+building kernel table...time: 00:00:00.0188575
+computing lookahead relations...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................time: 00:00:00.6857150
+building lookahead table...time: 00:00:00.3175938
+building action table...state 299: shift/reduce error on LBRACK
+state 488: shift/reduce error on SEMICOLON
+state 488: shift/reduce error on SEMICOLON_SEMICOLON
+state 527: shift/reduce error on BAR
+state 531: shift/reduce error on BAR
+state 550: shift/reduce error on BAR
+state 636: shift/reduce error on COLON_EQUALS
+state 668: shift/reduce error on COLON_EQUALS
+time: 00:00:00.9914904
+building goto table...time: 00:00:00.3694148
+returning tables.
+8 shift/reduce conflicts
+912 states
+159 nonterminals
+153 terminals
+481 productions
+#rows in action table: 912
+parser -> C:\build\agent2\_work\2\s\bin\parser.dll
+syntax -> C:\build\agent2\_work\2\s\bin\syntax.dll
+tosyntax -> C:\build\agent2\_work\2\s\bin\tosyntax.dll
+C:\build\agent2\_work\2\s\src\typechecker\FStar.TypeChecker.Cfg.fs(784,82): error FS0039: The value or constructor 'string_of_int' is not defined. Maybe you want one of the following:   string_of_list   string_of_proof_ns   String   string   string_of_delta_level [C:\build\agent2\_work\2\s\src\typechecker\typechecker.fsproj]
+format -> C:\build\agent2\_work\2\s\bin\format.dll
+fsdoc -> C:\build\agent2\_work\2\s\bin\fsdoc.dll
+make[1]: Leaving directory '/cygdrive/c/build/agent2/_work/2/s/src'
+warm-up failed
