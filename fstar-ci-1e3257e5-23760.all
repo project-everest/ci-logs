@@ -1,0 +1,1068 @@
+This is /home/everbld/everest-ci/ci
+Working directory: /cygdrive/c/build/agent1/_work/1/s
+About to run: fstar_and_friends uregressions
+BUILD_SOURCEBRANCHNAME: nik_friends
+BUILD_DEFINITIONNAME: FStar-CI-Windows
+BUILD_BUILDID: 23760
+DEFINITIONNAME:
+Z3 is /home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin/z3
+make fstar-in-fsharp
+Switching to KreMLin origin/master
+Switching to mitls-fstar origin/master
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src'
+VS/.nuget/NuGet.exe restore VS/FStar.sln
+Installing 'FsLexYacc.Runtime 6.1.0'.
+Installing 'FsLexYacc 6.1.0'.
+Installing 'FSharp.Compatibility.OCaml 0.1.10'.
+Installing 'PPrintForFSharp 0.0.2'.
+Successfully installed 'PPrintForFSharp 0.0.2'.
+Successfully installed 'FSharp.Compatibility.OCaml 0.1.10'.
+Successfully installed 'FsLexYacc.Runtime 6.1.0'.
+Successfully installed 'FsLexYacc 6.1.0'.
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src'
+HEAD is now at c65d477 Merge pull request #107 from FStarLang/non-c89-snprintf
+make -C VS install-packages
+[ -d packages ] || make update-nuget
+HEAD is now at 761a189c Dependent enum destructor. Serialize dsum. Extracts to C
+From https://github.com/project-everest/vale
+f73ba2b..ebbcb2d  gugavaro_newci -> origin/gugavaro_newci
+Switching to vale to fstar_ci
+From https://github.com/mitls/hacl-star
+9950dc8e..720a78d6  dev        -> origin/dev
+Removing src/tls/cache/
+Removing src/tls/extract/Model/
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src/VS'
+.nuget/NuGet.exe restore FStar.sln
+All packages listed in packages.config are already installed.
+find packages -name '*.exe' -exec chmod +x '{}' ';'
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src/VS'
+Switching to HACL origin/fstar-master
+Removing .sconsign.dblite
+Removing bin/
+Removing obj/
+Removing tools/FsLexYacc/
+Removing vale_output
+HEAD is now at 4dba226 hints
+HEAD is now at 4929a9a9 disabling test-libhacl32.so from test/makefile
+make: Entering directory '/cygdrive/c/build/agent1/_work/1/s/kremlin'
+ocamlbuild -I src -I lib -I parser -I kremlib -use-menhir -use-ocamlfind -classic-display -menhir "menhir --infer --explain" Kremlin.native Tests.native
+ln -sf Kremlin.native krml
+make: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/kremlin'
+make: Entering directory '/cygdrive/c/build/agent1/_work/1/s/kremlin/kremlib'
+make: *** [Makefile:78: extracted/Makefile.include] Error 1
+../krml -minimal -tmpdir extracted -warn-error +9+11 -skip-compilation -extract-uint128 \
+make: *** Waiting for unfinished jobs....
+-add-include '<inttypes.h>' -add-include '"kremlib.h"' -add-include '"kremlin/internal/compat.h"' \
+
+make: *** [Makefile:84: uint128/Makefile.include] Error 1
+KreMLin: from a ML-like subset to C
+
+Usage: C:\build\agent1\_work\1\s\kremlin\_build\src\Kremlin.native [OPTIONS] FILES
+
+High-level description:
+1. If some FILES end with .fst or .fsti, and [-verify] is set, KreMLin will
+call [fstar] on them to perform verification.
+2. If some FILES end with .fst or .fsti, KreMLin will call [fstar] on them to
+perform extraction and produce [out.krml].
+3. If exactly one FILE ends with [.krml] or [.json], or if a [.krml] file was
+produced at step 2., KreMLin will generate a series of [.c] and [.h] files
+in the directory specified by [-tmpdir], or in the current directory.
+4. If some FILES end with [.c], KreMLin will compile them along with the [.c]
+files generated at step 3. to obtain a series of [.o] files.
+5. If some FILES end with [.o], [.S] or [.a], KreMLin will link them along with the
+[.o] files obtained at step 4. to obtain a final executable.
+
+The [-skip-extraction] option stops KreMLin after step 1.
+The [-skip-translation] option stops KreMLin after step 2.
+The [-skip-compilation] option stops KreMLin after step 3.
+The [-skip-linking] option stops KreMLin after step 4.
+
+The [-warn-error] option follows the OCaml syntax, namely:
+- [r] is a range of warnings (either a number [n], or a range [n..n])
+- [-r] silences range [r]
+- [+r] enables range [r]
+- [@r] makes range [r] fatal.
+
+The default is +1..2@3+4..8@9+10@11+12..15 and the available warnings are:
+1: not generating code for a provided file
+2: found a reference to a function without implementation
+3: external command failed
+4: type error / malformed input
+5: type definition contains an application of an undefined type abbreviation
+6: variable-length array
+7: private F* function cannot be marked as C static
+8: C inline function reference across translation units
+9: need to manually call static initializers for globals
+10: deprecated feature
+11: subexpression is not Low*; cannot proceed
+12: cannot be compiled to Wasm
+13: monomorphic instance about to be dropped
+14: cannot perform tail-call optimization
+15: function is not Low*; need compatibility headers
+
+The [-bundle] option takes an argument of the form Api=Pattern1,...,Patternn
+The Api= part is optional and Api is made up of a non-empty list of modules
+separated by + (for instance: Interface1+Interface2). A pattern is either Foo.Bar
+(exact match) or Foo.Baz.* (prefix). The semantics are as follows: all the
+modules that match a pattern are grouped into a single C translation unit, and
+their declarations are marked as static, inasmuch as cross-translation unit
+calls permit. If the Api= part is present, then the module named Api must be
+found within the set of input files, and its declarations are appended to the
+translation unit without any visibility modifications.
+
+The default arguments are: 
+
+All include directories and paths supports special prefixes:
+- if a path starts with FSTAR_LIB, this will expand to wherever F*'s ulib
+directory is
+- if a path starts with FSTAR_HOME, this will expand to wherever the source
+checkout of F* is (this does not always exist, e.g. in the case of an OPAM
+setup)
+
+The compiler switches turn on the following options.
+[-cc gcc] (default) adds [-ccopts -Wall,-Werror,-Wno-unused-variable,-Wno-unknown-warning-option,-Wno-unused-but-set-variable,-g,-fwrapv,-fstack-check,-D_BSD_SOURCE,-D_DEFAULT_SOURCE,-D__USE_MINGW_ANSI_STDIO,-Wno-parentheses -ccopt -std=c11]
+[-cc clang] adds [-ccopts -Wall,-Werror,-Wno-unused-variable,-Wno-unknown-warning-option,-Wno-unused-but-set-variable,-g,-fwrapv,-fstack-check,-D_BSD_SOURCE,-D_DEFAULT_SOURCE,-D__USE_MINGW_ANSI_STDIO,-Wno-parentheses -ccopt -std=c11]
+[-cc g++] adds [-ccopts -Wall,-Werror,-Wno-unused-variable,-Wno-unknown-warning-option,-Wno-unused-but-set-variable,-g,-fwrapv,-fstack-check,-D_BSD_SOURCE,-D_DEFAULT_SOURCE,-D__USE_MINGW_ANSI_STDIO,-Wno-parentheses]
+[-cc msvc] adds [-warn-error +6 -falloca]
+[-cc compcert] adds [-warn-error @6@8 -fnostruct-passing -fnoanonymous-unions -ccopts -g,-D_BSD_SOURCE,-D_DEFAULT_SOURCE]
+
+The [-fc89] option triggers [-fnoanonymous-unions], [-fnocompound-literals] and
+[-fc89-scope]. It also changes the invocations above to use [-std=c89]. Note
+that if you're using the uint128 type, you will have to manually compile this
+code with -DKRML_VERIFIED_UINT128.
+
+To debug Wasm codegen, it might be useful to trigger the same compilation path
+as Wasm, but emit C code instead. This can be achieved with [-wasm -d
+force-c,c-calls,wasm-calls -drop C,TestLib -add-include '"hack.h"']
+where [hack.h] contains [#define WasmSupport_check_buffer_size(X)].
+
+Supported options:
+-cc                     compiler to use; one of gcc (default), compcert, g++, clang, msvc
+-m32                    turn on 32-bit cross-compiling
+-fsopt                  option to pass to F* (use -fsopts to pass a comma-separated list of values)
+-ccopt                  option to pass to the C compiler and linker (use -ccopts to pass a comma-separated list of values)
+-ldopt                  option to pass to the C linker (use -ldopts to pass a comma-separated list of values)
+-skip-extraction        stop after step 1.
+-skip-translation       stop after step 2.
+-skip-compilation       stop after step 3.
+-skip-linking           stop after step 4.
+-verify                 ask F* to verify the program
+-verbose                show the output of intermediary tools when acting as a driver for F* or the C compiler
+-diagnostics list       recursive functions and overly nested data types (useful for MSVC)
+-wasm                   emit a .wasm file instead of C
+
+-add-early-include      prepend #include the-argument to every generated file, before kremlib.h
+-add-include            prepend #include the-argument to every generated file, after the #define __FOO_H
+-add-include-tmh        append #include <FILE.tmh>, where FILE is the current basename
+-minimal                do not prepend #include "kremlib.h"; do not bundle FStar
+-static-header          generate a .h for the given module where all functions are marked a static inline
+-no-prefix              don't prepend the module name to declarations from this module
+-bundle                 group modules into a single C translation unit (see above)
+-drop                   do not extract code for this module (see above)
+-library                this is a model and all functions should be made abstract
+-header                 prepend the contents of the given file at the beginning of each .c and .h
+-tmpdir                 temporary directory for .out, .c, .h and .o files
+-I                      add directory to search path (F* and C compiler)
+-o                      name of the resulting executable
+-warn-error             decide which errors are fatal / warnings / silent (default: +1..2@3+4..8@9+10@11+12..15)
+
+-by-ref                 pass the given struct type by reference, always
+-falloca                use alloca(3) for variable-length arrays on the stack
+-fnostruct-passing      disable passing structures by value and use pointers instead
+-fnoanonymous-unions    disable C11 anonymous unions
+-fnocompound-literals   don't generate C11 compound literals
+-ftail-calls            statically compile tail-calls into loops
+-funroll-loops          textually expand loops smaller than N
+-fparentheses           add unnecessary parentheses to silence GCC and Clang's -Wparentheses
+-fno-shadow             add unnecessary renamings to defeat GCC and Clang's -Wshadow, as well as the various MSVC warnings
+-fcurly-braces          always add curly braces around blocks
+-fnoshort-enums         use C11 enums instead of C macros and uint8_t for enums
+-fc89-scope             use C89 scoping rules
+-fc89                   generate C89-compatible code (meta-option, see above)
+
+-djson                  dump the input AST as JSON
+-dast                   pretty-print the internal AST
+-dmonomorphization      pretty-print the internal AST after monomorphization
+-dinline                pretty-print the internal AST after inlining
+-dpattern               pretty-print after pattern matches compilation
+-dsimplify              pretty-print the internal AST after going to a statement language
+-dstructs               pretty-print the internal AST after struct transformations
+-dc                     pretty-print the output C
+-dwasm                  pretty-print the output Wasm
+-d                      debug the specific comma-separated list of values; currently supported: inline,bundle,reachability,c-calls,wasm-calls,wasm-memory,wasm,force-c,cflat
+
+-help                   Display this list of options
+--help                  Display this list of options
+
+make: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/kremlin/kremlib'
+make: Entering directory '/cygdrive/c/build/agent1/_work/1/s/kremlin/kremlib'
+../krml -minimal -tmpdir uint128 -skip-compilation -extract-uint128 \
+-add-include '<inttypes.h>' -add-include '<stdbool.h>' -add-include '"kremlin/internal/types.h"' \
+-bundle FStar.UInt128=* -fparentheses
+KreMLin: from a ML-like subset to C
+
+Usage: C:\build\agent1\_work\1\s\kremlin\_build\src\Kremlin.native [OPTIONS] FILES
+
+High-level description:
+1. If some FILES end with .fst or .fsti, and [-verify] is set, KreMLin will
+call [fstar] on them to perform verification.
+2. If some FILES end with .fst or .fsti, KreMLin will call [fstar] on them to
+perform extraction and produce [out.krml].
+3. If exactly one FILE ends with [.krml] or [.json], or if a [.krml] file was
+produced at step 2., KreMLin will generate a series of [.c] and [.h] files
+in the directory specified by [-tmpdir], or in the current directory.
+4. If some FILES end with [.c], KreMLin will compile them along with the [.c]
+files generated at step 3. to obtain a series of [.o] files.
+5. If some FILES end with [.o], [.S] or [.a], KreMLin will link them along with the
+[.o] files obtained at step 4. to obtain a final executable.
+
+The [-skip-extraction] option stops KreMLin after step 1.
+The [-skip-translation] option stops KreMLin after step 2.
+The [-skip-compilation] option stops KreMLin after step 3.
+The [-skip-linking] option stops KreMLin after step 4.
+
+The [-warn-error] option follows the OCaml syntax, namely:
+- [r] is a range of warnings (either a number [n], or a range [n..n])
+- [-r] silences range [r]
+- [+r] enables range [r]
+- [@r] makes range [r] fatal.
+
+The default is +1..2@3+4..8@9+10@11+12..15 and the available warnings are:
+1: not generating code for a provided file
+2: found a reference to a function without implementation
+3: external command failed
+4: type error / malformed input
+5: type definition contains an application of an undefined type abbreviation
+6: variable-length array
+7: private F* function cannot be marked as C static
+8: C inline function reference across translation units
+9: need to manually call static initializers for globals
+10: deprecated feature
+11: subexpression is not Low*; cannot proceed
+12: cannot be compiled to Wasm
+13: monomorphic instance about to be dropped
+14: cannot perform tail-call optimization
+15: function is not Low*; need compatibility headers
+
+The [-bundle] option takes an argument of the form Api=Pattern1,...,Patternn
+The Api= part is optional and Api is made up of a non-empty list of modules
+separated by + (for instance: Interface1+Interface2). A pattern is either Foo.Bar
+(exact match) or Foo.Baz.* (prefix). The semantics are as follows: all the
+modules that match a pattern are grouped into a single C translation unit, and
+their declarations are marked as static, inasmuch as cross-translation unit
+calls permit. If the Api= part is present, then the module named Api must be
+found within the set of input files, and its declarations are appended to the
+translation unit without any visibility modifications.
+
+The default arguments are: 
+
+All include directories and paths supports special prefixes:
+- if a path starts with FSTAR_LIB, this will expand to wherever F*'s ulib
+directory is
+- if a path starts with FSTAR_HOME, this will expand to wherever the source
+checkout of F* is (this does not always exist, e.g. in the case of an OPAM
+setup)
+
+The compiler switches turn on the following options.
+[-cc gcc] (default) adds [-ccopts -Wall,-Werror,-Wno-unused-variable,-Wno-unknown-warning-option,-Wno-unused-but-set-variable,-g,-fwrapv,-fstack-check,-D_BSD_SOURCE,-D_DEFAULT_SOURCE,-D__USE_MINGW_ANSI_STDIO,-Wno-parentheses -ccopt -std=c11]
+[-cc clang] adds [-ccopts -Wall,-Werror,-Wno-unused-variable,-Wno-unknown-warning-option,-Wno-unused-but-set-variable,-g,-fwrapv,-fstack-check,-D_BSD_SOURCE,-D_DEFAULT_SOURCE,-D__USE_MINGW_ANSI_STDIO,-Wno-parentheses -ccopt -std=c11]
+[-cc g++] adds [-ccopts -Wall,-Werror,-Wno-unused-variable,-Wno-unknown-warning-option,-Wno-unused-but-set-variable,-g,-fwrapv,-fstack-check,-D_BSD_SOURCE,-D_DEFAULT_SOURCE,-D__USE_MINGW_ANSI_STDIO,-Wno-parentheses]
+[-cc msvc] adds [-warn-error +6 -falloca]
+[-cc compcert] adds [-warn-error @6@8 -fnostruct-passing -fnoanonymous-unions -ccopts -g,-D_BSD_SOURCE,-D_DEFAULT_SOURCE]
+
+The [-fc89] option triggers [-fnoanonymous-unions], [-fnocompound-literals] and
+[-fc89-scope]. It also changes the invocations above to use [-std=c89]. Note
+that if you're using the uint128 type, you will have to manually compile this
+code with -DKRML_VERIFIED_UINT128.
+
+To debug Wasm codegen, it might be useful to trigger the same compilation path
+as Wasm, but emit C code instead. This can be achieved with [-wasm -d
+force-c,c-calls,wasm-calls -drop C,TestLib -add-include '"hack.h"']
+where [hack.h] contains [#define WasmSupport_check_buffer_size(X)].
+
+Supported options:
+-cc                     compiler to use; one of gcc (default), compcert, g++, clang, msvc
+-m32                    turn on 32-bit cross-compiling
+-fsopt                  option to pass to F* (use -fsopts to pass a comma-separated list of values)
+-ccopt                  option to pass to the C compiler and linker (use -ccopts to pass a comma-separated list of values)
+-ldopt                  option to pass to the C linker (use -ldopts to pass a comma-separated list of values)
+-skip-extraction        stop after step 1.
+-skip-translation       stop after step 2.
+-skip-compilation       stop after step 3.
+-skip-linking           stop after step 4.
+-verify                 ask F* to verify the program
+-verbose                show the output of intermediary tools when acting as a driver for F* or the C compiler
+-diagnostics list       recursive functions and overly nested data types (useful for MSVC)
+-wasm                   emit a .wasm file instead of C
+
+-add-early-include      prepend #include the-argument to every generated file, before kremlib.h
+-add-include            prepend #include the-argument to every generated file, after the #define __FOO_H
+-add-include-tmh        append #include <FILE.tmh>, where FILE is the current basename
+-minimal                do not prepend #include "kremlib.h"; do not bundle FStar
+-static-header          generate a .h for the given module where all functions are marked a static inline
+-no-prefix              don't prepend the module name to declarations from this module
+-bundle                 group modules into a single C translation unit (see above)
+-drop                   do not extract code for this module (see above)
+-library                this is a model and all functions should be made abstract
+-header                 prepend the contents of the given file at the beginning of each .c and .h
+-tmpdir                 temporary directory for .out, .c, .h and .o files
+-I                      add directory to search path (F* and C compiler)
+-o                      name of the resulting executable
+-warn-error             decide which errors are fatal / warnings / silent (default: +1..2@3+4..8@9+10@11+12..15)
+
+-by-ref                 pass the given struct type by reference, always
+-falloca                use alloca(3) for variable-length arrays on the stack
+-fnostruct-passing      disable passing structures by value and use pointers instead
+-fnoanonymous-unions    disable C11 anonymous unions
+-fnocompound-literals   don't generate C11 compound literals
+-ftail-calls            statically compile tail-calls into loops
+-funroll-loops          textually expand loops smaller than N
+-fparentheses           add unnecessary parentheses to silence GCC and Clang's -Wparentheses
+-fno-shadow             add unnecessary renamings to defeat GCC and Clang's -Wshadow, as well as the various MSVC warnings
+-fcurly-braces          always add curly braces around blocks
+-fnoshort-enums         use C11 enums instead of C macros and uint8_t for enums
+-fc89-scope             use C89 scoping rules
+-fc89                   generate C89-compatible code (meta-option, see above)
+
+-djson                  dump the input AST as JSON
+-dast                   pretty-print the internal AST
+-dmonomorphization      pretty-print the internal AST after monomorphization
+-dinline                pretty-print the internal AST after inlining
+-dpattern               pretty-print after pattern matches compilation
+-dsimplify              pretty-print the internal AST after going to a statement language
+-dstructs               pretty-print the internal AST after struct transformations
+-dc                     pretty-print the output C
+-dwasm                  pretty-print the output Wasm
+-d                      debug the specific comma-separated list of values; currently supported: inline,bundle,reachability,c-calls,wasm-calls,wasm-memory,wasm,force-c,cflat
+
+-help                   Display this list of options
+--help                  Display this list of options
+
+make: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/kremlin/kremlib'
+Restoring NuGet package FsLexYacc.6.1.0.
+Restoring NuGet package FsLexYacc.Runtime.6.1.0.
+Adding package 'FsLexYacc.Runtime.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+Adding package 'FsLexYacc.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+Added package 'FsLexYacc.Runtime.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+Added package 'FsLexYacc.6.1.0' to folder 'C:\build\agent1\_work\1\s\vale\tools\FsLexYacc'
+
+NuGet Config files used:
+C:\Users\everbld\AppData\Roaming\NuGet\NuGet.Config
+C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
+
+Feeds used:
+C:\Users\everbld\.nuget\packages\
+https://api.nuget.org/v3/index.json
+C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
+
+Installed:
+2 package(s) to packages.config projects
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src'
+./msbuild.bat /verbosity:minimal /p:Configuration=Release VS/FStar.sln
+dos2unix: converting file parser/parse.fsi to Unix format...
+**********************************************************************
+** Visual Studio 2017 Developer Command Prompt v15.5.5
+** Copyright (c) 2017 Microsoft Corporation
+**********************************************************************
+Microsoft (R) Build Engine version 15.5.180.51428 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+C:\build\agent1\_work\1\s\src\basic\boot\NotFStar.Util.fs(50,5): warning FS3190: Lowercase literal 'max_int' is being shadowed by a new pattern with the same name. Only uppercase and module-prefixed literals can be used as named patterns. [C:\build\agent1\_work\1\s\src\basic\basic.fsproj]
+basic -> C:\build\agent1\_work\1\s\bin\basic.dll
+Restoring NuGet packages...
+To prevent NuGet from downloading packages during build, open the Visual Studio Options dialog, click on the Package Manager node and uncheck 'Allow NuGet to download missing packages'.
+All packages listed in packages.config are already installed.
+prettyprint -> C:\build\agent1\_work\1\s\bin\prettyprint.dll
+compiling to dfas (can take a while...)
+389 states
+writing output
+building tables
+computing first function...time: 00:00:00.2628887
+building kernels...time: 00:00:00.1719697
+building kernel table...time: 00:00:00.0175429
+computing lookahead relations.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................time: 00:00:00.6142836
+building lookahead table...time: 00:00:00.3120902
+building action table...state 301: shift/reduce error on LBRACK
+state 490: shift/reduce error on SEMICOLON
+state 490: shift/reduce error on SEMICOLON_SEMICOLON
+state 529: shift/reduce error on BAR
+state 533: shift/reduce error on BAR
+state 552: shift/reduce error on BAR
+state 638: shift/reduce error on COLON_EQUALS
+state 670: shift/reduce error on COLON_EQUALS
+time: 00:00:00.9628730
+building goto table...time: 00:00:00.3220094
+returning tables.
+8 shift/reduce conflicts
+914 states
+159 nonterminals
+154 terminals
+482 productions
+#rows in action table: 914
+parser -> C:\build\agent1\_work\1\s\bin\parser.dll
+syntax -> C:\build\agent1\_work\1\s\bin\syntax.dll
+tosyntax -> C:\build\agent1\_work\1\s\bin\tosyntax.dll
+typechecker -> C:\build\agent1\_work\1\s\bin\typechecker.dll
+format -> C:\build\agent1\_work\1\s\bin\format.dll
+reflection -> C:\build\agent1\_work\1\s\bin\reflection.dll
+extraction -> C:\build\agent1\_work\1\s\bin\extraction.dll
+fsdoc -> C:\build\agent1\_work\1\s\bin\fsdoc.dll
+smtencoding -> C:\build\agent1\_work\1\s\bin\smtencoding.dll
+tactics -> C:\build\agent1\_work\1\s\bin\tactics.dll
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets(2041,5): warning MSB3277: Found conflicts between different versions of "FSharp.Core" that could not be resolved.  These reference conflicts are listed in the build log when log verbosity is set to detailed. [C:\build\agent1\_work\1\s\src\fstar\fstar.fsproj]
+fstar -> C:\build\agent1\_work\1\s\bin\fstar.exe
+tests -> C:\build\agent1\_work\1\s\bin\tests.exe
+dos2unix parser/parse.fsi
+chmod a+x ../bin/tests.exe
+chmod a+x ../bin/fstar.exe
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src'
+make fsharp-unit-tests
+make[1]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src'
+../bin/tests.exe
+Initializing ...
+Test.ZTesting the normalizer
+0: ...
+
+1: ...
+
+1: ...
+
+2: ...
+
+3: ...
+
+4: ...
+
+5: ...
+
+6: ...
+
+7: ...
+
+8: ...
+
+9: ...
+
+10: ...
+
+11: ...
+
+12: ...
+
+13: ...
+
+15: ...
+
+16: ...
+
+17: ...
+
+18: ...
+
+19: ...
+
+20: ...
+
+21: ...
+
+24: ...
+
+241: ...
+
+25: ...
+
+26: ...
+
+28: ...
+
+29: ...
+
+31: ...
+
+32: ...
+
+33: ...
+
+34: ...
+
+35: ...
+
+36: ...
+
+301: ...
+
+3012: ...
+
+302: ...
+
+303: ...
+
+3031: ...
+
+3032: ...
+
+3033: ...
+
+3034: ...
+
+3035: ...
+
+3036: ...
+
+305: ...
+
+306: ...
+
+307: ...
+
+308: ...
+
+304: ...
+
+305: ...
+
+309: ...
+
+310: ...
+
+401: ...
+
+402: ...
+
+403: ...
+
+404: ...
+
+Normalizer ok
+Testing NBE
+0: ...
+
+1: ...
+
+1: ...
+
+2: ...
+
+3: ...
+
+4: ...
+
+5: ...
+
+6: ...
+
+7: ...
+
+8: ...
+
+9: ...
+
+10: ...
+
+11: ...
+
+12: ...
+
+13: ...
+
+15: ...
+
+16: ...
+
+17: ...
+
+18: ...
+
+19: ...
+
+20: ...
+
+21: ...
+
+24: ...
+
+241: ...
+
+25: ...
+
+26: ...
+
+28: ...
+
+29: ...
+
+31: ...
+
+32: ...
+
+33: ...
+
+34: ...
+
+35: ...
+
+36: ...
+
+301: ...
+
+3012: ...
+
+302: ...
+
+303: ...
+
+3031: ...
+
+3032: ...
+
+3033: ...
+
+3034: ...
+
+3035: ...
+
+3036: ...
+
+305: ...
+
+306: ...
+
+307: ...
+
+308: ...
+
+304: ...
+
+305: ...
+
+309: ...
+
+310: ...
+
+401: ...
+
+402: ...
+
+403: ...
+
+404: ...
+
+NBE ok
+Comparing times for normalization and nbe
+Test 0
+NBE 25.000000
+Interpreter 32.000000
+Test 1
+NBE 0.000000
+Interpreter 0.000000
+Test 1
+NBE 0.000000
+Interpreter 0.000000
+Test 2
+NBE 0.000000
+Interpreter 0.000000
+Test 3
+NBE 0.000000
+Interpreter 0.000000
+Test 4
+NBE 0.000000
+Interpreter 0.000000
+Test 5
+NBE 1.000000
+Interpreter 1.000000
+Test 6
+NBE 0.000000
+Interpreter 0.000000
+Test 7
+NBE 0.000000
+Interpreter 0.000000
+Test 8
+NBE 0.000000
+Interpreter 0.000000
+Test 9
+NBE 0.000000
+Interpreter 0.000000
+Test 10
+NBE 0.000000
+Interpreter 0.000000
+Test 11
+NBE 0.000000
+Interpreter 0.000000
+Test 12
+NBE 14.000000
+Interpreter 16.000000
+Test 13
+NBE 15.000000
+Interpreter 24.000000
+Test 15
+NBE 0.000000
+Interpreter 0.000000
+Test 16
+NBE 1.000000
+Interpreter 0.000000
+Test 17
+NBE 0.000000
+Interpreter 0.000000
+Test 18
+NBE 11.000000
+Interpreter 1.000000
+Test 19
+NBE 5.000000
+Interpreter 1.000000
+Test 20
+NBE 0.000000
+Interpreter 0.000000
+Test 21
+NBE 1.000000
+Interpreter 6.000000
+Test 24
+NBE 3.000000
+Interpreter 1.000000
+Test 241
+NBE 0.000000
+Interpreter 0.000000
+Test 25
+NBE 0.000000
+Interpreter 0.000000
+Test 26
+NBE 0.000000
+Interpreter 0.000000
+Test 28
+NBE 0.000000
+Interpreter 0.000000
+Test 29
+NBE 0.000000
+Interpreter 0.000000
+Test 31
+NBE 0.000000
+Interpreter 0.000000
+Test 32
+NBE 0.000000
+Interpreter 0.000000
+Test 33
+NBE 0.000000
+Interpreter 0.000000
+Test 34
+NBE 0.000000
+Interpreter 0.000000
+Test 35
+NBE 0.000000
+Interpreter 0.000000
+Test 36
+NBE 0.000000
+Interpreter 0.000000
+Test 301
+NBE 0.000000
+Interpreter 0.000000
+Test 3012
+NBE 0.000000
+Interpreter 0.000000
+Test 302
+NBE 0.000000
+Interpreter 0.000000
+Test 303
+NBE 0.000000
+Interpreter 0.000000
+Test 3031
+NBE 0.000000
+Interpreter 0.000000
+Test 3032
+NBE 1.000000
+Interpreter 0.000000
+Test 3033
+NBE 0.000000
+Interpreter 0.000000
+Test 3034
+NBE 0.000000
+Interpreter 0.000000
+Test 3035
+NBE 0.000000
+Interpreter 0.000000
+Test 3036
+NBE 0.000000
+Interpreter 0.000000
+Test 305
+NBE 0.000000
+Interpreter 0.000000
+Test 306
+NBE 0.000000
+Interpreter 0.000000
+Test 307
+NBE 0.000000
+Interpreter 0.000000
+Test 308
+NBE 0.000000
+Interpreter 0.000000
+Test 304
+NBE 0.000000
+Interpreter 1.000000
+Test 305
+NBE 1.000000
+Interpreter 0.000000
+Test 309
+NBE 0.000000
+Interpreter 0.000000
+Test 310
+NBE 0.000000
+Interpreter 0.000000
+Test 401
+NBE 4.000000
+Interpreter 6.000000
+Test 402
+NBE 1.000000
+Interpreter 3.000000
+Test 403
+NBE 4.000000
+Interpreter 1.000000
+Test 404
+NBE 2.000000
+Interpreter 2.000000
+Testing the unifier
+0 ...Unify x
+and x
+1 ...Unify x
+and y
+2 ...Unify x
+and (fun x -> x) x
+3 ...Unify fun x -> x
+and fun x -> x
+4 ...Unify fun x -> x
+and fun y -> y
+5 ...Unify fun x _ -> x
+and fun a _ -> a
+6 ...Unify fun _ y _ -> y
+and fun _ b _ -> b
+7 ...Unify fun _ y -> y
+and fun x _ -> x
+8 ...Unify fun _ y _ -> y
+and fun _ _ z -> z
+9 ...Unify fun x -> (*?u1634*) _ x
+and fun x -> Prims.c_and x x
+10 ...Unify fun x -> (*?u1652*) _ x
+and fun x y -> x + y
+11 ...Unify x: Prims.int -> y: Prims.int{y == x} -> Prims.Tot Prims.bool
+and x: Prims.int -> y: Prims.int -> Prims.Tot Prims.bool
+12 ...Unify a: Type0 -> b: (_: a -> Prims.Tot Type0) -> x: a -> y: b x -> Prims.Tot Type0
+and a: Type0 -> b: (_: a -> Prims.Tot Type0) -> x: a -> y: b x -> Prims.Tot Type0
+13 ...Unify _ ()
+and (*?u1734*) _ ()
+14 ...Unify _ ()
+and (*?u1743*) _ ()
+Unifier ok
+make[1]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src'
+make boot-ocaml        #build the ocaml-snapshot
+make -C ocaml-output all
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src/ocaml-output'
+# TODO : call menhir directly when positions are fixed instead of
+Warning: you are using the standard library and/or the %inline keyword. We
+# letting OCamlbuild go through ocamlyacc
+menhir  --only-preprocess-for-ocamlyacc ../parser/parse.mly > parse.mly
+recommend switching on --infer in order to avoid obscure type error messages.
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src/ocaml-output'
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src/ocaml-output'
+echo 'open FStar_Util' > FStar_Version.ml
+echo 'let dummy () = ();;' >> FStar_Version.ml
+echo 'FStar_Options._version := "0.9.7.0~dev";;' >> FStar_Version.ml
+echo 'FStar_Options._platform := "Windows_x64";;' >> FStar_Version.ml
+echo 'FStar_Options._compiler := "OCaml 4.05.0";;' >> FStar_Version.ml
+echo 'FStar_Options._date := "2018-07-31T13:09:47-0700";;' >> FStar_Version.ml
+echo 'FStar_Options._commit:= "1e3257e53 (dirty)";;' >> FStar_Version.ml
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src/ocaml-output'
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src/ocaml-output'
+echo "%{" > ../parser/parse.fsy
+echo "#light \"off\"" >> ../parser/parse.fsy
+echo "// (c) Microsoft Corporation. All rights reserved" >> ../parser/parse.fsy
+echo "open Prims" >> ../parser/parse.fsy
+echo "open FStar" >> ../parser/parse.fsy
+echo "open FStar.Errors" >> ../parser/parse.fsy
+echo "open FStar.List" >> ../parser/parse.fsy
+echo "open FStar.Util" >> ../parser/parse.fsy
+echo "open FStar.Range" >> ../parser/parse.fsy
+echo "open FStar.Options" >> ../parser/parse.fsy
+echo "open FStar.Parser.Const" >> ../parser/parse.fsy
+echo "open FStar.Parser.AST" >> ../parser/parse.fsy
+echo "open FStar.Parser.Util" >> ../parser/parse.fsy
+echo "open FStar.Const" >> ../parser/parse.fsy
+echo "open FStar.Ident" >> ../parser/parse.fsy
+echo "open FStar.String" >> ../parser/parse.fsy
+# TODO : fsyacc seems to complain as soon as there is an arrow -> in a %type declaration...
+cat parse.mly | sed -e '/%{/d' \
+-e '/^open /d' \
+-e '/%token/s/[a-zA-Z0-9_]*\.//g' \
+-e '/%type/s/[a-zA-Z0-9_]*\.//g' \
+-e '/%token.*->.*/d' \
+-e '/%type.*->.*/d' \
+>> ../parser/parse.fsy
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src/ocaml-output'
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src/ocaml-output'
+# We are opening the same module twice but we need these modules
+# open for the definition of tokens
+echo "open Prims" > FStar_Parser_Parse.ml
+echo "open FStar_Errors" >> FStar_Parser_Parse.ml
+echo "open FStar_List" >> FStar_Parser_Parse.ml
+echo "open FStar_Util" >> FStar_Parser_Parse.ml
+echo "open FStar_Range" >> FStar_Parser_Parse.ml
+echo "open FStar_Options" >> FStar_Parser_Parse.ml
+echo "open FStar_Syntax_Syntax" >> FStar_Parser_Parse.ml
+echo "open FStar_Parser_Const" >> FStar_Parser_Parse.ml
+echo "open FStar_Syntax_Util" >> FStar_Parser_Parse.ml
+echo "open FStar_Parser_AST" >> FStar_Parser_Parse.ml
+echo "open FStar_Parser_Util" >> FStar_Parser_Parse.ml
+echo "open FStar_Const" >> FStar_Parser_Parse.ml
+echo "open FStar_Ident" >> FStar_Parser_Parse.ml
+echo "open FStar_String" >> FStar_Parser_Parse.ml
+# TODO: create a proper OCamlbuild rule for this production so that
+# OCamlbuild knows how to generate parse.mly first (possibly using
+# menhir) and removes the production as needed.
+ocamlyacc parse.mly 2> yac-log
+cat yac-log
+6 shift/reduce conflicts.
+cat parse.ml >> FStar_Parser_Parse.ml
+rm parse.ml parse.mli
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src/ocaml-output'
+make[2]: Entering directory '/cygdrive/c/build/agent1/_work/1/s/src/ocaml-output'
+make[2]: *** [Makefile:95: fstar.exe] Error 10
+cd ../../ && ocamlbuild -cflag -g -I src/ocaml-output -I src/basic/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/prettyprint/ml -I src/tactics/ml -I src/tests/ml -I ulib/ml -j 24 -build-dir src/ocaml-output/_build -use-ocamlfind main.native src/ocaml-output/FStar_Syntax_Syntax.inferred.mli
+make[2]: Target 'all' not remade because of errors.
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/fstar/ml/main.ml > src/fstar/ml/main.ml.depends
+make[1]: *** [Makefile:124: boot-ocaml] Error 2
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Main.ml > src/ocaml-output/FStar_Main.ml.depends
+make: *** [Makefile:172: utest-prelude] Error 2
+ocamlfind ocamldep -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules ulib/ml/FStar_All.ml > ulib/ml/FStar_All.ml.depends
+Command exited with non-zero status 2
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Common.ml > src/ocaml-output/FStar_Common.ml.depends
+2.50user 5.37system 0:56.88elapsed 13%CPU (0avgtext+0avgdata 72538880maxresident)k
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/FStar_All.cmo ulib/ml/FStar_All.ml
+0inputs+0outputs (329615major+0minor)pagefaults 0swaps
+ocamlfind ocamldep -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules ulib/ml/FStar_List.ml > ulib/ml/FStar_List.ml.depends
+ocamlfind ocamldep -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules ulib/ml/FStar_List_Tot_Base.ml > ulib/ml/FStar_List_Tot_Base.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/FStar_List_Tot_Base.cmo ulib/ml/FStar_List_Tot_Base.ml
+ocamlfind ocamldep -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules ulib/ml/FStar_Pervasives_Native.ml > ulib/ml/FStar_Pervasives_Native.ml.depends
+ocamlfind ocamldep -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules ulib/ml/FStar_ST.ml > ulib/ml/FStar_ST.ml.depends
+ocamlfind ocamldep -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules ulib/ml/FStar_CommonST.ml > ulib/ml/FStar_CommonST.ml.depends
+ocamlfind ocamldep -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules ulib/ml/FStar_Monotonic_Heap.ml > ulib/ml/FStar_Monotonic_Heap.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/FStar_Monotonic_Heap.cmo ulib/ml/FStar_Monotonic_Heap.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/FStar_CommonST.cmo ulib/ml/FStar_CommonST.ml
+ocamlfind ocamldep -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules ulib/ml/FStar_String.ml > ulib/ml/FStar_String.ml.depends
+ocamlfind ocamldep -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules ulib/ml/FStar_Char.ml > ulib/ml/FStar_Char.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/FStar_Char.cmo ulib/ml/FStar_Char.ml
++  ocamlfind ocamlc -c -g -annot -bin-annot -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/FStar_Char.cmo ulib/ml/FStar_Char.ml
+File "ulib/ml/FStar_Char.ml", line 7, characters 17-31:
+Warning 3: deprecated: Char.lowercase
+Use Char.lowercase_ascii instead.
+File "ulib/ml/FStar_Char.ml", line 10, characters 17-31:
+Warning 3: deprecated: Char.uppercase
+Use Char.uppercase_ascii instead.
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/basic/ml/FStar_Util.ml > src/basic/ml/FStar_Util.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/FStar_List.cmo ulib/ml/FStar_List.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/FStar_ST.cmo ulib/ml/FStar_ST.ml
+ocamlfind ocamldep -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules ulib/ml/prims.ml > ulib/ml/prims.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/prims.cmo ulib/ml/prims.ml
++  ocamlfind ocamlc -c -g -annot -bin-annot -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/prims.cmo ulib/ml/prims.ml
+File "ulib/ml/prims.ml", line 61, characters 20-56:
+Warning 8: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+Right _
+File "ulib/ml/prims.ml", line 67, characters 20-57:
+Warning 8: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+Left _
+File "ulib/ml/prims.ml", line 152, characters 20-55:
+Warning 8: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+[]
+File "ulib/ml/prims.ml", line 154, characters 20-55:
+Warning 8: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+[]
+File "ulib/ml/prims.ml", line 173, characters 20-66:
+Warning 8: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+LexTop
+File "ulib/ml/prims.ml", line 175, characters 20-66:
+Warning 8: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+LexTop
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/FStar_Pervasives_Native.cmo ulib/ml/FStar_Pervasives_Native.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/FStar_String.cmo ulib/ml/FStar_String.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/basic/ml -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -o src/basic/ml/FStar_Util.cmo src/basic/ml/FStar_Util.ml
++  ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/basic/ml -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -o src/basic/ml/FStar_Util.cmo src/basic/ml/FStar_Util.ml
+File "src/basic/ml/FStar_Util.ml", line 777, characters 15-28:
+Warning 3: deprecated: String.create
+Use Bytes.create instead.
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Dependencies.ml > src/ocaml-output/FStar_Dependencies.ml.depends
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Errors.ml > src/ocaml-output/FStar_Errors.ml.depends
+ocamlfind ocamldep -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules ulib/ml/FStar_Exn.ml > ulib/ml/FStar_Exn.ml.depends
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Options.ml > src/ocaml-output/FStar_Options.ml.depends
+ocamlfind ocamldep -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules ulib/ml/FStar_BaseTypes.ml > ulib/ml/FStar_BaseTypes.ml.depends
+ocamlfind ocamldep -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules ulib/ml/FStar_Float.ml > ulib/ml/FStar_Float.ml.depends
+ocamlfind ocamldep -package stdint -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules ulib/ml/FStar_Int16.ml > ulib/ml/FStar_Int16.ml.depends
+ocamlfind ocamldep -package stdint -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules ulib/ml/FStar_Int32.ml > ulib/ml/FStar_Int32.ml.depends
+ocamlfind ocamldep -package stdint -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules ulib/ml/FStar_Int64.ml > ulib/ml/FStar_Int64.ml.depends
+ocamlfind ocamldep -package stdint -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules ulib/ml/FStar_Int8.ml > ulib/ml/FStar_Int8.ml.depends
+ocamlfind ocamldep -package stdint -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules ulib/ml/FStar_UInt16.ml > ulib/ml/FStar_UInt16.ml.depends
+ocamlfind ocamldep -package stdint -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules ulib/ml/FStar_UInt8.ml > ulib/ml/FStar_UInt8.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/FStar_Float.cmo ulib/ml/FStar_Float.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/FStar_Int16.cmo ulib/ml/FStar_Int16.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/FStar_Int32.cmo ulib/ml/FStar_Int32.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/FStar_Int64.cmo ulib/ml/FStar_Int64.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/FStar_Int8.cmo ulib/ml/FStar_Int8.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/FStar_UInt16.cmo ulib/ml/FStar_UInt16.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/FStar_UInt8.cmo ulib/ml/FStar_UInt8.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Common.cmo src/ocaml-output/FStar_Common.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/FStar_Exn.cmo ulib/ml/FStar_Exn.ml
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/basic/ml/FStar_Getopt.ml > src/basic/ml/FStar_Getopt.ml.depends
+ocamlfind ocamldep -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules ulib/ml/FStar_Option.ml > ulib/ml/FStar_Option.ml.depends
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/basic/ml/FStar_Platform.ml > src/basic/ml/FStar_Platform.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/FStar_BaseTypes.cmo ulib/ml/FStar_BaseTypes.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/basic/ml -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -o src/basic/ml/FStar_Getopt.cmo src/basic/ml/FStar_Getopt.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/FStar_Option.cmo ulib/ml/FStar_Option.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/basic/ml -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -o src/basic/ml/FStar_Platform.cmo src/basic/ml/FStar_Platform.ml
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Range.ml > src/ocaml-output/FStar_Range.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Options.cmo src/ocaml-output/FStar_Options.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Range.cmo src/ocaml-output/FStar_Range.ml
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Parser_Dep.ml > src/ocaml-output/FStar_Parser_Dep.ml.depends
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Const.ml > src/ocaml-output/FStar_Const.ml.depends
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/basic/ml/FStar_BigInt.ml > src/basic/ml/FStar_BigInt.ml.depends
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Ident.ml > src/ocaml-output/FStar_Ident.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/basic/ml -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -o src/basic/ml/FStar_BigInt.cmo src/basic/ml/FStar_BigInt.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Ident.cmo src/ocaml-output/FStar_Ident.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Errors.cmo src/ocaml-output/FStar_Errors.ml
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Parser_AST.ml > src/ocaml-output/FStar_Parser_AST.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Const.cmo src/ocaml-output/FStar_Const.ml
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Parser_Const.ml > src/ocaml-output/FStar_Parser_Const.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Parser_Const.cmo src/ocaml-output/FStar_Parser_Const.ml
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Parser_Driver.ml > src/ocaml-output/FStar_Parser_Driver.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Parser_AST.cmo src/ocaml-output/FStar_Parser_AST.ml
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/parser/ml/FStar_Parser_ParseIt.ml > src/parser/ml/FStar_Parser_ParseIt.ml.depends
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -syntax camlp4o -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/parser/ml/FStar_Parser_LexFStar.ml > src/parser/ml/FStar_Parser_LexFStar.ml.depends
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Parser_Parse.ml > src/ocaml-output/FStar_Parser_Parse.ml.depends
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/parser/ml/FStar_Parser_Util.ml > src/parser/ml/FStar_Parser_Util.ml.depends
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Syntax_Syntax.ml > src/ocaml-output/FStar_Syntax_Syntax.ml.depends
+ocamlfind ocamldep -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules ulib/ml/FStar_Dyn.ml > ulib/ml/FStar_Dyn.ml.depends
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/basic/ml/FStar_Unionfind.ml > src/basic/ml/FStar_Unionfind.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o ulib/ml/FStar_Dyn.cmo ulib/ml/FStar_Dyn.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/basic/ml -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -o src/basic/ml/FStar_Unionfind.cmo src/basic/ml/FStar_Unionfind.ml
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Syntax_Util.ml > src/ocaml-output/FStar_Syntax_Util.ml.depends
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Syntax_Free.ml > src/ocaml-output/FStar_Syntax_Free.ml.depends
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Syntax_Subst.ml > src/ocaml-output/FStar_Syntax_Subst.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Syntax_Syntax.cmo src/ocaml-output/FStar_Syntax_Syntax.ml
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Syntax_Unionfind.ml > src/ocaml-output/FStar_Syntax_Unionfind.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Syntax_Unionfind.cmo src/ocaml-output/FStar_Syntax_Unionfind.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Syntax_Subst.cmo src/ocaml-output/FStar_Syntax_Subst.ml
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/ocaml-output/FStar_Syntax_InstFV.ml > src/ocaml-output/FStar_Syntax_InstFV.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Syntax_Free.cmo src/ocaml-output/FStar_Syntax_Free.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Syntax_InstFV.cmo src/ocaml-output/FStar_Syntax_InstFV.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/parser/ml -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/parser/ml/FStar_Parser_Util.cmo src/parser/ml/FStar_Parser_Util.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Syntax_Util.cmo src/ocaml-output/FStar_Syntax_Util.ml
+ocamlfind ocamldep -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -modules src/parser/ml/FStar_Ulexing.ml > src/parser/ml/FStar_Ulexing.ml.depends
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Parser_Parse.cmo src/ocaml-output/FStar_Parser_Parse.ml
+ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/parser/ml -I ulib/ml -I src/ocaml-output -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/parser/ml/FStar_Ulexing.cmo src/parser/ml/FStar_Ulexing.ml
++  ocamlfind ocamlc -c -g -annot -bin-annot -thread -package stdint -w -8-11-20-21-26-28 -package compiler-libs -package compiler-libs.common -package menhirLib -package dynlink -package pprint -package ulex -package yojson -package ocaml-migrate-parsetree -package process -package batteries -package zarith -package ppx_deriving.std -package ppx_deriving_yojson -I src/ocaml-output -I ulib/ml -I src/tests/ml -I src/tactics/ml -I src/prettyprint/ml -I src/parser/ml -I src/fstar/ml -I src/extraction/ml -I src/basic/ml -o src/ocaml-output/FStar_Parser_Parse.cmo src/ocaml-output/FStar_Parser_Parse.ml
+File "parse.mly", line 756, characters 8-14:
+Error: This variant expression is expected to have type
+FStar_Parser_AST.decl'
+The constructor Friend does not belong to type FStar_Parser_AST.decl'
+Command exited with code 2.
+make[2]: Leaving directory '/cygdrive/c/build/agent1/_work/1/s/src/ocaml-output'
+warm-up failed
