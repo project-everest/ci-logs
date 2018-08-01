@@ -1,0 +1,30 @@
+This is /home/everbld/everest-ci/ci
+Working directory: /cygdrive/c/build/agent2/_work/1/s
+About to run: docker_from_scratch
+BUILD_SOURCEBRANCHNAME: master
+BUILD_DEFINITIONNAME: Everest-Nightly-Windows
+BUILD_BUILDID: 23791
+DEFINITIONNAME:
+Z3 is /home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin/z3
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+Login Succeeded
+Sending build context to Docker daemon  2.048kB
+Step 1/6 : FROM projecteverest/everest-chomolungma
+latest: Pulling from projecteverest/everest-chomolungma
+Digest: sha256:ad1437907525c59bac4bbbd84858068414f9460fce36f171169fad9317437d28
+Status: Image is up to date for projecteverest/everest-chomolungma:latest
+---> f85fbdda8f3f
+Step 2/6 : ARG PARALLEL_OPT
+---> Running in 643e1f30aa88
+---> a2d0f19768c4
+Removing intermediate container 643e1f30aa88
+Step 3/6 : RUN ./everest --yes check pull $PARALLEL_OPT make
+---> Running in 828b1feead75
+# Switching to the everest directory ... now in /home/everest/everest
+
+Checking environment
+... which found
+Warning: git client not configured with the proper ssh credentials
+Hint: check which git you're running, and make sure you have the same SSH key in ~/.ssh and github.com
+[91m./everest: line 429: cannot create temp file for here-document: No space left on device
+The command '/bin/bash --login -c ./everest --yes check pull $PARALLEL_OPT make' returned a non-zero code: 1
