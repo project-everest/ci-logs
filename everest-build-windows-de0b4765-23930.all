@@ -1,0 +1,62 @@
+This is /home/everbld/everest-ci/ci
+Working directory: /cygdrive/c/build/agent2/_work/12/s
+About to run: everest_rebuild -windows
+BUILD_SOURCEBRANCHNAME: master
+BUILD_DEFINITIONNAME: Everest-CI-Windows-fnouint128
+BUILD_BUILDID: 23930
+DEFINITIONNAME:
+Z3 is /home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin/z3
+# Switching to the everest directory ... now in /cygdrive/c/build/agent2/_work/12/s
+
+OVERVIEW: ./everest, a high-level management script for Project Everest
+
+USAGE: ./everest [OPTIONS] [PROJECT] COMMANDS
+Command exited with non-zero status 1
+
+OPTION:
+--yes     Non-interactive mode (answer y to all questions, verbose)
+0.04user 0.27system 0:00.25elapsed 128%CPU (0avgtext+0avgdata 7289344maxresident)k
+
+-j n      Set max number of parallel jobs to n (default 1)
+0inputs+0outputs (29689major+0minor)pagefaults 0swaps
+This option is in two parts
+(-jn without space is NOT valid)
+
+PROJECT:
+restrict the subsequent commands to operate on one of the following:
+FStar kremlin mitls-fstar hacl-star vale
+
+COMMAND:
+check     ensure that all the required programs are found in path, install
+them if needed; offer to customize ~/.bash_profile with proper env
+variables
+(destination file ~/.bash_profile can be overridden with the
+EVEREST_ENV_DEST_FILE environment variable)
+
+opam      install the needed OPAM packages (implied by check)
+
+z3        install the right version of z3 (implied by check)
+
+pull      self-update the everest repository (i.e. the script and
+hashes.sh) then run reset
+
+merge     pull all projects, merging and rebasing local changes; does NOT
+reset to known to be good version, but preserves your changes
+
+forall    execute command in all git repository directories
+
+reset     pull all projects and move them to the revisions specified by
+hashes.sh
+
+snapshot  make the current state a new known set of working revisions; this
+writes into hashes.sh
+
+make      rebuild all projects
+
+test      launch the test artifacts
+
+verify    run verification for all projects
+
+clean     clean all projects
+
+help      print the current message
