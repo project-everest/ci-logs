@@ -1,0 +1,141 @@
+This is /home/everbld/everest-ci/ci
+Working directory: /cygdrive/c/build/agent1/_work/3/s
+About to run: docker_from_scratch
+BUILD_SOURCEBRANCHNAME: master
+BUILD_DEFINITIONNAME: Everest-Nightly-Windows
+BUILD_BUILDID: 23938
+DEFINITIONNAME:
+Z3 is /home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin/z3
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+Login Succeeded
+Sending build context to Docker daemon  2.048kB
+Step 1/6 : FROM projecteverest/everest-chomolungma
+latest: Pulling from projecteverest/everest-chomolungma
+8ee29e426c26: Already exists
+6e83b260b73b: Already exists
+e26b65fd1143: Already exists
+40dca07f8222: Already exists
+b420ae9e10b3: Already exists
+1eb36b867464: Pulling fs layer
+45878d78e0b6: Pulling fs layer
+2f599a31d77a: Pulling fs layer
+d3ffcc6fe860: Pulling fs layer
+124023f12839: Pulling fs layer
+3a4a12ffac24: Pulling fs layer
+9aaeebdaae51: Pulling fs layer
+53dc8946289b: Pulling fs layer
+312ae722f0e0: Pulling fs layer
+1c0a9050b5b4: Pulling fs layer
+d181dd6f3d5d: Pulling fs layer
+8d9764aab26d: Pulling fs layer
+1d644199e9e0: Pulling fs layer
+c62f6af3dce4: Pulling fs layer
+1efe266f97f9: Pulling fs layer
+9f0e629640ad: Pulling fs layer
+9aaeebdaae51: Waiting
+3a4a12ffac24: Waiting
+b182280d355f: Pulling fs layer
+8ad37923312d: Pulling fs layer
+7baaf1a1a12e: Pulling fs layer
+991d79762e6c: Pulling fs layer
+53dc8946289b: Waiting
+1c0a9050b5b4: Waiting
+312ae722f0e0: Waiting
+124023f12839: Waiting
+b182280d355f: Waiting
+d181dd6f3d5d: Waiting
+cc080cbd47da: Pulling fs layer
+a3a7803d9242: Pulling fs layer
+8ad37923312d: Waiting
+1d644199e9e0: Waiting
+1efe266f97f9: Waiting
+4c0ff63198dc: Pulling fs layer
+9f0e629640ad: Waiting
+d3ffcc6fe860: Waiting
+7baaf1a1a12e: Waiting
+991d79762e6c: Waiting
+4c0ff63198dc: Waiting
+c62f6af3dce4: Waiting
+cc080cbd47da: Waiting
+a3a7803d9242: Waiting
+45878d78e0b6: Verifying Checksum
+45878d78e0b6: Download complete
+1eb36b867464: Verifying Checksum
+1eb36b867464: Download complete
+1eb36b867464: Pull complete
+2f599a31d77a: Verifying Checksum
+2f599a31d77a: Download complete
+45878d78e0b6: Pull complete
+2f599a31d77a: Pull complete
+3a4a12ffac24: Verifying Checksum
+3a4a12ffac24: Download complete
+9aaeebdaae51: Download complete
+124023f12839: Verifying Checksum
+124023f12839: Download complete
+53dc8946289b: Verifying Checksum
+53dc8946289b: Download complete
+d3ffcc6fe860: Verifying Checksum
+d3ffcc6fe860: Download complete
+1c0a9050b5b4: Verifying Checksum
+1c0a9050b5b4: Download complete
+d181dd6f3d5d: Download complete
+8d9764aab26d: Verifying Checksum
+8d9764aab26d: Download complete
+d3ffcc6fe860: Pull complete
+c62f6af3dce4: Verifying Checksum
+c62f6af3dce4: Download complete
+124023f12839: Pull complete
+3a4a12ffac24: Pull complete
+9aaeebdaae51: Pull complete
+53dc8946289b: Pull complete
+1d644199e9e0: Verifying Checksum
+1d644199e9e0: Download complete
+9f0e629640ad: Verifying Checksum
+9f0e629640ad: Download complete
+b182280d355f: Verifying Checksum
+b182280d355f: Download complete
+8ad37923312d: Download complete
+312ae722f0e0: Verifying Checksum
+312ae722f0e0: Download complete
+7baaf1a1a12e: Verifying Checksum
+7baaf1a1a12e: Download complete
+cc080cbd47da: Download complete
+991d79762e6c: Verifying Checksum
+991d79762e6c: Download complete
+a3a7803d9242: Download complete
+312ae722f0e0: Pull complete
+1c0a9050b5b4: Pull complete
+d181dd6f3d5d: Pull complete
+8d9764aab26d: Pull complete
+4c0ff63198dc: Verifying Checksum
+4c0ff63198dc: Download complete
+1d644199e9e0: Pull complete
+c62f6af3dce4: Pull complete
+1efe266f97f9: Verifying Checksum
+1efe266f97f9: Download complete
+1efe266f97f9: Pull complete
+9f0e629640ad: Pull complete
+b182280d355f: Pull complete
+8ad37923312d: Pull complete
+7baaf1a1a12e: Pull complete
+991d79762e6c: Pull complete
+cc080cbd47da: Pull complete
+a3a7803d9242: Pull complete
+4c0ff63198dc: Pull complete
+Digest: sha256:93f8b824c56b33a773a47a45345e16112fed959cb968b129b2090c381f0e3a36
+Status: Downloaded newer image for projecteverest/everest-chomolungma:latest
+---> 4acc9d0e1b0d
+Step 2/6 : ARG PARALLEL_OPT
+---> Running in 3f9b6af35502
+---> 4b285945019f
+Removing intermediate container 3f9b6af35502
+Step 3/6 : RUN ./everest --yes check pull $PARALLEL_OPT make
+---> Running in 8f5b6c767f90
+# Switching to the everest directory ... now in /home/everest/everest
+
+Checking environment
+... which found
+Warning: git client not configured with the proper ssh credentials
+Hint: check which git you're running, and make sure you have the same SSH key in ~/.ssh and github.com
+[91m./everest: line 429: cannot create temp file for here-document: No space left on device
+The command '/bin/bash --login -c ./everest --yes check pull $PARALLEL_OPT make' returned a non-zero code: 1
