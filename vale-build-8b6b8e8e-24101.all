@@ -1,0 +1,101 @@
+This is /home/everbld/everest-ci/ci
+Working directory: /cygdrive/c/build/agent2/_work/13/s
+About to run: scons.bat  --NOVERIFY
+BUILD_SOURCEBRANCHNAME: master
+BUILD_DEFINITIONNAME: VALE-x64 CI-Windows
+BUILD_BUILDID: 24101
+DEFINITIONNAME:
+Z3 is /home/everbld/everest/z3-4.5.1.1f29cebd4df6-x64-win/bin/z3
+scons: Reading SConscript files ...
+***
+*** WARNING:  NOT VERIFYING ANY CODE
+***
+scons: done reading SConscript files.
+scons: Building targets ...
+Copy file(s): "tools\Dafny\z3.exe" to "bin\z3.exe"
+Copy file(s): "tools\Dafny\Provers.SMTLib.dll" to "bin\Provers.SMTLib.dll"
+Copy file(s): "tools\Dafny\DafnyRuntime.cs" to "bin\DafnyRuntime.cs"
+Copy file(s): "tools\Dafny\DafnyPrelude.bpl" to "bin\DafnyPrelude.bpl"
+Copy file(s): "tools\Dafny\Dafny.exe" to "bin\Dafny.exe"
+Copy file(s): "tools\Dafny\DafnyPipeline.dll" to "bin\DafnyPipeline.dll"
+Copy file(s): "tools\Dafny\BoogieVCGeneration.dll" to "bin\BoogieVCGeneration.dll"
+Copy file(s): "tools\Dafny\BoogieVCExpr.dll" to "bin\BoogieVCExpr.dll"
+Copy file(s): "tools\Dafny\BoogieParserHelper.dll" to "bin\BoogieParserHelper.dll"
+Copy file(s): "tools\Dafny\BoogieModel.dll" to "bin\BoogieModel.dll"
+Copy file(s): "tools\Dafny\BoogieHoudini.dll" to "bin\BoogieHoudini.dll"
+Copy file(s): "tools\Dafny\BoogieGraph.dll" to "bin\BoogieGraph.dll"
+Copy file(s): "tools\Dafny\BoogieExecutionEngine.dll" to "bin\BoogieExecutionEngine.dll"
+Copy file(s): "tools\Dafny\BoogieDoomed.dll" to "bin\BoogieDoomed.dll"
+Copy file(s): "tools\Dafny\BoogieCore.dll" to "bin\BoogieCore.dll"
+Copy file(s): "tools\Dafny\BoogieConcurrency.dll" to "bin\BoogieConcurrency.dll"
+Copy file(s): "tools\Dafny\BoogieCodeContractsExtender.dll" to "bin\BoogieCodeContractsExtender.dll"
+Copy file(s): "tools\Dafny\BoogieBasetypes.dll" to "bin\BoogieBasetypes.dll"
+Copy file(s): "tools\Dafny\BoogieAbsInt.dll" to "bin\BoogieAbsInt.dll"
+"C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe" -t:library -out:bin\DafnyInterface.dll tools\Vale\DafnyInterface\Source\DafnyInterface\DafnyDriver.cs tools\Vale\DafnyInterface\Source\DafnyInterface\Properties\AssemblyInfo.cs -r:C:\build\agent2\_work\13\s\tools\Dafny\BoogieAbsInt.dll -r:C:\build\agent2\_work\13\s\tools\Dafny\BoogieConcurrency.dll -r:C:\build\agent2\_work\13\s\tools\Dafny\BoogieCore.dll -r:C:\build\agent2\_work\13\s\tools\Dafny\BoogieExecutionEngine.dll -r:C:\build\agent2\_work\13\s\tools\Dafny\BoogieParserHelper.dll -r:C:\build\agent2\_work\13\s\tools\Dafny\BoogieVCGeneration.dll -r:C:\build\agent2\_work\13\s\tools\Dafny\Dafny.exe -r:C:\build\agent2\_work\13\s\tools\Dafny\DafnyPipeline.dll -r:C:\build\agent2\_work\13\s\tools\Dafny\Provers.SMTLib.dll
+Microsoft (R) Visual C# Compiler version 4.7.2053.0
+for C# 5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+This compiler is provided as part of the Microsoft (R) .NET Framework, but only supports language versions up to C# 5, which is no longer the latest version. For compilers that support newer versions of the C# programming language, see http://go.microsoft.com/fwlink/?LinkID=533240
+
+tools\FsLexYacc\FsLexYacc.6.1.0\build\fsyacc.exe --module "Parse" tools\Vale\src\parse.fsy -o obj\Vale\parse.fs
+building tables
+computing first function...time: 00:00:00.0628314
+building kernels...time: 00:00:00.0610740
+building kernel table...time: 00:00:00.0136034
+computing lookahead relations..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................time: 00:00:00.2739308
+building lookahead table...time: 00:00:00.0346436
+building action table...time: 00:00:00.3045315
+building goto table...time: 00:00:00.0254602
+returning tables.
+479 states
+59 nonterminals
+98 terminals
+219 productions
+#rows in action table: 479
+tools\FsLexYacc\FsLexYacc.6.1.0\build\fslex.exe tools\Vale\src\lex.fsl -o obj\Vale\lex.fs
+compiling to dfas (can take a while...)
+400 states
+writing output
+C:\PROGRA~2\MICROS~4\F#\4.0\FRAMEW~1\v4.0\fsc.exe -g --platform:anycpu --standalone --mlcompatibility -O tools\Vale\src\ast.fs tools\Vale\src\ast_util.fs tools\Vale\src\parse_util.fs obj\Vale\parse.fs obj\Vale\lex.fs tools\Vale\src\emit_vale_text.fs tools\Vale\src\transform.fs tools\Vale\src\emit_common_base.fs tools\Vale\src\emit_common_quick_code.fs tools\Vale\src\emit_common_lemmas.fs tools\Vale\src\emit_common_quick_export.fs tools\Vale\src\emit_common_refine.fs tools\Vale\src\emit_common_top.fs tools\Vale\src\emit_dafny_text.fs tools\Vale\src\emit_dafny_direct.fs tools\Vale\src\emit_fstar_text.fs tools\Vale\src\main.fs -o bin\vale.exe -r tools\Dafny\BoogieAbsInt.dll -r tools\Dafny\BoogieBasetypes.dll -r tools\Dafny\BoogieCodeContractsExtender.dll -r tools\Dafny\BoogieConcurrency.dll -r tools\Dafny\BoogieCore.dll -r tools\Dafny\BoogieDoomed.dll -r tools\Dafny\BoogieExecutionEngine.dll -r tools\Dafny\BoogieGraph.dll -r tools\Dafny\BoogieHoudini.dll -r tools\Dafny\BoogieModel.dll -r tools\Dafny\BoogieParserHelper.dll -r tools\Dafny\BoogieVCExpr.dll -r tools\Dafny\BoogieVCGeneration.dll -r tools\Dafny\DafnyPipeline.dll -r tools\Dafny\Dafny.exe -r bin\DafnyInterface.dll -r tools\Dafny\Newtonsoft.Json.dll -r tools\FsLexYacc\FsLexYacc.Runtime.6.1.0\lib\net40\FsLexYacc.Runtime.dll
+Microsoft (R) F# Compiler version 14.0.23413.0
+Copyright (c) Microsoft Corporation. All Rights Reserved.
+
+tools\Vale\src\emit_vale_text.fs(61,11): warning FS0025: Incomplete pattern matches on this expression. For example, the value 'EOp (Uop (UCall (_)), [_])' may indicate a case not covered by the pattern(s).
+
+tools\Vale\src\emit_dafny_text.fs(60,11): warning FS0025: Incomplete pattern matches on this expression. For example, the value 'EOp (Uop (UCall (_)), [_])' may indicate a case not covered by the pattern(s).
+
+tools\Vale\src\emit_dafny_direct.fs(229,11): warning FS0025: Incomplete pattern matches on this expression. For example, the value 'EOp (Uop (UCall (_)), [_])' may indicate a case not covered by the pattern(s).
+
+tools\Vale\src\emit_fstar_text.fs(85,11): warning FS0025: Incomplete pattern matches on this expression. For example, the value 'EOp (Uop (UCall (CallInline)), [_])' may indicate a case not covered by the pattern(s).
+bin\vale.exe -includeSuffix .vad .gen.dfy -sourceFrom BASE src -destFrom BASE obj -in src\arch\arm\decls.vad -out obj\arch\arm\decls.gen.dfy
+// parsing .\src\arch\arm\decls.vad
+bin\vale.exe -includeSuffix .vad .gen.dfy -sourceFrom BASE src -destFrom BASE obj -in src\arch\x64\decls.vad -out obj\arch\x64\decls.gen.dfy
+// parsing .\src\arch\x64\decls.vad
+bin\vale.exe -includeSuffix .vad .gen.dfy -sourceFrom BASE src -destFrom BASE obj -in src\arch\x64\decls64.vad -out obj\arch\x64\decls64.gen.dfy
+// parsing .\src\arch\x64\decls64.vad
+// parsing .\src\arch\x64\decls.vad
+bin\vale.exe -includeSuffix .vad .gen.dfy -sourceFrom BASE src -destFrom BASE obj -in src\arch\x86\decls.vad -out obj\arch\x86\decls.gen.dfy
+// parsing .\src\arch\x86\decls.vad
+bin\vale.exe -includeSuffix .vad .gen.dfy -sourceFrom BASE src -destFrom BASE obj -in tools\Vale\test\assert-by.vad -out obj\Vale\test\assert-by.gen.dfy
+// parsing .\tools\Vale\test\assert-by.vad
+// parsing .\tools\Vale\test\common.vad
+bin\vale.exe -includeSuffix .vad .gen.dfy -sourceFrom BASE src -destFrom BASE obj -in tools\Vale\test\calc.vad -out obj\Vale\test\calc.gen.dfy
+// parsing .\tools\Vale\test\calc.vad
+// parsing .\tools\Vale\test\common.vad
+bin\vale.exe -includeSuffix .vad .gen.dfy -sourceFrom BASE src -destFrom BASE obj -in tools\Vale\test\common.vad -out obj\Vale\test\common.gen.dfy
+// parsing .\tools\Vale\test\common.vad
+bin\vale.exe -includeSuffix .vad .gen.dfy -sourceFrom BASE src -destFrom BASE obj -in tools\Vale\test\DottedNames.vad -out obj\Vale\test\DottedNames.gen.dfy
+// parsing .\tools\Vale\test\DottedNames.vad
+// parsing .\tools\Vale\test\common.vad
+bin\vale.exe -includeSuffix .vad .gen.dfy -sourceFrom BASE src -destFrom BASE obj -in tools\Vale\test\inline-if.vad -out obj\Vale\test\inline-if.gen.dfy
+// parsing .\tools\Vale\test\inline-if.vad
+// parsing .\tools\Vale\test\common.vad
+bin\vale.exe -includeSuffix .vad .gen.dfy -sourceFrom BASE src -destFrom BASE obj -in tools\Vale\test\refined2.vad -out obj\Vale\test\refined2.gen.dfy
+// parsing .\tools\Vale\test\refined2.vad
+bin\vale.exe -includeSuffix .vad .gen.dfy -sourceFrom BASE src -destFrom BASE obj -in tools\Vale\test\refined3.vad -out obj\Vale\test\refined3.gen.dfy
+// parsing .\tools\Vale\test\refined3.vad
+bin\vale.exe -includeSuffix .vad .gen.dfy -sourceFrom BASE src -destFrom BASE obj -in tools\Vale\test\test1.vad -out obj\Vale\test\test1.gen.dfy
+// parsing .\tools\Vale\test\test1.vad
+// parsing .\tools\Vale\test\common.vad
+scons: done building targets.
